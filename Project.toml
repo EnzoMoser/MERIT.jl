@@ -1,0 +1,13 @@
+name = "MERIT"
+uuid = "0c276b8d-6eb3-44a0-a3a7-2fd8fb8ab939"
+authors = ["Aaron Dinesh"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
