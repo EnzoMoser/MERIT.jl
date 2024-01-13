@@ -48,13 +48,13 @@ end
 
 
 # TESTING CODE BELOW HERE
-frequencies = readdlm("/mnt/c/Users/aaron/Desktop/Coding/MERIT/data/frequencies.csv", ',', Float64)
-antennalocations = readdlm("/mnt/c/Users/aaron/Desktop/Coding/MERIT/data/antenna_locations.csv", ',', Float64)
-channelnames = readdlm("/mnt/c/Users/aaron/Desktop/Coding/MERIT/data/channel_names.csv", ',', Int64)
-scan1 = readdlm("/mnt/c/Users/aaron/Desktop/Coding/MERIT/data/B0_P3_p000.csv", ',', ComplexF64)
-scan2 = readdlm("/mnt/c/Users/aaron/Desktop/Coding/MERIT/data/B0_P3_p036.csv", ',', ComplexF64)
-timesTRUTH  = matread("/mnt/c/Users/aaron/Desktop/Coding/MERIT/data/tests/time.mat")["time"]
-pointsTRUTH = matread("/mnt/c/Users/aaron/Desktop/Coding/MERIT/data/tests/points.mat")["points"]
+frequencies = readdlm("data/frequencies.csv", ',', Float64)
+antennalocations = readdlm("data/antenna_locations.csv", ',', Float64)
+channelnames = readdlm("data/channel_names.csv", ',', Int64)
+scan1 = readdlm("data/B0_P3_p000.csv", ',', ComplexF64)
+scan2 = readdlm("data/B0_P3_p036.csv", ',', ComplexF64)
+timesTRUTH  = matread("data/tests/time.mat")["time"]
+pointsTRUTH = matread("data/tests/points.mat")["points"]
 points = domainHemisphere(2.5e-3, 7e-2)
 
 timesTEST = Beamform.get_delays(channelnames, antennalocations, 8.0, pointsTRUTH)
