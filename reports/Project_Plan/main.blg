@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2022/dev/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: ieeetr.bst
+Database file #1: citation.bib
+Warning--empty year in RN2
+Warning--empty journal in RN3
+You've used 3 entries,
+            1876 wiz_defined-function locations,
+            498 strings with 4306 characters,
+and the built_in function-call counts, 829 in all, are:
+= -- 72
+> -- 38
+< -- 0
++ -- 14
+- -- 11
+* -- 57
+:= -- 125
+add.period$ -- 4
+call.type$ -- 3
+change.case$ -- 3
+chr.to.int$ -- 0
+cite$ -- 5
+duplicate$ -- 49
+empty$ -- 75
+format.name$ -- 11
+if$ -- 202
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 13
+num.names$ -- 3
+pop$ -- 15
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 32
+stack$ -- 0
+substring$ -- 26
+swap$ -- 20
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 2
+while$ -- 7
+width$ -- 4
+write$ -- 31
+(There were 2 warnings)

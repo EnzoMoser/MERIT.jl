@@ -1,7 +1,5 @@
 module Beamform
 
-using MAT
-
 function get_delays(channel, antenna::Matrix{Float64}, relative_permittivity::Float64, points::Matrix{Float64})
     c_0::Float64 = 299792458.0
     speed = c_0 /  sqrt(relative_permittivity)

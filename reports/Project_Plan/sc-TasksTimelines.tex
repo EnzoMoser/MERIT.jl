@@ -1,0 +1,74 @@
+\section*{Tasks and Timelines}
+\newcolumntype{C}{>{\centering\arraybackslash}p{4cm}}
+\begin{tabularx}{\textwidth}{@{}|c|X|C|@{}}
+    \hline
+    ID & Task & Deadline \\
+    \hline
+    \textbf{1} & \textbf{Create an image from the scans given} & \textbf{26 January 2024} \\
+    \hline
+    1.1 & Implement code to generate a hemisphere & 22 January 2024 \\
+    \hline
+    1.2 & Implement code that calculates the delays from every point to the antenna & 23 January  2024 \\
+    \hline
+    1.3 & Implement the Delay-and-Sum (DAS) beamformer & 25 January 2024 \\
+    \hline
+    1.4 & Create a visualizer to show the resulting image & 26 January 2024 \\
+    \hline
+    \multicolumn{3}{|X|}{ } \\
+    \hline
+    \textbf{2} & \textbf{Implement the other beamformers} & \textbf{2 February 2024} \\
+    \hline
+    2.1 & Implement the Modified-Delay-and-Sum (MDAS) beamformer (called CDAS in the MATLAB library) & 31 January 2024 \\
+    \hline
+    2.2 & Implement the Delay-Multiply-and-Sum (DMAS) beamformer & 2 February 2024 \\
+    \hline
+    \multicolumn{3}{|X|}{ } \\
+    \hline
+    \textbf{3} & \textbf{Implement the metrics from the MATLAB library} & \textbf{9 February 2024} \\
+    3.1 & Implement the Full Width Half Max metric & 5 February 2024 \\
+    3.2 & Implement the Signal-to-Mean Ratio (SMR) metric & 7 February 2024 \\
+    3.3 & Implement the Signal-to-Clutter Ratio (SCR) metric & 9 February 2024 \\
+    \hline
+    \multicolumn{3}{|X|}{ } \\
+    \hline
+    \textbf{4} & \textbf{Make the pipeline customizable and allow for GPU execution} & \textbf{23 February 2024} \\
+    4.1 & Standardise the input and output for a “beamformer algorithm” type function & 13 February 2024 \\
+    4.2 & Allow the beamformer function to accept function handles to beamformer algorithms & 16 February 2024 \\
+    4.3 & Parallelize the code so it makes effective use of a GPU if present & 23 February 2024 \\
+    \hline
+    \multicolumn{3}{|X|}{ } \\
+    \hline
+    \textbf{5} & \textbf{End-to-End debug testing} & \textbf{1 March 2024} \\
+    5.1 & Create an end-to-end testing scheme & 25 February 2024 \\
+    5.2 & Collect the relevant data to verify the test results & 1 March 2024 \\
+    5.3 & Test a part of the library & 1 March 2024 \\
+    5.4 & Analyse results from the test & 1 March 2024 \\
+    5.5 & Fix bugs according to result analysis. Do 5.2 - 5.5 until all areas have been tested & 1 March 2024 \\
+    \hline
+    \multicolumn{3}{|X|}{ } \\
+    \hline
+    \textbf{6} & \textbf{Presentation} & \textbf{18 March 2024} \\
+    6.1 & Collect images to put into the presentation & 4 March 2024 \\
+    6.2 & Create a programme for the presentation & 5 March 2024 \\
+    6.3 & Finalize the presentation and get approval from supervisor & 8 March 2024 \\
+    6.4 & Present the presentation & 18 March 2024 \\
+    \hline
+    \multicolumn{3}{|X|}{ } \\
+    \hline
+    \textbf{7} & \textbf{Final Report} & \textbf{12 April 2024} \\
+    7.1 & Create a LaTeX template for the report & 11 March 2024 \\
+    7.2 & Create the first draft & 18 March 2024 \\
+    7.3 & Review by supervisor & 21 March 2024 \\
+    7.4 & Apply changes suggested to produce a final draft & 24 March 2024 \\
+    \hline
+\end{tabularx}
+
+\bigskip
+\noindent
+The above table outlines the tasks and their deadlines that need to be completed in order for the
+project and the library to be considered a success. The deadlines set were generous to account for any
+unforeseen events that may arise that would cause the project to slip. While the probability for such
+an event occurring is low, measures must still be put in place to safeguard the project in the unlikely
+event that a delay occurs. As well as generous deadlines, I also have included 14 days of slack at the
+end, assuming a deadline of April 12, 2024. This again was to account for any unforeseen
+complications that may arise during development.

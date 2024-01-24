@@ -6,10 +6,10 @@ using MAT
 @testset "MERIT.jl" begin
     # Write your tests here.
     #TODO Write test for Beamform.get_delays()
-    antennalocations = readdlm("data/antenna_locations.csv", ',', Float64)
-    channelnames = readdlm("data/channel_names.csv", ',', Int64)
-    pointsTRUTH  = matread("data/tests/points.mat")["points"]
-    timesTRUTH   = matread("data/tests/time.mat")["time"]
+    antennalocations = readdlm("./data/antenna_locations.csv", ',', Float64)
+    channelnames = readdlm("./data/channel_names.csv", ',', Int64)
+    pointsTRUTH  = matread("./data/tests/points.mat")["points"]
+    timesTRUTH   = matread("./data/tests/time.mat")["time"]
     timesTEST    = MERIT.Beamform.get_delays(channelnames, antennalocations, 8.0, pointsTRUTH)
     
     #Do the sizes match
