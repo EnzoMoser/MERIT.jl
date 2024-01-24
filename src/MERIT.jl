@@ -28,7 +28,7 @@ export Scans, BreastScans
     resolution: The resolution for each axis. A tuple in the format XYZ
     radius    : The radius of the hemisphere
     
-Returns a vector of vectors in the format vec{xpoints, ypoints, zpoints}"
+Returns a Nx3 matrix where N is the number of points produced"
 function domainHemisphere(resolution::Float64, radius::Float64)
     points = [[],[],[]]
     for x in -radius:resolution:radius
@@ -46,15 +46,14 @@ function domainHemisphere(resolution::Float64, radius::Float64)
 end
 
 
-
 # TESTING CODE BELOW HERE
-frequencies = readdlm("./data/frequencies.csv", ',', Float64)
-antennalocations = readdlm("./data/antenna_locations.csv", ',', Float64)
-channelnames = readdlm("./data/channel_names.csv", ',', Int64)
-scan1 = readdlm("./data/B0_P3_p000.csv", ',', ComplexF64)
-scan2 = readdlm("./data/B0_P3_p036.csv", ',', ComplexF64)
-timesTRUTH  = matread("./data/tests/time.mat")["time"]
-pointsTRUTH = matread("./data/tests/points.mat")["points"]
+frequencies = readdlm("MERIT.jl/data/antenna_locations.csv", ',', Float64)
+antennalocations = readdlm("MERIT.jl/data/antenna_locations.csv", ',', Float64)
+channelnames = readdlm("MERIT.jl/data/channel_names.csv", ',', Int64)
+scan1 = readdlm("MERIT.jl/data/B0_P3_p000.csv", ',', ComplexF64)
+scan2 = readdlm("MERIT.jl/data/B0_P3_p036.csv", ',', ComplexF64)
+timesTRUTH  = matread("MERIT.jl/data/tests/time.mat")["time"]
+pointsTRUTH = matread("MERIT.jl/data/tests/points.mat")["points"]
 points = domainHemisphere(2.5e-3, 7e-2)
 
 timesTEST = Beamform.get_delays(channelnames, antennalocations, 8.0, pointsTRUTH)
