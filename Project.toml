@@ -15,6 +15,7 @@ MAT = "0.10"
 DelimitedFiles = "1"
 DataFrames = "1"
 Plots = "1"
+CSV = "0.10"
 julia = "1"
 
 [extras]
