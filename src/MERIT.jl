@@ -1,67 +1,43 @@
 module MERIT
+    include("./Beamform.jl")
+    include("./Beamformer.jl")
+    include("./Visualize.jl")
 
-#TODO Impliment DAS (delay and sum)
-#       Use DataFrames to avoid the time it takes to convert to vector.
+    #Abstract type for the type heirarchy
+    #All scan types should be a subtype of Scans
+    abstract type Scans end
 
-include("./Beamform.jl")
-using CSV
-using DelimitedFiles
-using DataFrames
-using Plots
-using MAT
+    mutable struct BreastScans <: Scans
+        #Holds all the info for the breast scans
+        
+        #DataFrame to hold the data from each scan
+        scan::ComplexF64
+    end
 
-#Abstract type for the type heirarchy
-#All scan types should be a subtype of Scans
-abstract type Scans end
+    export Scans, BreastScans
 
-mutable struct BreastScans <: Scans
-    #Holds all the info for the breast scans
-    
-    #DataFrame to hold the data from each scan
-    scan::DataFrame
-end
+    "A function to return the points of a hemisphere
+        resolution: The resolution for each axis. A tuple in the format XYZ
+        radius    : The radius of the hemisphere
+        
+    Returns a Nx3 matrix where N is the number of points produced. Also returns the axes as a range type."
+    function domain_hemisphere(resolution::Float64, radius::Float64)
+        points = [[],[],[]]
 
-export Scans, BreastScans
+        #DO Z, Y and then X to make it fit with matlab ndgrid ?? 
+        #My way was x as the outermost loop, y as the middle amd z as last
 
-
-"A function to return the points of a hemisphere
-    resolution: The resolution for each axis. A tuple in the format XYZ
-    radius    : The radius of the hemisphere
-    
-Returns a Nx3 matrix where N is the number of points produced"
-function domainHemisphere(resolution::Float64, radius::Float64)
-    points = [[],[],[]]
-    for x in -radius:resolution:radius
-        for y in -radius:resolution:radius
-            for z in -radius:resolution:0
-                if(x^2 + y^2 + z^2 <= radius^2)
-                    push!(points[1], x)
-                    push!(points[2], y)
-                    push!(points[3], z + radius) 
+        for x in -radius:resolution:radius
+            for y in -radius:resolution:radius
+                for z in 0:resolution:radius
+                    if(x^2 + y^2 + z^2 <= radius^2)
+                        push!(points[1], x)
+                        push!(points[2], y)
+                        push!(points[3], z) 
+                    end
                 end
             end
         end
+        return Float64.(stack((points[1], points[2], points[3]); dims=2)), (-radius:resolution:radius,-radius:resolution:radius, 0:resolution:radius)
     end
-    return Float64.(stack((points[1], points[2], points[3]); dims=2))
-end
-
-
-# TESTING CODE BELOW HERE
-frequencies = readdlm("MERIT.jl/data/antenna_locations.csv", ',', Float64)
-antennalocations = readdlm("MERIT.jl/data/antenna_locations.csv", ',', Float64)
-channelnames = readdlm("MERIT.jl/data/channel_names.csv", ',', Int64)
-scan1 = readdlm("MERIT.jl/data/B0_P3_p000.csv", ',', ComplexF64)
-scan2 = readdlm("MERIT.jl/data/B0_P3_p036.csv", ',', ComplexF64)
-timesTRUTH  = matread("MERIT.jl/data/tests/time.mat")["time"]
-pointsTRUTH = matread("MERIT.jl/data/tests/points.mat")["points"]
-points = domainHemisphere(2.5e-3, 7e-2)
-
-timesTEST = Beamform.get_delays(channelnames, antennalocations, 8.0, pointsTRUTH)
-println(size(timesTEST))
-println(size(timesTRUTH))
-println(sum(reshape(timesTEST .== timesTRUTH, (1,:))))
-# plotlyjs()
-# display(plot(scatter(points[:,1], points[:,2], points[:,3])))
-# println("Plotted plot")
-# readline()
 end

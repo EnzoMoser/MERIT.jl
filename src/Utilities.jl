@@ -1,9 +1,5 @@
 module Utilities
-    export dlmread
-
-    "This function accepts a path to a CSV file and returns a vector
-    Delimination is done on the basis of commas."
-    function dlmread(path::String, type::Type)
-        
+    function add_dim(x)
+        return reshape(x, (size(x)..., 1))
     end
 end
