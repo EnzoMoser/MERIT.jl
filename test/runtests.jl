@@ -5,6 +5,7 @@ using MAT
 
 @testset "MERIT.jl" begin
     # Write your tests here.
+    println(pwd())
     antennalocations = readdlm("../data/antenna_locations.csv", ',', Float64)
     channelnames = readdlm("../data/channel_names.csv", ',', Int64)
     pointsTRUTH  = matread("../data/tests/points.mat")["points"]
