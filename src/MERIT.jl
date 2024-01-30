@@ -17,16 +17,12 @@ module MERIT
     export Scans, BreastScans
 
     "A function to return the points of a hemisphere
-        resolution: The resolution for each axis. A tuple in the format XYZ
+        resolution: The resolution for the axes
         radius    : The radius of the hemisphere
         
     Returns a Nx3 matrix where N is the number of points produced. Also returns the axes as a range type."
     function domain_hemisphere(resolution::Float64, radius::Float64)
         points = [[],[],[]]
-
-        #DO Z, Y and then X to make it fit with matlab ndgrid ?? 
-        #My way was x as the outermost loop, y as the middle amd z as last
-
         for x in -radius:resolution:radius
             for y in -radius:resolution:radius
                 for z in 0:resolution:radius

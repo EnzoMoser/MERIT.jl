@@ -6,4 +6,8 @@ module Beamformer
         return permutedims(processedSignals, (3, 2, 1))
 
     end
+
+
+    function MDAS(delayedSignals)
+    end
 end
