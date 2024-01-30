@@ -17,6 +17,7 @@ CSV = "0.10"
 DataFrames = "1"
 DelimitedFiles = "1"
 MAT = "0.10"
+PlotlyJS = "0.18"
 Plots = "1"
 julia = "1"
 
