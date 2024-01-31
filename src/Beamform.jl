@@ -3,6 +3,11 @@ module Beamform
     include("./Process.jl")
 
     function get_delays(channel, antenna::Matrix{Float64}, relative_permittivity::Float64, points::Matrix{Float64})
+        
+        if relative_permittivity <= 0
+            throw(DomainError(relative_permittivity, "The relative permittivity cannot 0 or less than 0"))
+        end
+        
         c_0::Float64 = 299792458.0
         speed = c_0 /  sqrt(relative_permittivity)
         
@@ -21,7 +26,6 @@ module Beamform
         #to reverse the delay. 
         #Size of (1 x channelNamesLength x NumPoints).
         time = -((distances[:, channel[:,1], :] + distances[:, channel[:,2], :]) ./ speed)
-        println(size(time))
         return time
     end
 

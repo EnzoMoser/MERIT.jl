@@ -7,7 +7,6 @@ module Beamformer
 
     end
 
-
     function MDAS(delayedSignals)
     end
 end

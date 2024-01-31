@@ -22,6 +22,19 @@ module MERIT
         
     Returns a Nx3 matrix where N is the number of points produced. Also returns the axes as a range type."
     function domain_hemisphere(resolution::Float64, radius::Float64)
+        
+        if radius <= 0.0
+            throw(DomainError(radius, "The radius cannot be 0 or negative"))
+        end
+        
+        if resolution <= 0.0
+            throw(DomainError(resolution, "The resolution cannot be 0 or negative"))
+        end        
+        
+        if resolution >= 2*radius
+            error("The resolution cannot be greater than 2*radius")
+        end
+        
         points = [[],[],[]]
         for x in -radius:resolution:radius
             for y in -radius:resolution:radius
@@ -29,7 +42,7 @@ module MERIT
                     if(x^2 + y^2 + z^2 <= radius^2)
                         push!(points[1], x)
                         push!(points[2], y)
-                        push!(points[3], z) 
+                        push!(points[3], z)
                     end
                 end
             end
