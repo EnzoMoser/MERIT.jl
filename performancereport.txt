@@ -1,0 +1,21 @@
+Using @benchmark on unoptimized code:
+
+BenchmarkTools.Trial: 1 sample with 1 evaluation.
+ Single result which took 8.457 s (4.78% GC) to evaluate,
+ with a memory estimate of 16.25 GiB, over 1_366_823 allocations.
+
+Iteration 1:
+ - Changed scan subtraction to use broadcasting
+ - Strictly typed the vector in domain_hemisphere (Vector[Float64[], Float64[], Float64[]] instead of [[],[],[]])
+
+
+ BenchmarkTools.Trial: 283 samples with 1 evaluation.
+ Range (min … max):  15.966 ms … 30.916 ms  ┊ GC (min … max): 0.00% … 0.00%
+ Time  (median):     16.880 ms              ┊ GC (median):    0.00%
+ Time  (mean ± σ):   17.668 ms ±  1.978 ms  ┊ GC (mean ± σ):  2.74% ± 5.49%
+
+    █▇▇                                                        
+  ▆████▇▅▅▅▃▅▃▄▅▅▁▄▄▃▄▃▃▃▄▃▂▁▁▁▃▃▃▂▁▂▁▁▁▁▂▁▁▁▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂ ▃
+  16 ms           Histogram: frequency by time        27.1 ms <
+
+ Memory estimate: 7.69 MiB, allocs estimate: 173888.

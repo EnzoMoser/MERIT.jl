@@ -35,7 +35,9 @@ module MERIT
             error("The resolution cannot be greater than 2*radius")
         end
         
-        points = [[],[],[]]
+        points = Vector[Float64[], Float64[], Float64[]]
+        
+        #Check the numbers of 1s in the matlab
         for x in -radius:resolution:radius
             for y in -radius:resolution:radius
                 for z in 0:resolution:radius
@@ -47,6 +49,6 @@ module MERIT
                 end
             end
         end
-        return Float64.(stack((points[1], points[2], points[3]); dims=2)), (-radius:resolution:radius,-radius:resolution:radius, 0:resolution:radius)
+        return stack((points[1], points[2], points[3]); dims=2), (-radius:resolution:radius, -radius:resolution:radius, 0:resolution:radius)
     end
 end

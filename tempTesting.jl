@@ -6,6 +6,7 @@ using Debugger
 using MAT
 using Profile
 using PProf
+using BenchmarkTools
 
 include("src/MERIT.jl")
 
@@ -14,28 +15,28 @@ include("src/MERIT.jl")
 
 function testing()
     plotlyjs()
-    frequencies = readdlm("data/frequencies.csv", ',', Float64)
-    antennalocations = readdlm("data/antenna_locations.csv", ',', Float64)
-    channelnames = readdlm("data/channel_names.csv", ',', Int64)
-    scan1 = readdlm("data/B0_P3_p000.csv", ',', ComplexF64)
-    scan2 = readdlm("data/B0_P3_p036.csv", ',', ComplexF64)
+    frequencies = readdlm("data/frequencies.csv", ',', Float64, use_mmap=true)
+    antennalocations = readdlm("data/antenna_locations.csv", ',', Float64, use_mmap=true)
+    channelnames = readdlm("data/channel_names.csv", ',', Int64, use_mmap=true)
+    scan1 = readdlm("data/B0_P3_p000.csv", ',', ComplexF64, use_mmap=true)
+    scan2 = readdlm("data/B0_P3_p036.csv", ',', ComplexF64, use_mmap=true)
 
-    imSlice = matread("data/tests/imageSlice.mat")["im_slice"]
-
-    signal = scan1 - scan2
+    signal = scan1 .- scan2
     points, axesPlot = MERIT.domain_hemisphere(2.5e-3, 7e-2+5e-3)
-    # timeDelays = MERIT.Beamform.get_delays(channelnames, antennalocations, 8.0, points)
-    # image = abs.(MERIT.Beamform.beamform(signal, frequencies, points, timeDelays))
-    # imageSlice = MERIT.Visualize.get_slice(image, points, 35e-3, axesPlot)
-    # size(imageSlice)
-    # graphHandle = heatmap(axesPlot[1], axesPlot[2], imageSlice, colorscale="Viridis")
-    # gui(graphHandle)
-    # readline()
+    timeDelays = MERIT.Beamform.get_delays(channelnames, antennalocations, 8.0, points)
+    
+    println(size(timeDelays))
+    
+    image = abs.(MERIT.Beamform.beamform(signal, frequencies, points, timeDelays))
+    imageSlice = MERIT.Visualize.get_slice(image, points, 35e-3, axesPlot)
+    println(size(imageSlice))
+    graphHandle = heatmap(axesPlot[1], axesPlot[2], imageSlice, colorscale="Viridis")
+    gui(graphHandle)
+    readline()
 end
 
+testing()
 
 # Profile.Allocs.clear()
 # Profile.Allocs.@profile sample_rate=0.5 testing()
 # PProf.Allocs.pprof(from_c = false)
-
-@time testing()
