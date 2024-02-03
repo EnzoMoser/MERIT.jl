@@ -77,9 +77,6 @@ module Beamform
         return time
     end
 
-
-
-
     function beamform(signals, frequencies, points, delays)
         #TODO: Change this function to accept a function handle to any beamformer
         
@@ -89,8 +86,9 @@ module Beamform
         #For simplicity's sake we only use one delay for now and one scan.  
         image = zeros(ComplexF64, (size(points, 1), 1, 1))
 
+
         for pointsIdx in range(1, size(points, 1))
-            image[pointsIdx, 1, :] = Beamformer.DAS(Process.delay_signal(signals, delays[:, :, pointsIdx], frequencies))[:,1,1] 
+            image[pointsIdx, 1, :] = Beamformer.DAS(Process.delay_signal(signals, delays[:, :, pointsIdx], frequencies))[1, 1, :] 
         end
 
         return image

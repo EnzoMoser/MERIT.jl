@@ -31,7 +31,7 @@ function testing()
     imageSlice = MERIT.Visualize.get_slice(image, points, 35e-3, axesPlot)
     println(size(imageSlice))
     graphHandle = heatmap(axesPlot[1], axesPlot[2], imageSlice, colorscale="Viridis")
-    gui(graphHandle)
+    Base.invokelatest(display, graphHandle)
     readline()
 end
 
