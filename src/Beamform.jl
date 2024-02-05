@@ -85,10 +85,11 @@ module Beamform
         #for batch processing. 
         #For simplicity's sake we only use one delay for now and one scan.  
         image = zeros(ComplexF64, (size(points, 1), 1, 1))
-
-
+        delayedSignals = zeros(ComplexF64, size(frequencies, 1), size(signals, 2), 1)
+        
         for pointsIdx in range(1, size(points, 1))
-            image[pointsIdx, 1, :] = Beamformer.DAS(Process.delay_signal(signals, delays[:, :, pointsIdx], frequencies))[1, 1, :] 
+            Process.delay_signal!(delayedSignals ,signals, delays[:, :, pointsIdx], frequencies)
+            @inbounds image[pointsIdx, 1, 1] = Beamformer.DAS(delayedSignals)
         end
 
         return image
