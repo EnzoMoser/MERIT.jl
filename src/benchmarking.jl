@@ -17,7 +17,6 @@ function testfnc(signal, frequencies, points, timeDelays)
     image = abs.(MERIT.Beamform.beamform(signal, frequencies, points, timeDelays))
 end
 
-testfnc(signal, frequencies, points, timeDelays)
 
 # Profile.Allocs.clear()
 # Profile.Allocs.@profile sample_rate=0.1 testfnc(signal, frequencies, points, timeDelays)
