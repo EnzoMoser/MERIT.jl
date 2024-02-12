@@ -3,7 +3,6 @@ module MERIT
     #TODO: Impliment the time domain
     using DelimitedFiles
 
-
     #From Scans.jl
     export BreastScan
 
@@ -20,7 +19,7 @@ module MERIT
     export DAS
 
     #From Visualize.jl
-    export get_slice
+    export get_slice, plot_scan
 
     #From Windows.jl
     export rectangular

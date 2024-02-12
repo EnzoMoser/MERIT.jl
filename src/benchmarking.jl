@@ -1,6 +1,5 @@
 using MERIT
 using BenchmarkTools
-using Plots
 using Profile
 using PProf
 
@@ -8,7 +7,6 @@ using PProf
 #     image = abs.(MERIT.Beamform.beamform(signal, frequencies, points, timeDelays))
 # end
 
-plotlyjs()
 scan = BreastScan{Float32, ComplexF32, UInt32}()
 scan.relative_permiativity = Float32(8.0)
 domain_hemisphere!(scan, 2.5e-3, 7e-2+5e-3, Float32)
@@ -19,11 +17,9 @@ load_channels!(scan, "data/channel_names.csv", ',', UInt32)
 scan.delayFunc = get_delays
 scan.beamformerFunc = DAS
 image = abs.(beamform(scan))
-imageSlice = get_slice(image, scan.points, Float32(35e-3), scan.axes)
+imageSlice = get_slice(image, scan, 35e-3)
 println(size(imageSlice))
-graphHandle = heatmap(scan.axes[1], scan.axes[2], imageSlice, colorscale="Viridis")
-Base.invokelatest(display, graphHandle)
-readline()
+plot_scan(imageSlice, scan)
 
 # Profile.Allocs.clear()
 # Profile.Allocs.@profile sample_rate=0.1 testfnc(signal, frequencies, points, timeDelays)
