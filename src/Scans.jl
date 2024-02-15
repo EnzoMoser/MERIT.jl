@@ -9,7 +9,6 @@
         points::Array{T, 2}
         axes::Tuple
         signal::Array{Y, 2}
-        relative_permiativity::T
         antennas::Array{T, 2}
         channels::Array{Z, 2}
         frequencies::Array{T, 2}
