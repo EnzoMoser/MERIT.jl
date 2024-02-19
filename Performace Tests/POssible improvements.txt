@@ -1,0 +1,12 @@
+investigate into a points "type"
+	- Look at other libraies and see what they do for points
+	- Figure out how to store these points. That is type safe
+	- Do a performace analysis for the 2 and 3d scenes.
+
+
+
+Report stuff:
+	-write about methadology and results
+	
+
+Vary permiativity and write example script

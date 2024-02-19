@@ -23,6 +23,9 @@ module MERIT
 
     #From Windows.jl
     export rectangular
+
+    #From Points.jl
+    export Point3, Point2
     
     include("./Scans.jl")
     include("./Beamform.jl")
@@ -31,5 +34,6 @@ module MERIT
     include("./Process.jl")
     include("./Utilities.jl")
     include("./Windows.jl")
+    include("./Points.jl")
 
 end

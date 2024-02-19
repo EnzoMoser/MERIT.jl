@@ -27,7 +27,7 @@ end
     print(size(pointsM))
 
     scan = BreastScan{Float64, ComplexF64, UInt32}()
-    domain_hemisphere!(scan, 2.5e-3, 7e-2+5e-3)
+    domain_hemisphere!(scan, 2.5e-3, 7e-2)
     load_scans!(scan,"../data/B0_P3_p000.csv" , "../data/B0_P3_p036.csv", ',')
     load_frequencies!(scan, "../data/frequencies.csv", ',')
     load_antennas!(scan, "../data/antenna_locations.csv", ',')
