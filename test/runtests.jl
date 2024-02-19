@@ -19,22 +19,23 @@ end
     # Write your tests here.
     println(pwd())
 
+    #TODO: Create tests to see if the types the user specifies are kept throughout the process.
+
     pointsM  = matread("../data/tests/points.mat")["points"]
     timesM   = matread("../data/tests/time.mat")["times"]
     imageSliceM = matread("../data/tests/imageSlice.mat")["im_slice"]
     print(size(pointsM))
 
-    frequencies = readdlm("../data/frequencies.csv", ',', Float64)
-    antennalocations = readdlm("../data/antenna_locations.csv", ',', Float64)
-    channelnames = readdlm("../data/channel_names.csv", ',', Int64)
-    scan1 = readdlm("../data/B0_P3_p000.csv", ',', ComplexF64)
-    scan2 = readdlm("../data/B0_P3_p036.csv", ',', ComplexF64)
-    
-    signal = scan1 - scan2
-    points , axes = MERIT.domain_hemisphere(2.5e-3, 7e-2 + 5e-3)
-    times = MERIT.Beamform.get_delays(channelnames, antennalocations, 8.0, points)
-    image = abs.(MERIT.Beamform.beamform(signal, frequencies, points, times))
-    imageSlice = MERIT.Visualize.get_slice(image, points, 35e-3, axes)
+    scan = BreastScan{Float64, ComplexF64, UInt32}()
+    domain_hemisphere!(scan, 2.5e-3, 7e-2)
+    load_scans!(scan,"../data/B0_P3_p000.csv" , "../data/B0_P3_p036.csv", ',')
+    load_frequencies!(scan, "../data/frequencies.csv", ',')
+    load_antennas!(scan, "../data/antenna_locations.csv", ',')
+    load_channels!(scan, "../data/channel_names.csv", ',')
+    scan.delayFunc = get_delays(Float32(8.0))
+    scan.beamformerFunc = DAS
+    image = abs.(beamform(scan))
+    imageSlice = get_slice(image, scan, 35e-3)
 
     #Are the image slices the same size
     @test size(imageSliceM) == size(imageSlice)

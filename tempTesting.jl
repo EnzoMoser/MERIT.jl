@@ -34,9 +34,3 @@ function testing()
     Base.invokelatest(display, graphHandle)
     readline()
 end
-
-testing()
-
-# Profile.Allocs.clear()
-# Profile.Allocs.@profile sample_rate=0.5 testing()
-# PProf.Allocs.pprof(from_c = false)
