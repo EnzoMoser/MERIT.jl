@@ -60,22 +60,17 @@ function domain_hemisphere!(scan::BreastScan{T, Y, Z}, resolution::Real, radius:
 
     radius = radius + 5e-3
 
-    points = Vector[T[], T[], T[]]
-
     #Check the numbers of 1s in the matlab
     for x in -T(radius):T(resolution):T(radius)
         for y in -T(radius):T(resolution):T(radius)
             for z in T(0):T(resolution):T(radius)
                 if(x^2 + y^2 + z^2 <= radius^2)
-                    push!(points[1], x)
-                    push!(points[2], y)
-                    push!(points[3], z)
+                    push!(scan.points, Point3{T}(x, y, z))
                 end
             end
         end
     end
 
-    scan.points = stack((points[1], points[2], points[3]); dims=2)
     scan.axes = (-T(radius):T(resolution):T(radius), -T(radius):T(resolution):T(radius), T(0):T(resolution):T(radius))
 end
 
@@ -122,7 +117,10 @@ delim   : The delimination character for the CSV file
 Loads the antenna locations (filetype should be a CSV) into the antennas field of the BreastScan struct.
 "
 function load_antennas!(scan::BreastScan{T, Y, Z}, source1::String, delim::AbstractChar) where {T <: Real, Y <: Number, Z <:Integer}
-    scan.antennas = readdlm(source1, delim, T, use_mmap=true)
+    antennamat = readdlm(source1, delim, T, use_mmap=true)
+    for i in eachrow(antennamat)
+        push!(scan.antennas, Point3{T}(i[1], i[2], i[3]))
+    end
 end
 
 "

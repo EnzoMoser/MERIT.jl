@@ -16,10 +16,10 @@ Z : The dataype of the channel locations. Can be any Integer dtype.
 "
 mutable struct BreastScan{T, Y, Z} <: Scan
     #This is for the points generated from domain_hemisphere
-    points::Array{T, 2}
+    points::Vector{Point3{T}}
     axes::Tuple
     signal::Array{Y, 2}
-    antennas::Array{T, 2}
+    antennas::Vector{Point3{T}}
     channels::Array{Z, 2}
     frequencies::Array{T, 2}
     delayFunc::Function

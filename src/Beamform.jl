@@ -1,6 +1,6 @@
 #= Here T has to be a subtype of Number since signal could be Real or Complex and theres no need to create two seperate
     implimentations for that =#
-function get_delays(channel::Matrix{Y}, antenna::Matrix{T}, relative_permittivity::Real, points::Matrix{T}) where {T<:Real, Y<:Real}
+function get_delays(channel::Matrix{Y}, antenna::Vector{Point3{T}}, relative_permittivity::Real, points::Matrix{T}) where {T<:Real, Y<:Real}
     if relative_permittivity <= 0
         throw(DomainError(relative_permittivity, "The relative permittivity cannot 0 or less than 0"))
     end
@@ -53,7 +53,7 @@ function get_delays(relative_permittivity::Real)
     end
     relative_perm = relative_permittivity
     
-    function calculate_(channel::Matrix{Y}, antenna::Matrix{T}, points::Matrix{T}) where {T<:Real, Y<:Real}
+    function calculate_(channel::Matrix{Y}, antenna::Matrix{T}, points::Vector{Point3{T}}) where {T<:Real, Y<:Real}
         c_0::T = 299792458.0
 
         #Base.sqrt_llvm is funtionally similar to sqrt. (sqrt calls sqrt_llvm after performing a check for negative numbers)
