@@ -60,8 +60,8 @@ function get_delays(relative_permittivity::Real)
         
         time = zeros(T, 1, size(channel, 1), size(points, 1))
         
-        for j in size(points, 1)
-            for i in size(antenna, 1)
+        for j in range(1, size(points, 1))
+            for i in range(1, size(antenna, 1))
                 @inbounds distances[1, i, j] = sum((points[j] - antenna[i])^2)
             end
         end

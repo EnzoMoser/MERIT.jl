@@ -16,11 +16,14 @@ function testing()
     load_channels!(scan, "data/channel_names.csv", ',')
     scan.delayFunc = get_delays(Float32(8.0))
     scan.beamformerFunc = DAS
-    image = abs.(beamform(scan))
+    imgCom = beamform(scan)
+    image = abs.(imgCom)
     imageSlice = get_slice(image, scan, 35e-3)
     println(size(imageSlice))
     plot_scan(imageSlice, scan)
 end
+
+testing()
 # Profile.Allocs.clear()
 # Profile.Allocs.@profile sample_rate=0.1 testfnc(signal, frequencies, points, timeDelays)
 # PProf.Allocs.pprof(from_c = false)
