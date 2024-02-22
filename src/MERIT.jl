@@ -27,6 +27,7 @@ module MERIT
     #From Points.jl
     export Point3, Point2
     
+    include("./Points.jl")
     include("./Scans.jl")
     include("./Beamform.jl")
     include("./Beamformer.jl")
@@ -34,6 +35,6 @@ module MERIT
     include("./Process.jl")
     include("./Utilities.jl")
     include("./Windows.jl")
-    include("./Points.jl")
+
 
 end

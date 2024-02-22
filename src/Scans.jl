@@ -14,6 +14,8 @@ T : The datatype of the points, antenna locations and frequencies. Can be any re
 Y : The datatype of the signal. Can either be some a Complex dtype or a Real dtype
 Z : The dataype of the channel locations. Can be any Integer dtype.
 "
+
+
 mutable struct BreastScan{T, Y, Z} <: Scan
     #This is for the points generated from domain_hemisphere
     points::Vector{Point3{T}}

@@ -1,6 +1,6 @@
 #= Here T has to be a subtype of Number since signal could be Real or Complex and theres no need to create two seperate
     implimentations for that =#
-function get_delays(channel::Matrix{Y}, antenna::Vector{Point3{T}}, relative_permittivity::Real, points::Matrix{T}) where {T<:Real, Y<:Real}
+function get_delays(channel::Matrix{Y}, antenna::Vector{Point3{T}}, relative_permittivity::Real, points::Vector{Point3{T}}) where {T<:Real, Y<:Real}
     if relative_permittivity <= 0
         throw(DomainError(relative_permittivity, "The relative permittivity cannot 0 or less than 0"))
     end
@@ -18,18 +18,10 @@ function get_delays(channel::Matrix{Y}, antenna::Vector{Point3{T}}, relative_per
     distances = zeros(T, 1, size(antenna, 1), size(points, 1))
     
     time = zeros(T, 1, size(channel, 1), size(points, 1))
-    pointsAntennaDifferences = zeros(Float64, 3, size(antenna, 1), size(points, 1))
     
-    #Reshaping and transposing to allow the element-wise operations later on
-    #to execute appropriately
-    antennaLoc = antenna'
-    pointsPerm = reshape(transpose(points), (3, 1, :))
-        
-    pointsAntennaDifferences .= (antennaLoc .- pointsPerm) .^ 2
-    
-    for j in 1:size(pointsPerm, 3)
-        for i in 1:size(antennaLoc, 2)
-            @inbounds distances[1, i, j] = pointsAntennaDifferences[1, i, j] + pointsAntennaDifferences[2, i, j] + pointsAntennaDifferences[3, i, j]
+    for j in points
+        for i in antenna
+            @inbounds distances[1, i, j] = sum((points[j] - antenna[j])^2)
         end
     end
 
@@ -53,7 +45,7 @@ function get_delays(relative_permittivity::Real)
     end
     relative_perm = relative_permittivity
     
-    function calculate_(channel::Matrix{Y}, antenna::Matrix{T}, points::Vector{Point3{T}}) where {T<:Real, Y<:Real}
+    function calculate_(channel::Matrix{Y}, antenna::Vector{Point3{T}}, points::Vector{Point3{T}}) where {T<:Real, Y<:Real}
         c_0::T = 299792458.0
 
         #Base.sqrt_llvm is funtionally similar to sqrt. (sqrt calls sqrt_llvm after performing a check for negative numbers)
@@ -67,18 +59,10 @@ function get_delays(relative_permittivity::Real)
         distances = zeros(T, 1, size(antenna, 1), size(points, 1))
         
         time = zeros(T, 1, size(channel, 1), size(points, 1))
-        pointsAntennaDifferences = zeros(Float64, 3, size(antenna, 1), size(points, 1))
         
-        #Reshaping and transposing to allow the element-wise operations later on
-        #to execute appropriately
-        antennaLoc = antenna'
-        pointsPerm = reshape(transpose(points), (3, 1, :))
-
-        pointsAntennaDifferences .= (antennaLoc .- pointsPerm) .^ 2
-        
-        for j in 1:size(pointsPerm, 3)
-            for i in 1:size(antennaLoc, 2)
-                @inbounds distances[1, i, j] = pointsAntennaDifferences[1, i, j] + pointsAntennaDifferences[2, i, j] + pointsAntennaDifferences[3, i, j]
+        for j in size(points, 1)
+            for i in size(antenna, 1)
+                @inbounds distances[1, i, j] = sum((points[j] - antenna[i])^2)
             end
         end
 
@@ -95,7 +79,7 @@ function get_delays(relative_permittivity::Real)
 end
 
 #This should be type agnostic
-function beamform(scan::BreastScan{<:AbstractFloat, <:Number, <:Integer})
+function beamform(scan::BreastScan{<:T, <:Y, <:Z}) where {T <: Real, Y <: Number, Z <:Integer}
     #Images are stored along the first dimension. The second dimension stores the same images but with different delay parameters.
     #We vary the delay parameter by changing the relative_permittivity. The third and futher dimensions can store multiple scans
     #for batch processing. 

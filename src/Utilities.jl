@@ -59,7 +59,7 @@ function domain_hemisphere!(scan::BreastScan{T, Y, Z}, resolution::Real, radius:
     end
 
     radius = radius + 5e-3
-
+    scan.points = Point3{T}[]
     #Check the numbers of 1s in the matlab
     for x in -T(radius):T(resolution):T(radius)
         for y in -T(radius):T(resolution):T(radius)
@@ -118,6 +118,7 @@ Loads the antenna locations (filetype should be a CSV) into the antennas field o
 "
 function load_antennas!(scan::BreastScan{T, Y, Z}, source1::String, delim::AbstractChar) where {T <: Real, Y <: Number, Z <:Integer}
     antennamat = readdlm(source1, delim, T, use_mmap=true)
+    scan.antennas = Point3{T}[]
     for i in eachrow(antennamat)
         push!(scan.antennas, Point3{T}(i[1], i[2], i[3]))
     end
