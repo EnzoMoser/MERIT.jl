@@ -45,15 +45,16 @@ function get_slice(image::Array{T}, scan::BreastScan{<:AbstractFloat, <:Number, 
     #is within a 1e-6 tolerance of the desired slice value 
     zSlice = eltype(scan.points)(zSlice)
     zDifference = scan.points[:,3] .- zSlice
-    boolZIdx = abs.(zDifference) .< 1e-6
-    
+    println(eltype(zDifference))
+    boolZIdx = abs.(zDifference) .< eltype(scan.points)(1e-6)
+    println(eltype(boolZIdx))
     #Create a -radius:resolution:radius x -radius:resolution:radius array.
     #Index each coordinate point with the respective axis
     #Then use the indexes to index into the first matrix and update each location with the intensity
     pointsSlice = scan.points[boolZIdx, :]
     
-    intensityGrid = zeros(length(scan.axes[1]), length(scan.axes[2]))
-    
+    intensityGrid = zeros(eltype(scan.points), length(scan.axes[1]), length(scan.axes[2]))
+    println(eltype(intensityGrid))
     if(size(pointsSlice, 1) == 0)
         println("No points found at this Z-Level!")
         return intensityGrid
