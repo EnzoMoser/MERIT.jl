@@ -17,9 +17,9 @@ function testfunc()
     scan.delayFunc = get_delays(Float32(8.0))
     scan.beamformerFunc = DAS
     image = abs.(beamform(scan))
-    # imageSlice = get_slice(image, scan, 35e-3)
-    # println(size(imageSlice))
-    # plot_scan(imageSlice, scan)
+    imageSlice = get_slice(image, scan, 35e-3)
+    println(size(imageSlice))
+    plot_scan(imageSlice, scan)
 end
 
 # Profile.Allocs.clear()

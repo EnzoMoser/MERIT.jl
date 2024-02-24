@@ -18,7 +18,7 @@ function get_delays(channel::Matrix{Y}, antenna::Matrix{T}, relative_permittivit
     distances = zeros(T, 1, size(antenna, 1), size(points, 1))
     
     time = zeros(T, 1, size(channel, 1), size(points, 1))
-    pointsAntennaDifferences = zeros(Float64, 3, size(antenna, 1), size(points, 1))
+    pointsAntennaDifferences = zeros(T, 3, size(antenna, 1), size(points, 1))
     
     #Reshaping and transposing to allow the element-wise operations later on
     #to execute appropriately
