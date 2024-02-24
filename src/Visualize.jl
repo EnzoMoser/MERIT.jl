@@ -6,7 +6,7 @@ function get_slice(image::Array{T}, scan::BreastScan{<:T, <:Y, <:Z}, zSlice::Rea
     #is within a 1e-6 tolerance of the desired slice value 
     zSlice = T(zSlice)
     boolZIdx = within_tol(scan.points, zSlice, 3, T(1e-6))
-    
+    writedlm("juliaPointsBoolIdx.csv", boolZIdx, ',')
     #Create a -radius:resolution:radius x -radius:resolution:radius array.
     #Index each coordinate point with the respective axis
     #Then use the indexes to index into the first matrix and update each location with the intensity
@@ -33,7 +33,7 @@ function get_slice(image::Array{T}, scan::BreastScan{<:T, <:Y, <:Z}, zSlice::Rea
         # intensityGrid[length(axes[1]) + 1 - indexMatrix[i, 1], indexMatrix[i, 2]] = imageSlice[i]  <-- This was an old implimentation to get this to look exactly like what imagesc in matlab shows. Apparently imagesc flips the image along the x-axis
         intensityGrid[indexMatrix[i, 1], indexMatrix[i, 2]] = imageSlice[i]
     end
-
+    writedlm("juliaPointsIntensityGrid.csv", intensityGrid, ',')
     return intensityGrid
 end
 

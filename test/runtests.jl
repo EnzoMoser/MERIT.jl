@@ -53,12 +53,11 @@ end
         b = rand(Point3{j}, 10000)
         for i = 1:length(a)
             c = a[i] + b[i]
-            @test c.x == a[i].x + b[i].x && c.y == a[i].y + b[i].y && c.z == a[i].z + b[i].z
+            @test c.x === a[i].x + b[i].x && c.y === a[i].y + b[i].y && c.z === a[i].z + b[i].z
             c = a[i] - b[i]
-            @test c.x == a[i].x - b[i].x && c.y == a[i].y - b[i].y && c.z == a[i].z - b[i].z
-            @test sum(a[i]) == a[i].x + a[i].y + a[i].z
+            @test c.x === a[i].x - b[i].x && c.y === a[i].y - b[i].y && c.z === a[i].z - b[i].z
+            @test sum(a[i]) === a[i].x + a[i].y + a[i].z
             @test a[i]^2 == Point3{j}(a[i].x^2, a[i].y^2, a[i].z^2)
         end
-
     end
 end
