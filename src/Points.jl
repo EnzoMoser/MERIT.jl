@@ -57,7 +57,7 @@ function within_tol(pVec::Vector{Point3{T}}, slice::T, idx, tol) where {T<:Real}
     slicePlane = Point3{T}(0,0,0)
     setfield!(slicePlane, idx, slice)
     zDiff = pVec - slicePlane
-    zBool = map(x -> getfield(x, idx) < tol, zDiff)
+    zBool = map(x -> abs(getfield(x, idx)) < tol, zDiff)
     return zBool
 end
 

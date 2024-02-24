@@ -5,14 +5,14 @@ function get_slice(image::Array{T}, scan::BreastScan{<:T, <:Y, <:Z}, zSlice::Rea
     #Create a boolean array which is True at all the indices where the z-coord
     #is within a 1e-6 tolerance of the desired slice value 
     zSlice = T(zSlice)
-    boolZIdx = within_tol(scan.points, zSlice, 3, 1e-6)
+    boolZIdx = within_tol(scan.points, zSlice, 3, T(1e-6))
     
     #Create a -radius:resolution:radius x -radius:resolution:radius array.
     #Index each coordinate point with the respective axis
     #Then use the indexes to index into the first matrix and update each location with the intensity
     pointsSlice = scan.points[boolZIdx]
     
-    intensityGrid = zeros(length(scan.axes[1]), length(scan.axes[2]))
+    intensityGrid = zeros(T, length(scan.axes[1]), length(scan.axes[2]))
     
     if(size(pointsSlice, 1) == 0)
         println("No points found at this Z-Level!")
@@ -20,7 +20,7 @@ function get_slice(image::Array{T}, scan::BreastScan{<:T, <:Y, <:Z}, zSlice::Rea
     end
     
     imageSlice =  image[boolZIdx]
-    indexMatrix = zeros(Int64, size(pointsSlice, 1), 2)
+    indexMatrix = zeros(Z, size(pointsSlice, 1), 2)
     for i in range(1, size(pointsSlice, 1))
         for j in range(1, 2)
             #Find at which index the x-coord and y-coord is, in the x-axis and y-axis range

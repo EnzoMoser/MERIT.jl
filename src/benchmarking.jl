@@ -21,8 +21,8 @@ function testing(n)
         imgCom = beamform(scan)
         image = abs.(imgCom)
         imageSlice = get_slice(image, scan, 35e-3)
-        # println(size(imageSlice))
-        # plot_scan(imageSlice, scan)
+        println(size(imageSlice))
+        plot_scan(imageSlice, scan)
     end
 end
 testing(1)
