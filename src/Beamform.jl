@@ -19,8 +19,8 @@ function get_delays(channel::Matrix{Y}, antenna::Vector{Point3{T}}, relative_per
     
     time = zeros(T, 1, size(channel, 1), size(points, 1))
     
-    for j in points
-        for i in antenna
+    for j in range(1, size(points, 1))
+        for i in range(1, size(antenna, 1))
             @inbounds distances[1, i, j] = sum((points[j] - antenna[j])^2)
         end
     end
@@ -60,14 +60,15 @@ function get_delays(relative_permittivity::Real)
         
         time = zeros(T, 1, size(channel, 1), size(points, 1))
         
-        for j in range(1, size(points, 1))
-            for i in range(1, size(antenna, 1))
-                @inbounds distances[1, i, j] = sum((points[j] - antenna[i])^2)
+        for i in range(1, size(points, 1))
+            for j in range(1, size(antenna, 1))
+                pointsAntennaDiff = antenna[j] - points[i]
+                pointsAntennaDiffSq = pointsAntennaDiff^2
+                @inbounds distances[1, j, i] = sum(pointsAntennaDiffSq)
             end
         end
 
         distances .= Base.sqrt_llvm.(distances)
-
         #The time taken to pass through the medium is the distance from the sending antenna
         #to the point, plus the distance from the point to the receving antenna, divided by the speed.
         #Since the medium introduces a delay of +t seconds, we need to add a delay of -t seconds
@@ -87,6 +88,7 @@ function beamform(scan::BreastScan{<:T, <:Y, <:Z}) where {T <: Real, Y <: Number
         
     image = zeros(eltype(scan.signal), (size(scan.points, 1), 1, 1))
     delayedSignals = zeros(eltype(scan.signal), size(scan.frequencies, 1), size(scan.signal, 2), 1)
+    delays = zeros(T, (1, size(scan.channels, 1), size(scan.points, 1)))
     delays = scan.delayFunc(scan.channels, scan.antennas, scan.points)
     
     for pointsIdx in range(1, size(scan.points, 1))
