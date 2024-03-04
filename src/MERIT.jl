@@ -26,6 +26,9 @@ module MERIT
 
     #From Points.jl
     export Point3, Point2
+
+    #From Metrics.jl
+    export FWHM
     
     include("./Points.jl")
     include("./Scans.jl")
@@ -35,6 +38,7 @@ module MERIT
     include("./Process.jl")
     include("./Utilities.jl")
     include("./Windows.jl")
+    include("./Metrics.jl")
 
 
 end

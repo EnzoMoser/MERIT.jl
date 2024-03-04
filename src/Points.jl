@@ -49,6 +49,9 @@ function Base.abs(p::Point3{T}) where{T <: Real}
     return Point3{T}(abs(p.x), abs(p.y), abs(p.z))
 end
 
+"""
+within_tol(pVec::Vector{Point3{T}}, slice::T, idx, tol)
+"""
 function within_tol(pVec::Vector{Point3{T}}, slice::T, idx, tol) where {T<:Real}
     if idx > 3 
         throw(DomainError("Illegal Access. There is only 3 fields in Points3"))
