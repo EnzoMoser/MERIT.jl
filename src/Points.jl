@@ -9,6 +9,12 @@ mutable struct Point3{T<:Real} <: Point
     z::T
 end
 
+mutable struct SphericalPoint{T<:Real} <: Point
+    radius::T
+    azimuthal::T
+    polar::T
+end
+
 mutable struct Point2{T<:Real} <: Point
     x::T
     y::T
@@ -68,6 +74,18 @@ Random.rand(rng::AbstractRNG, ::Random.SamplerType{Point3{T}}) where {T <: Real}
 
 Base.:(==)(p1::Point3{T}, p2::Point3{T}) where {T<:Real} = p1.x === p2.x && p1.y === p2.y && p1.z === p2.z
 
+function point3Vec2Mat(p::Vector{Point3{T}}) where {T <: Real}
+    pointsMat = zeros(length(p),3)
+    for i in 1:length(p)
+        pointsMat[i, 1] = p[i].x
+        pointsMat[i, 2] = p[i].y
+        pointsMat[i, 3] = p[i].z
+    end
+    return pointsMat
+end
+
+
+
 # POINT2 FUNCTIONS #
 
 function Base.:+(p1::Point2{T}, p2::Point2{T}) where {T <: Real}
@@ -94,3 +112,8 @@ end
 
 Base.iterate(p::Union{Point2{T}, Point3{T}}, state=1) where {T<:Real} = state > fieldcount(typeof(p)) ? nothing : (getfield(p, state), state + 1)
 
+
+# SphericalPoint FUNCTIONS #
+function spherical2rectangular(sp::SphericalPoint{T}) where T<:Real
+    return Point3{T}(sp.radius*cos(sp.azimuthal)*sin(sp.polar), sp.radius*sin(sp.azimuthal)*sin(sp.polar), sp.radius*cos(sp.polar))
+end

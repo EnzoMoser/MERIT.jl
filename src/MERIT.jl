@@ -25,11 +25,14 @@ module MERIT
     export rectangular
 
     #From Points.jl
-    export Point3, Point2
+    export Point3, Point2, SphericalPoint, point3Vec2Mat, within_tol
 
     #From Metrics.jl
     export FWHM
     
+    #From Testing.jl
+    export genAntennaLocations
+
     include("./Points.jl")
     include("./Scans.jl")
     include("./Beamform.jl")
@@ -39,6 +42,7 @@ module MERIT
     include("./Utilities.jl")
     include("./Windows.jl")
     include("./Metrics.jl")
-
+    #Some helper functions for testing the performance of the library
+    include("./Testing.jl")
 
 end
