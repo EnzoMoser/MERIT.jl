@@ -86,6 +86,10 @@ function load_scans!(scan::BreastScan{T, Y, Z}, source1::String, delim::Abstract
     scan.signal = readdlm(source1, delim, Y, use_mmap=true)
 end
 
+function load_scans(Y::DataType, source1::String, delim::AbstractChar)
+    return readdlm(source1, delim, Y, use_mmap=true)
+end
+
 "
 scan    : The BreastScan struct
 source1 : The path to the CSV file
@@ -96,6 +100,10 @@ Loads two scans (filetype should be a CSV) into the signal field of the BreastSc
 "
 function load_scans!(scan::BreastScan{T, Y, Z}, source1::String, source2::String, delim::AbstractChar) where {T <: Real, Y <: Number, Z <:Integer}
     scan.signal = readdlm(source1, delim, Y, use_mmap=true) .- readdlm(source2, delim, Y, use_mmap=true)
+end
+
+function load_scans(Y::DataType, source1::String, source2::String, delim::AbstractChar)
+    return readdlm(source1, delim, Y, use_mmap=true) .- readdlm(source2, delim, Y, use_mmap=true)
 end
 
 "
@@ -122,6 +130,15 @@ function load_antennas!(scan::BreastScan{T, Y, Z}, source1::String, delim::Abstr
     for i in eachrow(antennamat)
         push!(scan.antennas, Point3{T}(i[1], i[2], i[3]))
     end
+end
+
+function load_antennas(T::DataType, source1::String, delim::AbstractChar)
+    antennamat = readdlm(source1, delim, T, use_mmap=true)
+    antennas = Point3{T}[]
+    for i in eachrow(antennamat)
+        push!(antennas, Point3{T}(i[1], i[2], i[3]))
+    end
+    return antennas
 end
 
 "

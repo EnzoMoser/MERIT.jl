@@ -11,9 +11,19 @@ using Plots
 
 function testing()
     plotlyjs()
-    antenna_locations = genAntennaLocations(500, Float64)
-    antennaMat = point3Vec2Mat(antenna_locations)
-    plot(scatter(antennaMat[:, 1], antennaMat[:,2], antennaMat[:,3]))
+    # antenna_locations = load_antennas(Float64, "data/antenna_locations.csv", ',')
+    antenna_locations = genAntennaLocations(6, 4, Float64)
+    channelNames = genChannelNames(6, 4, "half-multistatic", Int64)
+    frequencies = genFrequencies(76, Float64)
+    scan = genRandomData(76, size(channelNames, 1), ComplexF64)
+
+    println(size(antenna_locations))
+    println(size(channelNames))
+    println(size(frequencies))
+    println(size(scan))
+
+    #antennaMat = point3Vec2Mat(antenna_locations)
+    #plot(scatter(antennaMat[:, 1], antennaMat[:,2], antennaMat[:,3]))
     
     
     # scan = BreastScan{Float32, ComplexF32, UInt32}()
