@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=2.54cm,bottom=2.54cm,left=2.54cm,right=2.54cm,headheight=16pt]{geometry}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage[dvipsnames, table]{xcolor}
+\setlength{\marginparwidth}{2cm}
+
+\title{
+    \textbf{MERIT.jl}\\
+    \vspace{1mm}
+    {The MicrowavE Radar-based Imaging Toolbox: Julia’s Version}
+}
+\author{Aaron Dinesh}
+\date{January 2024}
+
+
+\begin{document}
+    \begin{titlepage}
+        \vspace*{\fill}
+        \begin{center}
+          {\Huge \textbf{MERIT.jl}}\\[0.5cm]
+          {\Large The MicrowavE Radar-based Imaging Toolbox: Julia’s Version}\\[0.4cm]
+          {\Large Aaron Dinesh}\\[0.3cm]
+          January 2024
+        \end{center}
+        \vspace*{\fill}
+    \end{titlepage}
+    \input{sc-Introduction}
+    \input{sc-ProblemStatement}
+    \input{sc-GoalsObjectives.tex}
+    \pagebreak
+    \input{sc-TasksTimelines.tex}
+    \input{sc-RisksMitigations.tex}
+    \bibliographystyle{ieeetr}
+    \bibliography{citation}
+\end{document}

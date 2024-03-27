@@ -1,0 +1,46 @@
+\chapter{Introduction}
+MERIT.jl was motivated by a need to streamline the development process for new imaging algorithms. Currently, any
+researcher who wants to code a novel microwave imaging algorithm not only has to code the algorithm itself but also has
+to code all the helper functions required to produce an image. All this time fixing bugs subtracts from the time that could
+be spent fine-tuning the algorithm and choosing an optimal parameter set. The use of such open-source software has seen
+widespread use in a myriad of fields. PsychoPy and PsyToolkit are two such frameworks that revolutionized the field of
+psychological sciences. By implementing commonly used functions and scripts, they have allowed researchers to design and
+run experiments in a matter of hours. It has also allowed researchers who have little to no programming experience
+to get up and running with automated data processing, thereby allowing them to focus more on the quality of their
+experiment. \cite{stoetPsyToolkitTestimonials} \hfill \break
+
+The use of microwaves in imaging has started to gain interest amongst the medical community as an alternative and safer
+form of imaging when compared to more traditional methods such as X-rays. Clinical trials such as the ``MARIA M4''
+system, have proven that such microwave-based methods are more comfortable and are a viable alternative to current
+mammograms.   
+
+
+
+
+
+
+####################### Remove #######################
+The use of such OS frameworks has seen much success in other fields such as PsychoPy and PsyToolkit in the psychological
+sciences, and Maxima in mathematical computing. The groundwork was laid by D. O’Loughlin, M. A. Elahi, E. Porter, et al
+in their paper entitled “Open-source Software for Microwave Radar-based Image Reconstruction”. Here they implemented a
+series of classic beamformers such as “Delay-and-Sum”, “Modified-DAS” and “Multiply-DAS”. The MATLAB library also
+provides a series of utility functions that can be called to generate the imaging domain, or to generate an image slice
+from the beamformed data, for example. 
+
+The main drawback of MATLAB is that the language is far from performant, running about 2.24x slower than an equivalent
+Julia script [1]. Julia implements the “Multiple Dispatch” programming paradigm, which allows for powerful extensibility
+and an intuitive interface.
+
+\section*{Introduction}
+Microwave imaging has started to garner an interest amongst the medical community as an alternative and safer form of
+imaging when compared to more traditional methods such as X-rays. Recent clinical trials such as the “MARIA M4” system
+have proven that such microwave-based methods are more comfortable and offer a viable alternative to X-rays \cite{RN1}.
+Mammography is not the only area where this imaging modality is being trialed. It is seeing use in areas such as
+traumatic brain injury detection, bone degradation, and tumor detection \cite{RN2}. While the hardware has proved
+effective, the software side leaves a lot to be desired. Researchers often have to code their own data processing
+pipeline in order to get usable results for their studies. All this development subtracts from time that could be spent
+developing new algorithms and higher resolution systems. In their haste to complete a paper, bugs could be inadvertently
+introduced into the code, at best slowing down research while the bug is fixed, while at worst, it could bias the
+results without the researchers knowing. As such, good software needs to be built that would allow researchers to worry
+more about designing and testing algorithms rather than worrying about how to code the supporting functions that would
+allow them to test the effectiveness of these algorithms.

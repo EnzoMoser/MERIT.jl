@@ -1,0 +1,41 @@
+\definecolor{VeryLow}{HTML}{3AB34A}
+\definecolor{Low}{HTML}{2F903B}
+\definecolor{Medium}{HTML}{F8EB23}
+\definecolor{High}{HTML}{F79122}
+\definecolor{VeryHigh}{HTML}{E91820}
+\definecolor{Extreme}{HTML}{BB121A}
+
+
+% VeryLow Risk Score : 1, 2
+% Low Risk Score     : 3, 4
+% Medium Risk Score  : 6, 5, 8, 9
+% High Risk Score    : 10, 12
+% VeryHigh Risk Score: 15, 16
+% Extreme Risk Score : 20, 25
+
+
+
+\section*{Risks and Mitigations}
+As with any project, there are numerous risks with varying severities that can impact the timeline of the project and the quality of the end result. A good project plan not only identifies and quantifies the risks, but also includes mitigations that can reduce the impact of these risks. These risks are graded on a 5-point scale with the likelihood values being Rare, Unlikely, Moderate, Likely and Certain (1-5 respectively). The impact is also graded on a 5-point scale with the values being Insignificant, Minor, Significant, Major and Severe (1-5 respectively). The product of the severity and likelihood values produces a risk score that can be used to determine how impactful a particular risk can be if it occurs and is not handled appropriately\\
+
+\noindent
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{A}{>{\centering\arraybackslash}X}
+
+\begin{tabularx}{\textwidth}{@{}|X|P{1.7cm}|P{1.7cm}|P{1.7cm}|X|@{}}
+    \hline
+    \centering \textbf{Risk Description} & \textbf{Severity} & \centering \textbf{Likelihood} & \textbf{Risk Score} & \centering\arraybackslash \textbf{Mitigation} \\
+    \hline
+    Missing deadlines & 3 & 2 & \cellcolor{Medium} 6 & Generous deadlines and inclusion of 14 days of slack at the end \\
+    \hline
+    Failing to implement beamformers & 3 & 1 & \cellcolor{VeryLow} 3 & There are plenty of resources and reference implementations available online \\
+    \hline
+    Failing to run the code on the GPU & 2 & 3 & \cellcolor{Medium} 6 & There are many workshops online that demonstrate how to write performant Julia code for GPUs \\
+    \hline
+    Don't have enough time to perform End-to-End Testing & 4 & 2 & \cellcolor{Medium} 8 & Perform testing as the code is being written. So that at the end only minimal testing is required \\
+    \hline
+    Don't get the final report done in time & 5 & 2 & \cellcolor{High} 10 & The slack days included means that I should still have time to write the report even if deadlines slip \\
+    \hline
+    Fail to implement the Type Hierarchy & 4 & 3 & \cellcolor{High} 12 & Conceptually establish the type hierarchy early on in the development process. Look at other libraries that have had to implement a similar hierarchy and consider how they achieved it \\
+    \hline
+\end{tabularx}

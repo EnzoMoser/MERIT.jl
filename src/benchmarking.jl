@@ -1,47 +1,61 @@
 using MERIT
 using BenchmarkTools
-using Profile
-using PProf
-using ProfileView
-using Plots
 
-# function testfnc(signal, frequencies, points, timeDelays)
-#     image = abs.(MERIT.Beamform.beamform(signal, frequencies, points, timeDelays))
+function testing(scan)
+    scan.delayFunc = get_delays(Float32(8.0))
+    scan.beamformerFunc = DAS
+    imgCom = beamform(scan)
+end
+
+
+suite = BenchmarkGroup()
+
+# for a in 2:50:852
+#     antenna_locations = genAntennaLocations(a, 4, Float64)
+#     channelNames = genChannelNames(a, 4, "monostatic", Int64)
+#     frequencies = genFrequencies(1.5, 4.5, 76, Float64)
+#     scan_data = genRandomData(length(frequencies), size(channelNames, 1), ComplexF64)
+   
+#     scan = BreastScan{Float64, ComplexF64, Int64}()
+#     scan.signal = scan_data
+#     scan.frequencies = frequencies
+#     scan.channels = channelNames
+#     scan.antennas = antenna_locations
+#     domain_hemisphere!(scan, 2.5e-3, 7e-2+5e-3)
+#     suite["antennas"][string(a)] = @benchmarkable testing($scan) evals=1 samples=10 seconds=30
 # end
 
-function testing()
-    plotlyjs()
-    # antenna_locations = load_antennas(Float64, "data/antenna_locations.csv", ',')
+
+# for p in 1:12500:200000
+#     antenna_locations = genAntennaLocations(6, 4, Float64)
+#     channelNames = genChannelNames(6, 4, "leveled-half-multistatic-minus-self", UInt64)
+#     frequencies = genFrequencies(1.5, 4.5, 76, Float64)
+#     scan_data = genRandomData(length(frequencies), size(channelNames, 1), ComplexF64)
+   
+#     scan = BreastScan{Float64, ComplexF64, UInt64}()
+#     scan.signal = scan_data
+#     scan.frequencies = frequencies
+#     scan.channels = channelNames
+#     scan.antennas = antenna_locations
+#     scan.points = rand(Point3{Float64}, p)
+#     suite["points"][string(p)] = @benchmarkable testing($scan) evals=1 samples=10 seconds=30
+# end
+
+for f in 2:10:1000
     antenna_locations = genAntennaLocations(6, 4, Float64)
-    channelNames = genChannelNames(6, 4, "half-multistatic", Int64)
-    frequencies = genFrequencies(76, Float64)
-    scan = genRandomData(76, size(channelNames, 1), ComplexF64)
-
-    println(size(antenna_locations))
-    println(size(channelNames))
-    println(size(frequencies))
-    println(size(scan))
-
-    #antennaMat = point3Vec2Mat(antenna_locations)
-    #plot(scatter(antennaMat[:, 1], antennaMat[:,2], antennaMat[:,3]))
-    
-    
-    # scan = BreastScan{Float32, ComplexF32, UInt32}()
-    # domain_hemisphere!(scan, 2.5e-3, 7e-2+5e-3)
-    # load_scans!(scan,"data/B0_P3_p000.csv" , "data/B0_P3_p036.csv", ',')
-    # load_frequencies!(scan, "data/frequencies.csv", ',')
-    # load_antennas!(scan, "data/antenna_locations.csv", ',')
-    # load_channels!(scan, "data/channel_names.csv", ',')
-    # scan.delayFunc = get_delays(Float32(8.0))
-    # scan.beamformerFunc = DAS
-    # imgCom = beamform(scan)
-    # image = abs.(imgCom)
-    # imageSlice = get_slice(image, scan, 35e-3)
-    # println(size(imageSlice))
-    # plot_scan(imageSlice, scan)
+    channelNames = genChannelNames(6, 4, "leveled-half-multistatic-minus-self", UInt64)
+    frequencies = genFrequencies(1.5, 4.5, f, Float64)
+    scan_data = genRandomData(length(frequencies), size(channelNames, 1), ComplexF64)
+   
+    scan = BreastScan{Float64, ComplexF64, UInt64}()
+    scan.signal = scan_data
+    scan.frequencies = frequencies
+    scan.antennas = antenna_locations
+    scan.channels = channelNames
+    domain_hemisphere!(scan, 2.5e-3, 7e-2+5e-3)
+    suite["frequency"][string(f)] = @benchmarkable testing($scan) evals=1 samples=10 seconds=30
 end
-testing()
-# ProfileView.@profview testing(1)
-# Profile.Allocs.clear()
-# Profile.Allocs.@profile sample_rate=0.1 testing()
-# PProf.Allocs.pprof(from_c = false)
+
+BenchmarkTools.save("frequencyParams.json", params(suite))
+result = run(suite, verbose=true)
+BenchmarkTools.save("frequencyResults.json", result)
