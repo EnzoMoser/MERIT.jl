@@ -63,6 +63,9 @@
 \usepackage{booktabs} % To thicken table lines
 \usepackage{fancyhdr}
 \usepackage{xcolor} % to get TCD color on headings
+
+
+\graphicspath{{./Images/}}
 \numberwithin{equation}{chapter} %HS edit for (chapter.equation)
 \pagestyle{plain} % Embrace simplicity!
 
@@ -118,7 +121,8 @@
 
 \frontmatter
 \begin{document}
-\input{title/title.tex}
+
+\input{ch-Title.tex}
 \pagenumbering{roman}
 \section*{\Huge\textcolor{tcd_blue}{Declaration}}
 \vspace{1cm}
@@ -159,10 +163,9 @@ error when Points aren't passed in the right argument, instead of providing a wr
 
 \section*{\Huge\textcolor{tcd_blue}{Acknowledgements}}
 Thanks, Everyone!
+\newpage
 
 \tableofcontents
-\listoffigures
-\listoftables
 \newpage
 
 %%\section*{\Huge\textcolor{tcd_blue}{Nomenclature}}
@@ -191,20 +194,15 @@ Thanks, Everyone!
 
 \mainmatter
 % Maintaining separate .tex files for each chapter is good practice
-\input{introduction/introduction.tex}
-\input{background/background.tex}
-\input{project/project.tex}
-\input{evaluation/evaluation.tex}
-\input{conclusion/conclusion.tex}
+\setcounter{chapter}{1}
+\input{ch-Introduction.tex}
+\input{ch-Background.tex}
 
 % note that your supervisor may have a strong opinion on the style of referencing you use. Some background is available at https://www.overleaf.com/learn/latex/Bibtex_bibliography_styles
 \bibliographystyle{IEEEtran} %Changed to IEEETran by HS
 %\bibliographystyle{unsrt}
 
-\bibliography{bibs/citations}
+\bibliography{citations.bib}
 \appendix
 \renewcommand{\thechapter}{A\arabic{chapter}}
-\input{appendix/appendix.tex}
-
-
 \end{document}

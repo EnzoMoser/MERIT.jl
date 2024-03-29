@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  26 MAR 2024 15:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  29 MAR 2024 17:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,7 +818,7 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
-20.
+23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -828,27 +828,31 @@ File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
 \l__pdf_internal_box=\box67
 )
-(./main.aux)
+(./main.aux
+
+LaTeX Warning: Label `fig:MultistaticExample' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 120.
-LaTeX Font Info:    ... okay on input line 120.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
+LaTeX Font Info:    ... okay on input line 123.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -906,7 +910,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 120.
+Package hyperref Info: Link coloring ON on input line 123.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -919,9 +923,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 120.
-LaTeX Info: Redefining \pageref on input line 120.
-LaTeX Info: Redefining \nameref on input line 120.
+LaTeX Info: Redefining \ref on input line 123.
+LaTeX Info: Redefining \pageref on input line 123.
+LaTeX Info: Redefining \nameref on input line 123.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -929,21 +933,21 @@ LaTeX Info: Redefining \nameref on input line 120.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (./title/title.tex
-<title/Trinity_RGB_transparent_main.png, id=75, 412.6617pt x 142.3719pt>
-File: title/Trinity_RGB_transparent_main.png Graphic file (type png)
-<use title/Trinity_RGB_transparent_main.png>
-Package pdftex.def Info: title/Trinity_RGB_transparent_main.png  used on input 
-line 13.
+ (./ch-Title.tex
+<./Images//Trinity_RGB_transparent_main.png, id=23, 412.6617pt x 142.3719pt>
+File: ./Images//Trinity_RGB_transparent_main.png Graphic file (type png)
+<use ./Images//Trinity_RGB_transparent_main.png>
+Package pdftex.def Info: ./Images//Trinity_RGB_transparent_main.png  used on in
+put line 13.
 (pdftex.def)             Requested size: 412.66068pt x 142.37154pt.
  [1.1
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./title/Trinity_RGB_transp
-arent_main.png>])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images//Trinity_RGB_tran
+sparent_main.png>])
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-30.
+34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -951,137 +955,100 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.149 \chapter
+l.153 \chapter
               *{Abstract} [1.2] [2.3
 
-] (./main.toc)
+] [3.4] (./main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
-
- [3.4
-
-] (./main.lof)
-\tf@lof=\write6
-\openout6 = `main.lof'.
 
  [4.5
 
 ]
-(./main.lot)
-\tf@lot=\write7
-\openout7 = `main.lot'.
-
- [5.6
-
-] (./introduction/introduction.tex
-Chapter 1.
-[1.7
-
-
-]) (./background/background.tex [2.8]
-Chapter 2.
-<background/5e1-1.pdf, id=153, 283.0575pt x 298.11375pt>
-File: background/5e1-1.pdf Graphic file (type pdf)
-<use background/5e1-1.pdf>
-Package pdftex.def Info: background/5e1-1.pdf  used on input line 11.
-(pdftex.def)             Requested size: 283.0568pt x 298.11302pt.
-
-Overfull \hbox (16.33926pt too wide) in paragraph at lines 20--21
-\T1/cmss/m/n/12 from the Mas-ter/Doctoral The-sis tem-plate at [][]$\T1/cmtt/m/
-n/12 http : / / www . latextemplates . com / cat / theses$[][]\T1/cmss/m/n/12 ,
+(./ch-Introduction.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--12
 
  []
 
-[3.9
 
- <./background/5e1-1.pdf>] [4.10]
+LaTeX Warning: Citation `alsbouMedicalImagingSystem2023' on page 1 undefined on
+ input line 18.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--20
+
+ []
+
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-90.
-
+26.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-))
-(./project/project.tex
-Overfull \hbox (71.70612pt too wide) in paragraph at lines 97--1
-\T1/cmss/m/n/12 that you use a bib-li-o-graphic tool, such as End-Note (check o
-ut https://www.tcd.ie/library/support/endnote/),
+)) (./ch-Background.tex [1.6
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
+
  []
 
-[5.11]
-Chapter 3.
+<./Images//multistaic.png, id=73, 668.4975pt x 668.4975pt>
+File: ./Images//multistaic.png Graphic file (type png)
+<use ./Images//multistaic.png>
+Package pdftex.def Info: ./Images//multistaic.png  used on input line 24.
+(pdftex.def)             Requested size: 181.18454pt x 181.18016pt.
 
-Overfull \hbox (33.84076pt too wide) in paragraph at lines 15--16
-|   []   |   []   |   []   |   [] \T1/cmss/m/n/12 by [[][]8[][]] is on-line at 
-[][]$\T1/cmtt/m/n/12 https : / / doi . org / 10 . 3929 / ethz-[]a-[]004398225$[
-][]\T1/cmss/m/n/12 .
- []
+LaTeX Warning: Reference `fig:MARIAM4' on page 2 undefined on input line 34.
 
-) (./evaluation/evaluation.tex [6.12
+<./Images//MARIA_M4.png, id=74, 383.93437pt x 230.36063pt>
+File: ./Images//MARIA_M4.png Graphic file (type png)
+<use ./Images//MARIA_M4.png>
+Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 39.
+(pdftex.def)             Requested size: 407.66867pt x 244.61694pt.
+) (./main.bbl [2.7
 
-]
-Chapter 4.
-) (./conclusion/conclusion.tex [7.13
-
-]
-Chapter 5.
-) (./main.bbl [8.14
-
-]
-Underfull \hbox (badness 1655) in paragraph at lines 44--47
-[]\T1/cmss/m/n/12 M. P. Paï-dous-sis, S. J. Price, and E. De Lan-gre, |   []   
-|   []
- []
-
-) (./appendix/appendix.tex [9.15
-
-]
-Appendix A1.
-) (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
+] [3.8 <./Images//multistaic.png> <./Images//MARIA_M4.png>])
+(/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
-) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
+)
+(/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-pdfdoc.def
 File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [10.16
+) [4.9
 
 ]
 (./main.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A2E06967224C9B0CD3556FF3B831148F;2430.
+(rerunfilecheck)             Checksum: 58B0539BA417E5C2443BE2AF6F89DDCA;445.
  ) 
 Here is how much of TeX's memory you used:
- 25695 strings out of 478287
- 476053 string characters out of 5849289
- 787198 words of memory out of 5000000
- 43322 multiletter control sequences out of 15000+600000
- 495102 words of font info for 88 fonts, out of 8000000 for 9000
+ 25570 strings out of 478287
+ 474418 string characters out of 5849289
+ 777946 words of memory out of 5000000
+ 43261 multiletter control sequences out of 15000+600000
+ 481719 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,8n,117p,1193b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fo
-nts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmssi12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.p
-fb></usr/share/texmf/fonts/type1/public/cm-super/sfss0700.pfb></usr/share/texmf
-/fonts/type1/public/cm-super/sfss0800.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfss1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfss1728.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfsx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1200.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfsx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx2488.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (16 pages, 401094 bytes).
+ 99i,6n,117p,1193b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/
+cm-super/sfss1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfss1728.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1728.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (9 pages, 545657 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 276 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
+ 23 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 

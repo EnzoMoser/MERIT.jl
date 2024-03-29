@@ -1,0 +1,31 @@
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+MERIT.jl was motivated by a need to streamline the development process for new imaging algorithms. Currently, any
+researcher who wants to code a novel microwave imaging algorithm not only has to code the algorithm itself but also has
+to code all the helper functions required to produce an image. All this time fixing bugs subtracts from the time that could
+be spent fine-tuning the algorithm and choosing an optimal parameter set. The use of such open-source software has seen
+widespread use in a myriad of fields. PsychoPy and PsyToolkit are two such frameworks that revolutionized the field of
+psychological sciences. By implementing commonly used functions and scripts, they have allowed researchers to design and
+run experiments in a matter of hours. It has also allowed researchers who have little to no programming experience
+to get up and running with automated data processing, thereby allowing them to focus more on the quality of their
+experiment. \cite{stoetPsyToolkitTestimonials} \hfill \break
+
+The use of microwaves in imaging has started to gain interest amongst the medical community as an alternative and safer
+form of imaging when compared to more traditional methods such as X-rays. Clinical trials such as the ``MARIA M4''
+system has proven that such microwave-based methods are more comfortable and are a viable alternative to current
+mammograms \cite{preeceMARIAM4Clinical2016}. Mammography is not the only area where this imaging modality is being
+trailed. It is seeing use in areas such as traumatic brain injury detection, bone degradation and tumor detection
+\cite{alsbouMedicalImagingSystem2023}. While the hardware has proved effective, the software leaves a lot to be desired.
+\hfill \break
+
+That is where this project comes in. MERIT.jl aims to be an easy-to-use, extensible and featureful library. The goal
+being that anyone, regardless of coding experience, would be able to quickly create a script that allows them to process
+and visualize the scan data they have collected. The following sections will contain: 
+
+\begin{itemize}
+    \item A literature review on the existing microwave imaging systems
+    \item A look into existing microwave imaging frameworks
+    \item A discussion about the design choices and Julia features that are included
+    \item An examination of the results and possible future work
+\end{itemize}
+

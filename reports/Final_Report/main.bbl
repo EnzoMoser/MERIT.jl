@@ -21,42 +21,15 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{fitzpatrick2003flow}
-J.~Fitzpatrick, ``Flow/acoustic interactions of two cylinders in cross-flow,''
-  \emph{Journal of Fluids and Structures}, vol.~17, no.~1, pp. 97--113, 2003.
+\bibitem{stoetPsyToolkitTestimonials}
+\BIBentryALTinterwordspacing
+G.~Stoet, \emph{{{PsyToolkit Testimonials}}}, Std. [Online]. Available:
+  \url{https://www.psytoolkit.org/#_testimonials}
+\BIBentrySTDinterwordspacing
 
-\bibitem{finnegan2010experimental}
-S.~Finnegan, C.~Meskell, and S.~Ziada, ``Experimental investigation of the
-  acoustic power around two tandem cylinders,'' \emph{Journal of Pressure
-  Vessel Technology}, vol. 132, no.~4, p. 041306, 2010.
-
-\bibitem{hall2003vortex}
-J.~Hall, S.~Ziada, and D.~Weaver, ``Vortex-shedding from single and tandem
-  cylinders in the presence of applied sound,'' \emph{Journal of Fluids and
-  Structures}, vol.~18, no.~6, pp. 741--758, 2003.
-
-\bibitem{jordan2001array}
-P.~Jordan, J.~Fitzpatrick, and C.~Meskell, ``Array beam pattern control for
-  measurement of propeller noise,'' in \emph{AIAA/CEAS Aeroacoustics Conference
-  and Exhibit, Maastricht, Netherlands}, 2001.
-
-\bibitem{paidoussis2010fluid}
-M.~P. Pa{\"\i}doussis, S.~J. Price, and E.~De~Langre, \emph{Fluid-structure
-  interactions: cross-flow-induced instabilities}.\hskip 1em plus 0.5em minus
-  0.4em\relax Cambridge University Press, 2010.
-
-\bibitem{reyes2007power}
-L.~Reyes, ``Power uprate program status report-secy-07-0090,'' Technical
-  Report, US Nuclear Regulatory Commission, Tech. Rep., 2007.
-
-\bibitem{shustek2008interview}
-L.~Shustek and D.~Interviewee-Knuth, ``Interview donald knuth: A life's work
-  interrupted,'' \emph{Communications of the ACM}, vol.~51, no.~8, pp. 31--35,
-  2008.
-
-\bibitem{oetiker2001not}
-T.~Oetiker, H.~Partl, I.~Hyna, and E.~Schlegl, ``The not so short introduction
-  to latex 2$\varepsilon$,'' \emph{Electronic Document}, 2001, \url{http://www.
-  tex. ac. uk/tex-archive/info/lshort}.
+\bibitem{preeceMARIAM4Clinical2016}
+A.~W. Preece, I.~Craddock, M.~Shere, L.~Jones, and H.~L. Winton, ``{{MARIA
+  M4}}: Clinical evaluation of a prototype ultrawideband radar scanner for
+  breast cancer detection.'' vol.~3, no.~3, p. 033502.
 
 \end{thebibliography}
