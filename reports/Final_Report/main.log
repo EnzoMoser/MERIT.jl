@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  29 MAR 2024 17:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  30 MAR 2024 16:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -803,56 +803,161 @@ rs
 \f@nch@O@olf=\skip64
 \f@nch@O@orf=\skip65
 )
+(/usr/share/texlive/texmf-dist/tex/latex/hvfloat/hvfloat.sty
+Package: hvfloat 2021/09/23 v2.34 special floating objects (hv)
+
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box66
+\sift@deathcycles=\count327
+\@vwid@loff=\dimen294
+\@vwid@roff=\dimen295
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/10/07 v1.3j Sub-captions (AR)
+\c@subfigure=\count328
+\c@subtable=\count329
+)
+(/usr/share/texlive/texmf-dist/tex/latex/picture/picture.sty
+Package: picture 2020-04-22 v1.6 Dimens for picture macros (HO)
+Package picture Info: Calculation method: calc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box67
+)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+\tc@llx=\dimen296
+\tc@lly=\dimen297
+\tc@urx=\dimen298
+\tc@ury=\dimen299
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count330
+\l__pdf_internal_box=\box68
+))
+(/usr/share/texlive/texmf-dist/tex/latex/multido/multido.sty
+Package: multido 2004/05/17 package wrapper for PSTricks `multido.tex', (HV/RN)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/multido/multido.tex
+ v1.42, 2010/05/14 <tvz>
+\multido@count=\count331
+\multidocount=\count332
+\multido@stuff=\toks43
+)
+File: multido.tex 2010/05/14 v1.42 `multido' (tvz,hv)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count333
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/afterpage.sty
+Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
+\AP@output=\toks44
+\AP@partial=\box69
+\AP@footins=\box70
+)
+(/usr/share/texlive/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count334
+\c@dblbotnumber=\count335
+)
+\hvObjectWidth=\skip66
+\hvCapWidth=\skip67
+\hvWideWidth=\skip68
+\hvMultiFloatSkip=\skip69
+\hvMaxCapWidth=\skip70
+\hvObjectBox=\box71
+\hvCaptionBox=\box72
+\hvOBox=\box73
+\@tempbox=\box74
+\hv@caption@box=\box75
+\hv@leftBox=\box76
+\hv@rightBox=\box77
+\hvSet@bindCorrection=\skip71
+\hvSet@sepLineskip=\skip72
+\hv@leftPageObjectWidth=\skip73
+\hv@tempWidthA=\skip74
+\hv@tempWidthB=\skip75
+\hv@minTextlines=\skip76
+\hv@floatCapSep=\skip77
+\hvSet@bindCorr=\skip78
+\hvAboveCaptionSkip=\skip79
+\hvBelowCaptionSkip=\skip80
+\hv@dblfptop=\skip81
+\hv@fptop=\skip82
+\hv@@capPos=\count336
+\fboxlinewidth=\skip83
+\hv@maxImageWidth=\skip84
+\c@hv@tempCNTfigA=\count337
+\c@hv@tempCNTfigB=\count338
+\c@hv@tempCNTtabA=\count339
+\c@hv@tempCNTtabB=\count340
+\c@hv@pfigure=\count341
+\c@hv@ptable=\count342
+\c@subhv@pfigure=\count343
+\c@subhv@ptable=\count344
+\hv@cnta=\count345
+\hv@cntb=\count346
+\hv@boxLeftPage=\box78
+\hv@boxRightPage=\box79
+)
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box66
-\beforetitleunit=\skip66
-\aftertitleunit=\skip67
-\ttl@plus=\dimen294
-\ttl@minus=\dimen295
-\ttl@toksa=\toks43
-\titlewidth=\dimen296
-\titlewidthlast=\dimen297
-\titlewidthfirst=\dimen298
+\ttl@box=\box80
+\beforetitleunit=\skip85
+\aftertitleunit=\skip86
+\ttl@plus=\dimen300
+\ttl@minus=\dimen301
+\ttl@toksa=\toks45
+\titlewidth=\dimen302
+\titlewidthlast=\dimen303
+\titlewidthfirst=\dimen304
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
-23.
+24.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count327
-\l__pdf_internal_box=\box67
-)
-(./main.aux
-
-LaTeX Warning: Label `fig:MultistaticExample' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 124.
+LaTeX Font Info:    ... okay on input line 124.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -890,17 +995,17 @@ LaTeX Font Info:    ... okay on input line 123.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
-\scratchdimen=\dimen299
-\scratchbox=\box68
-\nofMPsegments=\count329
-\nofMParguments=\count330
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count331
-\MPscratchDim=\dimen300
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count347
+\scratchdimen=\dimen305
+\scratchbox=\box81
+\nofMPsegments=\count348
+\nofMParguments=\count349
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count350
+\MPscratchDim=\dimen306
+\MPnumerator=\count351
+\makeMPintoPDFobject=\count352
+\everyMPtoPDFconversion=\toks47
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -910,7 +1015,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 123.
+Package hyperref Info: Link coloring ON on input line 124.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -921,11 +1026,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count334
+\c@section@level=\count353
 )
-LaTeX Info: Redefining \ref on input line 123.
-LaTeX Info: Redefining \pageref on input line 123.
-LaTeX Info: Redefining \nameref on input line 123.
+LaTeX Info: Redefining \ref on input line 124.
+LaTeX Info: Redefining \pageref on input line 124.
+LaTeX Info: Redefining \nameref on input line 124.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -934,7 +1039,7 @@ LaTeX Info: Redefining \nameref on input line 123.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./ch-Title.tex
-<./Images//Trinity_RGB_transparent_main.png, id=23, 412.6617pt x 142.3719pt>
+<./Images//Trinity_RGB_transparent_main.png, id=27, 412.6617pt x 142.3719pt>
 File: ./Images//Trinity_RGB_transparent_main.png Graphic file (type png)
 <use ./Images//Trinity_RGB_transparent_main.png>
 Package pdftex.def Info: ./Images//Trinity_RGB_transparent_main.png  used on in
@@ -947,7 +1052,7 @@ put line 13.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images//Trinity_RGB_tran
 sparent_main.png>])
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-34.
+35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -955,17 +1060,31 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.153 \chapter
+l.154 \chapter
               *{Abstract} [1.2] [2.3
 
-] [3.4] (./main.toc)
-\tf@toc=\write5
-\openout5 = `main.toc'.
+] [3.4] (./main.lof
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page iv undefine
+d on input line 4.
+
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page iv undefine
+d on input line 5.
+
+)
+\tf@lof=\write5
+\openout5 = `main.lof'.
 
  [4.5
 
-]
-(./ch-Introduction.tex
+] (./main.toc)
+\tf@toc=\write6
+\openout6 = `main.toc'.
+
+ [5.6
+
+] (./ch-Introduction.tex
 Underfull \hbox (badness 10000) in paragraph at lines 3--12
 
  []
@@ -983,7 +1102,7 @@ LaTeX Font Info:    Trying to load font information for TS1+cmss on input line
 26.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) (./ch-Background.tex [1.6
+)) (./ch-Background.tex [1.7
 
 
 ]
@@ -991,22 +1110,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-<./Images//multistaic.png, id=73, 668.4975pt x 668.4975pt>
+<./Images//multistaic.png, id=94, 668.4975pt x 668.4975pt>
 File: ./Images//multistaic.png Graphic file (type png)
 <use ./Images//multistaic.png>
 Package pdftex.def Info: ./Images//multistaic.png  used on input line 24.
-(pdftex.def)             Requested size: 181.18454pt x 181.18016pt.
+(pdftex.def)             Requested size: 135.89185pt x 135.89021pt.
+[2.8
 
-LaTeX Warning: Reference `fig:MARIAM4' on page 2 undefined on input line 34.
-
-<./Images//MARIA_M4.png, id=74, 383.93437pt x 230.36063pt>
+ <./Images//multistaic.png>]
+<./Images//MARIA_M4.png, id=107, 383.93437pt x 230.36063pt>
 File: ./Images//MARIA_M4.png Graphic file (type png)
 <use ./Images//MARIA_M4.png>
 Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 39.
-(pdftex.def)             Requested size: 407.66867pt x 244.61694pt.
-) (./main.bbl [2.7
+(pdftex.def)             Requested size: 226.48413pt x 135.894pt.
 
-] [3.8 <./Images//multistaic.png> <./Images//MARIA_M4.png>])
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page 3 undefined
+ on input line 57.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--61
+
+ []
+
+<./Images//Wavelia.png, id=111, 472.76625pt x 418.56375pt>
+File: ./Images//Wavelia.png Graphic file (type png)
+<use ./Images//Wavelia.png>
+Package pdftex.def Info: ./Images//Wavelia.png  used on input line 63.
+(pdftex.def)             Requested size: 226.48413pt x 200.5187pt.
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page 3 undefined
+ on input line 65.
+
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page 3 undefined
+ on input line 65.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--83
+
+ []
+
+[3.9 <./Images//MARIA_M4.png>]
+<./Images//LeveledMultistatic.png, id=121, 537.80925pt x 361.35pt>
+File: ./Images//LeveledMultistatic.png Graphic file (type png)
+<use ./Images//LeveledMultistatic.png>
+Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 8
+5.
+(pdftex.def)             Requested size: 226.48413pt x 152.17398pt.
+
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page 4 undefined
+ on input line 87.
+
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page 4 undefined
+ on input line 87.
+
+
+LaTeX Warning: Citation `moloneyWaveliaMicrowaveBreast2021' on page 4 undefined
+ on input line 91.
+
+) [4.10 <./Images//Wavelia.png> <./Images//LeveledMultistatic.png>] (./main.bbl
+[5.11])
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
@@ -1016,39 +1182,40 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [4.9
+) [6.12
 
 ]
 (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 58B0539BA417E5C2443BE2AF6F89DDCA;445.
+(rerunfilecheck)             Checksum: 121655AD6A7D3C702FACCB2AC8FA64CB;541.
  ) 
 Here is how much of TeX's memory you used:
- 25570 strings out of 478287
- 474418 string characters out of 5849289
- 777946 words of memory out of 5000000
- 43261 multiletter control sequences out of 15000+600000
- 481719 words of font info for 56 fonts, out of 8000000 for 9000
+ 26629 strings out of 478287
+ 495191 string characters out of 5849289
+ 800669 words of memory out of 5000000
+ 44259 multiletter control sequences out of 15000+600000
+ 483253 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,117p,1193b,489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,6n,117p,1193b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf/fonts/type1/public/
-cm-super/sfss1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1440.pf
-b></usr/share/texmf/fonts/type1/public/cm-super/sfss1728.pfb></usr/share/texmf/
-fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1728.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (9 pages, 545657 bytes).
+fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmssi12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0800
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/publi
+c/cm-super/sfss1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx0800.
+pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1200.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fonts/type1/public
+/cm-super/sfsx1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx2488.p
+fb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on main.pdf (12 pages, 1750224 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 64 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 209 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 82 words of extra memory for PDF output out of 10000 (max. 10000000)
 
