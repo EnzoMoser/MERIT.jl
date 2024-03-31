@@ -8,55 +8,64 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
-Warning--I didn't find a database entry for "alsbouMedicalImagingSystem2023"
-Warning--I didn't find a database entry for "moloneyWaveliaMicrowaveBreast2021"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--missing institution in stoetPsyToolkitTestimonials
 Warning--empty journal in preeceMARIAM4Clinical2016
 Warning--empty year in preeceMARIAM4Clinical2016
+Warning--empty year in alsbouMedicalImagingSystem2023
+Warning--empty journal in moloneyWaveliaMicrowaveBreast2021
+Warning--empty year in moloneyWaveliaMicrowaveBreast2021
+Warning--empty journal in e.c.fearMicrowaveBreastImaging2013
+Warning--empty year in e.c.fearMicrowaveBreastImaging2013
+Warning--empty journal in klemmImprovedDelayandSumBeamforming2008
+Warning--empty year in klemmImprovedDelayandSumBeamforming2008
+Warning--empty journal in makladNeighborhoodBasedAlgorithmFacilitate2012
+Warning--empty year in makladNeighborhoodBasedAlgorithmFacilitate2012
+Warning--empty journal in bourquiPrototypeSystemMeasuring2012
+Warning--empty year in bourquiPrototypeSystemMeasuring2012
 
 Done.
-You've used 2 entries,
+You've used 8 entries,
             4087 wiz_defined-function locations,
-            835 strings with 7799 characters,
-and the built_in function-call counts, 1150 in all, are:
-= -- 86
-> -- 25
-< -- 3
-+ -- 12
-- -- 6
-* -- 69
-:= -- 196
-add.period$ -- 3
-call.type$ -- 2
-change.case$ -- 1
-chr.to.int$ -- 0
-cite$ -- 5
-duplicate$ -- 89
-empty$ -- 79
-format.name$ -- 7
-if$ -- 239
+            869 strings with 9553 characters,
+and the built_in function-call counts, 5933 in all, are:
+= -- 446
+> -- 189
+< -- 37
++ -- 96
+- -- 40
+* -- 314
+:= -- 848
+add.period$ -- 16
+call.type$ -- 8
+change.case$ -- 7
+chr.to.int$ -- 66
+cite$ -- 22
+duplicate$ -- 448
+empty$ -- 427
+format.name$ -- 47
+if$ -- 1351
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 20
-newline$ -- 31
-num.names$ -- 2
-pop$ -- 47
+int.to.str$ -- 8
+missing$ -- 92
+newline$ -- 51
+num.names$ -- 8
+pop$ -- 236
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 84
+skip$ -- 449
 stack$ -- 0
-substring$ -- 13
-swap$ -- 66
-text.length$ -- 3
+substring$ -- 201
+swap$ -- 355
+text.length$ -- 15
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 2
-warning$ -- 3
-while$ -- 3
-width$ -- 3
-write$ -- 41
-(There were 5 warnings)
+type$ -- 8
+warning$ -- 14
+while$ -- 23
+width$ -- 9
+write$ -- 94
+(There were 14 warnings)

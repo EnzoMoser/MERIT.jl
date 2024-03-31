@@ -1,0 +1,46 @@
+<mxfile host="65bd71144e" scale="3" border="0">
+    <diagram id="GgbF_YsU5TmStQ3wo0LS" name="Page-1">
+        <mxGraphModel dx="411" dy="247" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="583" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="21" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;dashed=1;fillColor=none;opacity=75;strokeWidth=0.5;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="40" width="200" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=1;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;fillColor=none;rotation=270;strokeColor=default;dashPattern=1 2;" parent="1" vertex="1">
+                    <mxGeometry x="432" y="130" width="16" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="332" y="230" width="16" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="" style="verticalLabelPosition=bottom;shadow=0;dashed=1;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.radio.aerial_-_antenna_1;fillColor=none;rotation=315;strokeWidth=1;dashPattern=1 2;" parent="1" vertex="1">
+                    <mxGeometry x="402" y="200" width="16" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeWidth=1;fillColor=#000000;opacity=75;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="120" width="10" height="10" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="" style="endArrow=classic;html=1;strokeWidth=0.9;startSize=6;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endSize=1;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="338" y="230" as="sourcePoint"/>
+                        <mxPoint x="353.00000000000006" y="130" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="59" value="" style="endArrow=none;html=1;strokeWidth=0.9;startSize=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endSize=1;startArrow=classicThin;startFill=1;endFill=0;dashed=1;dashPattern=1 2;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="342" y="231" as="sourcePoint"/>
+                        <mxPoint x="357" y="131" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="60" value="" style="curved=1;endArrow=classic;html=1;strokeColor=default;startSize=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="343" y="253" as="sourcePoint"/>
+                        <mxPoint x="453" y="143" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="453" y="243"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

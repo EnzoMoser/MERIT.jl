@@ -48,7 +48,7 @@ ability of the M4 system to localize a lesion as it correlated with the location
 team also divided the group into pre-/peri- and post- menopausal women and found that the sensitivity was 75\% and 73\%
 respectively. However, the reliability of these results are called into question when considering the sample size of the
 study. Given a sample size of 86, and assuming a normal distribution and that the results are statistically significant
-($p < 0.05$, Z = 1.96), a 10.58\% margin of error was calculated. While this may not be enough to conclusively prove
+($p < 0.05$, Z = 1.96), a 7.11\% margin of error was calculated. While this may not be enough to conclusively prove
 that the M4 system is a viable alternative to Mammograms, it is enough to show promise. With a larger sample size, this
 margin of error could be narrowed further.
 
@@ -102,3 +102,38 @@ participants had a positive outlook on the system. 23 out of the 25 women said t
 to other women and all of the women agreed that the information provided was clear and well understood.
 
 \subsection{TSAR}
+The third and final system considered for the project was the TSAR system \cite{e.c.fearMicrowaveBreastImaging2013}. Standing for Tissue Sensing Adaptive Radar,
+this system was developed by the University of Calgary to address some of the shortcomings of the previous two systems.
+In the MERIT and Wavelia systems, reflections from the skin can muddy the data and can lead to artifacts in the final
+image. In order to get around this, both systems take an additional scan, offset by a fixed rotational amount in the
+coronal plane. The idea being, that any reflections that appear on the first scan would appear with similar amplitude in
+the second scan at the same time position, while the tumor would show in a different place, provided that the tumor
+doesn't lie on the axis of rotation. This method is known as Rotational Subtraction
+\cite{klemmImprovedDelayandSumBeamforming2008}. The TSAR system, on the other hand, makes use of an adaptive algorithm
+that instead estimates the skin response at an antenna as the weighted sum of the responses from the neighboring
+antennas. This skin response can then be subtracted from the current antenna to remove the reflection artifacts
+\cite{makladNeighborhoodBasedAlgorithmFacilitate2012}. \hfill \break
+
+Like the previous two systems, patients lie in the prone position on the examination table, with their breast being
+submerged in an immersion liquid. However, unlike the previous two systems, the TSAR operates in a monostatic
+configuration. In this setup, there is only one antenna that acts as both the transmitting and the receiving antenna.
+This antenna, usually fixed on some type of rotating apparatus, would rotate around the breast to image a section. It
+would then step vertically by a fixed amount and repeat the previous step, eventually imaging the entire breast. The
+TSAR system also operates on a much wider section of the UWB spectrum, from 50 MHz to 15 GHz, with the frequency data
+being collected by a VNA. The system also makes use of a laser in order to help with the 3D reconstruction of the breast
+during post-processing. The prototype setup can be seen in Figure \ref{fig:TSARPrototype} \hfill \break
+
+\begin{figure}
+    \includegraphics[width=0.5\textwidth]{TSARPrototype.png}
+    \centering
+    \caption{The TSAR Prototype \cite{bourquiPrototypeSystemMeasuring2012}}
+    \label{fig:TSARPrototype}
+\end{figure}
+
+The benefit of the monostatic configuration is that the number of antenna locations per row and the number of rows are
+parameters that can be tweaked depending on whether the radiologist would want a quicker scan or higher precision. One
+can imagine the scenario of a rapid screening center as part of a national screening program where the speed of the scan
+is valued over the precision of the scan. As such this provides a notable benefit over the previous two systems. The
+clinical trial conducted by this study was extremely limited, only including 8 successfully imaged patients. Due to the
+low sample size, one can't reliably say whether this system and its adaptive reflection-suppressing algorithm can
+outperform the other two systems in terms of accuracy, although the TSAR system does show promise. \hfill 

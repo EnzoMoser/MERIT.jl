@@ -32,4 +32,41 @@ A.~W. Preece, I.~Craddock, M.~Shere, L.~Jones, and H.~L. Winton, ``{{MARIA
   M4}}: Clinical evaluation of a prototype ultrawideband radar scanner for
   breast cancer detection.'' vol.~3, no.~3, p. 033502.
 
+\bibitem{alsbouMedicalImagingSystem2023}
+\BIBentryALTinterwordspacing
+N.~Alsbou, K.~Cisse, C.~Cox, M.~Akinbola, and I.~Ali, ``Medical {{Imaging
+  System Design}} using {{Microwave Antennas}} and {{Portable Platform}},'' in
+  \emph{2023 {{IEEE}} 17th {{International Symposium}} on {{Medical
+  Information}} and {{Communication Technology}} ({{ISMICT}})}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, pp. 1--5. [Online]. Available:
+  \url{https://ieeexplore.ieee.org/document/10152069/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{moloneyWaveliaMicrowaveBreast2021}
+B.~M. Moloney, P.~F. McAnena, S.~M. Elwahab, A.~Fasoula, L.~Duchesne, J.~D.
+  Gil~Cano, C.~Glynn, A.~O'Connell, R.~Ennis, A.~J. Lowery, and M.~J. Kerin,
+  ``The {{Wavelia Microwave Breast Imaging}} system-tumour discriminating
+  features and their clinical usefulness.'' vol.~94, no. 1128, p. 20210907.
+
+\bibitem{e.c.fearMicrowaveBreastImaging2013}
+{E. C. Fear}, {J. Bourqui}, {C. Curtis}, {D. Mew}, {B. Docktor}, and {C.
+  Romano}, ``Microwave {{Breast Imaging With}} a {{Monostatic Radar-Based
+  System}}: {{A Study}} of {{Application}} to {{Patients}},'' vol.~61, no.~5,
+  pp. 2119--2128.
+
+\bibitem{klemmImprovedDelayandSumBeamforming2008}
+M.~Klemm, I.~Craddock, J.~Leendertz, A.~Preece, and R.~Benjamin, ``Improved
+  {{Delay-and-Sum Beamforming Algorithm}} for {{Breast Cancer Detection}},''
+  vol. 2008.
+
+\bibitem{makladNeighborhoodBasedAlgorithmFacilitate2012}
+B.~Maklad, C.~Curtis, E.~Fear, and G.~Messier, ``Neighborhood-{{Based
+  Algorithm}} to {{Facilitate}} the {{Reduction}} of {{Skin Reflections}} in
+  {{Radar-Based Microwave Imaging}},'' vol.~39, pp. 115--139.
+
+\bibitem{bourquiPrototypeSystemMeasuring2012}
+J.~Bourqui, J.~Sill, and E.~Fear, ``A {{Prototype System}} for {{Measuring
+  Microwave Frequency Reflections}} from the {{Breast}},'' vol. 2012, p.
+  851234.
+
 \end{thebibliography}
