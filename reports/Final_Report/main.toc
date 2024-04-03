@@ -5,3 +5,6 @@
 \contentsline {subsection}{\numberline {1.1.1}MARIA M4}{2}{subsection.1.1.1}%
 \contentsline {subsection}{\numberline {1.1.2}Wavelia}{3}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}TSAR}{5}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Beamformers}{6}{subsection.1.1.4}%
+\contentsline {subsubsection}{Delay and Sum}{7}{figure.caption.12}%
+\contentsline {subsubsection}{Weighted Delay and Sum Beamformer}{8}{equation.1.2}%

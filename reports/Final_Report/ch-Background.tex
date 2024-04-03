@@ -137,3 +137,105 @@ is valued over the precision of the scan. As such this provides a notable benefi
 clinical trial conducted by this study was extremely limited, only including 8 successfully imaged patients. Due to the
 low sample size, one can't reliably say whether this system and its adaptive reflection-suppressing algorithm can
 outperform the other two systems in terms of accuracy, although the TSAR system does show promise. \hfill 
+
+\subsection{Beamformers}
+Without loss of generality, imagine a line array of wave emitters. If all of these begin to emit at the same time, the
+individual waves would constructively and destructively interfere with each other as their peaks and troughs align and
+misalign. This property can be exploited in such a way so that the waves constructively interfere in one direction and
+destructively interfere in all the other directions, effectively aiming the beam in a particular direction. A diagram
+of this can be seen in Figure \ref{fig:phasedArray}.
+
+
+\begin{figure}[!h]
+    \includegraphics[width=0.5\textwidth]{phasedArray.png}
+    \centering
+    \caption{Phased Array Diagram}
+    \label{fig:phasedArray}
+\end{figure}
+
+This is the forward beamforming process, but one can also consider the reverse process. Considering Figure \ref{fig:pointEmitter} imagine a point emitter
+embedded in a 2D plane, that radiates circular waves evenly in all directions. Now imagine a line array that receives
+this wave. Due to the diffusion of the wave through space, the same wave will appear at each antenna at different times. This would
+manifest as the same amplitude appearing at different times, in the signal graphs, even though the impulses come from
+the same wave. Reverse beamforming then, is the process of varying the phase and amplitude of the received signals in
+order to estimate the intensity at the location where the wave originated. Inverse beamforming is a process used in many
+fields such as radio astronomy and seismic imaging, so there already is a wealth of research and plenty of algorithms to
+choose from. The rest of this section will talk about the various beamformers that are popular in the field of microwave
+imaging. \hfill \break
+
+\begin{figure}
+    \includegraphics[width=0.6\textwidth]{pointEmitter.png}
+    \centering
+    \caption{Point Emitter with a Phased Array}
+    \label{fig:pointEmitter}
+\end{figure}
+
+\subsubsection{Delay and Sum}
+The Delay and Sum (DAS) beamformer is the template for most other beamforming algorithms in the field. The DAS
+beamformer posits that every antenna has recorded the same source and that the delay in each signal is
+due to the relative distance between the receiving antenna ($\mathcal{A}'$) and the transmitting antenna
+($\mathcal{A}$). As such, if one was to delay the signals by the correct amount, and sum over all the received signals,
+one would be able to estimate the energy at the source. This same idea can be applied to signals received from the
+aforementioned imaging systems. Since these work in the frequency domain, the following explanations and equations will
+work on this assumption, but these equations can easily be converted to the relative time domain functions. As stated
+before a point from the imaging domain is chosen ($r$). We then estimate the path delay of the wave from the
+transmitting antenna to the receiving antenna along the path.
+
+\begingroup
+\Large
+\begin{equation}
+    \tau_{\mathcal{A}_i', \mathcal{A}_j}(r) = \frac{\epsilon}{c_0} \left [\lVert \mathcal{A}' - r \rVert + \lVert r - \mathcal{A}\rVert\right ]
+    \label{eq:PathDelayDAS}
+\end{equation}
+\endgroup
+
+
+$\epsilon$ is the relative permittivity of the medium. In reality, this value changes from patient to patient and even
+varies within the breast of each patient depending on the path taken. However in order to achieve a practical beamformer, one must estimate an
+averaged relative permittivity value for the entire breast, we will label this as $\epsilon_i$ and it will parametrize
+the DAS beamformer. As well as this, equation \ref{eq:PathDelayDAS} assumes a straight-line path between the point and
+the transmitting and receiving antennas. This is rarely the case, however, in practice making this assumption
+only yields a maximal error of 3mm in position while greatly simplifying the delay calculations
+\cite{oloughlinParameterSearchAlgorithms2017}. Using this, the received signals are delayed and then summed across all
+stepped input frequencies. This result is then squared to give us the energy at the chosen point. Thus the point is
+imaged, This process is repeated for all the points in the imaging domain, overall the DAS beamforming equation can be
+represented as such:
+
+\begingroup
+\Large
+\begin{equation}
+    I_{\epsilon_i}(r) = \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}} S_{a, a'}[\omega]e^{j\omega \tau_{\epsilon_i, a, a'}(r)}\right ]^2
+    \label{eq:DASBeamformer}
+\end{equation}
+\endgroup
+
+\subsubsection{Weighted Delay and Sum Beamformer}
+The Weighted Delay and Sum (WDAS) Beamformer can be considered as a further generalization of the DAS beamformer.
+In equation \ref{eq:DASBeamformer} all channels contribute equally to the final result due to the implicit weighting
+factor of 1. The equation also assumes that all signals travel along similar paths, and therefore a constant speed (due
+to the fixed $\epsilon_i$). In reality, this is only true for antennas that are closer together. The greater the
+distance between the transmitting and receiving antennas, the greater the chance, that the waves deviate from the straight line
+path, ergo the estimation of the speed and subsequently the delay along that path will be wrong. Essentially, the
+algorithm needs to have some mechanism that would penalize the signal from antennas that are further away and reward
+signals from antennas that are close by. This is what S.A. Shah Karam et al proposed in their 2021 paper, "Weighted delay-and-sum beamformer for breast cancer detection using
+microwave imaging" \cite{shahkaramWeightedDelayandsumBeamformer2021}. They define a weighting factor based on the
+transmitter-receiver distance ($TRD_i$) for
+the $t^{th}$ observation:
+
+\begin{equation}
+    w_i = \alpha -  \lvert r_{T_{r_i}} - r_{R_{c_i}} \rvert
+\end{equation}
+
+In order to reward signals from antennas that are close and penalize antennas that are far away one must subtract the
+$TRD_i$ from a positive constant, $\alpha$. This parameter is patient-specific and must be changed based on the homo- or
+heterogeneity of the breast tissue. The paper used an $\alpha$ of 20cm for their results. One important thing to note is
+that these weighting factors are data-independent. Since the $TRD_i$ relies only on the distance between the antennas,
+these weighting factors can be computed beforehand. Another thing of note is that these weighting factors are
+independent of the chosen focal point as well, which means we can compute a normalized weight and apply it to the signal
+before employing the traditional DAS algorithm. The normalized weighting factor $\hat{w}_i$ is calculated as follows,
+where $M$ is the number of channels:
+\begin{equation}
+    \hat{w}_i = \frac{w_i}{\sum_{i=0}^{M} w_i}
+\end{equation} 
+
+\subsubsection{Delay Multiply and Sum}
