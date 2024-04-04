@@ -124,7 +124,7 @@ being collected by a VNA. The system also makes use of a laser in order to help 
 during post-processing. The prototype setup can be seen in Figure \ref{fig:TSARPrototype} \hfill \break
 
 \begin{figure}
-    \includegraphics[width=0.5\textwidth]{TSARPrototype.png}
+    \includegraphics[width=0.65\textwidth]{TSARPrototype.png}
     \centering
     \caption{The TSAR Prototype \cite{bourquiPrototypeSystemMeasuring2012}}
     \label{fig:TSARPrototype}
@@ -182,7 +182,7 @@ before a point from the imaging domain is chosen ($r$). We then estimate the pat
 transmitting antenna to the receiving antenna along the path.
 
 \begingroup
-\Large
+\large
 \begin{equation}
     \tau_{\mathcal{A}_i', \mathcal{A}_j}(r) = \frac{\epsilon}{c_0} \left [\lVert \mathcal{A}' - r \rVert + \lVert r - \mathcal{A}\rVert\right ]
     \label{eq:PathDelayDAS}
@@ -202,12 +202,15 @@ imaged, This process is repeated for all the points in the imaging domain, overa
 represented as such:
 
 \begingroup
-\Large
+\large
 \begin{equation}
     I_{\epsilon_i}(r) = \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}} S_{a, a'}[\omega]e^{j\omega \tau_{\epsilon_i, a, a'}(r)}\right ]^2
     \label{eq:DASBeamformer}
 \end{equation}
 \endgroup
+The DAS algorithm was the chosen beamformer for the MERIT.jl library due to its simplicity to implement and the time
+constraints I had to work with. However, two other beamformers will be discussed below and will be compared with the DAS
+algorithm.
 
 \subsubsection{Weighted Delay and Sum Beamformer}
 The Weighted Delay and Sum (WDAS) Beamformer can be considered as a further generalization of the DAS beamformer.
@@ -222,9 +225,12 @@ microwave imaging" \cite{shahkaramWeightedDelayandsumBeamformer2021}. They defin
 transmitter-receiver distance ($TRD_i$) for
 the $t^{th}$ observation:
 
+\begingroup
+\large
 \begin{equation}
     w_i = \alpha -  \lvert r_{T_{r_i}} - r_{R_{c_i}} \rvert
 \end{equation}
+\endgroup
 
 In order to reward signals from antennas that are close and penalize antennas that are far away one must subtract the
 $TRD_i$ from a positive constant, $\alpha$. This parameter is patient-specific and must be changed based on the homo- or
@@ -234,8 +240,46 @@ these weighting factors can be computed beforehand. Another thing of note is tha
 independent of the chosen focal point as well, which means we can compute a normalized weight and apply it to the signal
 before employing the traditional DAS algorithm. The normalized weighting factor $\hat{w}_i$ is calculated as follows,
 where $M$ is the number of channels:
+
+\begingroup
+\large
 \begin{equation}
     \hat{w}_i = \frac{w_i}{\sum_{i=0}^{M} w_i}
 \end{equation} 
+\endgroup
 
 \subsubsection{Delay Multiply and Sum}
+The Delay Multiply and Sum (DMAS) algorithm was first proposed by Hooi Been Lim et al in 2008
+\cite{beenlimConfocalMicrowaveImaging2008}. Instead of considering each channel in isolation across the frequency bands,
+the DMAS algorithm proposes a pair-wise multiplication of the delayed signals before summing across the frequency range.
+For a focal point $r$ the equation would be as follows:
+
+\begingroup
+\large
+\begin{equation}
+    I_{\epsilon_i}(r) = \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}}\sum_{\mathcal{B}'}\sum_{\mathcal{B}} S_{a, a'}[\omega]e^{j\omega \tau_{\epsilon_i, a, a'}(r)} S_{b, b'}[\omega]e^{j\omega \tau_{\epsilon_i, b, b'}(r)}\right ]^2
+    \label{eq:DMASBeamformer}
+\end{equation}
+\endgroup
+
+Here $\mathcal{A}' = \mathcal{B'}'$ are the receiving antennas and $\mathcal{A} = \mathcal{B}$ are the transmitting
+antennas. The paper then compared the DMAS algorithm with the traditional DAS algorithm and found that the pairwise
+multiplication of the delayed signals before summation provided greater contrast and sharper results, greatly increasing
+the SCR of the image. Figure \ref{fig:DMASDASComp} shows the differences between the DAS and DMAS algorithms and most
+importantly, how the DMAS beamformer provides a greatly reduced noise floor.
+
+\begin{figure}[!h]
+    \includegraphics[width=0.7\textwidth]{DMASDASComp.png}
+    \centering
+    \caption{Comparason between DAS (a, c) and DMAS (b, d) Beamformers}
+    \label{fig:DMASDASComp}
+\end{figure}
+
+The original paper never provided an explanation for the surprising effectiveness of the algorithm, leaving
+the explanation for a future paper that they never wrote. However, this did not stop the wider research community from
+providing possible explanations as to how the DMAS algorithm provides the results it does. One explanation provided by
+Prof O'Loughlin posits that the pairwise multiplication rewards signals that have a high degree of coherency while
+disproportionately penalizing incoherent signals. In essence, the coherent signals get brightened a lot more than the
+incoherent signals would \cite{oloughlinComparingRadarBasedBreast2019}. G. Matrone et al backs up this idea by
+noting that the DMAS beamformer, after the signals are time aligned like in DAS, is the autocorrelation function of the
+receiver antenna with the auto terms excluded \cite{g.matroneDelayMultiplySum2015}.

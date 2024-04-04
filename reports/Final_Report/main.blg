@@ -10,6 +10,9 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
 Warning--I didn't find a database entry for "oloughlinParameterSearchAlgorithms2017"
 Warning--I didn't find a database entry for "shahkaramWeightedDelayandsumBeamformer2021"
+Warning--I didn't find a database entry for "beenlimConfocalMicrowaveImaging2008"
+Warning--I didn't find a database entry for "oloughlinComparingRadarBasedBreast2019"
+Warning--I didn't find a database entry for "g.matroneDelayMultiplySum2015"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -31,7 +34,7 @@ Warning--empty year in bourquiPrototypeSystemMeasuring2012
 Done.
 You've used 8 entries,
             4087 wiz_defined-function locations,
-            873 strings with 9713 characters,
+            879 strings with 9917 characters,
 and the built_in function-call counts, 5933 in all, are:
 = -- 446
 > -- 189
@@ -70,4 +73,4 @@ warning$ -- 14
 while$ -- 23
 width$ -- 9
 write$ -- 94
-(There were 16 warnings)
+(There were 19 warnings)

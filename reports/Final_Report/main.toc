@@ -8,3 +8,4 @@
 \contentsline {subsection}{\numberline {1.1.4}Beamformers}{6}{subsection.1.1.4}%
 \contentsline {subsubsection}{Delay and Sum}{7}{figure.caption.12}%
 \contentsline {subsubsection}{Weighted Delay and Sum Beamformer}{8}{equation.1.2}%
+\contentsline {subsubsection}{Delay Multiply and Sum}{9}{equation.1.4}%
