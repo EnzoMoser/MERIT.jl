@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  4 APR 2024 14:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  4 APR 2024 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1039,7 +1039,7 @@ LaTeX Info: Redefining \nameref on input line 125.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./ch-Title.tex
-<./Images//Trinity_RGB_transparent_main.png, id=35, 412.6617pt x 142.3719pt>
+<./Images//Trinity_RGB_transparent_main.png, id=47, 412.6617pt x 142.3719pt>
 File: ./Images//Trinity_RGB_transparent_main.png Graphic file (type png)
 <use ./Images//Trinity_RGB_transparent_main.png>
 Package pdftex.def Info: ./Images//Trinity_RGB_transparent_main.png  used on in
@@ -1098,7 +1098,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-<./Images//multistaic.png, id=119, 668.4975pt x 668.4975pt>
+<./Images//multistaic.png, id=133, 668.4975pt x 668.4975pt>
 File: ./Images//multistaic.png Graphic file (type png)
 <use ./Images//multistaic.png>
 Package pdftex.def Info: ./Images//multistaic.png  used on input line 24.
@@ -1106,7 +1106,7 @@ Package pdftex.def Info: ./Images//multistaic.png  used on input line 24.
 [2.8
 
  <./Images//multistaic.png>]
-<./Images//MARIA_M4.png, id=132, 383.93437pt x 230.36063pt>
+<./Images//MARIA_M4.png, id=146, 383.93437pt x 230.36063pt>
 File: ./Images//MARIA_M4.png Graphic file (type png)
 <use ./Images//MARIA_M4.png>
 Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 39.
@@ -1116,7 +1116,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--61
 
  []
 
-<./Images//Wavelia.png, id=137, 472.76625pt x 418.56375pt>
+<./Images//Wavelia.png, id=151, 472.76625pt x 418.56375pt>
 File: ./Images//Wavelia.png Graphic file (type png)
 <use ./Images//Wavelia.png>
 Package pdftex.def Info: ./Images//Wavelia.png  used on input line 63.
@@ -1127,7 +1127,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 69--83
  []
 
 [3.9 <./Images//MARIA_M4.png>]
-<./Images//LeveledMultistatic.png, id=149, 537.80925pt x 361.35pt>
+<./Images//LeveledMultistatic.png, id=163, 537.80925pt x 361.35pt>
 File: ./Images//LeveledMultistatic.png Graphic file (type png)
 <use ./Images//LeveledMultistatic.png>
 Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 8
@@ -1143,13 +1143,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--125
 
  []
 
-<./Images//TSARPrototype.png, id=163, 144.54pt x 99.4917pt>
+<./Images//TSARPrototype.png, id=178, 144.54pt x 99.4917pt>
 File: ./Images//TSARPrototype.png Graphic file (type png)
 <use ./Images//TSARPrototype.png>
 Package pdftex.def Info: ./Images//TSARPrototype.png  used on input line 127.
 (pdftex.def)             Requested size: 294.4266pt x 202.67494pt.
 [5.11]
-<./Images//phasedArray.png, id=175, 523.9575pt x 523.9575pt>
+<./Images//phasedArray.png, id=189, 523.9575pt x 523.9575pt>
 File: ./Images//phasedArray.png Graphic file (type png)
 <use ./Images//phasedArray.png>
 Package pdftex.def Info: ./Images//phasedArray.png  used on input line 150.
@@ -1160,7 +1160,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--165
  []
 
 [6.12 <./Images//TSARPrototype.png> <./Images//phasedArray.png>]
-<./Images//pointEmitter.png, id=182, 695.59875pt x 785.93625pt>
+<./Images//pointEmitter.png, id=196, 695.59875pt x 785.93625pt>
 File: ./Images//pointEmitter.png Graphic file (type png)
 <use ./Images//pointEmitter.png>
 Package pdftex.def Info: ./Images//pointEmitter.png  used on input line 167.
@@ -1179,7 +1179,7 @@ undefined on input line 224.
 LaTeX Warning: Citation `beenlimConfocalMicrowaveImaging2008' on page 9 undefin
 ed on input line 253.
 
-<./Images//DMASDASComp.png, id=209, 823.075pt x 576.1525pt>
+<./Images//DMASDASComp.png, id=222, 823.075pt x 576.1525pt>
 File: ./Images//DMASDASComp.png Graphic file (type png)
 <use ./Images//DMASDASComp.png>
 Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 272.
@@ -1214,13 +1214,13 @@ See the caption package documentation for explanation.
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 134265E35F56A75B2A5458DEB3216ABD;738.
+(rerunfilecheck)             Checksum: 996C101487F32DEDFED6147D9DE49981;1297.
  ) 
 Here is how much of TeX's memory you used:
- 26714 strings out of 478287
- 497276 string characters out of 5849289
- 804398 words of memory out of 5000000
- 44317 multiletter control sequences out of 15000+600000
+ 26717 strings out of 478287
+ 497323 string characters out of 5849289
+ 804478 words of memory out of 5000000
+ 44320 multiletter control sequences out of 15000+600000
  485522 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,6n,117p,1193b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1245,10 +1245,10 @@ onts/type1/public/cm-super/sfss1728.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sftt1200.pfb>
-Output written on main.pdf (17 pages, 1998028 bytes).
+Output written on main.pdf (17 pages, 1998368 bytes).
 PDF statistics:
- 339 PDF objects out of 1000 (max. 8388607)
- 251 compressed objects within 3 object streams
+ 351 PDF objects out of 1000 (max. 8388607)
+ 263 compressed objects within 3 object streams
  52 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 142 words of extra memory for PDF output out of 10000 (max. 10000000)
 
