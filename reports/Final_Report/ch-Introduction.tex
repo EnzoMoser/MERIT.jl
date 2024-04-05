@@ -1,26 +1,23 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
-MERIT.jl was motivated by a need to streamline the development process for new imaging algorithms. Currently, any
-researcher who wants to code a novel microwave imaging algorithm not only has to code the algorithm itself but also has
-to code all the helper functions required to produce an image. All this time fixing bugs subtracts from the time that could
-be spent fine-tuning the algorithm and choosing an optimal parameter set. The use of such open-source software has seen
-widespread use in a myriad of fields. PsychoPy and PsyToolkit are two such frameworks that revolutionized the field of
-psychological sciences. By implementing commonly used functions and scripts, they have allowed researchers to design and
-run experiments in a matter of hours. It has also allowed researchers who have little to no programming experience
-to get up and running with automated data processing, thereby allowing them to focus more on the quality of their
-experiment. \cite{stoetPsyToolkitTestimonials} \hfill \break
+MERIT.jl was motivated by a need to increase the interoperability between the data produced from systems and the
+programs that would be able to process them. Currently, any researcher who wants to design a novel microwave imaging
+algorithm or test the efficacy of their new systems has to spend time and effort creating entirely new software suites.
+More often than not these programs either tend to be closed source, or not compatible with other systems mainly because
+there are not many incentives for a researcher to invest the time required in creating a truly configurable and
+extensible open-source system. With the rise and success of clinical trials in microwave imaging, this problem is only
+going to get worse as more and more systems are developed.  \hfill \break
 
-The use of microwaves in imaging has started to gain interest amongst the medical community as an alternative and safer
-form of imaging when compared to more traditional methods such as X-rays. Clinical trials such as the ``MARIA M4''
-system has proven that such microwave-based methods are more comfortable and are a viable alternative to current
-mammograms \cite{preeceMARIAM4Clinical2016}. Mammography is not the only area where this imaging modality is being
-trailed. It is seeing use in areas such as traumatic brain injury detection, bone degradation and tumor detection
-\cite{alsbouMedicalImagingSystem2023}. While the hardware has proved effective, the software leaves a lot to be desired.
-\hfill \break
+The use of such open-source software has seen widespread use in a myriad of fields. PsychoPy and PsyToolkit are two such
+frameworks that revolutionized the field of psychological sciences. By implementing commonly used functions and scripts,
+they have allowed researchers to design and run experiments in a matter of hours. It has also allowed researchers who
+have little to no programming experience to get up and running with automated data processing, thereby allowing them to
+focus more on the quality of their experiment \cite{stoetPsyToolkitTestimonials}. \hfill \break
 
 That is where this project comes in. MERIT.jl aims to be an easy-to-use, extensible and featureful library. The goal
 being that anyone, regardless of coding experience, would be able to quickly create a script that allows them to process
-and visualize the scan data they have collected. The following sections will contain: 
+and visualize the scan data they have collected, as well as allowing more experienced coders to develop and test new
+algorithms with ease. The following sections will contain: 
 
 \begin{itemize}
     \item A literature review on the existing microwave imaging systems
@@ -29,3 +26,5 @@ and visualize the scan data they have collected. The following sections will con
     \item An examination of the results and possible future work
 \end{itemize}
 
+The source code and the library are hosted on GitHub for anyone to view and amend:
+\url{https://github.com/AaronDinesh/MERIT.jl}

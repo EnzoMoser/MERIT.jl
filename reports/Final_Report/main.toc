@@ -3,9 +3,14 @@
 \contentsline {chapter}{Background}{2}{chapter*.5}%
 \contentsline {section}{\numberline {1.1}Literature Review}{2}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}MARIA M4}{2}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Wavelia}{3}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.2}Wavelia}{4}{subsection.1.1.2}%
 \contentsline {subsection}{\numberline {1.1.3}TSAR}{5}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Beamformers}{6}{subsection.1.1.4}%
+\contentsline {subsection}{\numberline {1.1.4}Beamformers}{7}{subsection.1.1.4}%
 \contentsline {subsubsection}{Delay and Sum}{7}{figure.caption.12}%
-\contentsline {subsubsection}{Weighted Delay and Sum Beamformer}{8}{equation.1.2}%
+\contentsline {subsubsection}{Weighted Delay and Sum Beamformer}{9}{equation.1.2}%
 \contentsline {subsubsection}{Delay Multiply and Sum}{9}{equation.1.4}%
+\contentsline {chapter}{Julia}{11}{chapter*.14}%
+\contentsline {section}{\numberline {1.2}Why Julia?}{11}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Python}{11}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}MATLAB}{12}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Julia}{12}{subsection.1.2.3}%

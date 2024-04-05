@@ -1,9 +1,13 @@
 \chapter*{Background}
 \addcontentsline{toc}{chapter}{Background}
 \section{Literature Review}
-In order to understand the design requirements of the library, a literature review needed to be performed. The scope was
-narrowed down to 3 systems that showed promise and were broadly representative of the antenna configuration that future
-systems would adopt. Most systems will adopt one of the following setups
+In order to understand the design requirements of the library, a literature review needed to be performed. Due to the
+relative infancy of the field, there are various competing configurations with no clear winner in sight. However, some
+patterns can still be gleaned from current clinical trials which are broadly representative of the direction the field
+is moving in. In all of these systems, the patient to be scanned would lie in the prone position on an imaging table.
+The patient would then pass their breast through a hole in the table into some type of imaging apparatus. The imaging
+apparatus varies slightly from system to system, but they all contain some type of antenna array that is used for the
+imaging process. Most systems will adopt one of the following antenna setups
 \begin{enumerate}
     \item Monostatic
     \item Leveled Multistatic
@@ -27,12 +31,17 @@ to a hemisphere of antennas around the breast. \hfill
     \label{fig:MultistaticExample}
 \end{figure}
 
-\noindent As stated before, the MARIA M4 systems makes use of the UWB spectrum over a frequency range of 3.0 to 8.0 GHz. A
-VNA was used to step through the frequencies and collect the scans from the antenna. The system exploits the inherent
-symmetry in the antenna reciprocity to halve the number of channels (made of a transmitting and receiving antenna)
-collected, thereby speeding up the scan time. For the MARIA M4 system, this equates to a 1770 reduction in the number of
-channels collected. Figure \ref{fig:MARIAM4}, shows the antenna array used in the M4 system (a), as well as the M5
-system (c) which is an integrated package.
+\noindent As stated before, the MARIA M4 system makes use of the UWB spectrum over a frequency range of 3.0 to 8.0 GHz.
+A commercial-grade Vector Network Analyzer (VNA) was used as the system signal source. The VNA, operating in a stepped
+continuous wave mode, was used to both produce the transmitted sine waves and record the frequency and phase of the
+reflected waves at the receiving antennas. The choice of a commercial-grade VNA is indicative of the prototype nature of
+the MARIA M4 system, where easy reconfigurability of the frequency imaging range would be of higher importance than
+price. While not explicitly stated, one would presume that the M5 system would replace the VNA with some application
+specific hardware to reduce the overall cost of the system. The M4 system exploits the inherent symmetry in the antenna
+reciprocity to halve the number of channels (made of a transmitting and receiving antenna) collected, thereby speeding
+up the scan time. For the MARIA M4 system, this equates to a 1770 reduction in the number of channels collected. Figure
+\ref{fig:MARIAM4}, shows the antenna array used in the M4 system (a), as well as the M5 system (c) which is an
+integrated package.
 
 
 \begin{figure}
@@ -42,15 +51,20 @@ system (c) which is an integrated package.
     \label{fig:MARIAM4}
 \end{figure}
 
-\noindent The team scanned 86 participants, with a mean age of 51.4 and a range of 24 - 78 years old. The M4 system showed a sensitivity of
-74\% (64/86) when compared with the "gold-standard' of an ultrasound. The "sensitivity" was determined based on the
-ability of the M4 system to localize a lesion as it correlated with the location in the ultrasound image. The research
-team also divided the group into pre-/peri- and post- menopausal women and found that the sensitivity was 75\% and 73\%
-respectively. However, the reliability of these results are called into question when considering the sample size of the
-study. Given a sample size of 86, and assuming a normal distribution and that the results are statistically significant
-($p < 0.05$, Z = 1.96), a 7.11\% margin of error was calculated. While this may not be enough to conclusively prove
-that the M4 system is a viable alternative to Mammograms, it is enough to show promise. With a larger sample size, this
-margin of error could be narrowed further.
+\noindent The team also conducted a clinical study in order to test the efficacy in women who already attend symptomatic
+breast care clinics. In total 86 patients were included with ages ranging from 24 - 78 years old; the mean age being
+51.4. The inclusion criteria for the study required that possible participants be clinically symptomatic, be able to be
+imaged by ultrasound and mammograms (these being the control), be able to lie in the prone position and have cup sizes
+within 310 to 850 ml. The types of lesions included in the study were mostly cysts and cancers, but some other
+conditions such as hematoma, lipoma and fibroadenoma were also included. The goal of the study was to test the
+sensitivity of the M4 system; the sensitivity metric being determined based on the ability of the system to localize a
+lesion as it correlated with the location in the ultrasound image. The M4 system showed a sensitivity of 74\% (64/86)
+when compared with the "gold-standard' of an ultrasound. The research team also divided the group into pre-/peri- and
+post- menopausal women and found that the sensitivity was 75\% and 73\% respectively. However, the reliability of these
+results are called into question when considering the sample size of the study. Given a sample size of 86, assuming
+a normal distribution and that the results are statistically significant ($p < 0.05$, Z = 1.96), a 7.11\% margin of
+error was calculated. While this may not be enough to conclusively prove that the M4 system is a viable alternative to
+Mammograms, it is enough to show promise. With a larger sample size, this margin of error could be narrowed further.
 
 \subsection{Wavelia}
 The second system that was considered was the Wavelia Microwave Breast Imaging System developed by MVG Industries
@@ -89,8 +103,14 @@ coplanar with a particular section. \hfill \break
 \end{figure}
 
 \noindent The Wavelia paper \cite{moloneyWaveliaMicrowaveBreast2021} conducted a feasibility study on 25 female
-participants. While the results aren't statistically significant, they do demonstrate the strengths of the Wavelia
-system. 11 of the participants had a biopsy confirmed carcinoma and out of these, the Walia system detected 9 lesions,
+participants who were recruited after presenting with symptoms to the Symptomatic Breast Unit at Galway University
+Hospital, Ireland. Their inclusion criteria required that participants to have a mammogram that was performed at the
+time of symptomatic presentation to the hospital, be capable of lying in the prone position for a length of 15 minutes,
+have a bra size larger than 32B and a breast size equivalent to a B cup. The final criteria required that the
+participant's submerged breast have enough margin between the breast and the cylindrical container in order to
+accommodate the transition liquid. This was determined by the clinician at the time of the trial. Out of the 25 patients
+who presented with a palpable lump, one patient's scan had to be removed, due to the lump being later classified as
+normal tissue. 11 of the participants had a biopsy confirmed carcinoma and out of these, the Walia system detected 9 lesions,
 with 7 being located to the appropriate region. Overall the system detected an abnormality in 21 of the 24 participants,
 leading to a sensitivity of 87.5\%. The researchers do note some limitations of the Walia system, namely it can't detect
 any lesions smaller than 10mm. This is significant since the size of the detected lesion plays a big factor when
@@ -257,7 +277,7 @@ For a focal point $r$ the equation would be as follows:
 \begingroup
 \large
 \begin{equation}
-    I_{\epsilon_i}(r) = \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}}\sum_{\mathcal{B}'}\sum_{\mathcal{B}} S_{a, a'}[\omega]e^{j\omega \tau_{\epsilon_i, a, a'}(r)} S_{b, b'}[\omega]e^{j\omega \tau_{\epsilon_i, b, b'}(r)}\right ]^2
+    I_{\epsilon_i}(r) = \sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}}\sum_{\mathcal{B}'}\sum_{\mathcal{B}} S_{a, a'}[\omega]e^{j\omega \tau_{\epsilon_i, a, a'}(r)} S_{b, b'}[\omega]e^{j\omega \tau_{\epsilon_i, b, b'}(r)}
     \label{eq:DMASBeamformer}
 \end{equation}
 \endgroup

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  4 APR 2024 14:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  5 APR 2024 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -918,46 +918,71 @@ ings
 \hv@boxLeftPage=\box78
 \hv@boxRightPage=\box79
 )
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count347
+\lst@gtempboxa=\box80
+\lst@token=\toks45
+\lst@length=\count348
+\lst@currlwidth=\dimen300
+\lst@column=\count349
+\lst@pos=\count350
+\lst@lostspace=\dimen301
+\lst@width=\dimen302
+\lst@newlines=\count351
+\lst@lineno=\count352
+\lst@maxwidth=\dimen303
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count353
+\lst@skipnumbers=\count354
+\lst@framebox=\box81
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box80
+\ttl@box=\box82
 \beforetitleunit=\skip85
 \aftertitleunit=\skip86
-\ttl@plus=\dimen300
-\ttl@minus=\dimen301
-\ttl@toksa=\toks45
-\titlewidth=\dimen302
-\titlewidthlast=\dimen303
-\titlewidthfirst=\dimen304
+\ttl@plus=\dimen304
+\ttl@minus=\dimen305
+\ttl@toksa=\toks46
+\titlewidth=\dimen306
+\titlewidthlast=\dimen307
+\titlewidthfirst=\dimen308
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
-25.
+48.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 125.
-LaTeX Font Info:    ... okay on input line 125.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 148.
+LaTeX Font Info:    ... okay on input line 148.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -995,17 +1020,17 @@ LaTeX Font Info:    ... okay on input line 125.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count347
-\scratchdimen=\dimen305
-\scratchbox=\box81
-\nofMPsegments=\count348
-\nofMParguments=\count349
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count350
-\MPscratchDim=\dimen306
-\MPnumerator=\count351
-\makeMPintoPDFobject=\count352
-\everyMPtoPDFconversion=\toks47
+\scratchcounter=\count355
+\scratchdimen=\dimen309
+\scratchbox=\box83
+\nofMPsegments=\count356
+\nofMParguments=\count357
+\everyMPshowfont=\toks47
+\MPscratchCnt=\count358
+\MPscratchDim=\dimen310
+\MPnumerator=\count359
+\makeMPintoPDFobject=\count360
+\everyMPtoPDFconversion=\toks48
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -1015,7 +1040,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 125.
+Package hyperref Info: Link coloring ON on input line 148.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1026,20 +1051,22 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count353
+\c@section@level=\count361
 )
-LaTeX Info: Redefining \ref on input line 125.
-LaTeX Info: Redefining \pageref on input line 125.
-LaTeX Info: Redefining \nameref on input line 125.
+LaTeX Info: Redefining \ref on input line 148.
+LaTeX Info: Redefining \pageref on input line 148.
+LaTeX Info: Redefining \nameref on input line 148.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count362
  (./ch-Title.tex
-<./Images//Trinity_RGB_transparent_main.png, id=47, 412.6617pt x 142.3719pt>
+<./Images//Trinity_RGB_transparent_main.png, id=67, 412.6617pt x 142.3719pt>
 File: ./Images//Trinity_RGB_transparent_main.png Graphic file (type png)
 <use ./Images//Trinity_RGB_transparent_main.png>
 Package pdftex.def Info: ./Images//Trinity_RGB_transparent_main.png  used on in
@@ -1052,7 +1079,7 @@ put line 13.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images//Trinity_RGB_tran
 sparent_main.png>])
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-36.
+59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -1060,7 +1087,7 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.155 \chapter
+l.178 \chapter
               *{Abstract} [1.2] [2.3
 
 ] [3.4] (./main.lof)
@@ -1077,122 +1104,138 @@ l.155 \chapter
 [5.6
 
 ] (./ch-Introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--12
+Underfull \hbox (badness 10000) in paragraph at lines 3--10
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--20
+Underfull \hbox (badness 10000) in paragraph at lines 11--16
 
  []
 
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-26.
+23.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )) (./ch-Background.tex [1.7
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
+Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
-<./Images//multistaic.png, id=133, 668.4975pt x 668.4975pt>
+<./Images//multistaic.png, id=157, 668.4975pt x 668.4975pt>
 File: ./Images//multistaic.png Graphic file (type png)
 <use ./Images//multistaic.png>
-Package pdftex.def Info: ./Images//multistaic.png  used on input line 24.
+Package pdftex.def Info: ./Images//multistaic.png  used on input line 28.
 (pdftex.def)             Requested size: 135.89185pt x 135.89021pt.
 [2.8
 
- <./Images//multistaic.png>]
-<./Images//MARIA_M4.png, id=146, 383.93437pt x 230.36063pt>
+]
+<./Images//MARIA_M4.png, id=169, 383.93437pt x 230.36063pt>
 File: ./Images//MARIA_M4.png Graphic file (type png)
 <use ./Images//MARIA_M4.png>
-Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 39.
+Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 48.
 (pdftex.def)             Requested size: 226.48413pt x 135.894pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--61
+ [3.9 <./Images//multistaic.png> <./Images//MARIA_M4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 70--75
 
  []
 
-<./Images//Wavelia.png, id=151, 472.76625pt x 418.56375pt>
+<./Images//Wavelia.png, id=184, 472.76625pt x 418.56375pt>
 File: ./Images//Wavelia.png Graphic file (type png)
 <use ./Images//Wavelia.png>
-Package pdftex.def Info: ./Images//Wavelia.png  used on input line 63.
+Package pdftex.def Info: ./Images//Wavelia.png  used on input line 77.
 (pdftex.def)             Requested size: 226.48413pt x 200.5187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--83
+Underfull \hbox (badness 10000) in paragraph at lines 83--97
 
  []
 
-[3.9 <./Images//MARIA_M4.png>]
-<./Images//LeveledMultistatic.png, id=163, 537.80925pt x 361.35pt>
+<./Images//LeveledMultistatic.png, id=188, 537.80925pt x 361.35pt>
 File: ./Images//LeveledMultistatic.png Graphic file (type png)
 <use ./Images//LeveledMultistatic.png>
-Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 8
-5.
+Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 9
+9.
 (pdftex.def)             Requested size: 226.48413pt x 152.17398pt.
- [4.10 <./Images//Wavelia.png> <./Images//LeveledMultistatic.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 105--116
+[4.10 <./Images//Wavelia.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 117--125
+[5.11 <./Images//LeveledMultistatic.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 137--145
 
  []
 
-<./Images//TSARPrototype.png, id=178, 144.54pt x 99.4917pt>
+<./Images//TSARPrototype.png, id=207, 144.54pt x 99.4917pt>
 File: ./Images//TSARPrototype.png Graphic file (type png)
 <use ./Images//TSARPrototype.png>
-Package pdftex.def Info: ./Images//TSARPrototype.png  used on input line 127.
+Package pdftex.def Info: ./Images//TSARPrototype.png  used on input line 147.
 (pdftex.def)             Requested size: 294.4266pt x 202.67494pt.
-[5.11]
-<./Images//phasedArray.png, id=189, 523.9575pt x 523.9575pt>
+[6.12 <./Images//TSARPrototype.png>]
+<./Images//phasedArray.png, id=217, 523.9575pt x 523.9575pt>
 File: ./Images//phasedArray.png Graphic file (type png)
 <use ./Images//phasedArray.png>
-Package pdftex.def Info: ./Images//phasedArray.png  used on input line 150.
+Package pdftex.def Info: ./Images//phasedArray.png  used on input line 170.
 (pdftex.def)             Requested size: 226.48413pt x 226.48058pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--165
+Underfull \hbox (badness 10000) in paragraph at lines 176--185
 
  []
 
-[6.12 <./Images//TSARPrototype.png> <./Images//phasedArray.png>]
-<./Images//pointEmitter.png, id=196, 695.59875pt x 785.93625pt>
+<./Images//pointEmitter.png, id=219, 695.59875pt x 785.93625pt>
 File: ./Images//pointEmitter.png Graphic file (type png)
 <use ./Images//pointEmitter.png>
-Package pdftex.def Info: ./Images//pointEmitter.png  used on input line 167.
+Package pdftex.def Info: ./Images//pointEmitter.png  used on input line 187.
 (pdftex.def)             Requested size: 271.7837pt x 307.07755pt.
- [7.13 <./Images//pointEmitter.png>]
+[7.13 <./Images//phasedArray.png>]
 
 LaTeX Warning: Citation `oloughlinParameterSearchAlgorithms2017' on page 8 unde
-fined on input line 199.
+fined on input line 219.
 
+[8.14 <./Images//pointEmitter.png>]
 
-LaTeX Warning: Citation `shahkaramWeightedDelayandsumBeamformer2021' on page 8 
-undefined on input line 224.
+LaTeX Warning: Citation `shahkaramWeightedDelayandsumBeamformer2021' on page 9 
+undefined on input line 244.
 
-[8.14]
 
 LaTeX Warning: Citation `beenlimConfocalMicrowaveImaging2008' on page 9 undefin
-ed on input line 253.
+ed on input line 273.
 
-<./Images//DMASDASComp.png, id=222, 823.075pt x 576.1525pt>
+[9.15]
+<./Images//DMASDASComp.png, id=251, 823.075pt x 576.1525pt>
 File: ./Images//DMASDASComp.png Graphic file (type png)
 <use ./Images//DMASDASComp.png>
-Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 272.
+Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 292.
 (pdftex.def)             Requested size: 317.0764pt x 221.95566pt.
 
-LaTeX Warning: Citation `oloughlinComparingRadarBasedBreast2019' on page 9 unde
-fined on input line 283.
+
+LaTeX Warning: Citation `oloughlinComparingRadarBasedBreast2019' on page 10 und
+efined on input line 303.
 
 
-LaTeX Warning: Citation `g.matroneDelayMultiplySum2015' on page 9 undefined on 
-input line 285.
+LaTeX Warning: Citation `g.matroneDelayMultiplySum2015' on page 10 undefined on
+ input line 305.
 
-) [9.15 <./Images//DMASDASComp.png>] (./main.bbl [10.16])
+) (./ch-Julia.tex [10.16 <./Images//DMASDASComp.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 5--12
+
+ []
+
+[11.17
+
+]
+
+LaTeX Warning: Citation `CompaniesUsingMATLAB' on page 12 undefined on input li
+ne 41.
+
+
+LaTeX Warning: Citation `aruobaComparisonProgrammingLanguages2018' on page 12 u
+ndefined on input line 43.
+
+) (./main.bbl [12.18])
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
@@ -1207,23 +1250,23 @@ File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
 Package caption Warning: Unused \captionsetup[sub] on input line 68.
 See the caption package documentation for explanation.
 
-[11.17
+[13.19
 
 ] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 996C101487F32DEDFED6147D9DE49981;1297.
+(rerunfilecheck)             Checksum: C64AA3CA6FE7BA5720F4ABAC61B7ABD3;1749.
  ) 
 Here is how much of TeX's memory you used:
- 26717 strings out of 478287
- 497323 string characters out of 5849289
- 804478 words of memory out of 5000000
- 44320 multiletter control sequences out of 15000+600000
+ 28084 strings out of 478287
+ 517129 string characters out of 5849289
+ 825042 words of memory out of 5000000
+ 45666 multiletter control sequences out of 15000+600000
  485522 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,6n,117p,1193b,531s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,6n,117p,1193b,532s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
@@ -1245,10 +1288,10 @@ onts/type1/public/cm-super/sfss1728.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sftt1200.pfb>
-Output written on main.pdf (17 pages, 1998368 bytes).
+Output written on main.pdf (19 pages, 2011763 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
- 52 named destinations out of 1000 (max. 500000)
- 142 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 384 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

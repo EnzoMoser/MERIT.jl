@@ -13,13 +13,14 @@ Warning--I didn't find a database entry for "shahkaramWeightedDelayandsumBeamfor
 Warning--I didn't find a database entry for "beenlimConfocalMicrowaveImaging2008"
 Warning--I didn't find a database entry for "oloughlinComparingRadarBasedBreast2019"
 Warning--I didn't find a database entry for "g.matroneDelayMultiplySum2015"
+Warning--I didn't find a database entry for "CompaniesUsingMATLAB"
+Warning--I didn't find a database entry for "aruobaComparisonProgrammingLanguages2018"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--missing institution in stoetPsyToolkitTestimonials
 Warning--empty journal in preeceMARIAM4Clinical2016
 Warning--empty year in preeceMARIAM4Clinical2016
-Warning--empty year in alsbouMedicalImagingSystem2023
 Warning--empty journal in moloneyWaveliaMicrowaveBreast2021
 Warning--empty year in moloneyWaveliaMicrowaveBreast2021
 Warning--empty journal in e.c.fearMicrowaveBreastImaging2013
@@ -32,45 +33,45 @@ Warning--empty journal in bourquiPrototypeSystemMeasuring2012
 Warning--empty year in bourquiPrototypeSystemMeasuring2012
 
 Done.
-You've used 8 entries,
+You've used 7 entries,
             4087 wiz_defined-function locations,
-            879 strings with 9917 characters,
-and the built_in function-call counts, 5933 in all, are:
-= -- 446
-> -- 189
-< -- 37
-+ -- 96
-- -- 40
-* -- 314
-:= -- 848
-add.period$ -- 16
-call.type$ -- 8
-change.case$ -- 7
-chr.to.int$ -- 66
-cite$ -- 22
-duplicate$ -- 448
-empty$ -- 427
-format.name$ -- 47
-if$ -- 1351
+            875 strings with 9626 characters,
+and the built_in function-call counts, 5085 in all, are:
+= -- 382
+> -- 164
+< -- 32
++ -- 84
+- -- 35
+* -- 271
+:= -- 719
+add.period$ -- 13
+call.type$ -- 7
+change.case$ -- 6
+chr.to.int$ -- 54
+cite$ -- 20
+duplicate$ -- 388
+empty$ -- 353
+format.name$ -- 41
+if$ -- 1154
 int.to.chr$ -- 0
-int.to.str$ -- 8
-missing$ -- 92
-newline$ -- 51
-num.names$ -- 8
-pop$ -- 236
+int.to.str$ -- 7
+missing$ -- 80
+newline$ -- 46
+num.names$ -- 7
+pop$ -- 204
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 449
+skip$ -- 385
 stack$ -- 0
-substring$ -- 201
-swap$ -- 355
-text.length$ -- 15
+substring$ -- 172
+swap$ -- 311
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 8
-warning$ -- 14
-while$ -- 23
-width$ -- 9
-write$ -- 94
-(There were 19 warnings)
+type$ -- 7
+warning$ -- 13
+while$ -- 18
+width$ -- 8
+write$ -- 82
+(There were 20 warnings)

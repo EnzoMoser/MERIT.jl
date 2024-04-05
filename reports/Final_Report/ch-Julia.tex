@@ -10,5 +10,57 @@ are researchers, it needs to be a language that they are familiar with, or one w
 language chosen is too difficult to learn, any potential time savings from the ease of use would be heavily outweighed
 by the time spent learning the language. \hfill \break
 
+\subsection{Python}
 Python was one of the languages considered. Python's philosophy was code readability over all and this fact is
-complimented by it's high-level syntax and indentation requirements.
+complimented by its high-level syntax and indentation requirements. It was first introduced towards the end of the
+1980's by Guido van Rossum and has had an expansive community ever since. The Python package repository and pip have
+allowed the community to develop libraries that can be easily shared and downloaded. All these factors catapulted Python
+into the limelight and it has become the go-to language for any data science and deep learning application. However,
+several drawbacks severely limit the usability of Python for high performance applications. Firstly, Python is an
+interpreted language, meaning that at runtime, the Python interpreter reads the Python file line by line and calls the
+relevant machine code. Due to this interpretation step, raw Python code is slow to run. Due to this reason, most
+performant libraries in Python tend to use C-optimized implementations behind the scenes. So in order to develop any
+decently performing Python libraries, one also has to be proficient in C as well as know how to create C and Python
+bindings. Secondly, the Python Interpreter makes use of a runtime lock known as the Global Interpreter Lock (GIL) which
+makes parallel processing in Python incredibly difficult. The reason for the GIL comes down to Python's use of reference
+counting for memory management. Reference counting is a method where each object in Python gets assigned a reference
+variable that keeps track of the number of references that point to that object. As references to the object get
+created, the count goes up, as references get deleted or reach the end of their scope, the count goes down. When the
+reference variable reaches zero, this becomes a flag for the object to be deleted, since there are no longer any
+references pointing to this object. In some threaded applications, this can cause some issues where the reference count
+gets updated by multiple threads simultaneously. In some cases, this can cause the reference count to never reach zero
+leading to a memory leak, or it can reach zero too early and the object gets removed. To get around this, Python puts a
+lock on the interpreter itself, this is the GIL. This means that any Python bytecode needs to first acquire a lock on
+the interpreter before it can be executed. This makes multithreading in Python incredibly difficult and slower than it
+would be in other languages. So for these reasons, Python was rejected as the software of choice.
+
+\subsection{MATLAB}
+MATLAB was another language that was considered. Developed in 1984, it became the goto software for many research
+purposes due to its ease of use and intuitive operations on matrices and its multi-dimensional analogues. It is taught
+across every single engineering college, and one company estimates that MATLAB is being used in over 57,811 companies
+\cite{CompaniesUsingMATLAB}. MATLAB, however, is still an interpreted language and therefore can be quite slow some
+times. A study conducted by Aruoba and Fernández-Villaverde found that their MATLAB code ran about 3x slower than the
+same code written in C++, highlighting just how big of a difference a compiler can make \cite{aruobaComparisonProgrammingLanguages2018}. It should be noted that the
+MATLAB version of the code ran about 30.26x faster than the same Python code, implying that even though both are an
+interpreted language, the MATLAB interpreter is much more optimized than the Python interpreter. But one of the biggest
+drawbacks by far, is the fact that MATLAB is a license based language. In order to use MATLAB, one must pay a yearly
+subscription of anywhere from €120 to €3,650 depending on the purpose for which it is used. This goes directly against
+the open-source vision of MERIT.jl. This cost can become prohibitively expensive for small teams trying to work on new
+systems and algorithms. Octave was briefly considered as it is a free and open-source competitor to MATLAB, but this
+idea was quickly dropped when it became clear that Octave's main goal was compatibility with MATLAB scripts rather than
+performance over MATLAB. For these reasons, MATLAB was also rejected as the software of choice.
+
+\subsection{Julia}
+The third and final language considered was the Julia programming language. Julia was developed by Jeff Bezanson, Stefan
+Karpinski and Viral B. Shah, and was first released to the public in 2012. Julia was designed to be a coding language
+that offered high-level syntax while also automatically compiling the code at runtime. Julia's Just In Time (JIT) compiler,
+allows it to offer the full dynamism of Python and MATLAB while avoiding the drawbacks that come with having to use an
+interpreter. The aforementioned study found that Julia was only 1.47x slower than the comparable C++ implementation.
+Julia also offers features that are not in Python or MATLAB such as parametric polymorphism, multiple dispatch,
+efficient garbage collection and a JIT that is capable of optimizations and ahead-of-time compilation. Julia also bakes
+in native support for multiple parallel programming paradigms such as GPU programming and multithreading, making it an
+appealing choice for people working on high-performance compute clusters. One other feature that made Julia wildly
+popular was the native ability to call C and Fortran libraries without having to create any special wrappers. This "It
+Just Works" ideology is what garnered Julia its well deserved popularity. With it's rising fame and easy to understand
+syntax, this was the coding language decided for MERIT.jl. In the next few sections, the various Julia features used
+will be discussed in more detail.
