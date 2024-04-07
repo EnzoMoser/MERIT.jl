@@ -353,3 +353,155 @@ situations requires the developer to have advanced knowledge of the language. Th
 people who want to contribute to the library. However, I feel that this is an acceptable trade-off since the benefits
 that come from having a performant library, such as increased usage and better recognition, far outweigh the negatives
 from having an increased barrier of entry.
+
+\subsection{Closure}
+Closure in programming refers to the practice of calling a function A which returns a function B that has some
+information about the variables in the scope of function A. Consider the following simple example:
+\begin{lstlisting}[language=Julia]
+    function addX(x)
+        scalar = x
+
+        function calc_(a)
+            return a + scalar
+        end
+    end
+
+    add5 = addX(5)
+    add7 = addX(7)
+    add5(2)  # Will return 7
+    add7(10) # Will return 17
+\end{lstlisting}
+Here a function called \lstinline[language=Julia]{addX} is defined which accepts an input \lstinline[language=Julia]{x},
+assigns it to a variable called \lstinline[language=Julia]{scalar} and finally defines a function called
+\lstinline[language=Julia]{calc_} which calculates and returns \lstinline[language=Julia]{a + scalar}. Here we say that
+\lstinline[language=Julia]{scalar} is "captured" by \lstinline[language=Julia]{calc_}. When calling the
+\lstinline[language=Julia]{addX} function as was done in line 8, we receive a function pointer of sorts to a
+parametrized \lstinline[language=Julia]{calc_}. Note that by default Julia automatically returns the last thing computed
+in the executed function's scope, this is how \lstinline[language=Julia]{calc_} is returned from
+\lstinline[language=Julia]{addX} without an explicit return statement. This idea of closure is important as it allows
+users to customize parametric functions to suit their particular needs. The MERIT.jl library uses this in the
+\lstinline[language=Julia]{get_delays} function in the Beamform.jl file (for more information see the GitHub link in
+the Introduction). Earlier sections showed
+how $epsilon$ is a free parameter in the beamforming equations, one that researchers would be changing frequently.
+Implementing closure for the \lstinline[language=Julia]{get_delays} method allows researchers to quickly and easily
+define a set of delay functions which they can pass to the \lstinline[language=Julia]{beamform} function to see the
+various effects on the resulting scan that come from tweaking $epsilon$. This fulfills one of the other tenets of the
+library, which was to create an interface that allowed for flexibility and customizability in the functions that
+mattered. One important thing to keep in mind is that captured variables must never be reassigned otherwise, the
+compiler will not be able to infer the data type of the variables leading to slow and type unstable code. Again this
+highlights one of the draw backs of using Julia, writing customizable code is relatively easy, however writing code that
+is both customizable and performant is tough. Any researcher who might want to implement a custom delay function (e.g.
+one that does not assume a straight line model) using closure, would have to make frequent use of the
+\lstinline[language=Julia]{@code_warntype} to ensure that the code they have written is type stable, and therefore comes
+with some promises of performance.  
+
+\subsection{Type Safety}
+Type Safety refers to a program or language's ability to detect and discourage errors that arise from performing
+operations on the wrong data type. For example in Julia, one can easily add two numeric types together but if one tried
+to add two strings together, the Julia compiler would produce an error, since that would be an illegal operation. This
+offers some level of protection against illegal operations, but there are many cases where the type of the variable
+agrees with the operation being performed, but their semantic meaning disagrees. Consider the example of a function used
+to calculate the speeds of various vehicles. The function \lstinline[language=Julia]{calcSpeed} accepts a vector for
+distance traveled by the various cars and the times each car took to travel that distance and returns the speed of each
+car in a third vector.
+
+\begin{lstlisting}[language=Julia]
+function calcSpeed(dist::Vector{T}, t::Vector{T}) where {T <: Real}
+    return dist ./ t
+end
+
+#################################################### 
+distance = rand(1, 100)
+time = rand(1, 100)
+calcSpeed(distance, time)   # Will compute the speed
+
+#################################################### 
+distance = rand(1, 100)
+time = rand(ComplexF64,1, 100)
+
+# Will throw an error since there is a type mismatch
+calcSpeed(distance, time)  
+
+#################################################### 
+distance = rand(1, 100)
+time = rand(1, 100)
+
+# Will compute the wrong answer, but no error gets thrown
+calcSpeed(time, distance) 
+\end{lstlisting}
+On line 8, calcSpeed gets called correctly and returns the speed of each car correctly. On line 13, the Julia compiler
+will throw an error because the \lstinline[language=Julia]{time} variable is a Complex Float64 and
+\lstinline[language=Julia]{calcSpeed} only accepts types that are a subset of Real. However, on line 18, no error is
+thrown even though the wrong answer is returned. This is because compilers can only make deductions on the concrete
+types of the variables and the operations being performed and not on the semantic meaning of the function, variable
+names and what it means to call the function with those variables. However, we can limit the chance of a variable being
+passed to the wrong positional argument by creating lightweight types that encode this semantic information in their
+type name. In the above case, it would mean creating a "distance" type, and a "time" type that are wrappers around some
+in-built concrete type. With this, the compiler will throw an error when running line 18 as the function received a
+vector of type "time" when it was expecting one of type "distance". \hfill \break
+The MERIT.jl library exemplifies the idea of "strong" type safety through its implementation of the Point
+data type. The Point type is an abstract type from which the Point3 and Point2 concrete type subsets. These are
+lightweight wrappers around a grouping of 3 and 2 numbers respectively and serve the purpose of being a 3D and 2D point.
+\begin{lstlisting}[language=Julia]
+    abstract type Point end
+
+    # xyz can be any data type that is a subset of Real
+    mutable struct Point3{T <: Real} <: Point
+        x::T
+        y::T
+        z::T 
+    end
+
+    mutable struct Point2{T <:  Real} <: Point
+        x::T
+        y::T
+    end
+\end{lstlisting}
+Since these are custom data types, the inbuilt operators could not be used on them. So in addition to this, MERIT.jl
+also had to extend some of the inbuilt operators using the concepts from parametric polymorphism so that these points
+data types could be used in a meaningful way. For the full suite of operations implemented, please refer to the GitHub
+link in the Introduction. Every other function in the library that needs to work with the points from the imaging domain,
+e.g. the \lstinline[language=Julia]{domain_hemisphere!} and the \lstinline[language=Julia]{get_delays}, to name a few,
+accept collections of the points data types rather than simply accepting a matrix of numbers. This way, an error gets
+thrown if any other collection of numbers that is not a points data type is passed in that argument. This does not
+entirely solve the problem however, it is still feasible for a Point3 variable representing antenna locations to be
+mistakenly used in the place of a Point3 variable which describes the imaging domain. Even though this issue still
+exists in some part, the hope is that with this new type, the chance of the aforementioned issues arising would be
+minimal. 
+
+%% Talk about performance impact about new points type execution time went from 8 to 12 seconds.
+
+Due to time constraints, the entire library could not be made strongly type safe, but the Points.jl file
+provides an excellent template that could be used to implement further types to eventually reach a strong type safety
+that is in every function in the library.
+
+\subsection{Customizability}
+The customizability of the MERIT.jl library has been demonstrated extensively in the previous sections. However, nowhere
+is this exemplified more than in the BreastScan struct. The entire library is built around the use of the Scan structs.
+These structs encapsulate all the information about a particular Scan, including all the required information about the
+machine that was used to conduct the scan. Most importantly each scan struct is recommended to have two function pointer
+fields which will hold pointers to the delay function and the beamforming function to be used in the beamforming
+process. During the setup process, researchers can easily swap out the delay function or the beamforming function used
+by overwriting these function pointers with other relevant functions from the library or with their own functions. In
+order to work with the one-call data processing pipeline in MERIT.jl, researchers just need to ensure that their delay
+and beamformer functions follow these templates:
+\begin{lstlisting}[language=Julia]
+    function delay_template(relative_permiativity)
+        #Capture the relatively_permiativity
+            function(channels, antenna, domain_points):
+                #calculate and return a time matrix
+                #Size = (1 x #Channels x #Points)
+            end
+    end
+    
+    function beamformer(delayed_signals)
+        #Do some processing
+        #return should be of size (1 x 1 x #Points)
+    end
+\end{lstlisting}
+These templates allow for a lot of flexibility and are really where MERIT.jl shines in comparison to its MATLAB counter
+part. Researchers who just want to benchmark new algorithms against already established ones just need to follow these
+templates and they can be guaranteed that their functions will "just work" with the one-call data processing pipeline.
+If their functions also follow the rules of type stability mentioned above, they can also have some reasonable
+guarantees that any slowdowns are caused by their implementations rather than the lack of compiler optimizations for
+type unstable code. 

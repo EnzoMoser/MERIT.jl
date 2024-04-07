@@ -19,3 +19,5 @@
 \contentsline {subsection}{\numberline {2.2.2}Type Heirarchy}{15}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}Parametric Polymorphism}{18}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Type Stability}{19}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Closure}{20}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Type Safety}{21}{subsection.2.2.6}%
