@@ -80,6 +80,12 @@
 \or June\or July\or August\or September\or October\or November\or December\fi \space%
 \number \year}
 
+%% Defining Code Colors
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
 \lstdefinestyle{codeStyle}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
@@ -100,6 +106,28 @@
 }
 
 \lstset{style=codeStyle}
+
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+      end,export,false,for,function,immutable,import,importall,if,in,%
+      macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+      using,while},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+}[keywords,comments,strings]%
+
+\lstset{%
+    language         = Julia,
+    basicstyle       = \ttfamily,
+    keywordstyle     = \bfseries\color{magenta},
+    stringstyle      = \color{codepurple},
+    commentstyle     = \color{codegreen},
+    showstringspaces = false,
+}
 
 
 

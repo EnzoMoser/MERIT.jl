@@ -1,0 +1,9 @@
+Motivations to allow for greater interoperability between systems and data (introduction). THis is the motivation rather than 'trying to solve breast cancer'
+benfits of opensource is ease of access and reproducability and reliability. It will allow systems to be tested on other data. 
+- MammoWave in Italy, Safe in Turkey
+- I only care about the fact that there is a lot of data and not a lot of interoperability.
+- More roboust methods that wont compromise performance. -> TYpe safety added in Julia.
+
+- In literature review, talk about the antenna configuration broadly and how each systems work broadly. "Since there is no consensus, in the field I have reviewed 3 systems that are representitive of the field" Then link to Declan's paper for a more indepth review.
+- Don't be vaugue, dont just say VNA's but instead instead mention that they are commercial grade VNAs beause they want to test that things work, rather than being cost effective. But more commerial systems would tend to use custom hardware since it is more cost effective. 
+- Patient, Indication, Comparator, Outcome, Time-frame. When you are refering to clnical studies you need to give these paramters. 

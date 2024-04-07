@@ -7,3 +7,6 @@
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Phased Array Diagram\relax }}{7}{figure.caption.11}%
 \contentsline {figure}{\numberline {1.7}{\ignorespaces Point Emitter with a Phased Array\relax }}{8}{figure.caption.12}%
 \contentsline {figure}{\numberline {1.8}{\ignorespaces Comparason between DAS (a, c) and DMAS (b, d) Beamformers\relax }}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Multiple Dispatch (top) vs Single Dispatch (bottom)\relax }}{15}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Type hierarchy for the Integer Type\relax }}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Current type hierarchy in MERIT.jl\relax }}{18}{figure.caption.17}%

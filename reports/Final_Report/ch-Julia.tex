@@ -1,3 +1,5 @@
+\setcounter{chapter}{2}
+\setcounter{section}{0}
 \chapter*{Julia}
 \addcontentsline{toc}{chapter}{Julia}
 
@@ -61,6 +63,293 @@ efficient garbage collection and a JIT that is capable of optimizations and ahea
 in native support for multiple parallel programming paradigms such as GPU programming and multithreading, making it an
 appealing choice for people working on high-performance compute clusters. One other feature that made Julia wildly
 popular was the native ability to call C and Fortran libraries without having to create any special wrappers. This "It
-Just Works" ideology is what garnered Julia its well deserved popularity. With it's rising fame and easy to understand
+Just Works" ideology is what garnered Julia its well deserved popularity. With its rising fame and easy to understand
 syntax, this was the coding language decided for MERIT.jl. In the next few sections, the various Julia features used
-will be discussed in more detail.
+will be discussed in more detail. \hfill \break
+
+\section{Features in Julia}
+\subsection{Multiple Dispatch}
+Multiple Dispatch is a programming paradigm in which a function can be dispatched (invoked) based not only on the
+function name but also on the type and order of input arguments. This is opposed to the single dispatch
+programming paradigm where the function that is dispatched usually depends on a special argument before the function
+name. In almost all programming languages this is the variable name for that class. For example, consider the following
+code: \hfill
+\begin{lstlisting}
+    Class Dog:
+        name::string
+
+        function says(a::string):
+            print("The dog, $self.name says $a")
+        end
+    end
+
+    Class Cat:
+        name::string
+
+        function says(a::string):
+            print("The cat, $self.name says $a")
+        end
+    end
+
+    billy = Dog("billy")
+    kate = Cat("Kate")
+\end{lstlisting}
+If we wanted to call the "says" function for the Dog or Cat class, then we would have to write,
+\lstinline|billy.says("Hello World")| or \lstinline|kate.says("Hello World")|. This is the single dispatch paradigm and
+it is probably the one most people are familiar with. This fits well into an object-oriented programming language, where
+objects are used to encapsulate concepts and ideas and therefore we create specialized functions that operate on the data
+contained within that class. However, one drawback is that the compiler relies on the user to remember which
+methods belong to which class, and also which methods are callable. Also, it isn't clear how one would write a function
+that allows for the Cat and the Dog to interact with each other. Instead, now consider the multiple dispatch paradigm.
+In Julia particularly, it is important to note that methods no longer belong to objects as we were forced to do in
+single dispatch. Added to this, methods no longer have to be defined within the "class" but can be done after class
+declaration or even class instantiation. Consider the example below: \hfill
+
+\begin{lstlisting}
+    struct Dog{
+        name::string
+    }
+
+    struct Cat{
+        name::string
+    }
+
+    function says(pet::Cat, a::string)
+        print("The cat, $pet.name says $a")
+    end
+
+    function says(pet::Dog, a::string)
+        print("The dog, $pet.name says $a")
+    end    
+
+    function encounter(petA, petB)
+        print("$petA.name encounters $petB.name and $meets(petA, petB)")
+    end
+
+    function meets(petA::Cat, petB::Dog)
+        return "hisses"
+    end
+
+    function meets(petA::Dog, petB::Cat)
+        return "barks"
+    end
+
+    billy = Dog("Billy")
+    kate = Cat("Kate")
+    says(billy, "Hello")
+    says(kate, "Hello")
+    encounters(kate, billy)
+    encounters(billy, kate)
+
+\end{lstlisting}
+
+Here we have a similar situation as before, but instead of having classes, we have structs and methods that take those
+structs as arguments. On lines 30 and 31 in the code block above, we get a similar output as in single dispatch. But
+where multiple dispatch really shines is in the next two lines. Here we have the cat and the dog encountering each
+other. In single dispatch, someone would have to create a wrapper library to handle the interaction between two classes,
+but in multiple dispatch it is as easy as creating another method. This can be seen in the "meets" functions defined in
+the code block above. Since multiple dispatch relies on the input arguments as well, we can create specialized "meet"
+functions for when a Dog meets a Cat or when a Cat meets a Dog. In the above code block executing line 32 would print
+out "Kate encounters Billy and hisses". This is because we had a struct of type Cat as the first input argument to
+"meets" and a struct of type Dog as the second argument. Line 33 on the other hand, would print "Billy meets Kate and
+barks", since the order of the input arguments is reversed. Another notable consequence from this is that if anyone
+else wanted to extend "meets" and therefore "encounters" to other animals, they would only need to define a struct with
+the same fields as Cat and Dog, and new meets methods as such: \hfill
+
+\begin{lstlisting}
+    struct Rabbit{
+        name::string
+    }
+
+    function meets(petA::Cat, petB:Rabbit)
+        return "chases"
+    end
+    function meets(petB::Rabbit, petB:Cat)
+        return "runs away"
+    end
+
+    kate = Cat("Kate")
+    johnny = Rabbit(Johnny)
+    encounters(kate, johnny)
+    encounter(johnny, kate)
+\end{lstlisting}
+
+Line 12 in the above code block would print "Kate encounters Johnny and chases" while line would print "Johnny
+encounters Kate and runs away". While these examples may be simple, they showcase the powerful flexibility and
+extensibility behind multiple dispatch. It is this feature that allows all the Julia libraries to "just work" together,
+without needing any glue-code. Some other developer could come along and create a new package for a "Lion" and so long
+as it implements a struct with the same required field names as the other animals and creates a "meets" function, any
+variable of type Lion will work well with the "encounters" function. 
+
+\begin{figure}[!h]
+    \includegraphics[width=1\textwidth]{multipleDispatch.png}
+    \centering
+    \caption{Multiple Dispatch (top) vs Single Dispatch (bottom)} 
+    \label{fig:multipleDispatch}
+\end{figure}
+
+\subsection{Type Heirarchy}
+All the types in Julia are arranged in a tree-like structure and can be broadly classified into two categories, an
+Abstract Type or a Concrete Type. Abstract types are the internal nodes of the type tree, having both parents and
+children, while concrete types are the "leaves" of this tree. One notable difference between abstract types and concrete
+types is that abstract types cannot be instantiated; they serve only as nodes in the type graph. While this may seem
+pointless at first glance, it is this very feature that allows the multiple dispatch paradigm mentioned before to really
+shine. Shown in Figure \ref{fig:juliaTypeHeirarchy}, is the type hierarchy for the Integer type, the abstract types are
+highlighted in red, whereas the concrete types are highlighted in blue. \hfill
+\begin{figure}[t]
+    \includegraphics[width=0.45\textwidth]{juliaTypeTree.png}
+    \centering
+    \caption{Type hierarchy for the Integer Type} 
+    \label{fig:juliaTypeHeirarchy}
+\end{figure}
+
+As well as giving us a way to logically organize types, the type hierarchy tightly integrates with the multiple dispatch
+system. Consider for example the code block below: \hfill
+\begin{lstlisting}[language=Julia]
+    abstract type Animal end
+
+    struct Cat <: Animal
+        name::string
+    end
+
+    struct Dog <: Animal
+        name::string
+    end
+
+    function encounters(petA::Animal, petB::Animal)
+        verb = meets(petA, petB)
+        println("$(petA.name) meets $(petB.name) and $(verb)")
+    end
+
+    meets(petA::Animal, petB::Animal) = "passes by."
+    meets(petA::Cat, petB::Dog) = "hisses"
+    meets(petA::Dog, petB::Cat) = "barks"
+
+    whiskers = Cat("Whiskers")
+    fudge = Dog("Fudge")
+    encounters(whiskers, fudge)
+
+    ####################################################
+    #Defined in another library that subtypes the Animal abstract class.
+    struct Rabbit <: Animal
+        name::String
+    end
+
+    chomper = Rabbit("Chomper")
+    encounters(whiskers, chomper)
+\end{lstlisting}
+
+In the above code block, we define an abstract Animal type, by default this is a subtype of the abstract type Any. Then
+we define a concrete type Cat and a concrete type Dog. When line 22 gets executed, the multiple dispatch system will
+choose the correct \lstinline[language=Julia]|meets()| function and "Whiskers meets Fudge and hisses", this is as expected. Now another developer
+might want to implement a Rabbit type. So they create the Rabbit type as shown above, and specifies that it is a subtype
+of the Animal abstract type via the \lstinline[language=Julia]{<:} operator. Even if they do not implement a
+\lstinline[language=Julia]{meets()} that is specialized for their Rabbit class, the
+\lstinline[language=Julia]{encoutners()} will still work since it only expects an input that is a subtype of Animal. The
+\lstinline[language=Julia]{meets()} function will also work, since the original author implemented a
+\lstinline[language=Julia]{meets()} method that accepts arguments of type Animal or any subtypes of it. But why didn't
+the earlier call to \lstinline[language=Julia]{encoutners()} (and consequently \lstinline[language=Julia]{meets()})
+fail, since both lines 15 and 16 are valid options for the dispatcher? This is an example of where multiple dispatch
+benefits from having a type hierarchy. The Julia dispatcher always dispatches the function that is most specific across
+\textbf{ALL} its arguments. So in the Cat and Dog case, the \lstinline[language=Julia]{meets()} on line 16 will be
+dispatched. In the Cat and Rabbit case, the \lstinline[language=Julia]{meets()} one line 15 is the most specific
+function and so that gets dispatched. This allows for amazing extensibility that isn't found in many other languages. Often
+it is impractical for a developer to think of all the ways their library would be used or all the types or functions
+that the end-users would require. In Julia, they don't have to think about it. Instead, they can define an abstract
+class and some methods that accept the abstract class as inputs. The users can then create subtypes of this abstract
+class and define their own methods for their new type. Neither developer has to be worried about whether they were through
+enough to consider all possibilities, they can write code for their own purposes and trust that the Julia dispatcher and
+type hierarchy would automatically determine the correct function to call. \hfill \break
+This idea is heavily used in the MERIT.jl library. Currently, most of the research in microwave imaging is centered
+around the breast and breast cancer, but in the future, this could be implemented for other body parts. As such, the
+library needs to be flexible to allow for easy updates. MERIT.jl is centered around the Scan abstract type, from this
+type we subtype the BreastScan type, which holds all the information from the scan of a particular breast. If in the
+future microwave imaging gets used for a chest scan, all a developer would need to do is to implement a ChestScan
+struct, subtyped from Scan, and implement a few functions and the Julia dispatcher will handle the rest. I, as the
+original developer, do not need to worry about the intricacies of how a ChestScan struct would work, or what fields it
+would need. I can trust that future developers can easily extend this library without introducing breaking changes to
+the library core. In this way, MERIT.jl achieves extensive flexibility and expandability which would not be possible in
+other languages.  \hfill \break
+
+\begin{figure}[h]
+    \includegraphics[width=0.45\textwidth]{scanType.png}
+    \centering
+    \caption{Current type hierarchy in MERIT.jl} 
+    \label{fig:scanType}
+\end{figure}
+
+\subsection{Parametric Polymorphism}
+Parametric polymorphism refers to the programming paradigm where a function can be created generic to the input argument
+type. The compiler can then strongly type the function with the correct types. Consider the simple example of an
+\lstinline[language=Julia]{addtwo(x)} function.
+
+\begin{lstlisting}[language=Julia]
+    function addTwo(x::T) where {T <: Real}
+        return x + T(2)
+    end
+\end{lstlisting}
+
+Instead of restricting x to a specific type, we replace it with the variable T and instead place a restriction on T. In
+this case we say that T, and by extension x, can be any type that is a subtype of the abstract Real type. We also
+convert the 2 from an Int64 type, to whatever type T is, to allow for accurate summation. If parametric polymorphism was
+not a feature in Julia, this function would need to be duplicated 16 different times to account for all the concrete
+subtypes of Real (see Figure \ref{fig:juliaTypeHeirarchy}). Parametric Polymorphism with the Julia type hierarchy allows
+a developer to have incredible expressive power with very few lines of code. \hfill \break 
+MERIT.jl uses this feature extensively due to the fact that the library needs to be agnostic to the type of the input
+data. When instantiating the BreastScan struct the user can provide the types of the data that they will load and can
+therefore set the internal data type of the struct. It would be impossible to support all 4,176 different permutations
+of every single function, however, with parametric polymorphism, the function only needs to be defined once and the Julia
+compiler will handle the rest. This means that researchers and developers don't have to worry about whether the library
+functions can support the data type of their data, so long as it follows the type restriction set on the function, it
+will produce an output, greatly simplifying the coding experience.  
+
+\subsection{Type Stability}
+Type Stability is a coding discipline that Julia recommends all code to use. A function whose contained variables have a
+consistent type for the lifetime of that function is considered to be "type stable" or to have "type stability". Another
+way to think about this is that if the output type only depends on the input types, then the function is type stable.
+Consider the following two functions: \hfill
+\begin{lstlisting}[language=Julia]
+    function unstable()
+        x = 1
+        for i = 1:10
+            x /= rand()
+        end
+        return x
+    end
+    
+    function stable()
+        x = 1.0
+        for i = 1:10
+            x /= rand()
+        end
+        return x
+    end
+    
+\end{lstlisting}
+In both functions, we have a variable x which gets divided by a random float 10 times, with the result being returned.
+However, the first function is considered to be type unstable while the second function is type stable. This is because
+in the first function x was declared as an Int64, but when we divide by the random Float64, the data type of x changes
+to Float64 as Julia performs floating point division by default. Whereas in the second function, x gets declared as a
+Float64 and remains as a Float64 when it gets returned. Type Stability is important because if the Julia compiler can
+determine that the types of the variables stay constant for the lifetime of the function, it can perform optimizations
+on the machine code that would otherwise be impossible. These optimizations are evident when benchmarking the functions
+above. Using the \lstinline[language=Julia]{@benchmark} macro from BenchmarkTools, I timed both functions. They were run
+multiple times to ensure that only the compiled versions of the function were being executed rather than the functions
+being interpreted. The benchmarks showed that on average the type stable function ran in 306.178ns whereas the type
+unstable function ran in 573.355ns; almost 1.87x slower. When considering the many hundreds of function calls required
+to produce an output in MERIT.jl, these slowdowns become significant. When coding functions for MERIT.jl, I aimed to
+preserve type stability in functions that I knew would be called frequently. The
+\lstinline[language=Julia]{@code_warntype} macro was greatly beneficial in this task as it flags sections of code where
+the compiler cannot definitively infer the type of a variable or where it suspects there might be some type instability.
+Having type stable functions in MERIT.jl was a necessity, where possible, due to the large datasets that need to be processed. An 8cm
+radius breast at 0.25cm resolution has about 70k points, which need to have their distances to each antenna calculated.
+Assuming we are dealing with the MARIA M4 system with its 60 antennas, this equates to around 4.2M distance calculations
+alone for each image. Running such calculations on type unstable functions would be prohibitively expensive and would
+take far too long to compute. Herein lies one of the drawbacks of using the Julia language. While the dynamism offers us
+powerful expressibility, it also comes at the cost of massive slowdowns when used incorrectly. While it may be easy to
+create type stable functions for the example shown in the code block above, it becomes increasingly harder to create
+type stable code when the operations that need to be performed become more complex. Creating performant code in these
+situations requires the developer to have advanced knowledge of the language. This does raise the barrier of entry for
+people who want to contribute to the library. However, I feel that this is an acceptable trade-off since the benefits
+that come from having a performant library, such as increased usage and better recognition, far outweigh the negatives
+from having an increased barrier of entry.
