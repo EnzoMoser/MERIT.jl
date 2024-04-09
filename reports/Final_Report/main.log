@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  7 APR 2024 19:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  9 APR 2024 22:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1066,7 +1066,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count362
  (./ch-Title.tex
-<./Images//Trinity_RGB_transparent_main.png, id=95, 412.6617pt x 142.3719pt>
+<./Images//Trinity_RGB_transparent_main.png, id=123, 412.6617pt x 142.3719pt>
 File: ./Images//Trinity_RGB_transparent_main.png Graphic file (type png)
 <use ./Images//Trinity_RGB_transparent_main.png>
 Package pdftex.def Info: ./Images//Trinity_RGB_transparent_main.png  used on in
@@ -1104,46 +1104,51 @@ l.206 \chapter
 [5.6
 
 ] (./ch-Introduction.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--10
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
-
- []
+LaTeX Warning: Citation `d.oloughlinOpensourceSoftwareMicrowave2018' on page 1 
+undefined on input line 9.
 
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-23.
+17.
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)) (./ch-Background.tex [1.7
+)
+Underfull \hbox (badness 10000) in paragraph at lines 26--33
+
+ []
 
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 34--39
+
+ []
+
+[1.7
+
+
+]) (./ch-Background.tex [2.8]
 Underfull \hbox (badness 10000) in paragraph at lines 16--18
 
  []
 
-<./Images//multistaic.png, id=199, 668.4975pt x 668.4975pt>
+<./Images//multistaic.png, id=251, 668.4975pt x 668.4975pt>
 File: ./Images//multistaic.png Graphic file (type png)
 <use ./Images//multistaic.png>
 Package pdftex.def Info: ./Images//multistaic.png  used on input line 28.
 (pdftex.def)             Requested size: 135.89185pt x 135.89021pt.
-[2.8
+[3.9
 
 ]
-<./Images//MARIA_M4.png, id=210, 383.93437pt x 230.36063pt>
+<./Images//MARIA_M4.png, id=262, 383.93437pt x 230.36063pt>
 File: ./Images//MARIA_M4.png Graphic file (type png)
 <use ./Images//MARIA_M4.png>
 Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 48.
 (pdftex.def)             Requested size: 226.48413pt x 135.894pt.
- [3.9 <./Images//multistaic.png> <./Images//MARIA_M4.png>]
+ [4.10 <./Images//multistaic.png> <./Images//MARIA_M4.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 70--75
 
  []
 
-<./Images//Wavelia.png, id=225, 472.76625pt x 418.56375pt>
+<./Images//Wavelia.png, id=277, 472.76625pt x 418.56375pt>
 File: ./Images//Wavelia.png Graphic file (type png)
 <use ./Images//Wavelia.png>
 Package pdftex.def Info: ./Images//Wavelia.png  used on input line 77.
@@ -1153,29 +1158,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 83--97
 
  []
 
-<./Images//LeveledMultistatic.png, id=229, 537.80925pt x 361.35pt>
+<./Images//LeveledMultistatic.png, id=281, 537.80925pt x 361.35pt>
 File: ./Images//LeveledMultistatic.png Graphic file (type png)
 <use ./Images//LeveledMultistatic.png>
 Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 9
 9.
 (pdftex.def)             Requested size: 226.48413pt x 152.17398pt.
-[4.10 <./Images//Wavelia.png>]
+[5.11 <./Images//Wavelia.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 125--136
 
  []
 
-[5.11 <./Images//LeveledMultistatic.png>]
+[6.12 <./Images//LeveledMultistatic.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 137--145
 
  []
 
-<./Images//TSARPrototype.png, id=248, 144.54pt x 99.4917pt>
+<./Images//TSARPrototype.png, id=299, 144.54pt x 99.4917pt>
 File: ./Images//TSARPrototype.png Graphic file (type png)
 <use ./Images//TSARPrototype.png>
 Package pdftex.def Info: ./Images//TSARPrototype.png  used on input line 147.
 (pdftex.def)             Requested size: 294.4266pt x 202.67494pt.
-[6.12 <./Images//TSARPrototype.png>]
-<./Images//phasedArray.png, id=258, 523.9575pt x 523.9575pt>
+[7.13 <./Images//TSARPrototype.png>]
+<./Images//phasedArray.png, id=310, 523.9575pt x 523.9575pt>
 File: ./Images//phasedArray.png Graphic file (type png)
 <use ./Images//phasedArray.png>
 Package pdftex.def Info: ./Images//phasedArray.png  used on input line 170.
@@ -1185,90 +1190,176 @@ Underfull \hbox (badness 10000) in paragraph at lines 176--185
 
  []
 
-<./Images//pointEmitter.png, id=260, 695.59875pt x 785.93625pt>
+<./Images//pointEmitter.png, id=312, 695.59875pt x 785.93625pt>
 File: ./Images//pointEmitter.png Graphic file (type png)
 <use ./Images//pointEmitter.png>
 Package pdftex.def Info: ./Images//pointEmitter.png  used on input line 187.
 (pdftex.def)             Requested size: 271.7837pt x 307.07755pt.
-[7.13 <./Images//phasedArray.png>]
+[8.14 <./Images//phasedArray.png>]
 
-LaTeX Warning: Citation `oloughlinParameterSearchAlgorithms2017' on page 8 unde
+LaTeX Warning: Citation `oloughlinParameterSearchAlgorithms2017' on page 9 unde
 fined on input line 219.
 
-[8.14 <./Images//pointEmitter.png>]
+[9.15 <./Images//pointEmitter.png>]
 
-LaTeX Warning: Citation `shahkaramWeightedDelayandsumBeamformer2021' on page 9 
-undefined on input line 244.
+LaTeX Warning: Citation `shahkaramWeightedDelayandsumBeamformer2021' on page 10
+ undefined on input line 244.
 
 
-LaTeX Warning: Citation `beenlimConfocalMicrowaveImaging2008' on page 9 undefin
-ed on input line 273.
+LaTeX Warning: Citation `beenlimConfocalMicrowaveImaging2008' on page 10 undefi
+ned on input line 273.
 
-[9.15]
-<./Images//DMASDASComp.png, id=291, 823.075pt x 576.1525pt>
+[10.16]
+<./Images//DMASDASComp.png, id=343, 823.075pt x 576.1525pt>
 File: ./Images//DMASDASComp.png Graphic file (type png)
 <use ./Images//DMASDASComp.png>
-Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 292.
+Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 294.
 (pdftex.def)             Requested size: 317.0764pt x 221.95566pt.
 
 
-LaTeX Warning: Citation `oloughlinComparingRadarBasedBreast2019' on page 10 und
-efined on input line 303.
+LaTeX Warning: Citation `oloughlinComparingRadarBasedBreast2019' on page 11 und
+efined on input line 305.
 
 
-LaTeX Warning: Citation `g.matroneDelayMultiplySum2015' on page 10 undefined on
- input line 305.
+LaTeX Warning: Citation `g.matroneDelayMultiplySum2015' on page 11 undefined on
+ input line 307.
 
-) (./ch-Julia.tex [10.16 <./Images//DMASDASComp.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 7--14
+) (./ch-Julia.tex [11.17 <./Images//DMASDASComp.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 8--15
 
  []
 
-[11.17
+[12.18
 
 ]
 
-LaTeX Warning: Citation `CompaniesUsingMATLAB' on page 12 undefined on input li
-ne 43.
+LaTeX Warning: Citation `CompaniesUsingMATLAB' on page 13 undefined on input li
+ne 44.
 
 
-LaTeX Warning: Citation `aruobaComparisonProgrammingLanguages2018' on page 12 u
-ndefined on input line 45.
+LaTeX Warning: Citation `aruobaComparisonProgrammingLanguages2018' on page 13 u
+ndefined on input line 46.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--69
+Underfull \hbox (badness 10000) in paragraph at lines 57--70
 
  []
 
-[12.18]
+[13.19]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 81.
- [13.19] [14.20]
-<./Images//multipleDispatch.png, id=375, 1228.59pt x 668.4975pt>
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 82.
+ [14.20] [15.21]
+<./Images//multipleDispatch.png, id=426, 1228.59pt x 668.4975pt>
 File: ./Images//multipleDispatch.png Graphic file (type png)
 <use ./Images//multipleDispatch.png>
-Package pdftex.def Info: ./Images//multipleDispatch.png  used on input line 185
+Package pdftex.def Info: ./Images//multipleDispatch.png  used on input line 186
 .
 (pdftex.def)             Requested size: 452.96826pt x 246.46297pt.
-<./Images//juliaTypeTree.png, id=377, 849.1725pt x 1147.28625pt>
+<./Images//juliaTypeTree.png, id=428, 849.1725pt x 1147.28625pt>
 File: ./Images//juliaTypeTree.png Graphic file (type png)
 <use ./Images//juliaTypeTree.png>
-Package pdftex.def Info: ./Images//juliaTypeTree.png  used on input line 200.
+Package pdftex.def Info: ./Images//juliaTypeTree.png  used on input line 201.
 (pdftex.def)             Requested size: 203.83434pt x 275.38933pt.
- [15.21 <./Images//multipleDispatch.png>] [16.22 <./Images//juliaTypeTree.png>]
+ [16.22 <./Images//multipleDispatch.png>] [17.23 <./Images//juliaTypeTree.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--273
+Underfull \hbox (badness 10000) in paragraph at lines 243--273
 
  []
 
-[17.23]
-<./Images//scanType.png, id=436, 605.26125pt x 484.81125pt>
+[18.24]
+<./Images//scanType.png, id=487, 605.26125pt x 484.81125pt>
 File: ./Images//scanType.png Graphic file (type png)
 <use ./Images//scanType.png>
 Package pdftex.def Info: ./Images//scanType.png  used on input line 275.
 (pdftex.def)             Requested size: 203.83434pt x 163.27274pt.
- [18.24 <./Images//scanType.png>] [19.25] [20.26] [21.27]) (./main.bbl
-[22.28])
+ [19.25 <./Images//scanType.png>] [20.26] [21.27] [22.28] [23.29])
+(./ch-Results.tex [24.30]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 8.
+ (../../src/GettingStarted.jl) [25.31
+
+]
+<./Images//MERITWorkflow.png, id=624, 2655.9225pt x 725.71124pt>
+File: ./Images//MERITWorkflow.png Graphic file (type png)
+<use ./Images//MERITWorkflow.png>
+Package pdftex.def Info: ./Images//MERITWorkflow.png  used on input line 27.
+(pdftex.def)             Requested size: 452.96826pt x 123.76791pt.
+
+
+Package caption Warning: \label without proper reference on input line 61.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:MERITResults' on page 26 undefined on input line 
+45.
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+Overfull \hbox (0.29597pt too wide) in paragraph at lines 41--55
+\T1/cmss/m/n/12 The li-brary was bench-marked against the MAT-LAB im-ple-men-ta
+-tion cre-ated by Prof O'Loughlin
+ []
+
+<./Images//JuliaOutput.png, id=626, 723.45282pt x 538.26094pt>
+File: ./Images//JuliaOutput.png Graphic file (type png)
+<use ./Images//JuliaOutput.png>
+Package pdftex.def Info: ./Images//JuliaOutput.png  used on input line 58.
+(pdftex.def)             Requested size: 203.83434pt x 151.65656pt.
+<./Images//MATLABOutput.png, id=627, 722.7pt x 537.50812pt>
+File: ./Images//MATLABOutput.png Graphic file (type png)
+<use ./Images//MATLABOutput.png>
+Package pdftex.def Info: ./Images//MATLABOutput.png  used on input line 59.
+(pdftex.def)             Requested size: 203.83434pt x 151.60027pt.
+
+LaTeX Warning: Citation `BenchmarkToolsJl' on page 26 undefined on input line 7
+7.
+
+[26.32 <./Images//MERITWorkflow.png>]
+<./Images//PointsUnedited.png, id=634, 511.365pt x 318.645pt>
+File: ./Images//PointsUnedited.png Graphic file (type png)
+<use ./Images//PointsUnedited.png>
+Package pdftex.def Info: ./Images//PointsUnedited.png  used on input line 82.
+(pdftex.def)             Requested size: 203.83434pt x 127.01328pt.
+<./Images//PointsEdited.png, id=635, 511.365pt x 318.645pt>
+File: ./Images//PointsEdited.png Graphic file (type png)
+<use ./Images//PointsEdited.png>
+Package pdftex.def Info: ./Images//PointsEdited.png  used on input line 83.
+(pdftex.def)             Requested size: 203.83434pt x 127.01328pt.
+<./Images//ChannelsUnedited.png, id=636, 511.146pt x 318.645pt>
+File: ./Images//ChannelsUnedited.png Graphic file (type png)
+<use ./Images//ChannelsUnedited.png>
+Package pdftex.def Info: ./Images//ChannelsUnedited.png  used on input line 91.
+
+(pdftex.def)             Requested size: 339.7262pt x 211.78929pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./Images//FrequencyUnedited.png, id=637, 511.146pt x 318.645pt>
+File: ./Images//FrequencyUnedited.png Graphic file (type png)
+<use ./Images//FrequencyUnedited.png>
+Package pdftex.def Info: ./Images//FrequencyUnedited.png  used on input line 98
+.
+(pdftex.def)             Requested size: 203.83434pt x 127.06676pt.
+<./Images//FrequencyEdited.png, id=638, 511.365pt x 318.864pt>
+File: ./Images//FrequencyEdited.png Graphic file (type png)
+<use ./Images//FrequencyEdited.png>
+Package pdftex.def Info: ./Images//FrequencyEdited.png  used on input line 99.
+(pdftex.def)             Requested size: 203.83434pt x 127.10057pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./ch-FutureWork.tex [27.33 <./Images//JuliaOutput.png> <./Images//MATLABOutp
+ut.png> <./Images//PointsUnedited.png> <./Images//PointsEdited.png>] [28.34 <./
+Images//ChannelsUnedited.png> <./Images//FrequencyUnedited.png> <./Images//Freq
+uencyEdited.png>] [29.35]
+
+LaTeX Warning: Citation `JuliaGPU' on page 30 undefined on input line 46.
+
+) [30.36
+
+] (./main.bbl [31.37])
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
@@ -1278,28 +1369,24 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-)
+) [32.38
 
-Package caption Warning: Unused \captionsetup[sub] on input line 68.
-See the caption package documentation for explanation.
-
-[23.29
-
-] (./main.aux)
+]
+(./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CBC4468F133F5A786661E468230F4486;2714.
+(rerunfilecheck)             Checksum: D235452861A34F87B058F6499F462FC0;3903.
  ) 
 Here is how much of TeX's memory you used:
- 28681 strings out of 478287
- 523917 string characters out of 5849289
- 988644 words of memory out of 5000000
- 46071 multiletter control sequences out of 15000+600000
+ 29454 strings out of 478287
+ 534611 string characters out of 5849289
+ 1154969 words of memory out of 5000000
+ 46756 multiletter control sequences out of 15000+600000
  486294 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,7n,117p,1193b,1966s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,14n,117p,1193b,1966s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
@@ -1321,10 +1408,10 @@ onts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/cm
 </usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfsx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (29 pages, 2142787 bytes).
+Output written on main.pdf (38 pages, 3002924 bytes).
 PDF statistics:
- 688 PDF objects out of 1000 (max. 8388607)
- 577 compressed objects within 6 object streams
- 246 named destinations out of 1000 (max. 500000)
- 253 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 858 PDF objects out of 1000 (max. 8388607)
+ 720 compressed objects within 8 object streams
+ 311 named destinations out of 1000 (max. 500000)
+ 349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,48 @@
+\setcounter{chapter}{4}
+\setcounter{section}{0}
+\setcounter{subsection}{0}
+\chapter*{Future Work}
+\section{Time Domain Implimentation}
+Due to the limited time I had to work on this library, I mainly focused on implementations of beamformers in the
+frequency domain. While this covers some systems, the library effectively excludes a whole class of systems that perform
+time domain data gathering. But I don't see this being difficult to include in future updates. Using the multiple
+dispatch feature in Julia, one could extend the \lstinline[language=Julia]{delay_signal!} in the Process.jl file to
+accept signals that are a subtype of Real instead of Complex. The beamformers can stay largely the same since they do
+not depend on the type of input data. The rest of the pipeline should work with the time domain since they are type
+agnostic, or they have a type restriction permissive enough to allow for both time and frequency domain signals.
+
+\section{Implimentation of More Beamformers}
+Currently, the only beamformer implemented is the DAS beamformer, again mainly due to time constraints on the project
+itself. However, in the future one could consider implementing a generalized DAS beamformer, where more than just the
+relative permittivity value is parametrized. A more generalized DAS beamformer can described mathematically as:
+
+\begingroup
+\large
+\begin{equation}
+    I_{\epsilon_i}(r) = \mathcal{G}(\mathcal{S}) \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}} S_{a, a'}[\omega]e^{j\omega \tau_{\epsilon_i, a, a'}(r)}\right ]^2
+    \label{eq:GeneralisedDASBeamformer}
+\end{equation}
+\endgroup
+Here $\mathcal{G}(\mathcal{S})$ can be considered as a generalized weighting function that can be defined by the user. This way, the
+library needs only to support this one family of beamformers which can then be specialized into traditional DAS or even
+Weighted DAS. Programmatically, this could be implemented via closure the same way \lstinline[language=Julia]{delay} was
+defined in Beamformer.jl. It would also require a rewrite of the one-call processing pipeline that has been established
+via the \lstinline[language=Julia]{beamform} function. However, this is expected since the one-call function is only
+meant for researchers who quickly want to visualize a scan and investigate the effects of tuning a limited set of
+parameters. It is assumed that anyone who would be willing to create their own beamforming function would create their
+own processing pipeline using the high-level functions provided. 
+
+\section{Parallel Processing}
+Parallel processing was a feature that was not explored as it was outside the scope of this bachelor's project. However,
+there are areas of the code that have been identified as "embarrassingly parallel". These are sections of the code tha
+are amenable to significant acceleration through the use of multithreading and parallel processing. Consider for example
+the beamformer implementations, in these equations the response at each point is calculated independently of all the
+other points. As such this operation can be easily split across all available threads or even all available GPU cores,
+providing exponential increases to the performance of the library overall. The Julia language provides native support
+for threaded for-loops through the use of the \lstinline[language=Julia]{Threads.@threads} macro, which will evenly split the
+for-loop range across the threads available to the Julia runtime. However, the onus still lies on the user to ensure
+that no data race conditions can occur. Julia also supports GPU programming natively through the use of CUDA.jl for
+Nvidia GPUs, AMDGPU.jl for AMD GPUs, oneAPI.jl for Intel GPUs as well as Metal.jl for the current Apple integrated GPUs
+\cite{JuliaGPU}. Out of the APIs listed, CUDA.jl is by far the most advanced and complete library due to its age and
+dominance in other fields and would probably offer the most benefit for researchers as they most likely already have
+access to an Nvidia GPU.

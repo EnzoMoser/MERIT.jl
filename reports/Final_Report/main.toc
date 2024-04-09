@@ -1,23 +1,30 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{Introduction}{1}{chapter*.4}%
-\contentsline {chapter}{Background}{2}{chapter*.5}%
-\contentsline {section}{\numberline {1.1}Literature Review}{2}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}MARIA M4}{2}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Wavelia}{4}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}TSAR}{5}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Beamformers}{7}{subsection.1.1.4}%
-\contentsline {subsubsection}{Delay and Sum}{7}{figure.caption.12}%
-\contentsline {subsubsection}{Weighted Delay and Sum Beamformer}{9}{equation.1.2}%
-\contentsline {subsubsection}{Delay Multiply and Sum}{9}{equation.1.4}%
-\contentsline {chapter}{Julia}{11}{chapter*.14}%
-\contentsline {section}{\numberline {2.1}Why Julia?}{11}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Python}{11}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}MATLAB}{12}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Julia}{12}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}Features in Julia}{13}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Multiple Dispatch}{13}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Type Heirarchy}{15}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Parametric Polymorphism}{18}{subsection.2.2.3}%
-\contentsline {subsection}{\numberline {2.2.4}Type Stability}{19}{subsection.2.2.4}%
-\contentsline {subsection}{\numberline {2.2.5}Closure}{20}{subsection.2.2.5}%
-\contentsline {subsection}{\numberline {2.2.6}Type Safety}{21}{subsection.2.2.6}%
+\contentsline {chapter}{Background}{3}{chapter*.5}%
+\contentsline {section}{\numberline {1.1}Literature Review}{3}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}MARIA M4}{3}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Wavelia}{5}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}TSAR}{6}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Beamformers}{8}{subsection.1.1.4}%
+\contentsline {subsubsection}{Delay and Sum}{8}{figure.caption.12}%
+\contentsline {subsubsection}{Weighted Delay and Sum Beamformer}{10}{equation.1.2}%
+\contentsline {subsubsection}{Delay Multiply and Sum}{10}{equation.1.4}%
+\contentsline {chapter}{Julia}{12}{chapter*.14}%
+\contentsline {section}{\numberline {2.1}Why Julia?}{12}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Python}{12}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}MATLAB}{13}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Julia}{13}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}Features in Julia}{14}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Multiple Dispatch}{14}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Type Heirarchy}{16}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Parametric Polymorphism}{19}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Type Stability}{20}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Closure}{21}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Type Safety}{22}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Customizability}{23}{subsection.2.2.7}%
+\contentsline {section}{\numberline {3.1}Current Workflow}{25}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}MERIT.jl Results}{26}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Performance of MERIT.jl}{27}{subsection.3.1.2}%
+\contentsline {section}{\numberline {4.1}Time Domain Implimentation}{30}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Implimentation of More Beamformers}{30}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Parallel Processing}{31}{section.4.3}%

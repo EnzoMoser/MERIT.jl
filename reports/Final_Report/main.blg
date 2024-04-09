@@ -8,6 +8,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
+Warning--I didn't find a database entry for "d.oloughlinOpensourceSoftwareMicrowave2018"
 Warning--I didn't find a database entry for "oloughlinParameterSearchAlgorithms2017"
 Warning--I didn't find a database entry for "shahkaramWeightedDelayandsumBeamformer2021"
 Warning--I didn't find a database entry for "beenlimConfocalMicrowaveImaging2008"
@@ -15,27 +16,29 @@ Warning--I didn't find a database entry for "oloughlinComparingRadarBasedBreast2
 Warning--I didn't find a database entry for "g.matroneDelayMultiplySum2015"
 Warning--I didn't find a database entry for "CompaniesUsingMATLAB"
 Warning--I didn't find a database entry for "aruobaComparisonProgrammingLanguages2018"
+Warning--I didn't find a database entry for "BenchmarkToolsJl"
+Warning--I didn't find a database entry for "JuliaGPU"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--missing institution in stoetPsyToolkitTestimonials
 Warning--empty journal in preeceMARIAM4Clinical2016
 Warning--empty year in preeceMARIAM4Clinical2016
 Warning--empty journal in moloneyWaveliaMicrowaveBreast2021
 Warning--empty year in moloneyWaveliaMicrowaveBreast2021
+Warning--empty journal in bourquiPrototypeSystemMeasuring2012
+Warning--empty year in bourquiPrototypeSystemMeasuring2012
 Warning--empty journal in e.c.fearMicrowaveBreastImaging2013
 Warning--empty year in e.c.fearMicrowaveBreastImaging2013
+Warning--missing institution in stoetPsyToolkitTestimonials
 Warning--empty journal in klemmImprovedDelayandSumBeamforming2008
 Warning--empty year in klemmImprovedDelayandSumBeamforming2008
 Warning--empty journal in makladNeighborhoodBasedAlgorithmFacilitate2012
 Warning--empty year in makladNeighborhoodBasedAlgorithmFacilitate2012
-Warning--empty journal in bourquiPrototypeSystemMeasuring2012
-Warning--empty year in bourquiPrototypeSystemMeasuring2012
 
 Done.
 You've used 7 entries,
             4087 wiz_defined-function locations,
-            875 strings with 9626 characters,
+            881 strings with 9758 characters,
 and the built_in function-call counts, 5085 in all, are:
 = -- 382
 > -- 164
@@ -74,4 +77,4 @@ warning$ -- 13
 while$ -- 18
 width$ -- 8
 write$ -- 82
-(There were 20 warnings)
+(There were 23 warnings)

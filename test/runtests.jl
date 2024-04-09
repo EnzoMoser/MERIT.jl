@@ -17,31 +17,29 @@ function MSE(y_pred, y_acc)
 end
 @testset "MERIT.jl" begin
     # Write your tests here.
-    println(pwd())
+    pointsM  = matread("../data/tests/points.mat")["points"]
+    timesM   = matread("../data/tests/time.mat")["times"]
+    imageSliceM = matread("../data/tests/imageSlice.mat")["im_slice"]
+    print(size(pointsM))
 
-    # #TODO: Create tests to see if the types the user specifies are kept throughout the process.
+    scan = BreastScan{Float64, ComplexF64, UInt32}()
+    domain_hemisphere!(scan, 2.5e-3, 7e-2)
+    load_scans!(scan,"../data/B0_P3_p000.csv" , "../data/B0_P3_p036.csv", ',')
+    load_frequencies!(scan, "../data/frequencies.csv", ',')
+    load_antennas!(scan, "../data/antenna_locations.csv", ',')
+    load_channels!(scan, "../data/channel_names.csv", ',')
+    scan.delayFunc = get_delays(Float32(8.0))
+    scan.beamformerFunc = DAS
+    image = abs.(beamform(scan))
+    imageSlice = get_slice(image, scan, 35e-3)
 
-    # pointsM  = matread("../data/tests/points.mat")["points"]
-    # timesM   = matread("../data/tests/time.mat")["times"]
-    # imageSliceM = matread("../data/tests/imageSlice.mat")["im_slice"]
-    # print(size(pointsM))
+    #Are the image slices the same size
+    @test size(imageSliceM) == size(imageSlice)
 
-    # scan = BreastScan{Float64, ComplexF64, UInt32}()
-    # domain_hemisphere!(scan, 2.5e-3, 7e-2)
-    # load_scans!(scan,"../data/B0_P3_p000.csv" , "../data/B0_P3_p036.csv", ',')
-    # load_frequencies!(scan, "../data/frequencies.csv", ',')
-    # load_antennas!(scan, "../data/antenna_locations.csv", ',')
-    # load_channels!(scan, "../data/channel_names.csv", ',')
-    # scan.delayFunc = get_delays(Float32(8.0))
-    # scan.beamformerFunc = DAS
-    # image = abs.(beamform(scan))
-    # imageSlice = get_slice(image, scan, 35e-3)
-
-    # #Are the image slices the same size
-    # @test size(imageSliceM) == size(imageSlice)
-
-    # #Calculate the mean square error
-    # @test MSE(imageSlice, imageSliceM) < 1e-6
+    #Calculate the mean square error
+    MSEScan = MSE(imageSlice, imageSliceM)
+    println(MSEScan)
+    @test MSEScan < 1e-6
 
 end
 

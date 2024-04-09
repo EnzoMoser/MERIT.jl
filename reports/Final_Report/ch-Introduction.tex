@@ -1,5 +1,28 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
+The microwave imaging field has seen a rising interest in the medical field evidenced by the numerous clinical trials
+which are being conducted by research groups around the world \cite{preeceMARIAM4Clinical2016,
+moloneyWaveliaMicrowaveBreast2021, e.c.fearMicrowaveBreastImaging2013}. A cursory search on GitHub for software around
+microwave imaging yielded few useful results, with many either being specialized repositories for a particular task or
+performing some machine learning analysis on microwave data. Only one repository stood out as a generalized library that
+gives researchers all the tools needed to easily test different algorithms; the MERIT toolbox developed by Prof
+O'Loughlin, M. A. Elahi, E. Porter, et. al \cite{d.oloughlinOpensourceSoftwareMicrowave2018}. Other fields of science
+have seen numerous benefits from the introduction of comprehensive open-source libraries. Libraries such as PsychoPy and
+PsyToolkit have allowed researchers to design and conduct experiments in a matter of hours by packaging common functions
+in an easy-to-use library \cite{stoetPsyToolkitTestimonials}. With the rise in the number of systems that can perform
+microwave imaging and the vast amounts of data being generated from these systems, it is imperative that there are a
+variety of toolkits available to not only analyze data from these current systems but also from future systems. This BAI
+project aims to consider the following questions:
+\begin{itemize}
+    \item Improving the accessibility of Microwave Imaging
+    \item Increasing the compatibility between systems, the data these systems generate and the software used to analyze
+    this data
+    \item Creating an intuitive, easily extensible and customizable library
+    \item Leveraging the features of a coding language to create a performant library   
+\end{itemize}
+
+
+
 MERIT.jl was motivated by a need to increase the interoperability between the data produced from systems and the
 programs that would be able to process them. Currently, any researcher who wants to design a novel microwave imaging
 algorithm or test the efficacy of their new systems has to spend time and effort creating entirely new software suites.

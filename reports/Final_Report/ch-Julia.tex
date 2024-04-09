@@ -1,5 +1,6 @@
 \setcounter{chapter}{2}
 \setcounter{section}{0}
+\setcounter{subsection}{0}
 \chapter*{Julia}
 \addcontentsline{toc}{chapter}{Julia}
 
@@ -99,7 +100,7 @@ If we wanted to call the "says" function for the Dog or Cat class, then we would
 it is probably the one most people are familiar with. This fits well into an object-oriented programming language, where
 objects are used to encapsulate concepts and ideas and therefore we create specialized functions that operate on the data
 contained within that class. However, one drawback is that the compiler relies on the user to remember which
-methods belong to which class, and also which methods are callable. Also, it isn't clear how one would write a function
+methods belong to which class, and also which methods are callable. Also, it is not clear how one would write a function
 that allows for the Cat and the Dog to interact with each other. Instead, now consider the multiple dispatch paradigm.
 In Julia particularly, it is important to note that methods no longer belong to objects as we were forced to do in
 single dispatch. Added to this, methods no longer have to be defined within the "class" but can be done after class
@@ -245,10 +246,9 @@ choose the correct \lstinline[language=Julia]|meets()| function and "Whiskers me
 might want to implement a Rabbit type. So they create the Rabbit type as shown above, and specifies that it is a subtype
 of the Animal abstract type via the \lstinline[language=Julia]{<:} operator. Even if they do not implement a
 \lstinline[language=Julia]{meets()} that is specialized for their Rabbit class, the
-\lstinline[language=Julia]{encoutners()} will still work since it only expects an input that is a subtype of Animal. The
+\lstinline[language=Julia]{encoutners()} will still work since it only ex:wantpects an input that is a subtype of Animal. The
 \lstinline[language=Julia]{meets()} function will also work, since the original author implemented a
-\lstinline[language=Julia]{meets()} method that accepts arguments of type Animal or any subtypes of it. But why didn't
-the earlier call to \lstinline[language=Julia]{encoutners()} (and consequently \lstinline[language=Julia]{meets()})
+\lstinline[language=Julia]{meets()} method that accepts arguments of type Animal or any subtypes of it. But why did not the earlier call to \lstinline[language=Julia]{encoutners()} (and consequently \lstinline[language=Julia]{meets()})
 fail, since both lines 15 and 16 are valid options for the dispatcher? This is an example of where multiple dispatch
 benefits from having a type hierarchy. The Julia dispatcher always dispatches the function that is most specific across
 \textbf{ALL} its arguments. So in the Cat and Dog case, the \lstinline[language=Julia]{meets()} on line 16 will be
@@ -389,7 +389,7 @@ various effects on the resulting scan that come from tweaking $epsilon$. This fu
 library, which was to create an interface that allowed for flexibility and customizability in the functions that
 mattered. One important thing to keep in mind is that captured variables must never be reassigned otherwise, the
 compiler will not be able to infer the data type of the variables leading to slow and type unstable code. Again this
-highlights one of the draw backs of using Julia, writing customizable code is relatively easy, however writing code that
+highlights one of the drawbacks of using Julia, writing customizable code is relatively easy, however writing code that
 is both customizable and performant is tough. Any researcher who might want to implement a custom delay function (e.g.
 one that does not assume a straight line model) using closure, would have to make frequent use of the
 \lstinline[language=Julia]{@code_warntype} to ensure that the code they have written is type stable, and therefore comes
@@ -467,13 +467,9 @@ thrown if any other collection of numbers that is not a points data type is pass
 entirely solve the problem however, it is still feasible for a Point3 variable representing antenna locations to be
 mistakenly used in the place of a Point3 variable which describes the imaging domain. Even though this issue still
 exists in some part, the hope is that with this new type, the chance of the aforementioned issues arising would be
-minimal. 
-
-%% Talk about performance impact about new points type execution time went from 8 to 12 seconds.
-
-Due to time constraints, the entire library could not be made strongly type safe, but the Points.jl file
+minimal. Due to time constraints, the entire library could not be made strongly type safe, but the Points.jl file
 provides an excellent template that could be used to implement further types to eventually reach a strong type safety
-that is in every function in the library.
+that is in every function in the library. %%Add section about performance impact here, Run time from 8 to 12 secs.
 
 \subsection{Customizability}
 The customizability of the MERIT.jl library has been demonstrated extensively in the previous sections. However, nowhere
@@ -504,4 +500,5 @@ part. Researchers who just want to benchmark new algorithms against already esta
 templates and they can be guaranteed that their functions will "just work" with the one-call data processing pipeline.
 If their functions also follow the rules of type stability mentioned above, they can also have some reasonable
 guarantees that any slowdowns are caused by their implementations rather than the lack of compiler optimizations for
-type unstable code. 
+type unstable code.
+

@@ -12,9 +12,7 @@ load_channels!(scan, "data/channel_names.csv", ',')
 scan.delayFunc = get_delays(Float32(8.0))
 scan.beamformerFunc = DAS
 image = abs.(beamform(scan))
-println(eltype(image))
 imageSlice = get_slice(image, scan, 35e-3)
-println(size(imageSlice))  
 graphHandle = heatmap(scan.axes[1], scan.axes[2], imageSlice, colorscale="Viridis")
 savefig(graphHandle, "GettingStarted.png")
 

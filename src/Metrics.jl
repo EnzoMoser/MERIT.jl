@@ -11,7 +11,6 @@ Full Width at Half Maximum
 A width along each dimension such that all the points outside this width are less than half the maximum intensity
 for that dimension. Or conversely, all the points within this width are greater than half the maximum intensity.
 "
-
 #TODO: Reduce allocs by preallocating and using boolBitArray multiple times
 #TODO: Reduce allocs by preallocating and using xPoints multiple times for the other axes
 function FWHM(scan::BreastScan{<:T, <:Y, <:Z}, image) where {T <: Real, Y <: Number, Z <:Integer}
