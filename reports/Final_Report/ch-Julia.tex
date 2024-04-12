@@ -1,504 +1,79 @@
 \setcounter{chapter}{2}
 \setcounter{section}{0}
 \setcounter{subsection}{0}
-\chapter*{Julia}
-\addcontentsline{toc}{chapter}{Julia}
+\chapter*{Evaluating Programming Languages}
+\addcontentsline{toc}{chapter}{Evaluating Programming Languages}
+A wide array of libraries aimed towards researchers and data scientists tend to be written in high-level languages such
+as Python and MATLAB. Their high-level syntax and open-source nature make them an attractive language to create and
+share libraries. This is backed up by statistics collected by JetBrains in 2022 which showed that out of the 23,000
+people surveyed for their Python usage, 53\% of these people used Python for some form of data science
+\cite{PythonDevelopersSurvey}. MATLAB also reports similar statistics, mentioning that their software suite is used by
+over 6500+ universities around the world for various purposes \cite{MATLABAcademia}. Julia is another programming
+language that has been gaining interest in research communities due to having high-level syntax like Python and MATLAB
+but also the performance that comes with low-level languages such as C. The Julia team conducted their own study of
+1,329 individuals over a 3 month period in 2023 and found that 84\% of people surveyed used Julia for research or
+teaching \cite{clasterJuliaUserDeveloper}. The prevalence of these programming languages in academia made them a
+potential candidate for MERIT.jl. The sections that follow will contain an analysis of the advantages and
+disadvantages of using each language.
 
-\section{Why Julia?}
-One of the goals of MERIT.jl was to streamline the development process for new imaging algorithms. As well as this
-MERIT.jl aims to lower the barrier of entry and the coding knowledge needed in order to set up these data processing and
-visualizing pipelines. In order to fulfill these dreams, the right coding language needed to be selected. Since the
-barrier of entry needs to be low, a high-level language needs to be selected and since the primary target of MERIT.jl
-are researchers, it needs to be a language that they are familiar with, or one which they can easily learn. If the
-language chosen is too difficult to learn, any potential time savings from the ease of use would be heavily outweighed
-by the time spent learning the language. \hfill \break
+\section{Python}
+ Python's philosophy was code readability over all and this fact is complimented by its high-level syntax and
+indentation requirements. It was first introduced towards the end of the 1980's by Guido van Rossum and has had an
+expansive community ever since. The introduction of the PyPI Python Package Index in the late 2000's catapulted the new
+20 year old language into the limelight by greatly simplifying the process of distributing libraries. Its success is
+evident with over 20.4TB worth of Python libraries being hosted by PyPI \cite{indexPyPIStatistics}. However, several
+drawbacks severely limit the usability of Python for high performance applications. Firstly, Python is an interpreted
+language, meaning that at runtime, the Python interpreter reads the Python file line by line and calls the relevant
+machine code. Due to this interpretation step, raw Python code is slow to run
+\cite{baranyPythonInterpreterPerformance2014}. For this reason, many libraries that require high performance in Python
+have a significant portion of their code written in C or C++, as demonstrated by their language breakdown in their respective GitHub repositories
+\cite{Tensorflow, paszkePyTorch}. So developers who are concerned about speed have to be proficient in C and C++ as well
+as Python, creating a high barrier of entry which goes against MERIT.jl's  goal of ``easily extensibility''.
 
-\subsection{Python}
-Python was one of the languages considered. Python's philosophy was code readability over all and this fact is
-complimented by its high-level syntax and indentation requirements. It was first introduced towards the end of the
-1980's by Guido van Rossum and has had an expansive community ever since. The Python package repository and pip have
-allowed the community to develop libraries that can be easily shared and downloaded. All these factors catapulted Python
-into the limelight and it has become the go-to language for any data science and deep learning application. However,
-several drawbacks severely limit the usability of Python for high performance applications. Firstly, Python is an
-interpreted language, meaning that at runtime, the Python interpreter reads the Python file line by line and calls the
-relevant machine code. Due to this interpretation step, raw Python code is slow to run. Due to this reason, most
-performant libraries in Python tend to use C-optimized implementations behind the scenes. So in order to develop any
-decently performing Python libraries, one also has to be proficient in C as well as know how to create C and Python
-bindings. Secondly, the Python Interpreter makes use of a runtime lock known as the Global Interpreter Lock (GIL) which
-makes parallel processing in Python incredibly difficult. The reason for the GIL comes down to Python's use of reference
-counting for memory management. Reference counting is a method where each object in Python gets assigned a reference
-variable that keeps track of the number of references that point to that object. As references to the object get
-created, the count goes up, as references get deleted or reach the end of their scope, the count goes down. When the
-reference variable reaches zero, this becomes a flag for the object to be deleted, since there are no longer any
-references pointing to this object. In some threaded applications, this can cause some issues where the reference count
-gets updated by multiple threads simultaneously. In some cases, this can cause the reference count to never reach zero
-leading to a memory leak, or it can reach zero too early and the object gets removed. To get around this, Python puts a
-lock on the interpreter itself, this is the GIL. This means that any Python bytecode needs to first acquire a lock on
-the interpreter before it can be executed. This makes multithreading in Python incredibly difficult and slower than it
-would be in other languages. So for these reasons, Python was rejected as the software of choice.
+Secondly, the Python Interpreter makes use of a runtime lock known as the Global Interpreter Lock (GIL) which makes
+parallel processing in Python difficult \cite{ajitsariaWhatPythonGlobal}. Python implemented the GIL as a consequence of
+their use of reference counting for memory management. Reference counting is a method where each object in Python gets
+assigned a reference variable that keeps track of the number of references that point to that object. As references to
+the object are created, the count goes up, as references are deleted or reach the end of their scope, the count goes
+down. When this variable reaches zero, it becomes a flag for the object to be deleted. In some threaded applications,
+references can get created or deleted by multiple threads, causing this counter to be updated simultaneously. In some
+cases, this can cause the reference count to never reach zero leading to a memory leak, or reaching zero too early,
+prematurely deleting the object. To combat this, Python created the GIL to act as a lock on the interpreter. Any Python
+bytecode needs to first acquire a lock on the interpreter before it can be executed. This makes multithreading in Python
+difficult and slower than it would be in other languages. So for these reasons, Python was rejected as the software of
+choice.
 
-\subsection{MATLAB}
+\section{MATLAB}
 MATLAB was another language that was considered. Developed in 1984, it became the goto software for many research
-purposes due to its ease of use and intuitive operations on matrices and its multi-dimensional analogues. It is taught
-across every single engineering college, and one company estimates that MATLAB is being used in over 57,811 companies
-\cite{CompaniesUsingMATLAB}. MATLAB, however, is still an interpreted language and therefore can be quite slow some
-times. A study conducted by Aruoba and Fernández-Villaverde found that their MATLAB code ran about 3x slower than the
-same code written in C++, highlighting just how big of a difference a compiler can make \cite{aruobaComparisonProgrammingLanguages2018}. It should be noted that the
-MATLAB version of the code ran about 30.26x faster than the same Python code, implying that even though both are an
-interpreted language, the MATLAB interpreter is much more optimized than the Python interpreter. But one of the biggest
-drawbacks by far, is the fact that MATLAB is a license based language. In order to use MATLAB, one must pay a yearly
-subscription of anywhere from €120 to €3,650 depending on the purpose for which it is used. This goes directly against
-the open-source vision of MERIT.jl. This cost can become prohibitively expensive for small teams trying to work on new
-systems and algorithms. Octave was briefly considered as it is a free and open-source competitor to MATLAB, but this
-idea was quickly dropped when it became clear that Octave's main goal was compatibility with MATLAB scripts rather than
-performance over MATLAB. For these reasons, MATLAB was also rejected as the software of choice.
+purposes due to its ease of use and intuitive operations on matrices and its multi-dimensional analogs. MATLAB also has
+seen success in industry with one company estimating that it is used in over 57,811 companies
+\cite{CompaniesUsingMATLAB}. However, MATLAB is an interpreted language like Python, meaning that it is slower than
+compiled code. A study conducted by Aruoba and Fernández-Villaverde found that their MATLAB code ran about 3x slower
+than the same code written in C++, highlighting just how big of a difference a compiler can make
+\cite{aruobaComparisonProgrammingLanguages2018}. It should be noted that the same MATLAB code ran about 30.26x faster
+than their Python implementation, implying that even though both are interpreted languages, the MATLAB interpreter is
+much more optimized than the Python interpreter. But one of the biggest drawbacks by far, is the fact that MATLAB is a
+license-based language. In order to use MATLAB, one must pay a yearly subscription of anywhere from €120 to €3,650
+depending on the purpose for which it is used \cite{MATLABPricing}. This goes against the open-source nature of
+MERIT.jl. The yearly licensing cost can be expensive for small research teams, barring them from contributing to the
+library. Octave was briefly considered as it is a free and open-source competitor to MATLAB, but this idea was quickly
+dropped when it became clear that Octave's main goal was compatibility with MATLAB scripts rather than absolute
+performance. For these reasons, MATLAB was also rejected as the software of choice.
 
-\subsection{Julia}
+\section{Julia}
 The third and final language considered was the Julia programming language. Julia was developed by Jeff Bezanson, Stefan
-Karpinski and Viral B. Shah, and was first released to the public in 2012. Julia was designed to be a coding language
-that offered high-level syntax while also automatically compiling the code at runtime. Julia's Just In Time (JIT) compiler,
-allows it to offer the full dynamism of Python and MATLAB while avoiding the drawbacks that come with having to use an
-interpreter. The aforementioned study found that Julia was only 1.47x slower than the comparable C++ implementation.
-Julia also offers features that are not in Python or MATLAB such as parametric polymorphism, multiple dispatch,
-efficient garbage collection and a JIT that is capable of optimizations and ahead-of-time compilation. Julia also bakes
-in native support for multiple parallel programming paradigms such as GPU programming and multithreading, making it an
-appealing choice for people working on high-performance compute clusters. One other feature that made Julia wildly
-popular was the native ability to call C and Fortran libraries without having to create any special wrappers. This "It
-Just Works" ideology is what garnered Julia its well deserved popularity. With its rising fame and easy to understand
-syntax, this was the coding language decided for MERIT.jl. In the next few sections, the various Julia features used
-will be discussed in more detail. \hfill \break
-
-\section{Features in Julia}
-\subsection{Multiple Dispatch}
-Multiple Dispatch is a programming paradigm in which a function can be dispatched (invoked) based not only on the
-function name but also on the type and order of input arguments. This is opposed to the single dispatch
-programming paradigm where the function that is dispatched usually depends on a special argument before the function
-name. In almost all programming languages this is the variable name for that class. For example, consider the following
-code: \hfill
-\begin{lstlisting}
-    Class Dog:
-        name::string
-
-        function says(a::string):
-            print("The dog, $self.name says $a")
-        end
-    end
-
-    Class Cat:
-        name::string
-
-        function says(a::string):
-            print("The cat, $self.name says $a")
-        end
-    end
-
-    billy = Dog("billy")
-    kate = Cat("Kate")
-\end{lstlisting}
-If we wanted to call the "says" function for the Dog or Cat class, then we would have to write,
-\lstinline|billy.says("Hello World")| or \lstinline|kate.says("Hello World")|. This is the single dispatch paradigm and
-it is probably the one most people are familiar with. This fits well into an object-oriented programming language, where
-objects are used to encapsulate concepts and ideas and therefore we create specialized functions that operate on the data
-contained within that class. However, one drawback is that the compiler relies on the user to remember which
-methods belong to which class, and also which methods are callable. Also, it is not clear how one would write a function
-that allows for the Cat and the Dog to interact with each other. Instead, now consider the multiple dispatch paradigm.
-In Julia particularly, it is important to note that methods no longer belong to objects as we were forced to do in
-single dispatch. Added to this, methods no longer have to be defined within the "class" but can be done after class
-declaration or even class instantiation. Consider the example below: \hfill
-
-\begin{lstlisting}
-    struct Dog{
-        name::string
-    }
-
-    struct Cat{
-        name::string
-    }
-
-    function says(pet::Cat, a::string)
-        print("The cat, $pet.name says $a")
-    end
-
-    function says(pet::Dog, a::string)
-        print("The dog, $pet.name says $a")
-    end    
-
-    function encounter(petA, petB)
-        print("$petA.name encounters $petB.name and $meets(petA, petB)")
-    end
-
-    function meets(petA::Cat, petB::Dog)
-        return "hisses"
-    end
-
-    function meets(petA::Dog, petB::Cat)
-        return "barks"
-    end
-
-    billy = Dog("Billy")
-    kate = Cat("Kate")
-    says(billy, "Hello")
-    says(kate, "Hello")
-    encounters(kate, billy)
-    encounters(billy, kate)
-
-\end{lstlisting}
-
-Here we have a similar situation as before, but instead of having classes, we have structs and methods that take those
-structs as arguments. On lines 30 and 31 in the code block above, we get a similar output as in single dispatch. But
-where multiple dispatch really shines is in the next two lines. Here we have the cat and the dog encountering each
-other. In single dispatch, someone would have to create a wrapper library to handle the interaction between two classes,
-but in multiple dispatch it is as easy as creating another method. This can be seen in the "meets" functions defined in
-the code block above. Since multiple dispatch relies on the input arguments as well, we can create specialized "meet"
-functions for when a Dog meets a Cat or when a Cat meets a Dog. In the above code block executing line 32 would print
-out "Kate encounters Billy and hisses". This is because we had a struct of type Cat as the first input argument to
-"meets" and a struct of type Dog as the second argument. Line 33 on the other hand, would print "Billy meets Kate and
-barks", since the order of the input arguments is reversed. Another notable consequence from this is that if anyone
-else wanted to extend "meets" and therefore "encounters" to other animals, they would only need to define a struct with
-the same fields as Cat and Dog, and new meets methods as such: \hfill
-
-\begin{lstlisting}
-    struct Rabbit{
-        name::string
-    }
-
-    function meets(petA::Cat, petB:Rabbit)
-        return "chases"
-    end
-    function meets(petB::Rabbit, petB:Cat)
-        return "runs away"
-    end
-
-    kate = Cat("Kate")
-    johnny = Rabbit(Johnny)
-    encounters(kate, johnny)
-    encounter(johnny, kate)
-\end{lstlisting}
-
-Line 12 in the above code block would print "Kate encounters Johnny and chases" while line would print "Johnny
-encounters Kate and runs away". While these examples may be simple, they showcase the powerful flexibility and
-extensibility behind multiple dispatch. It is this feature that allows all the Julia libraries to "just work" together,
-without needing any glue-code. Some other developer could come along and create a new package for a "Lion" and so long
-as it implements a struct with the same required field names as the other animals and creates a "meets" function, any
-variable of type Lion will work well with the "encounters" function. 
-
-\begin{figure}[!h]
-    \includegraphics[width=1\textwidth]{multipleDispatch.png}
-    \centering
-    \caption{Multiple Dispatch (top) vs Single Dispatch (bottom)} 
-    \label{fig:multipleDispatch}
-\end{figure}
-
-\subsection{Type Heirarchy}
-All the types in Julia are arranged in a tree-like structure and can be broadly classified into two categories, an
-Abstract Type or a Concrete Type. Abstract types are the internal nodes of the type tree, having both parents and
-children, while concrete types are the "leaves" of this tree. One notable difference between abstract types and concrete
-types is that abstract types cannot be instantiated; they serve only as nodes in the type graph. While this may seem
-pointless at first glance, it is this very feature that allows the multiple dispatch paradigm mentioned before to really
-shine. Shown in Figure \ref{fig:juliaTypeHeirarchy}, is the type hierarchy for the Integer type, the abstract types are
-highlighted in red, whereas the concrete types are highlighted in blue. \hfill
-\begin{figure}[t]
-    \includegraphics[width=0.45\textwidth]{juliaTypeTree.png}
-    \centering
-    \caption{Type hierarchy for the Integer Type} 
-    \label{fig:juliaTypeHeirarchy}
-\end{figure}
-
-As well as giving us a way to logically organize types, the type hierarchy tightly integrates with the multiple dispatch
-system. Consider for example the code block below: \hfill
-\begin{lstlisting}[language=Julia]
-    abstract type Animal end
-
-    struct Cat <: Animal
-        name::string
-    end
-
-    struct Dog <: Animal
-        name::string
-    end
-
-    function encounters(petA::Animal, petB::Animal)
-        verb = meets(petA, petB)
-        println("$(petA.name) meets $(petB.name) and $(verb)")
-    end
-
-    meets(petA::Animal, petB::Animal) = "passes by."
-    meets(petA::Cat, petB::Dog) = "hisses"
-    meets(petA::Dog, petB::Cat) = "barks"
-
-    whiskers = Cat("Whiskers")
-    fudge = Dog("Fudge")
-    encounters(whiskers, fudge)
-
-    ####################################################
-    #Defined in another library that subtypes the Animal abstract class.
-    struct Rabbit <: Animal
-        name::String
-    end
-
-    chomper = Rabbit("Chomper")
-    encounters(whiskers, chomper)
-\end{lstlisting}
-
-In the above code block, we define an abstract Animal type, by default this is a subtype of the abstract type Any. Then
-we define a concrete type Cat and a concrete type Dog. When line 22 gets executed, the multiple dispatch system will
-choose the correct \lstinline[language=Julia]|meets()| function and "Whiskers meets Fudge and hisses", this is as expected. Now another developer
-might want to implement a Rabbit type. So they create the Rabbit type as shown above, and specifies that it is a subtype
-of the Animal abstract type via the \lstinline[language=Julia]{<:} operator. Even if they do not implement a
-\lstinline[language=Julia]{meets()} that is specialized for their Rabbit class, the
-\lstinline[language=Julia]{encoutners()} will still work since it only ex:wantpects an input that is a subtype of Animal. The
-\lstinline[language=Julia]{meets()} function will also work, since the original author implemented a
-\lstinline[language=Julia]{meets()} method that accepts arguments of type Animal or any subtypes of it. But why did not the earlier call to \lstinline[language=Julia]{encoutners()} (and consequently \lstinline[language=Julia]{meets()})
-fail, since both lines 15 and 16 are valid options for the dispatcher? This is an example of where multiple dispatch
-benefits from having a type hierarchy. The Julia dispatcher always dispatches the function that is most specific across
-\textbf{ALL} its arguments. So in the Cat and Dog case, the \lstinline[language=Julia]{meets()} on line 16 will be
-dispatched. In the Cat and Rabbit case, the \lstinline[language=Julia]{meets()} one line 15 is the most specific
-function and so that gets dispatched. This allows for amazing extensibility that isn't found in many other languages. Often
-it is impractical for a developer to think of all the ways their library would be used or all the types or functions
-that the end-users would require. In Julia, they don't have to think about it. Instead, they can define an abstract
-class and some methods that accept the abstract class as inputs. The users can then create subtypes of this abstract
-class and define their own methods for their new type. Neither developer has to be worried about whether they were through
-enough to consider all possibilities, they can write code for their own purposes and trust that the Julia dispatcher and
-type hierarchy would automatically determine the correct function to call. \hfill \break
-This idea is heavily used in the MERIT.jl library. Currently, most of the research in microwave imaging is centered
-around the breast and breast cancer, but in the future, this could be implemented for other body parts. As such, the
-library needs to be flexible to allow for easy updates. MERIT.jl is centered around the Scan abstract type, from this
-type we subtype the BreastScan type, which holds all the information from the scan of a particular breast. If in the
-future microwave imaging gets used for a chest scan, all a developer would need to do is to implement a ChestScan
-struct, subtyped from Scan, and implement a few functions and the Julia dispatcher will handle the rest. I, as the
-original developer, do not need to worry about the intricacies of how a ChestScan struct would work, or what fields it
-would need. I can trust that future developers can easily extend this library without introducing breaking changes to
-the library core. In this way, MERIT.jl achieves extensive flexibility and expandability which would not be possible in
-other languages.  \hfill \break
-
-\begin{figure}[h]
-    \includegraphics[width=0.45\textwidth]{scanType.png}
-    \centering
-    \caption{Current type hierarchy in MERIT.jl} 
-    \label{fig:scanType}
-\end{figure}
-
-\subsection{Parametric Polymorphism}
-Parametric polymorphism refers to the programming paradigm where a function can be created generic to the input argument
-type. The compiler can then strongly type the function with the correct types. Consider the simple example of an
-\lstinline[language=Julia]{addtwo(x)} function.
-
-\begin{lstlisting}[language=Julia]
-    function addTwo(x::T) where {T <: Real}
-        return x + T(2)
-    end
-\end{lstlisting}
-
-Instead of restricting x to a specific type, we replace it with the variable T and instead place a restriction on T. In
-this case we say that T, and by extension x, can be any type that is a subtype of the abstract Real type. We also
-convert the 2 from an Int64 type, to whatever type T is, to allow for accurate summation. If parametric polymorphism was
-not a feature in Julia, this function would need to be duplicated 16 different times to account for all the concrete
-subtypes of Real (see Figure \ref{fig:juliaTypeHeirarchy}). Parametric Polymorphism with the Julia type hierarchy allows
-a developer to have incredible expressive power with very few lines of code. \hfill \break 
-MERIT.jl uses this feature extensively due to the fact that the library needs to be agnostic to the type of the input
-data. When instantiating the BreastScan struct the user can provide the types of the data that they will load and can
-therefore set the internal data type of the struct. It would be impossible to support all 4,176 different permutations
-of every single function, however, with parametric polymorphism, the function only needs to be defined once and the Julia
-compiler will handle the rest. This means that researchers and developers don't have to worry about whether the library
-functions can support the data type of their data, so long as it follows the type restriction set on the function, it
-will produce an output, greatly simplifying the coding experience.  
-
-\subsection{Type Stability}
-Type Stability is a coding discipline that Julia recommends all code to use. A function whose contained variables have a
-consistent type for the lifetime of that function is considered to be "type stable" or to have "type stability". Another
-way to think about this is that if the output type only depends on the input types, then the function is type stable.
-Consider the following two functions: \hfill
-\begin{lstlisting}[language=Julia]
-    function unstable()
-        x = 1
-        for i = 1:10
-            x /= rand()
-        end
-        return x
-    end
-    
-    function stable()
-        x = 1.0
-        for i = 1:10
-            x /= rand()
-        end
-        return x
-    end
-    
-\end{lstlisting}
-In both functions, we have a variable x which gets divided by a random float 10 times, with the result being returned.
-However, the first function is considered to be type unstable while the second function is type stable. This is because
-in the first function x was declared as an Int64, but when we divide by the random Float64, the data type of x changes
-to Float64 as Julia performs floating point division by default. Whereas in the second function, x gets declared as a
-Float64 and remains as a Float64 when it gets returned. Type Stability is important because if the Julia compiler can
-determine that the types of the variables stay constant for the lifetime of the function, it can perform optimizations
-on the machine code that would otherwise be impossible. These optimizations are evident when benchmarking the functions
-above. Using the \lstinline[language=Julia]{@benchmark} macro from BenchmarkTools, I timed both functions. They were run
-multiple times to ensure that only the compiled versions of the function were being executed rather than the functions
-being interpreted. The benchmarks showed that on average the type stable function ran in 306.178ns whereas the type
-unstable function ran in 573.355ns; almost 1.87x slower. When considering the many hundreds of function calls required
-to produce an output in MERIT.jl, these slowdowns become significant. When coding functions for MERIT.jl, I aimed to
-preserve type stability in functions that I knew would be called frequently. The
-\lstinline[language=Julia]{@code_warntype} macro was greatly beneficial in this task as it flags sections of code where
-the compiler cannot definitively infer the type of a variable or where it suspects there might be some type instability.
-Having type stable functions in MERIT.jl was a necessity, where possible, due to the large datasets that need to be processed. An 8cm
-radius breast at 0.25cm resolution has about 70k points, which need to have their distances to each antenna calculated.
-Assuming we are dealing with the MARIA M4 system with its 60 antennas, this equates to around 4.2M distance calculations
-alone for each image. Running such calculations on type unstable functions would be prohibitively expensive and would
-take far too long to compute. Herein lies one of the drawbacks of using the Julia language. While the dynamism offers us
-powerful expressibility, it also comes at the cost of massive slowdowns when used incorrectly. While it may be easy to
-create type stable functions for the example shown in the code block above, it becomes increasingly harder to create
-type stable code when the operations that need to be performed become more complex. Creating performant code in these
-situations requires the developer to have advanced knowledge of the language. This does raise the barrier of entry for
-people who want to contribute to the library. However, I feel that this is an acceptable trade-off since the benefits
-that come from having a performant library, such as increased usage and better recognition, far outweigh the negatives
-from having an increased barrier of entry.
-
-\subsection{Closure}
-Closure in programming refers to the practice of calling a function A which returns a function B that has some
-information about the variables in the scope of function A. Consider the following simple example:
-\begin{lstlisting}[language=Julia]
-    function addX(x)
-        scalar = x
-
-        function calc_(a)
-            return a + scalar
-        end
-    end
-
-    add5 = addX(5)
-    add7 = addX(7)
-    add5(2)  # Will return 7
-    add7(10) # Will return 17
-\end{lstlisting}
-Here a function called \lstinline[language=Julia]{addX} is defined which accepts an input \lstinline[language=Julia]{x},
-assigns it to a variable called \lstinline[language=Julia]{scalar} and finally defines a function called
-\lstinline[language=Julia]{calc_} which calculates and returns \lstinline[language=Julia]{a + scalar}. Here we say that
-\lstinline[language=Julia]{scalar} is "captured" by \lstinline[language=Julia]{calc_}. When calling the
-\lstinline[language=Julia]{addX} function as was done in line 8, we receive a function pointer of sorts to a
-parametrized \lstinline[language=Julia]{calc_}. Note that by default Julia automatically returns the last thing computed
-in the executed function's scope, this is how \lstinline[language=Julia]{calc_} is returned from
-\lstinline[language=Julia]{addX} without an explicit return statement. This idea of closure is important as it allows
-users to customize parametric functions to suit their particular needs. The MERIT.jl library uses this in the
-\lstinline[language=Julia]{get_delays} function in the Beamform.jl file (for more information see the GitHub link in
-the Introduction). Earlier sections showed
-how $epsilon$ is a free parameter in the beamforming equations, one that researchers would be changing frequently.
-Implementing closure for the \lstinline[language=Julia]{get_delays} method allows researchers to quickly and easily
-define a set of delay functions which they can pass to the \lstinline[language=Julia]{beamform} function to see the
-various effects on the resulting scan that come from tweaking $epsilon$. This fulfills one of the other tenets of the
-library, which was to create an interface that allowed for flexibility and customizability in the functions that
-mattered. One important thing to keep in mind is that captured variables must never be reassigned otherwise, the
-compiler will not be able to infer the data type of the variables leading to slow and type unstable code. Again this
-highlights one of the drawbacks of using Julia, writing customizable code is relatively easy, however writing code that
-is both customizable and performant is tough. Any researcher who might want to implement a custom delay function (e.g.
-one that does not assume a straight line model) using closure, would have to make frequent use of the
-\lstinline[language=Julia]{@code_warntype} to ensure that the code they have written is type stable, and therefore comes
-with some promises of performance.  
-
-\subsection{Type Safety}
-Type Safety refers to a program or language's ability to detect and discourage errors that arise from performing
-operations on the wrong data type. For example in Julia, one can easily add two numeric types together but if one tried
-to add two strings together, the Julia compiler would produce an error, since that would be an illegal operation. This
-offers some level of protection against illegal operations, but there are many cases where the type of the variable
-agrees with the operation being performed, but their semantic meaning disagrees. Consider the example of a function used
-to calculate the speeds of various vehicles. The function \lstinline[language=Julia]{calcSpeed} accepts a vector for
-distance traveled by the various cars and the times each car took to travel that distance and returns the speed of each
-car in a third vector.
-
-\begin{lstlisting}[language=Julia]
-function calcSpeed(dist::Vector{T}, t::Vector{T}) where {T <: Real}
-    return dist ./ t
-end
-
-#################################################### 
-distance = rand(1, 100)
-time = rand(1, 100)
-calcSpeed(distance, time)   # Will compute the speed
-
-#################################################### 
-distance = rand(1, 100)
-time = rand(ComplexF64,1, 100)
-
-# Will throw an error since there is a type mismatch
-calcSpeed(distance, time)  
-
-#################################################### 
-distance = rand(1, 100)
-time = rand(1, 100)
-
-# Will compute the wrong answer, but no error gets thrown
-calcSpeed(time, distance) 
-\end{lstlisting}
-On line 8, calcSpeed gets called correctly and returns the speed of each car correctly. On line 13, the Julia compiler
-will throw an error because the \lstinline[language=Julia]{time} variable is a Complex Float64 and
-\lstinline[language=Julia]{calcSpeed} only accepts types that are a subset of Real. However, on line 18, no error is
-thrown even though the wrong answer is returned. This is because compilers can only make deductions on the concrete
-types of the variables and the operations being performed and not on the semantic meaning of the function, variable
-names and what it means to call the function with those variables. However, we can limit the chance of a variable being
-passed to the wrong positional argument by creating lightweight types that encode this semantic information in their
-type name. In the above case, it would mean creating a "distance" type, and a "time" type that are wrappers around some
-in-built concrete type. With this, the compiler will throw an error when running line 18 as the function received a
-vector of type "time" when it was expecting one of type "distance". \hfill \break
-The MERIT.jl library exemplifies the idea of "strong" type safety through its implementation of the Point
-data type. The Point type is an abstract type from which the Point3 and Point2 concrete type subsets. These are
-lightweight wrappers around a grouping of 3 and 2 numbers respectively and serve the purpose of being a 3D and 2D point.
-\begin{lstlisting}[language=Julia]
-    abstract type Point end
-
-    # xyz can be any data type that is a subset of Real
-    mutable struct Point3{T <: Real} <: Point
-        x::T
-        y::T
-        z::T 
-    end
-
-    mutable struct Point2{T <:  Real} <: Point
-        x::T
-        y::T
-    end
-\end{lstlisting}
-Since these are custom data types, the inbuilt operators could not be used on them. So in addition to this, MERIT.jl
-also had to extend some of the inbuilt operators using the concepts from parametric polymorphism so that these points
-data types could be used in a meaningful way. For the full suite of operations implemented, please refer to the GitHub
-link in the Introduction. Every other function in the library that needs to work with the points from the imaging domain,
-e.g. the \lstinline[language=Julia]{domain_hemisphere!} and the \lstinline[language=Julia]{get_delays}, to name a few,
-accept collections of the points data types rather than simply accepting a matrix of numbers. This way, an error gets
-thrown if any other collection of numbers that is not a points data type is passed in that argument. This does not
-entirely solve the problem however, it is still feasible for a Point3 variable representing antenna locations to be
-mistakenly used in the place of a Point3 variable which describes the imaging domain. Even though this issue still
-exists in some part, the hope is that with this new type, the chance of the aforementioned issues arising would be
-minimal. Due to time constraints, the entire library could not be made strongly type safe, but the Points.jl file
-provides an excellent template that could be used to implement further types to eventually reach a strong type safety
-that is in every function in the library. %%Add section about performance impact here, Run time from 8 to 12 secs.
-
-\subsection{Customizability}
-The customizability of the MERIT.jl library has been demonstrated extensively in the previous sections. However, nowhere
-is this exemplified more than in the BreastScan struct. The entire library is built around the use of the Scan structs.
-These structs encapsulate all the information about a particular Scan, including all the required information about the
-machine that was used to conduct the scan. Most importantly each scan struct is recommended to have two function pointer
-fields which will hold pointers to the delay function and the beamforming function to be used in the beamforming
-process. During the setup process, researchers can easily swap out the delay function or the beamforming function used
-by overwriting these function pointers with other relevant functions from the library or with their own functions. In
-order to work with the one-call data processing pipeline in MERIT.jl, researchers just need to ensure that their delay
-and beamformer functions follow these templates:
-\begin{lstlisting}[language=Julia]
-    function delay_template(relative_permiativity)
-        #Capture the relatively_permiativity
-            function(channels, antenna, domain_points):
-                #calculate and return a time matrix
-                #Size = (1 x #Channels x #Points)
-            end
-    end
-    
-    function beamformer(delayed_signals)
-        #Do some processing
-        #return should be of size (1 x 1 x #Points)
-    end
-\end{lstlisting}
-These templates allow for a lot of flexibility and are really where MERIT.jl shines in comparison to its MATLAB counter
-part. Researchers who just want to benchmark new algorithms against already established ones just need to follow these
-templates and they can be guaranteed that their functions will "just work" with the one-call data processing pipeline.
-If their functions also follow the rules of type stability mentioned above, they can also have some reasonable
-guarantees that any slowdowns are caused by their implementations rather than the lack of compiler optimizations for
-type unstable code.
-
+Karpinski, Viral B. Shah and Alan Edelman, and was first released to the public in 2012 \cite{bezansonWhyWeCreated12}.
+The creators wanted a language that was as fast as C while also retaining the dynamism of high-level languages such as
+Ruby and Python. The Just In Time (JIT) compiler employed by the Julia runtime compiles the high-level language syntax
+into machine code allowing for large performance gains over other high-level languages. The aforementioned study found
+that Julia was only 1.47x slower than the comparable C++ implementation \cite{aruobaComparisonProgrammingLanguages2018}.
+Added to this speed, Julia offers features that are not available in Python or MATLAB such as parametric polymorphism,
+multiple dispatch and efficient garbage collection. Julia also has native support for multiple parallel processing
+paradigms such as GPU programming and multithreading, making it an appealing choice for people working on
+high-performance compute clusters. One other feature that made Julia wildly popular was the native ability to call C and
+Fortran libraries without having to create any special wrappers. These features allow Julia to have an ``It Just
+Works!'' ideology, where libraries written in other supported languages as well as in Julia can all work together
+without significant additions of ``glue-code''. As stated before Julia has already garnered an interest in academia,
+this coupled with its performance made it a clear choice for MERIT.jl. The next chapter will discuss in detail the
+various Julia features that were used in the library and how they contributed to the overall goal of answering the
+research questions stated in the beginning.   

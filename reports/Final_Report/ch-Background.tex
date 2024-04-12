@@ -1,28 +1,31 @@
 \chapter*{Background}
 \addcontentsline{toc}{chapter}{Background}
 \section{Literature Review}
-In order to understand the design requirements of the library, a literature review needed to be performed. Due to the
-relative infancy of the field, there are various competing configurations with no clear winner in sight. However, some
-patterns can still be gleaned from current clinical trials which are broadly representative of the direction the field
-is moving in. In all of these systems, the patient to be scanned would lie in the prone position on an imaging table.
-The patient would then pass their breast through a hole in the table into some type of imaging apparatus. The imaging
-apparatus varies slightly from system to system, but they all contain some type of antenna array that is used for the
-imaging process. Most systems will adopt one of the following antenna setups
+This section reviews the current state-of-the-art hardware in the field. The field has seen intense research since E.
+Larsen and J. H. Jacobi released a paper on microwave imaging of an isolated canine kidney, showing that this new
+modality provided a viable alternative to established methods such as X-rays
+\cite{larsenMicrowaveScatteringParameter1979}. In recent years we have seen many clinical trials for imaging systems
+with various competing configurations and no clear benefits in choosing one configuration over another. Despite the lack
+of a prevailing paradigm, some patterns can be gleaned from these trials that are broadly representative of the
+direction that the field is moving towards. In all of these systems, the patient to be scanned would lie in the prone
+position on an imaging table. The patient would then pass their breast through a hole in the table into some type of
+imaging apparatus. The imaging apparatus varies slightly from system to system, but they all contain some type of
+antenna array that is used for the imaging process. Most systems will adopt one of the following antenna setups
 \begin{enumerate}
-    \item Monostatic
-    \item Leveled Multistatic
     \item Fully Multistatic
+    \item Leveled Multistatic
+    \item Monostatic
 \end{enumerate}
 \noindent These terms relate to the position of antennas around the breast tissue and how the resulting scan data would
-be structured. \hfill \break
+be structured. The subsequent sections will consider an example of each of the above configurations. \hfill \break
 
 \subsection{MARIA M4}
-The first system we will look at is the MARIA M4 system developed by Preece et al within the Electrical and Engineering
-Department of the University of Bristol \cite{preeceMARIAM4Clinical2016}. This is the 4th iteration in a series of MARIA systems that evolved from a
-system of 16 UWB antennas to 60 antennas in the current system. These all operate in a multistatic configuration,
-meaning that any antenna in the array can listen to any other antenna in the array, an example of which can be seen in
-Figure \ref{fig:MultistaticExample}. This figure shows a top-down view, however, one can imagine this being generalized
-to a hemisphere of antennas around the breast. \hfill
+The first system to be reviewed is the MARIA M4 system developed by Preece et al within the Electrical and Engineering
+Department of the University of Bristol \cite{preeceMARIAM4Clinical2016}. This is the 4th iteration in a series of MARIA
+systems that evolved from a configuration of 16 UWB antennas to the current system which is equipped with 60 antennas.
+These all operate in a multistatic configuration, allowing any antenna in the array to transmit to and receive from any
+other antenna in the array, an example of which can be seen in Figure \ref{fig:MultistaticExample}. This figure shows a
+top-down view, however, one can imagine this being generalized to a hemisphere of antennas around the breast. \hfill
 
 \begin{figure}
     \includegraphics[width=0.3\textwidth]{multistaic.png}
@@ -35,43 +38,44 @@ to a hemisphere of antennas around the breast. \hfill
 A commercial-grade Vector Network Analyzer (VNA) was used as the system signal source. The VNA, operating in a stepped
 continuous wave mode, was used to both produce the transmitted sine waves and record the frequency and phase of the
 reflected waves at the receiving antennas. The choice of a commercial-grade VNA is indicative of the prototype nature of
-the MARIA M4 system, where easy reconfigurability of the frequency imaging range would be of higher importance than
-price. While not explicitly stated, one would presume that the M5 system would replace the VNA with some application
-specific hardware to reduce the overall cost of the system. The M4 system exploits the inherent symmetry in the antenna
+the MARIA M4 system, where easy reconfigurability of the frequency imaging range was of higher importance than price.
+While not explicitly stated, one would presume that the M5 system would replace the VNA with some application specific
+hardware to reduce the overall cost of the system. The M4 system exploits the inherent symmetry in the antenna
 reciprocity to halve the number of channels (made of a transmitting and receiving antenna) collected, thereby speeding
 up the scan time. For the MARIA M4 system, this equates to a 1770 reduction in the number of channels collected. Figure
 \ref{fig:MARIAM4}, shows the antenna array used in the M4 system (a), as well as the M5 system (c) which is an
 integrated package.
-
-
 \begin{figure}
     \includegraphics[width=0.5\textwidth]{MARIA_M4.png}
     \centering
     \caption{The MARIA M4 and M5 system. (a) The MARIA M4 antenna array. (b) The M4 in a clinical setting. (c) The integrated M5 package \cite{preeceMARIAM4Clinical2016}}
     \label{fig:MARIAM4}
 \end{figure}
-
-\noindent The team also conducted a clinical study in order to test the efficacy in women who already attend symptomatic
+The team also conducted a clinical study in order to test the efficacy in women who already attend symptomatic
 breast care clinics. In total 86 patients were included with ages ranging from 24 - 78 years old; the mean age being
-51.4. The inclusion criteria for the study required that possible participants be clinically symptomatic, be able to be
-imaged by ultrasound and mammograms (these being the control), be able to lie in the prone position and have cup sizes
-within 310 to 850 ml. The types of lesions included in the study were mostly cysts and cancers, but some other
-conditions such as hematoma, lipoma and fibroadenoma were also included. The goal of the study was to test the
-sensitivity of the M4 system; the sensitivity metric being determined based on the ability of the system to localize a
-lesion as it correlated with the location in the ultrasound image. The M4 system showed a sensitivity of 74\% (64/86)
-when compared with the "gold-standard' of an ultrasound. The research team also divided the group into pre-/peri- and
-post- menopausal women and found that the sensitivity was 75\% and 73\% respectively. However, the reliability of these
-results are called into question when considering the sample size of the study. Given a sample size of 86, assuming
-a normal distribution and that the results are statistically significant ($p < 0.05$, Z = 1.96), a 7.11\% margin of
-error was calculated. While this may not be enough to conclusively prove that the M4 system is a viable alternative to
-Mammograms, it is enough to show promise. With a larger sample size, this margin of error could be narrowed further.
+51.4. The inclusion criteria for the study required that possible participants:
+\begin{itemize}
+    \item Be clinically symptomatic
+    \item Be able to be imaged by ultrasounds and mammograms (these scans being the control)
+    \item Be able to lie prone
+    \item Have cup sizes between 310 and 850 ml.
+\end{itemize}
+The types of lesions included in the study were mostly cysts and cancers, but some other conditions such as hematoma,
+lipoma and fibroadenoma were also included. The goal of the study was to test the sensitivity of the M4 system; the
+sensitivity metric being determined based on the ability of the system to localize a lesion as it correlated with the
+location in the ultrasound or mammogram image. The M4 system showed a sensitivity of 74\% (64/86) when compared with the
+``gold-standard'' of an ultrasound. The research team also divided the group into pre-/peri- and post- menopausal women,
+discovering sensitivities of 75\% and 73\% respectively. However, the credibility of these results are questioned when
+considering the limited sample size of the study. Given a sample size of 86, assuming a normal distribution and that the results
+are statistically significant ($p < 0.05$, Z = 1.96), a 7.11\% margin of error was calculated. While this may not be
+enough to conclusively prove that the M4 system is a viable alternative to mammograms, it is enough to show promise.
 
 \subsection{Wavelia}
-The second system that was considered was the Wavelia Microwave Breast Imaging System developed by MVG Industries
+The second system considered was the Wavelia Microwave Breast Imaging System developed by MVG Industries
 \cite{moloneyWaveliaMicrowaveBreast2021}. The Wavelia system integrates the imaging system as well as the examination
 bed into one complete package (Figure \ref{fig:WaveliaSystem}). The integrated package makes the Wavelia system an
 appealing choice for some hospitals, however, its large size may be a barrier to adoption in some facilities where space
-is a premium. \hfill \break
+is a premium.\hfill \break
 
 \begin{figure}
     \includegraphics[width=0.5\textwidth]{Wavelia.png}
@@ -80,20 +84,21 @@ is a premium. \hfill \break
     \label{fig:WaveliaSystem}
 \end{figure}
 
-Like in the MARIA M4 system, patients lie in a prone position and place their breasts in the circular cutouts on the
-bed. The system then begins to create a 3D reconstruction of the exterior of the breast using a stereoscopic camera.
-This also allows for the breast volume to be explicitly calculated rather than being inferred like in the MARIA system.
-The Wavelia makes use of the UWB spectrum when imaging the breast, although they opt for a narrower frequency range of
-0.5 - 4.0 GHz compared to the 3.0 - 8.0 GHz range of the MARIA system. The antenna configuration, unlike the MARIA system, is an array of 18 Vivaldi-type probes arranged in a concyclic manner
-on a horizontal plane. These antennas operate in a Multistatic manner and image the breast in sections parallel to the
-coronal plane. The entire antenna assembly moves downwards in 5mm intervals to image the entire breast (Figure \ref{fig:LeveledMultistaticExample}). This is a
-leveled multistatic system as opposed to the fully multistatic system in the MARIA M4. This leveled multistatic approach
-has the benefit of a theoretically infinite vertical resolution. If the radiologist wanted a finer resolution along the
-coronal plane, they would just have to tweak the array vertical step size, rather than having to manufacture an entirely
-new antenna array, like in the MERIT system. This leveled approach also allows the parameters of the reconstruction
-algorithm to be easily changed based on the particular section of the breast that we are imaging. The fully multistatic
-approach, however, would need significant additional logic in the post-processing steps to determine which channels are
-coplanar with a particular section. \hfill \break
+Like in the MARIA M4 system, patients lie prone on the examination table and place their breasts in the circular cutouts
+on the bed. Through the use of a stereoscopic camera, a 3D scan of the breast is collected allowing for an explicit
+calculation of the imaging domain, rather than the hemispherical approximation approach that needs to be taken with the
+MARIA system. The Wavelia system also makes use of the UWB spectrum while imaging, but opts to use a narrower part of
+the spectrum, 0.5 - 4.0 GHz compared to the 3.0 - 8.0 GHz range of the MARIA system. The antenna configuration, unlike
+the MARIA system, is an array of 18 Vivaldi-type probes arranged in a concyclic manner on a horizontal plane. These
+antennas operate in a Multistatic manner and image the breast in sections parallel to the coronal plane. The entire
+antenna assembly moves downwards in 5mm intervals to image the entire breast (Figure
+\ref{fig:LeveledMultistaticExample}). This is a leveled multistatic system as opposed to the fully multistatic system in
+the MARIA M4. This approach has the benefit of a theoretically infinite vertical resolution. If the radiologist requires
+a finer resolution along the coronal plane, they would simply change the vertical step size of the array, rather than
+having to manufacture an entirely new antenna array, like in the MERIT system. This leveled approach allows for the
+parameters of the reconstruction algorithm to be tuned independently for each coronal slice. Whereas in the fully
+multistatic approach, significant logic would be required in the post-processing steps to determine which channels are
+coplanar with a particular slice. \hfill \break
 
 \begin{figure}
     \includegraphics[width=0.5\textwidth]{LeveledMultistatic.png}
@@ -104,44 +109,60 @@ coplanar with a particular section. \hfill \break
 
 \noindent The Wavelia paper \cite{moloneyWaveliaMicrowaveBreast2021} conducted a feasibility study on 25 female
 participants who were recruited after presenting with symptoms to the Symptomatic Breast Unit at Galway University
-Hospital, Ireland. Their inclusion criteria required that participants to have a mammogram that was performed at the
-time of symptomatic presentation to the hospital, be capable of lying in the prone position for a length of 15 minutes,
-have a bra size larger than 32B and a breast size equivalent to a B cup. The final criteria required that the
-participant's submerged breast have enough margin between the breast and the cylindrical container in order to
-accommodate the transition liquid. This was determined by the clinician at the time of the trial. Out of the 25 patients
-who presented with a palpable lump, one patient's scan had to be removed, due to the lump being later classified as
-normal tissue. 11 of the participants had a biopsy confirmed carcinoma and out of these, the Walia system detected 9 lesions,
-with 7 being located to the appropriate region. Overall the system detected an abnormality in 21 of the 24 participants,
-leading to a sensitivity of 87.5\%. The researchers do note some limitations of the Walia system, namely it can't detect
-any lesions smaller than 10mm. This is significant since the size of the detected lesion plays a big factor when
-deciding whether a lesion is cancerous or not. Another limitation of the system is that breast sizes that are too small
-cannot be scanned in any great detail by the Wavelia system. Due to the patients being in the prone position, their
-breast tissue needs to hang down far enough to have multiple sections of their breast be imaged by the antenna array.
-The researchers are working on a subsequent system that should address all the aforementioned limitations. Overall the
-participants had a positive outlook on the system. 23 out of the 25 women said that they would recommend the procedure
-to other women and all of the women agreed that the information provided was clear and well understood.
+Hospital, Ireland. Their inclusion criteria required that participants:
+
+\begin{itemize}
+    \item Have a mammogram that was performed at the time of symptomatic presentation to the breast unit (these were
+    used as controls)
+    \item Be capable of assuming the prone position for a length of 15 minutes
+    \item Have a bra size larger than a 32B and have a breast size equivalent to a B cup
+    \item Have a breast such that when submerged, there would be a margin between the cylindrical container and the
+    breast to accommodate the transition liquid 
+\end{itemize}
+
+The suitability of the patient based on the final criterion was determined by a clinician at the time of the trial. Out
+of the 25 patients who presented with a palpable lump, one patient's scan had to be removed, due to the lump later being
+classified as normal tissue. 11 of the participants had a biopsy confirmed carcinoma and out of these, the Walia system detected 9 lesions, with 7
+being located to the appropriate region. Overall the system detected an abnormality in 21 of the 24 participants,
+leading to a sensitivity of 87.5\%. The researchers do note some limitations of the Walia system, namely that it cannot
+detect any lesions smaller than 10mm. This is significant since the size of the detected lesion plays a big factor when
+deciding whether it is cancerous or not. Another limitation of the system is that breast sizes that are too small cannot
+be scanned in any great detail by the Wavelia system. Due to the prone position assumed by the patients, their breast
+tissue needs to have a pendulus reach far enough such that multiple sections of the breast can be imaged by the antenna
+array. The researchers are working on a subsequent system that should address all the aforementioned limitations.
+Overall the participants had a positive outlook on the system. 23 out of the 25 women said that they would recommend the
+procedure to other women and all of the women agreed that the information provided was clear and well understood.
 
 \subsection{TSAR}
-The third and final system considered for the project was the TSAR system \cite{e.c.fearMicrowaveBreastImaging2013}. Standing for Tissue Sensing Adaptive Radar,
-this system was developed by the University of Calgary to address some of the shortcomings of the previous two systems.
-In the MERIT and Wavelia systems, reflections from the skin can muddy the data and can lead to artifacts in the final
-image. In order to get around this, both systems take an additional scan, offset by a fixed rotational amount in the
-coronal plane. The idea being, that any reflections that appear on the first scan would appear with similar amplitude in
-the second scan at the same time position, while the tumor would show in a different place, provided that the tumor
-doesn't lie on the axis of rotation. This method is known as Rotational Subtraction
-\cite{klemmImprovedDelayandSumBeamforming2008}. The TSAR system, on the other hand, makes use of an adaptive algorithm
-that instead estimates the skin response at an antenna as the weighted sum of the responses from the neighboring
-antennas. This skin response can then be subtracted from the current antenna to remove the reflection artifacts
-\cite{makladNeighborhoodBasedAlgorithmFacilitate2012}. \hfill \break
+The third and final system considered for the project was the TSAR system \cite{e.c.fearMicrowaveBreastImaging2013}.
+Standing for Tissue Sensing Adaptive Radar, this system was developed by the University of Calgary to address some of
+the shortcomings of the aforementioned systems. In the MARIA and Wavelia systems, reflections from the skin can dominate
+in the received signals leading to artifacts in the final image. To combat this, both systems record an additional scan,
+where the antenna array is offset by a fixed rotational amount in the coronal plane. Any skin reflections that appear in
+the first scan would also appear in the subsequent scan with a similar intensity and timing, while the signals reflected
+from the tumor would appear at a different time position, provided that the tumor does not lie on the axis of rotation.
+The method aptly known as ``Rotational Subtraction'' involves subtracting the scans from each other, suppressing the skin
+reflections while preserving the tumor response. However, as noted by H. Benchakroun and Prof O'Loughlin in their
+papers, Rotational Subtraction can introduce artifacts into the signal due to differences between the original and
+rotated antenna positions relative to the tumor. These artifacts tend to appear as ``wave-like'' inclusions on the
+generated image. Both studies also noted the presence of an ``echo'' in the final image that appears as a duplication of
+the tumor response close to the true location of the tumor. They observed that the degree of rotation has an impact on
+the relative amplitude of the response and its echo citing that for tumors greater than $3cm$ away from the center, an
+increased rotation angle ($ > 20^{\circ}$) caused the tumor to go in and out of focus. For rotations less than
+$15^{\circ}$ the tumor could not be identified in the image \cite{h.benchakrounImpactRotationalArtefact2021,
+d.oloughlinRotationalArtefactRemoval2020}. The TSAR system, on the other hand, makes use of an adaptive
+algorithm that estimates the skin response at an antenna as the weighted sum of responses from the
+neighboring antennas. This skin response can then be subtracted from the current antenna to remove the reflection
+artifacts \cite{makladNeighborhoodBasedAlgorithmFacilitate2012}. \hfill \break
 
-Like the previous two systems, patients lie in the prone position on the examination table, with their breast being
-submerged in an immersion liquid. However, unlike the previous two systems, the TSAR operates in a monostatic
-configuration. In this setup, there is only one antenna that acts as both the transmitting and the receiving antenna.
-This antenna, usually fixed on some type of rotating apparatus, would rotate around the breast to image a section. It
-would then step vertically by a fixed amount and repeat the previous step, eventually imaging the entire breast. The
-TSAR system also operates on a much wider section of the UWB spectrum, from 50 MHz to 15 GHz, with the frequency data
-being collected by a VNA. The system also makes use of a laser in order to help with the 3D reconstruction of the breast
-during post-processing. The prototype setup can be seen in Figure \ref{fig:TSARPrototype} \hfill \break
+Like the previous two systems, patients lie in the prone position on the examination table, with their breast submerged
+in an immersion liquid. However, unlike the previous two systems, TSAR operates in a monostatic configuration. In this
+setup, there is only one antenna that acts as both the transmitter and receiver. This antenna, usually fixed on some
+type of rotating apparatus, would move around the breast to image a section. It would then step vertically by a fixed
+amount and repeat the previous step, eventually imaging the entire breast. The TSAR system also operates on a much wider
+section of the UWB spectrum, from 50 MHz to 15 GHz, with the frequency data being collected by a commercial-grade VNA.
+To help with the reconstruction of the imaging domain during the post-processing step, TSAR makes use of a laser that
+explicitly 3D scans the breast. The prototype setup can be seen in Figure \ref{fig:TSARPrototype} \hfill \break
 
 \begin{figure}
     \includegraphics[width=0.65\textwidth]{TSARPrototype.png}
@@ -150,21 +171,18 @@ during post-processing. The prototype setup can be seen in Figure \ref{fig:TSARP
     \label{fig:TSARPrototype}
 \end{figure}
 
-The benefit of the monostatic configuration is that the number of antenna locations per row and the number of rows are
-parameters that can be tweaked depending on whether the radiologist would want a quicker scan or higher precision. One
-can imagine the scenario of a rapid screening center as part of a national screening program where the speed of the scan
-is valued over the precision of the scan. As such this provides a notable benefit over the previous two systems. The
-clinical trial conducted by this study was extremely limited, only including 8 successfully imaged patients. Due to the
-low sample size, one can't reliably say whether this system and its adaptive reflection-suppressing algorithm can
-outperform the other two systems in terms of accuracy, although the TSAR system does show promise. \hfill 
+One feature of a monostatic configuration is that the number of antenna locations per row and the number of rows are
+parameters that can be changed by a radiologist to balance the trade-off between speed and precision. The clinical trial
+conducted by this study was extremely limited, only including 8 successfully imaged patients. Due to the low sample
+size, one cannot reliably say whether this system and its adaptive reflection-suppressing algorithm can outperform the
+other two systems in terms of accuracy. \hfill 
 
 \subsection{Beamformers}
 Without loss of generality, imagine a line array of wave emitters. If all of these begin to emit at the same time, the
 individual waves would constructively and destructively interfere with each other as their peaks and troughs align and
-misalign. This property can be exploited in such a way so that the waves constructively interfere in one direction and
+misalign. This property can be exploited in such a way that the waves constructively interfere in one direction and
 destructively interfere in all the other directions, effectively aiming the beam in a particular direction. A diagram
 of this can be seen in Figure \ref{fig:phasedArray}.
-
 
 \begin{figure}[!h]
     \includegraphics[width=0.5\textwidth]{phasedArray.png}
@@ -173,15 +191,15 @@ of this can be seen in Figure \ref{fig:phasedArray}.
     \label{fig:phasedArray}
 \end{figure}
 
-This is the forward beamforming process, but one can also consider the reverse process. Considering Figure \ref{fig:pointEmitter} imagine a point emitter
-embedded in a 2D plane, that radiates circular waves evenly in all directions. Now imagine a line array that receives
-this wave. Due to the diffusion of the wave through space, the same wave will appear at each antenna at different times. This would
-manifest as the same amplitude appearing at different times, in the signal graphs, even though the impulses come from
-the same wave. Reverse beamforming then, is the process of varying the phase and amplitude of the received signals in
-order to estimate the intensity at the location where the wave originated. Inverse beamforming is a process used in many
-fields such as radio astronomy and seismic imaging, so there already is a wealth of research and plenty of algorithms to
-choose from. The rest of this section will talk about the various beamformers that are popular in the field of microwave
-imaging. \hfill \break
+This is the forward beamforming process, but one can also consider the reverse process. Considering Figure
+\ref{fig:pointEmitter} imagine a point emitter embedded in a 2D plane, that radiates circular waves evenly in all
+directions, with the waves falling incident on an antenna array. Due to the diffusion of the wave through space, the
+same wavefront will appear at each antenna at different times. This manifests in the recorded signals as similar
+amplitudes but shifted in time. Reverse beamforming then, is the process of varying the phase and amplitude of the
+received signals in order to estimate the intensity at the location where the wave originated. Inverse beamforming is a
+process used in many fields such as radio astronomy and seismic imaging, so there already is a wealth of research and
+plenty of algorithms to choose from. The rest of this section will talk about the various beamformers that are popular
+in the field of microwave imaging. \hfill \break
 
 \begin{figure}
     \includegraphics[width=0.6\textwidth]{pointEmitter.png}
@@ -191,15 +209,14 @@ imaging. \hfill \break
 \end{figure}
 
 \subsubsection{Delay and Sum}
-The Delay and Sum (DAS) beamformer is the template for most other beamforming algorithms in the field. The DAS
-beamformer posits that every antenna has recorded the same source and that the delay in each signal is
-due to the relative distance between the receiving antenna ($\mathcal{A}'$) and the transmitting antenna
-($\mathcal{A}$). As such, if one was to delay the signals by the correct amount, and sum over all the received signals,
-one would be able to estimate the energy at the source. This same idea can be applied to signals received from the
-aforementioned imaging systems. Since these work in the frequency domain, the following explanations and equations will
-work on this assumption, but these equations can easily be converted to the relative time domain functions. As stated
-before a point from the imaging domain is chosen ($r$). We then estimate the path delay of the wave from the
-transmitting antenna to the receiving antenna along the path.
+The DAS beamformer posits that every antenna has recorded the same source and that the delay in each signal is due to
+the relative distance between the receiving antenna ($\mathcal{A}'$) and the transmitting antenna ($\mathcal{A}$). As
+such, if one was to delay the signals by the correct amount, and sum over all the received signals, one would be able to
+estimate the energy at the source. This same idea can be applied to signals received from the aforementioned imaging
+systems. Since these work in the frequency domain, the following explanations and equations will work on this
+assumption, but these equations can easily be converted to the relative time domain functions, by replacing the
+multiplication by a complex exponential with the equivalent time delay. As stated before a point from the imaging domain
+is chosen ($r$). The path delay of the wave from $A$ to $\mathcal{A'}$ via $r$ is estimated via the following equation:
 
 \begingroup
 \large
@@ -209,17 +226,15 @@ transmitting antenna to the receiving antenna along the path.
 \end{equation}
 \endgroup
 
-
-$\epsilon$ is the relative permittivity of the medium. In reality, this value changes from patient to patient and even
-varies within the breast of each patient depending on the path taken. However in order to achieve a practical beamformer, one must estimate an
-averaged relative permittivity value for the entire breast, we will label this as $\epsilon_i$ and it will parametrize
-the DAS beamformer. As well as this, equation \ref{eq:PathDelayDAS} assumes a straight-line path between the point and
-the transmitting and receiving antennas. This is rarely the case, however, in practice making this assumption
-only yields a maximal error of 3mm in position while greatly simplifying the delay calculations
-\cite{oloughlinParameterSearchAlgorithms2017}. Using this, the received signals are delayed and then summed across all
-stepped input frequencies. This result is then squared to give us the energy at the chosen point. Thus the point is
-imaged, This process is repeated for all the points in the imaging domain, overall the DAS beamforming equation can be
-represented as such:
+with $\epsilon$ being the relative permittivity of the medium. In reality, $\epsilon$ changes from patient to patient
+and even varies within the breast of each patient depending on the path taken. However, to achieve a practical
+beamformer, one must estimate an averaged relative permittivity value for the entire breast, henceforth this will be
+labeled as $\epsilon_i$ and it will parametrize the DAS beamformer. Equation \ref{eq:PathDelayDAS} also assumes a
+straight-line path between $r$, $\mathcal{A}$ and $\mathcal{A'}$, even though in most cases, this assumption does not
+hold. However, as found by Prof O'Loughlin, B. L. Oliveria and M. A. Elahi et al, this assumption yields a maximal error
+of $3mm$ in position, while greatly simplifying the delay calculations \cite{oloughlinParameterSearchAlgorithms2017}.
+Using this, the received signals are delayed, summed across all stepped input frequencies and finally squared to yield
+the energy at the chosen point. Overall the DAS beamforming equation can be represented as such:
 
 \begingroup
 \large
@@ -228,22 +243,20 @@ represented as such:
     \label{eq:DASBeamformer}
 \end{equation}
 \endgroup
-The DAS algorithm was the chosen beamformer for the MERIT.jl library due to its simplicity to implement and the time
-constraints I had to work with. However, two other beamformers will be discussed below and will be compared with the DAS
-algorithm.
+
+The DAS algorithm was implemented as the beamformer of choice due to its simplicity and time constraints placed on the
+project. Two other well known beamformers will be discussed for completeness and comparison with the DAS beamformer. 
 
 \subsubsection{Weighted Delay and Sum Beamformer}
-The Weighted Delay and Sum (WDAS) Beamformer can be considered as a further generalization of the DAS beamformer.
-In equation \ref{eq:DASBeamformer} all channels contribute equally to the final result due to the implicit weighting
-factor of 1. The equation also assumes that all signals travel along similar paths, and therefore a constant speed (due
-to the fixed $\epsilon_i$). In reality, this is only true for antennas that are closer together. The greater the
-distance between the transmitting and receiving antennas, the greater the chance, that the waves deviate from the straight line
-path, ergo the estimation of the speed and subsequently the delay along that path will be wrong. Essentially, the
-algorithm needs to have some mechanism that would penalize the signal from antennas that are further away and reward
-signals from antennas that are close by. This is what S.A. Shah Karam et al proposed in their 2021 paper, "Weighted delay-and-sum beamformer for breast cancer detection using
-microwave imaging" \cite{shahkaramWeightedDelayandsumBeamformer2021}. They define a weighting factor based on the
-transmitter-receiver distance ($TRD_i$) for
-the $t^{th}$ observation:
+The Weighted Delay and Sum (WDAS) Beamformer can be considered as a further generalization of the DAS beamformer. In
+equation \ref{eq:DASBeamformer} all channels contribute equally to the final result due to the implicit unit weighting
+factor. The DAS equation also assumes that all signals travel along similar paths and also have a constant speed, due to
+the fixed $\epsilon_i$. In reality, this is only true for antennas that are closer together. The greater the distance
+between $\mathcal{A}$ and $\mathcal{A'}$, the more likely it is that the waves deviate from the straight-line path
+assumption, ergo the estimation of speed and subsequently the delay along that path will be wrong. S. A Shah Karam, et
+al. proposed a solution to this issue in their 2021 paper ``Weighted delay-and-sum beamformer for breast cancer
+detection using microwave imaging'' \cite{shahkaramWeightedDelayandsumBeamformer2021}. They suggested a weighting factor
+based on the transmitter-receiver distance ($TRD_i$) for the $t^{th}$ observation:
 
 \begingroup
 \large
@@ -252,14 +265,12 @@ the $t^{th}$ observation:
 \end{equation}
 \endgroup
 
-In order to reward signals from antennas that are close and penalize antennas that are far away one must subtract the
-$TRD_i$ from a positive constant, $\alpha$. This parameter is patient-specific and must be changed based on the homo- or
-heterogeneity of the breast tissue. The paper used an $\alpha$ of 20cm for their results. One important thing to note is
-that these weighting factors are data-independent. Since the $TRD_i$ relies only on the distance between the antennas,
-these weighting factors can be computed beforehand. Another thing of note is that these weighting factors are
-independent of the chosen focal point as well, which means we can compute a normalized weight and apply it to the signal
-before employing the traditional DAS algorithm. The normalized weighting factor $\hat{w}_i$ is calculated as follows,
-where $M$ is the number of channels:
+$\alpha$ is a positive parameter that allows the above weighting factor to reward signals from nearby antennas while
+penalizing signals from antennas that are far away. This parameter is patient-specific and must be changed based on the
+homo- or heterogeneity of the breast tissue, with the paper using a value of $20cm$ for their tests. The paper also
+noted that since $w_i$ is data-independent and focal point independent, a set of normalized weighting factors can be
+computed before hand and applied to the signals at collection time rather than processing time. The normalized weighting
+factor $\hat{w}_i$ is calculated as follows, where $M$ is the number of channels:
 
 \begingroup
 \large
@@ -269,10 +280,9 @@ where $M$ is the number of channels:
 \endgroup
 
 \subsubsection{Delay Multiply and Sum}
-The Delay Multiply and Sum (DMAS) algorithm was first proposed by Hooi Been Lim et al in 2008
-\cite{beenlimConfocalMicrowaveImaging2008}. Instead of considering each channel in isolation across the frequency bands,
-the DMAS algorithm proposes a pair-wise multiplication of the delayed signals before summing across the frequency range.
-For a focal point $r$ the equation would be as follows:
+The Delay Multiply and Sum (DMAS) algorithm, first proposed by Hooi Been Lim et al in 2008
+\cite{h.beenlimConfocalMicrowaveImaging2008}, suggests a pair-wise multiplication of the delayed signals before summing
+across the frequency range. For a focal point $r$ the equation would be as follows:
 
 %dick and balls (Cvetic et al. 2024)
 
@@ -284,10 +294,10 @@ For a focal point $r$ the equation would be as follows:
 \end{equation}
 \endgroup
 
-Here $\mathcal{A}' = \mathcal{B'}'$ are the receiving antennas and $\mathcal{A} = \mathcal{B}$ are the transmitting
-antennas. The paper then compared the DMAS algorithm with the traditional DAS algorithm and found that the pairwise
-multiplication of the delayed signals before summation provided greater contrast and sharper results, greatly increasing
-the SCR of the image. Figure \ref{fig:DMASDASComp} shows the differences between the DAS and DMAS algorithms and most
+Here $\mathcal{A}' = \mathcal{B}'$ are the receiving antennas and $\mathcal{A} = \mathcal{B}$ are the transmitting
+antennas. Upon comparison with the traditional DAS algorithm, the researchers found that the pair-wise multiplication
+before summation provided greater contrast and sharper results, greatly increasing the Signal-to-Clutter ratio of the
+image. Figure \ref{fig:DMASDASComp} shows the differences between the DAS and DMAS algorithms and most
 importantly, how the DMAS beamformer provides a greatly reduced noise floor.
 
 \begin{figure}[!h]
@@ -297,11 +307,11 @@ importantly, how the DMAS beamformer provides a greatly reduced noise floor.
     \label{fig:DMASDASComp}
 \end{figure}
 
-The original paper never provided an explanation for the surprising effectiveness of the algorithm, leaving
-the explanation for a future paper that they never wrote. However, this did not stop the wider research community from
-providing possible explanations as to how the DMAS algorithm provides the results it does. One explanation provided by
-Prof O'Loughlin posits that the pairwise multiplication rewards signals that have a high degree of coherency while
-disproportionately penalizing incoherent signals. In essence, the coherent signals get brightened a lot more than the
-incoherent signals would \cite{oloughlinComparingRadarBasedBreast2019}. G. Matrone et al backs up this idea by
-noting that the DMAS beamformer, after the signals are time aligned like in DAS, is the autocorrelation function of the
-receiver antenna with the auto terms excluded \cite{g.matroneDelayMultiplySum2015}.
+The researchers never provided an explanation for the surprising effectiveness of the algorithm, leaving it for a future
+paper that they never wrote. However, this did not stop the wider research community from providing possible
+explanations as to how the DMAS algorithm provides such a low noise floor. An explanation provided by Prof O'Loughlin
+posits that the pair-wise multiplication rewards signals that have a high degree of coherency while disproportionately
+penalizing incoherent signals. In essence, the coherent signals get amplified a lot more than incoherent signals
+\cite{oloughlinComparingRadarBasedBreast2019}. G. Matrone et al. further reinforces this hypothesis by noting that the DMAS beamformer,
+after the signals are time aligned like in DAS, computes the autocorrelation of the receiver antenna with the auto
+terms removed \cite{g.matroneDelayMultiplySum2015}.

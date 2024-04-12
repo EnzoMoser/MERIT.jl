@@ -1,7 +1,8 @@
-\setcounter{chapter}{4}
+\setcounter{chapter}{5}
 \setcounter{section}{0}
 \setcounter{subsection}{0}
 \chapter*{Future Work}
+\addcontentsline{toc}{chapter}{Future Work}
 \section{Time Domain Implimentation}
 Due to the limited time I had to work on this library, I mainly focused on implementations of beamformers in the
 frequency domain. While this covers some systems, the library effectively excludes a whole class of systems that perform
@@ -34,15 +35,15 @@ own processing pipeline using the high-level functions provided.
 
 \section{Parallel Processing}
 Parallel processing was a feature that was not explored as it was outside the scope of this bachelor's project. However,
-there are areas of the code that have been identified as "embarrassingly parallel". These are sections of the code tha
-are amenable to significant acceleration through the use of multithreading and parallel processing. Consider for example
-the beamformer implementations, in these equations the response at each point is calculated independently of all the
-other points. As such this operation can be easily split across all available threads or even all available GPU cores,
-providing exponential increases to the performance of the library overall. The Julia language provides native support
-for threaded for-loops through the use of the \lstinline[language=Julia]{Threads.@threads} macro, which will evenly split the
-for-loop range across the threads available to the Julia runtime. However, the onus still lies on the user to ensure
-that no data race conditions can occur. Julia also supports GPU programming natively through the use of CUDA.jl for
-Nvidia GPUs, AMDGPU.jl for AMD GPUs, oneAPI.jl for Intel GPUs as well as Metal.jl for the current Apple integrated GPUs
-\cite{JuliaGPU}. Out of the APIs listed, CUDA.jl is by far the most advanced and complete library due to its age and
-dominance in other fields and would probably offer the most benefit for researchers as they most likely already have
-access to an Nvidia GPU.
+there are areas of the code that have been identified as ``embarrassingly parallel''. These are sections of the code
+that are amenable to significant acceleration through the use of multithreading and parallel processing. Consider for
+example the beamformer implementations in these equations, the response at each point is calculated independently of all
+the other points. As such this operation can be easily split across all available threads or even all available GPU
+cores, providing exponential increases to the performance of the library overall. The Julia language provides native
+support for threaded for-loops through the use of the \lstinline[language=Julia]{Threads.@threads} macro, which will
+evenly split the for-loop range across the threads available to the Julia runtime. However, the onus still lies on the
+user to ensure that no data race conditions can occur. Julia also supports GPU programming natively through the use of
+CUDA.jl for Nvidia GPUs, AMDGPU.jl for AMD GPUs, oneAPI.jl for Intel GPUs as well as Metal.jl for the current Apple
+integrated GPUs \cite{JuliaGPU}. Out of the APIs listed, CUDA.jl is by far the most advanced and complete library due to
+its age and dominance in other fields and would probably offer the most benefit for researchers as they most likely
+already have access to an Nvidia GPU.

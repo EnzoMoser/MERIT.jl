@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  9 APR 2024 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  12 APR 2024 02:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -943,6 +943,9 @@ File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box82
@@ -958,31 +961,31 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 LaTeX Font Info:    Trying to load font information for T1+cmss on input line 1
-76.
+77.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 176.
-LaTeX Font Info:    ... okay on input line 176.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 177.
+LaTeX Font Info:    ... okay on input line 177.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1040,7 +1043,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 176.
+Package hyperref Info: Link coloring ON on input line 177.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1053,9 +1056,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count361
 )
-LaTeX Info: Redefining \ref on input line 176.
-LaTeX Info: Redefining \pageref on input line 176.
-LaTeX Info: Redefining \nameref on input line 176.
+LaTeX Info: Redefining \ref on input line 177.
+LaTeX Info: Redefining \pageref on input line 177.
+LaTeX Info: Redefining \nameref on input line 177.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1066,7 +1069,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count362
  (./ch-Title.tex
-<./Images//Trinity_RGB_transparent_main.png, id=123, 412.6617pt x 142.3719pt>
+<./Images//Trinity_RGB_transparent_main.png, id=131, 412.6617pt x 142.3719pt>
 File: ./Images//Trinity_RGB_transparent_main.png Graphic file (type png)
 <use ./Images//Trinity_RGB_transparent_main.png>
 Package pdftex.def Info: ./Images//Trinity_RGB_transparent_main.png  used on in
@@ -1079,18 +1082,18 @@ put line 13.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Images//Trinity_RGB_tran
 sparent_main.png>])
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-87.
+88.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
- been already used, duplicate ignored
+) (./ch-Abstract.texpdfTeX warning (ext4): destination with the same identifier
+ (name{page.i}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.206 \chapter
-              *{Abstract} [1.2] [2.3
+l.1 \chapter
+            *{Abstract} [1.2] [2.3
 
-] [3.4] (./main.lof)
+]) [3.4] (./main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
@@ -1104,262 +1107,267 @@ l.206 \chapter
 [5.6
 
 ] (./ch-Introduction.tex
-
-LaTeX Warning: Citation `d.oloughlinOpensourceSoftwareMicrowave2018' on page 1 
-undefined on input line 9.
-
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
 17.
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 26--33
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
 
  []
 
+) (./ch-Background.tex [1.7
 
-Underfull \hbox (badness 10000) in paragraph at lines 34--39
-
- []
-
-[1.7
-
-
-]) (./ch-Background.tex [2.8]
-Underfull \hbox (badness 10000) in paragraph at lines 16--18
-
- []
-
-<./Images//multistaic.png, id=251, 668.4975pt x 668.4975pt>
-File: ./Images//multistaic.png Graphic file (type png)
-<use ./Images//multistaic.png>
-Package pdftex.def Info: ./Images//multistaic.png  used on input line 28.
-(pdftex.def)             Requested size: 135.89185pt x 135.89021pt.
-[3.9
 
 ]
+
+LaTeX Warning: Citation `larsenMicrowaveScatteringParameter1979' on page 2 unde
+fined on input line 7.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
+
+ []
+
+<./Images//multistaic.png, id=260, 668.4975pt x 668.4975pt>
+File: ./Images//multistaic.png Graphic file (type png)
+<use ./Images//multistaic.png>
+Package pdftex.def Info: ./Images//multistaic.png  used on input line 31.
+(pdftex.def)             Requested size: 135.89185pt x 135.89021pt.
 <./Images//MARIA_M4.png, id=262, 383.93437pt x 230.36063pt>
 File: ./Images//MARIA_M4.png Graphic file (type png)
 <use ./Images//MARIA_M4.png>
-Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 48.
+Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 49.
 (pdftex.def)             Requested size: 226.48413pt x 135.894pt.
- [4.10 <./Images//multistaic.png> <./Images//MARIA_M4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 70--75
+[2.8
+
+] [3.9 <./Images//multistaic.png> <./Images//MARIA_M4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 74--79
 
  []
 
-<./Images//Wavelia.png, id=277, 472.76625pt x 418.56375pt>
+<./Images//Wavelia.png, id=282, 472.76625pt x 418.56375pt>
 File: ./Images//Wavelia.png Graphic file (type png)
 <use ./Images//Wavelia.png>
-Package pdftex.def Info: ./Images//Wavelia.png  used on input line 77.
+Package pdftex.def Info: ./Images//Wavelia.png  used on input line 81.
 (pdftex.def)             Requested size: 226.48413pt x 200.5187pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--97
+Underfull \hbox (badness 10000) in paragraph at lines 87--102
 
  []
 
-<./Images//LeveledMultistatic.png, id=281, 537.80925pt x 361.35pt>
+[4.10 <./Images//Wavelia.png>]
+<./Images//LeveledMultistatic.png, id=294, 537.80925pt x 361.35pt>
 File: ./Images//LeveledMultistatic.png Graphic file (type png)
 <use ./Images//LeveledMultistatic.png>
-Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 9
-9.
+Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 1
+04.
 (pdftex.def)             Requested size: 226.48413pt x 152.17398pt.
-[5.11 <./Images//Wavelia.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 125--136
+ [5.11 <./Images//LeveledMultistatic.png>]
+
+LaTeX Warning: Citation `h.benchakrounImpactRotationalArtefact2021' on page 6 u
+ndefined on input line 153.
+
+
+LaTeX Warning: Citation `d.oloughlinRotationalArtefactRemoval2020' on page 6 un
+defined on input line 153.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--157
 
  []
 
-[6.12 <./Images//LeveledMultistatic.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 137--145
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--166
 
  []
 
-<./Images//TSARPrototype.png, id=299, 144.54pt x 99.4917pt>
+<./Images//TSARPrototype.png, id=306, 144.54pt x 99.4917pt>
 File: ./Images//TSARPrototype.png Graphic file (type png)
 <use ./Images//TSARPrototype.png>
-Package pdftex.def Info: ./Images//TSARPrototype.png  used on input line 147.
+Package pdftex.def Info: ./Images//TSARPrototype.png  used on input line 168.
 (pdftex.def)             Requested size: 294.4266pt x 202.67494pt.
-[7.13 <./Images//TSARPrototype.png>]
-<./Images//phasedArray.png, id=310, 523.9575pt x 523.9575pt>
+[6.12]
+<./Images//phasedArray.png, id=316, 523.9575pt x 523.9575pt>
 File: ./Images//phasedArray.png Graphic file (type png)
 <use ./Images//phasedArray.png>
-Package pdftex.def Info: ./Images//phasedArray.png  used on input line 170.
+Package pdftex.def Info: ./Images//phasedArray.png  used on input line 188.
 (pdftex.def)             Requested size: 226.48413pt x 226.48058pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--185
+Underfull \hbox (badness 10000) in paragraph at lines 194--203
 
  []
 
-<./Images//pointEmitter.png, id=312, 695.59875pt x 785.93625pt>
+[7.13 <./Images//TSARPrototype.png> <./Images//phasedArray.png>]
+<./Images//pointEmitter.png, id=325, 695.59875pt x 785.93625pt>
 File: ./Images//pointEmitter.png Graphic file (type png)
 <use ./Images//pointEmitter.png>
-Package pdftex.def Info: ./Images//pointEmitter.png  used on input line 187.
+Package pdftex.def Info: ./Images//pointEmitter.png  used on input line 205.
 (pdftex.def)             Requested size: 271.7837pt x 307.07755pt.
-[8.14 <./Images//phasedArray.png>]
-
-LaTeX Warning: Citation `oloughlinParameterSearchAlgorithms2017' on page 9 unde
-fined on input line 219.
-
-[9.15 <./Images//pointEmitter.png>]
-
-LaTeX Warning: Citation `shahkaramWeightedDelayandsumBeamformer2021' on page 10
- undefined on input line 244.
-
-
-LaTeX Warning: Citation `beenlimConfocalMicrowaveImaging2008' on page 10 undefi
-ned on input line 273.
-
-[10.16]
-<./Images//DMASDASComp.png, id=343, 823.075pt x 576.1525pt>
+ [8.14 <./Images//pointEmitter.png>] [9.15]
+<./Images//DMASDASComp.png, id=354, 823.075pt x 576.1525pt>
 File: ./Images//DMASDASComp.png Graphic file (type png)
 <use ./Images//DMASDASComp.png>
-Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 294.
+Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 304.
 (pdftex.def)             Requested size: 317.0764pt x 221.95566pt.
-
-
-LaTeX Warning: Citation `oloughlinComparingRadarBasedBreast2019' on page 11 und
-efined on input line 305.
-
-
-LaTeX Warning: Citation `g.matroneDelayMultiplySum2015' on page 11 undefined on
- input line 307.
-
-) (./ch-Julia.tex [11.17 <./Images//DMASDASComp.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 8--15
-
+) (./ch-Julia.tex [10.16 <./Images//DMASDASComp.png>]
+Overfull \hbox (14.51907pt too wide) in paragraph at lines 4--4
+|\T1/cmss/bx/n/24.88 Evaluating Pro-gram-ming Lan-guages| 
  []
 
-[12.18
+
+LaTeX Warning: Citation `PythonDevelopersSurvey' on page 11 undefined on input 
+line 10.
+
+
+LaTeX Warning: Citation `MATLABAcademia' on page 11 undefined on input line 11.
+
+
+
+LaTeX Warning: Citation `clasterJuliaUserDeveloper' on page 11 undefined on inp
+ut line 15.
+
+
+LaTeX Warning: Citation `indexPyPIStatistics' on page 11 undefined on input lin
+e 24.
+
+
+LaTeX Warning: Citation `baranyPythonInterpreterPerformance2014' on page 11 und
+efined on input line 28.
+
+
+LaTeX Warning: Citation `Tensorflow' on page 11 undefined on input line 30.
+
+
+LaTeX Warning: Citation `paszkePyTorch' on page 11 undefined on input line 30.
+
+
+LaTeX Warning: Citation `ajitsariaWhatPythonGlobal' on page 11 undefined on inp
+ut line 34.
+
+[11.17
 
 ]
 
-LaTeX Warning: Citation `CompaniesUsingMATLAB' on page 13 undefined on input li
-ne 44.
+LaTeX Warning: Citation `MATLABPricing' on page 12 undefined on input line 57.
 
 
-LaTeX Warning: Citation `aruobaComparisonProgrammingLanguages2018' on page 13 u
-ndefined on input line 46.
+LaTeX Warning: Citation `bezansonWhyWeCreated12' on page 12 undefined on input 
+line 65.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 57--70
-
- []
-
-[13.19]
+) (./ch-JuliaFeatures.tex [12.18] [13.19]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 82.
- [14.20] [15.21]
-<./Images//multipleDispatch.png, id=426, 1228.59pt x 668.4975pt>
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 15.
+ [14.20
+
+] [15.21]
+<./Images//multipleDispatch.png, id=455, 1228.59pt x 487.8225pt>
 File: ./Images//multipleDispatch.png Graphic file (type png)
 <use ./Images//multipleDispatch.png>
-Package pdftex.def Info: ./Images//multipleDispatch.png  used on input line 186
+Package pdftex.def Info: ./Images//multipleDispatch.png  used on input line 102
 .
-(pdftex.def)             Requested size: 452.96826pt x 246.46297pt.
-<./Images//juliaTypeTree.png, id=428, 849.1725pt x 1147.28625pt>
+(pdftex.def)             Requested size: 452.96826pt x 179.85135pt.
+<./Images//juliaTypeTree.png, id=457, 849.1725pt x 1147.28625pt>
 File: ./Images//juliaTypeTree.png Graphic file (type png)
 <use ./Images//juliaTypeTree.png>
-Package pdftex.def Info: ./Images//juliaTypeTree.png  used on input line 201.
+Package pdftex.def Info: ./Images//juliaTypeTree.png  used on input line 116.
 (pdftex.def)             Requested size: 203.83434pt x 275.38933pt.
  [16.22 <./Images//multipleDispatch.png>] [17.23 <./Images//juliaTypeTree.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--273
 
- []
+LaTeX Warning: Citation `gilmoreMicrowaveImagingHuman2013' on page 18 undefined
+ on input line 174.
 
-[18.24]
-<./Images//scanType.png, id=487, 605.26125pt x 484.81125pt>
+<./Images//scanType.png, id=490, 605.26125pt x 484.81125pt>
 File: ./Images//scanType.png Graphic file (type png)
 <use ./Images//scanType.png>
-Package pdftex.def Info: ./Images//scanType.png  used on input line 275.
-(pdftex.def)             Requested size: 203.83434pt x 163.27274pt.
- [19.25 <./Images//scanType.png>] [20.26] [21.27] [22.28] [23.29])
+Package pdftex.def Info: ./Images//scanType.png  used on input line 181.
+(pdftex.def)             Requested size: 226.48413pt x 181.4117pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[18.24] [19.25 <./Images//scanType.png>] [20.26] [21.27] [22.28] [23.29])
 (./ch-Results.tex [24.30]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 8.
+nput line 9.
  (../../src/GettingStarted.jl) [25.31
 
 ]
-<./Images//MERITWorkflow.png, id=624, 2655.9225pt x 725.71124pt>
+<./Images//MERITWorkflow.png, id=639, 2655.9225pt x 725.71124pt>
 File: ./Images//MERITWorkflow.png Graphic file (type png)
 <use ./Images//MERITWorkflow.png>
-Package pdftex.def Info: ./Images//MERITWorkflow.png  used on input line 27.
+Package pdftex.def Info: ./Images//MERITWorkflow.png  used on input line 28.
 (pdftex.def)             Requested size: 452.96826pt x 123.76791pt.
-
-
-Package caption Warning: \label without proper reference on input line 61.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Reference `fig:MERITResults' on page 26 undefined on input line 
-45.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Overfull \hbox (0.29597pt too wide) in paragraph at lines 41--55
+Overfull \hbox (0.29597pt too wide) in paragraph at lines 42--56
 \T1/cmss/m/n/12 The li-brary was bench-marked against the MAT-LAB im-ple-men-ta
 -tion cre-ated by Prof O'Loughlin
  []
 
-<./Images//JuliaOutput.png, id=626, 723.45282pt x 538.26094pt>
+<./Images//JuliaOutput.png, id=641, 723.45282pt x 538.26094pt>
 File: ./Images//JuliaOutput.png Graphic file (type png)
 <use ./Images//JuliaOutput.png>
-Package pdftex.def Info: ./Images//JuliaOutput.png  used on input line 58.
+Package pdftex.def Info: ./Images//JuliaOutput.png  used on input line 59.
 (pdftex.def)             Requested size: 203.83434pt x 151.65656pt.
-<./Images//MATLABOutput.png, id=627, 722.7pt x 537.50812pt>
+<./Images//MATLABOutput.png, id=642, 722.7pt x 537.50812pt>
 File: ./Images//MATLABOutput.png Graphic file (type png)
 <use ./Images//MATLABOutput.png>
-Package pdftex.def Info: ./Images//MATLABOutput.png  used on input line 59.
+Package pdftex.def Info: ./Images//MATLABOutput.png  used on input line 60.
 (pdftex.def)             Requested size: 203.83434pt x 151.60027pt.
-
-LaTeX Warning: Citation `BenchmarkToolsJl' on page 26 undefined on input line 7
-7.
-
 [26.32 <./Images//MERITWorkflow.png>]
-<./Images//PointsUnedited.png, id=634, 511.365pt x 318.645pt>
+<./Images//PointsUnedited.png, id=649, 511.365pt x 318.645pt>
 File: ./Images//PointsUnedited.png Graphic file (type png)
 <use ./Images//PointsUnedited.png>
-Package pdftex.def Info: ./Images//PointsUnedited.png  used on input line 82.
+Package pdftex.def Info: ./Images//PointsUnedited.png  used on input line 84.
 (pdftex.def)             Requested size: 203.83434pt x 127.01328pt.
-<./Images//PointsEdited.png, id=635, 511.365pt x 318.645pt>
+<./Images//PointsEdited.png, id=650, 511.365pt x 318.645pt>
 File: ./Images//PointsEdited.png Graphic file (type png)
 <use ./Images//PointsEdited.png>
-Package pdftex.def Info: ./Images//PointsEdited.png  used on input line 83.
+Package pdftex.def Info: ./Images//PointsEdited.png  used on input line 85.
 (pdftex.def)             Requested size: 203.83434pt x 127.01328pt.
-<./Images//ChannelsUnedited.png, id=636, 511.146pt x 318.645pt>
-File: ./Images//ChannelsUnedited.png Graphic file (type png)
-<use ./Images//ChannelsUnedited.png>
-Package pdftex.def Info: ./Images//ChannelsUnedited.png  used on input line 91.
-
-(pdftex.def)             Requested size: 339.7262pt x 211.78929pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Images//FrequencyUnedited.png, id=637, 511.146pt x 318.645pt>
+<./Images//ChannelsUnedited.png, id=651, 511.146pt x 318.645pt>
+File: ./Images//ChannelsUnedited.png Graphic file (type png)
+<use ./Images//ChannelsUnedited.png>
+Package pdftex.def Info: ./Images//ChannelsUnedited.png  used on input line 93.
+
+(pdftex.def)             Requested size: 339.7262pt x 211.78929pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./Images//FrequencyUnedited.png, id=652, 511.146pt x 318.645pt>
 File: ./Images//FrequencyUnedited.png Graphic file (type png)
 <use ./Images//FrequencyUnedited.png>
-Package pdftex.def Info: ./Images//FrequencyUnedited.png  used on input line 98
-.
+Package pdftex.def Info: ./Images//FrequencyUnedited.png  used on input line 10
+0.
 (pdftex.def)             Requested size: 203.83434pt x 127.06676pt.
-<./Images//FrequencyEdited.png, id=638, 511.365pt x 318.864pt>
+<./Images//FrequencyEdited.png, id=653, 511.365pt x 318.864pt>
 File: ./Images//FrequencyEdited.png Graphic file (type png)
 <use ./Images//FrequencyEdited.png>
-Package pdftex.def Info: ./Images//FrequencyEdited.png  used on input line 99.
+Package pdftex.def Info: ./Images//FrequencyEdited.png  used on input line 101.
+
 (pdftex.def)             Requested size: 203.83434pt x 127.10057pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 ) (./ch-FutureWork.tex [27.33 <./Images//JuliaOutput.png> <./Images//MATLABOutp
-ut.png> <./Images//PointsUnedited.png> <./Images//PointsEdited.png>] [28.34 <./
+ut.png>] [28.34 <./Images//PointsUnedited.png> <./Images//PointsEdited.png> <./
 Images//ChannelsUnedited.png> <./Images//FrequencyUnedited.png> <./Images//Freq
-uencyEdited.png>] [29.35]
+uencyEdited.png>] [29.35]) (./ch-Conclusions.tex [30.36
 
-LaTeX Warning: Citation `JuliaGPU' on page 30 undefined on input line 46.
+] [31.37]) (./main.bbl
+[32.38
 
-) [30.36
+] [33.39
 
-] (./main.bbl [31.37])
+])
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
@@ -1369,22 +1377,20 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [32.38
-
-]
+) [34.40]
 (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D235452861A34F87B058F6499F462FC0;3903.
+(rerunfilecheck)             Checksum: 2C2E8764D2346D33A688EE58498FA35C;4179.
  ) 
 Here is how much of TeX's memory you used:
- 29454 strings out of 478287
- 534611 string characters out of 5849289
- 1154969 words of memory out of 5000000
- 46756 multiletter control sequences out of 15000+600000
- 486294 words of font info for 68 fonts, out of 8000000 for 9000
+ 29515 strings out of 478287
+ 536132 string characters out of 5849289
+ 1140611 words of memory out of 5000000
+ 46802 multiletter control sequences out of 15000+600000
+ 486308 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,117p,1193b,1966s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
@@ -1401,17 +1407,17 @@ texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/c
-m-super/sfss0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss0800.pfb
+m-super/sfss0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfss1095.pfb
 ></usr/share/texmf/fonts/type1/public/cm-super/sfss1200.pfb></usr/share/texmf/f
 onts/type1/public/cm-super/sfss1440.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfss1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1200.pfb>
 </usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb></usr/share/texmf/fo
 nts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf/fonts/type1/public/cm-
 super/sfsx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on main.pdf (38 pages, 3002924 bytes).
+Output written on main.pdf (40 pages, 2988661 bytes).
 PDF statistics:
- 858 PDF objects out of 1000 (max. 8388607)
- 720 compressed objects within 8 object streams
- 311 named destinations out of 1000 (max. 500000)
- 349 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 894 PDF objects out of 1000 (max. 8388607)
+ 754 compressed objects within 8 object streams
+ 313 named destinations out of 1000 (max. 500000)
+ 365 words of extra memory for PDF output out of 10000 (max. 10000000)
 

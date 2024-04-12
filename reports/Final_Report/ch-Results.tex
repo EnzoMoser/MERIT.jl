@@ -1,7 +1,8 @@
-\setcounter{chapter}{3}
+\setcounter{chapter}{4}
 \setcounter{section}{0}
 \setcounter{subsection}{0}
 \chapter*{Results}
+\addcontentsline{toc}{chapter}{Results}
 \section{Current Workflow}
 The current workflow in MERIT.jl was designed to be simple and approachable without much background knowledge about how
 Julia or the underlying library works. Shown below is the full workflow needed to generate a plot from the data:
@@ -35,34 +36,35 @@ verbose and conform to established nomenclature in the field so that anyone who 
 what each function does without having to delve into the source code. In this way, the MERIT.jl library is somewhat self
 documenting. Additional information is provided above each function in the form of docstrings which can be used with the
 help function built into the Julia REPL. This was done in a bid to lower the prerequisite knowledge needed to use the
-library, thereby fulfilling one of the goals of MERIT.jl which was to create an open and acessible library. 
+library, thereby fulfilling one of the goals of MERIT.jl which was to create an open and accessible library. 
 
-\subsection{MERIT.jl Results}
+\section{MERIT.jl Results}
 The library was benchmarked against the MATLAB implementation created by Prof O'Loughlin et al to ensure that the
 results provided by MERIT.jl are provably correct. Both implementations were given the same data, B0\_P3\_p000.csv and
 B0\_P3\_p036.csv. Rotational subtraction was performed on these in both libraries to reduce the presence of skin
 reflections in the data as mentioned before. The data was then processed according to the processing pipeline
-recommended by both libraries, the result of which can be seen below in Figure \ref{fig:MERITResults}. It should be noted that the \lstinline[language=Octave]{imshow} function was used in MATLAB to plot the image. This had
-the effect of reflecting the image across the x-axis and also slightly stretching the image along the x-axis, however,
-the matrix holding the image data still shares the same layout as the image matrix in Julia so a numerical
-comparison between the two could be performed. The averaged MSE proved to be an excellent choice as a numerical
-comparator, due to the squaring operations in the MSE formula any small differences would be greatly magnified in the
-error. This is desirable when the goal is to see if MERIT.jl can provide output that is similar to its MATLAB
-counterpart. Computing the averaged MSE between the two images yielded an error of $8.4417 \times 10^{-7}$ which is well
-within the accuracy of a float, making it effectively identical to the images produced by MATLAB. This shows that the
-Julia library in its current state provides a viable alternative to the MATLAB implementation for frequency domain
-analysis.
+recommended by both libraries, the result of which can be seen below in Figure \ref{fig:OutputResults}. It should be
+noted that the \lstinline[language=Octave]{imshow} function was used in MATLAB to plot the image. This had the effect of
+reflecting the image across the x-axis and also slightly stretching the image along the x-axis, however, the matrix
+holding the image data still shares the same layout as the image matrix in Julia so a numerical comparison between the
+two could be performed. The averaged MSE proved to be an excellent choice as a numerical comparator, due to the squaring
+operations in the MSE formula any small differences would be greatly magnified in the error. This is desirable when the
+goal is to see if MERIT.jl can provide output that is similar to its MATLAB counterpart. Computing the averaged MSE
+between the two images yielded an error of $8.4417 \times 10^{-7}$ which is well within the accuracy of a float, making
+it effectively identical to the images produced by MATLAB. This shows that the Julia library in its current state
+provides a viable alternative to the MATLAB implementation for frequency domain analysis.
 
 \begin{figure}[t]
     \begin{tabular}{cc}
         \subfloat[MERIT.jl Output]{\includegraphics[width=0.45\linewidth]{JuliaOutput.png}}&
         \subfloat[MATLAB Output]{\includegraphics[width=0.45\linewidth]{MATLABOutput.png}}
     \end{tabular}
-    \label{fig:MERITResults}
+    \caption{A comparison between Julia and MATLAB output}
+    \label{fig:OutputResults}
 \end{figure}
 
 
-\subsection{Performance of MERIT.jl}
+\section{Performance of MERIT.jl}
 One of the requirements for MERIT.jl was that it had to be performant. Through the use of type stability, SIMD optimized
 for loops and the disabling of array bounds checking, the library could process the provided data in 8 seconds. However,
 after the addition of the Points data type for type safety, the processing time climbed to 12 seconds. While the overall
@@ -75,7 +77,7 @@ research is necessary to determine a definitive cause. To capture the full perfo
 scalability test was performed, in which the number of points, channels and frequency divisions were progressively
 increased. This was performed in an automated manner using the functions provided by BenchmarkTools.jl
 \cite{BenchmarkToolsJl}. The results from the benchmark suites were then exported to CSV files and analyzed in Excel to
-judge the "Big O" notation of MERIT.jl.
+judge the ``Big O'' notation of MERIT.jl.
 
 \begin{figure}[h!]
     \begin{tabular}{cc}

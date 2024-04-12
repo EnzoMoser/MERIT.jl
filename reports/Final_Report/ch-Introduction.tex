@@ -1,18 +1,18 @@
 \chapter*{Introduction}
 \addcontentsline{toc}{chapter}{Introduction}
-The microwave imaging field has seen a rising interest in the medical field evidenced by the numerous clinical trials
-which are being conducted by research groups around the world \cite{preeceMARIAM4Clinical2016,
-moloneyWaveliaMicrowaveBreast2021, e.c.fearMicrowaveBreastImaging2013}. A cursory search on GitHub for software around
-microwave imaging yielded few useful results, with many either being specialized repositories for a particular task or
-performing some machine learning analysis on microwave data. Only one repository stood out as a generalized library that
-gives researchers all the tools needed to easily test different algorithms; the MERIT toolbox developed by Prof
-O'Loughlin, M. A. Elahi, E. Porter, et. al \cite{d.oloughlinOpensourceSoftwareMicrowave2018}. Other fields of science
-have seen numerous benefits from the introduction of comprehensive open-source libraries. Libraries such as PsychoPy and
-PsyToolkit have allowed researchers to design and conduct experiments in a matter of hours by packaging common functions
-in an easy-to-use library \cite{stoetPsyToolkitTestimonials}. With the rise in the number of systems that can perform
-microwave imaging and the vast amounts of data being generated from these systems, it is imperative that there are a
-variety of toolkits available to not only analyze data from these current systems but also from future systems. This BAI
-project aims to consider the following questions:
+Microwave imaging has seen a rising interest in the medical field evidenced by the numerous clinical trials that are
+being conducted by research groups around the world \cite{preeceMARIAM4Clinical2016, moloneyWaveliaMicrowaveBreast2021,
+e.c.fearMicrowaveBreastImaging2013}. A cursory search on GitHub for software around microwave imaging yielded few useful
+results, with many being specialized repositories for a particular task or performing some machine learning analysis on
+microwave data. Only one repository stood out as a generalized library that provides researchers with all the tools
+needed to easily test different algorithms; the MERIT toolbox developed by Prof O'Loughlin, M. A. Elahi, E. Porter, et.
+al \cite{d.oloughlinOpensourceSoftwareMicrowave2018}. Other fields of research have seen numerous benefits from the
+introduction of comprehensive open-source libraries. Libraries such as PsychoPy and PsyToolkit have allowed psychology
+researchers to design and conduct experiments in a matter of hours by packaging common functions in an easy-to-use
+library \cite{stoetPsyToolkitTestimonials}. With a rise in the number of systems that can perform microwave imaging
+and the vast amounts of data being generated from these systems, it is imperative that there are a variety of toolkits
+available to not only analyze data from these current systems but also from future systems. This BAI project aims to
+consider the following questions:
 \begin{itemize}
     \item Improving the accessibility of Microwave Imaging
     \item Increasing the compatibility between systems, the data these systems generate and the software used to analyze
@@ -20,34 +20,15 @@ project aims to consider the following questions:
     \item Creating an intuitive, easily extensible and customizable library
     \item Leveraging the features of a coding language to create a performant library   
 \end{itemize}
+\hfill \break
 
-
-
-MERIT.jl was motivated by a need to increase the interoperability between the data produced from systems and the
-programs that would be able to process them. Currently, any researcher who wants to design a novel microwave imaging
-algorithm or test the efficacy of their new systems has to spend time and effort creating entirely new software suites.
-More often than not these programs either tend to be closed source, or not compatible with other systems mainly because
-there are not many incentives for a researcher to invest the time required in creating a truly configurable and
-extensible open-source system. With the rise and success of clinical trials in microwave imaging, this problem is only
-going to get worse as more and more systems are developed.  \hfill \break
-
-The use of such open-source software has seen widespread use in a myriad of fields. PsychoPy and PsyToolkit are two such
-frameworks that revolutionized the field of psychological sciences. By implementing commonly used functions and scripts,
-they have allowed researchers to design and run experiments in a matter of hours. It has also allowed researchers who
-have little to no programming experience to get up and running with automated data processing, thereby allowing them to
-focus more on the quality of their experiment \cite{stoetPsyToolkitTestimonials}. \hfill \break
-
-That is where this project comes in. MERIT.jl aims to be an easy-to-use, extensible and featureful library. The goal
-being that anyone, regardless of coding experience, would be able to quickly create a script that allows them to process
-and visualize the scan data they have collected, as well as allowing more experienced coders to develop and test new
-algorithms with ease. The following sections will contain: 
-
+The rest of the report will be divided up as follows:
 \begin{itemize}
-    \item A literature review on the existing microwave imaging systems
-    \item A look into existing microwave imaging frameworks
+    \item A literature review on existing microwave imaging systems
+    \item A look into existing reconstruction algorithms 
     \item A discussion about the design choices and Julia features that are included
     \item An examination of the results and possible future work
 \end{itemize}
 
-The source code and the library are hosted on GitHub for anyone to view and amend:
-\url{https://github.com/AaronDinesh/MERIT.jl}
+MERIT.jl being an open-source library has all its code available on GitHub for anyone to view and amend. It can be
+viewed at the following URL: \url{https://github.com/AaronDinesh/MERIT.jl}
