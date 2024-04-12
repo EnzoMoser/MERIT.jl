@@ -1,13 +1,12 @@
 \chapter*{Abstract}
-
-%%NEED TO REDO THIS ABSTRACT
-
-MERIT aims to provide a software framework that is robust, easy to use and performant. It implements a variety of
-microwave imaging algorithms and a myriad of helper functions, all while leveraging the powerful features available in
-Julia. MERIT.jl also implements a ``Scan'' abstract datatype which allows users to subtype their own specialized datatype.
-Organizing the datatypes in this way means that MERIT.jl plays very well with Julia's own type hierarchy and also the
-other language features that depend on this. To encourage type safety, MERIT.jl implements a lightweight Points class
-which allows for efficient processing of coordinate points. In this way, collections of points won't simply be a matrix
-of Floats or Ints instead,they would be a Vector of the Points type. In this way, the Julia compiler will throw an
-error when Points aren't passed in the right argument, instead of providing a wrong output.      
+\change{Include some sentences about the field}MERIT.jl is designed to provide a robust, user-friendly and high-performance software framework that aims to increase
+the interoperability between microwave imaging systems, the data they produce and the software that analyzes that data.
+It contains helper functions as well as inverse scattering algorithms to aid in image reconstruction.
+The unique features in Julia, such as parametric polymorphism, multiple dispatch and type stability to name a few, have
+allowed MERIT.jl to possess unparalleled customizability and extensibility. MERIT.jl also demonstrates a level of type
+safety by implementing a lightweight Points type that allows for the efficient processing of coordinate points. Unlike
+traditional methods that represent points as a matrix of numbers, the Points type allows the Julia compiler to recognize
+when an incorrect collection is passed in place of the points collection, throwing an error in the process. In this way
+MERIT.jl can promise a level of safety without having to compromise on performance, while this strong type safety is not
+implemented fully in the library, the Points type serves as a template for future updates.
 \newpage

@@ -1,8 +1,12 @@
-\setcounter{chapter}{3}
+\setcounter{chapter}{2}
 \setcounter{section}{0}
 \setcounter{subsection}{0}
-\chapter*{Julia Specific Features}
-\addcontentsline{toc}{chapter}{Julia Specific Features}
+\chapter*{Programming Paradigms}
+\addcontentsline{toc}{chapter}{Programming Paradigms}
+As mentioned in the section before, Julia's development was centered around the philosophy of creating a dynamic yet high
+performing language by combining features like Multiple Dispatch and Parametric Polymorphism among others. The following
+sections will describe a small subset of these features.
+
 \section{Multiple Dispatch}
 Multiple Dispatch is a programming paradigm in which a function can be invoked based not only on the function name but
 also on the type and order of input arguments. This is opposed to the single dispatch programming paradigm where the
@@ -101,7 +105,7 @@ be dispatched due to the reverse ordering of the types.
 \begin{figure}[!h]
     \includegraphics[width=1\textwidth]{multipleDispatch.png}
     \centering
-    \caption{Multiple Dispatch (top) vs Single Dispatch (bottom)} 
+    \caption{Multiple Dispatch (top) vs Single Dispatch (bottom) demonstrating that in the multiple dispatch paradigm, the executed function also depends on the type and order of its inputs} 
     \label{fig:multipleDispatch}
 \end{figure}
 
@@ -168,23 +172,6 @@ will execute successfully provided the subtyped class contains the fields being 
 about the completeness of the other's implementation, provided developer B follows the standards set by developer A,
 they can develop an extension to library A and trust that the two libraries will be comparable.
 
-The concept of abstract types and subtypes is used heavily in MERIT.jl due to the constant pace of progression in the
-field. Currently, most of the research in microwave imaging is centered around breast imaging and breast cancer, however
-in 2013, a pilot study published in the International Journal of Biomedical Imaging found the use of microwave imaging
-to be beneficial when imaging transverse sections of the forearm \cite{gilmoreMicrowaveImagingHuman2013}. As such the
-library needs to be flexible enough to adapt to novel imaging domains. MERIT.jl is centered around the Scan abstract
-type, from this, the BreastScan type is subtyped which holds all the information regarding the scan from a particular
-breast. In order to incorporate the aforementioned study, one would have to create a ForearmScan type, subtyped from
-Scan, which has a similar field name structure to the BreastScan type. In this way, MERIT.jl achieves extensive
-flexibility and expandability which would not be possible in other languages. 
-\begin{figure}[h!]
-    \includegraphics[width=0.5\textwidth]{scanType.png}
-    \centering
-    \caption{Current type hierarchy in MERIT.jl} 
-    \label{fig:scanType}
-\end{figure}
-
-\FloatBarrier
 \section{Parametric Polymorphism}
 Parametric polymorphism refers to the programming paradigm where a function can be made generic to the input argument
 type. At compilation time, the compiler can strongly type the function based on the types of the input arguments.
@@ -200,15 +187,8 @@ Instead of specifying a concrete type for \lstinline[language=Julia]{x}, it is p
 Real abstract type. If parametric polymorphism was not a Julia feature, this function would have to be duplicated 16
 times to account for the various concrete types that are a subtype of Real (see Figure \ref{fig:juliaTypeHeirarchy}).
 
-MERIT.jl uses this feature extensively due to the fact that the library needs to be agnostic to the type of the input
-data. When instantiating the BreastScan struct the user can provide the types of the data that will be loaded and can
-therefore set the internal data type of the struct. It would be impossible to support all 4,176 different permutations
-of every type pairing, however, with parametric polymorphism, each function only needs to be defined once and the Julia
-compiler will handle the rest. This means that researchers and developers don't have to worry about whether the library
-functions can support the data type of their data, so long as it follows the type restriction set on the function, it
-will produce an output, creating an intuitive and easy coding experience.  
-
 \section{Type Stability}
+\label{TypeStability}
 Type Stability is a coding discipline that Julia recommends all code use. A function whose contained variables have a
 consistent type for its lifetime is considered to be ``type stable'' or to have ``type stability''. Another way to think
 about this, is that if the output type depends only on the input types, then the function is type stable. Consider the
@@ -241,18 +221,7 @@ type Any, ergo forgoing any optimizations. These optimizations are evident when 
 was performed using the \lstinline[language=Julia]{@benchmark} macro from the BenchmarkTools module. Both functions were
 run multiple times to ensure that only the compiled versions of the functions were executed rather than the interpreted
 version. These benchmarks showed that on average the type unstable function ran 1.87x slower than the type stable
-function (573.355ns and 306.178ns respectively). These performance gains become significant when considering the many
-millions of function calls required to generate an output in MERIT.jl. Consider just the distance calculations required
-between an $8cm$ radius breast whose domain is discretized with a resolution of $0.25cm$ and an antenna array made of 60
-antennas; this equates to roughly 4.2M calculations alone for each image. Performing this on a type unstable function
-would take far too long to compute, rendering the library unusable. Herein lies one of the drawbacks of writing Julia
-code, namely the ease at which an inexperienced developer can write type unstable functions. In the simple case above,
-the cause for the type instability is evident, however, with larger more complex functions it can be hard to narrow down
-the cause for the instability. Creating performant code in these situations requires advanced knowledge of the language,
-raising the barrier to entry. However, the language offers the \lstinline[language=Julia]{@code_warntype} macro that can
-analyze sections of code and indicate, but not fix, places of instability where the compiler fails to infer the data
-type of the variable. This tool can considerably benefit developers of MERIT.jl to ensure that any extensions written
-for the language remain in line with its philosophy of performance.  
+function (573.355ns and 306.178ns respectively).  
 
 \section{Closure}
 Closure in programming refers to the practice of calling a function A that returns a function B which has some
@@ -274,11 +243,7 @@ add7(10) # Will return 17
 Defined above is a function called \lstinline[language=Julia]{addX} which accepts an input \lstinline[language=Julia]{x}
 and assigns it to a variable \lstinline[language=Julia]{scalar}, before constructing and returning the function
 \lstinline[language=Julia]{calc_}. This can be beneficial as it allows developers to create a family of functions that
-are parametrized by their input variable. MERIT.jl makes use of closure in the \lstinline[language=Julia]{get_delys} in
-the Breamform.jl file (for more information see the GitHub link in the Introduction). Earlier sections showed how
-$\epsilon$ is a free parameter in the beamforming equations, one that researchers would be changing frequently to find
-the optimal parameter for each particular scan. Implementing this feature fulfills one of the other tenets of MERIT.jl
-which was to create flexibility and customizability in the functions where it was required. It must be noted that the
+are parametrized by their input variable.  It must be noted that the
 captured variable, in the above case \lstinline[language=Julia]{scalar}, must never be reassigned, otherwise, the
 compiler will not be able to infer the data types leading to type unstable code, and by extension all the negative
 consequences mentioned in the previous section.
@@ -324,65 +289,3 @@ incorrectly passed positionally can be negated by creating lightweight types tha
 their type name. In the above case, it would mean creating a ``distance'' type and a ``time'' type that act as wrappers
 around a numerical concrete type. This way when line 22 is executed, instead of returning an incorrect answer, the
 compiler will raise an error as the ``time'' and ``distance'' types were provided in the wrong order.
-
-The MERIT.jl library exemplifies the idea of ``strong'' type safety through its implementation of the Point data type.
-The Point type is an abstract type from which the Point3 and Point2 concrete type subsets. These are lightweight
-wrappers around a grouping of 3 and 2 numerical types respectively and serve the purpose of being a 3D and 2D point.
-\begin{lstlisting}[language=Julia]
-abstract type Point end
-
-# xyz can be any data type that is a subset of Real
-mutable struct Point3{T <: Real} <: Point
-    x::T
-    y::T
-    z::T 
-end
-
-mutable struct Point2{T <:  Real} <: Point
-    x::T
-    y::T
-end
-\end{lstlisting}
-Due to the custom nature of these data types, the inbuilt operators could not be used on them. So in addition, MERIT.jl
-had to extend the in-built operators using the concepts of multiple dispatch and parametric polymorphism as mentioned
-before such that these types could be useful. The full suite of implemented operators can be found in the GitHub
-repository. Every function in the library that needs to work with points accepts a collection of a Points subtype
-rather than a collection of numbers. This way no other collection of numbers can be erroneously passed in place of the
-Points subtypes. Some edge cases still exist however, there is nothing stopping a user from incorrectly passing a
-collection of points describing antenna locations to an argument which is for points from the imaging domain. Even
-though this issue still exists, clear and easy to understand documentation should make this a nonissue. Due to time
-constraints on the project, the entire library could not be made ``strongly'' typed, however, the Points type acts as s
-template that could be used to eventually strongly type the entire library
-
-\section{Customizability}
-The customizability of the MERIT.jl library has been demonstrated extensively in the previous sections. However, nowhere
-is this exemplified more than in the BreastScan struct. The entire library is built around the use of the Scan structs.
-These structs encapsulate all the information about a particular Scan, including all the required information about the
-machine that was used to conduct the scan. Most importantly each scan struct is recommended to have two function pointer
-fields which will reference the delay function and the beamforming function to be used in the beamforming process.
-During the setup process, researchers can easily swap out the delay function or the beamforming function used with other
-relevant functions from the library or with their own functions. In order to work with the one-call data processing
-pipeline in MERIT.jl, researchers just need to ensure that their delay and beamformer functions follow these templates:
-\begin{lstlisting}[language=Julia]
-function delay_template(relative_permiativity)
-    # Capture the relatively_permiativity
-    
-    # Create a delay function
-    function calc_(channels, antenna, domain_points):
-        #calculate and return a time matrix
-        #Size = (1 x #Channels x #Points)
-    end
-end
-
-function beamformer(delayed_signals)
-    #Do some processing
-    #return should be of size (1 x 1 x #Points)
-end
-\end{lstlisting}
-These templates allow for a lot of flexibility and are really where MERIT.jl shines in comparison to its MATLAB
-counterpart. Researchers who just want to benchmark new algorithms against already established ones just need to follow
-these templates and they can be guaranteed that their functions will ``just work'' with the one-call data processing
-pipeline. If their functions also follow the rules of type stability mentioned in previous sections, they can also have
-some reasonable guarantees that any slowdowns are caused by their implementations rather than the lack of compiler
-optimizations for type unstable code.
-

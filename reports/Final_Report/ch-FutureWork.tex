@@ -3,7 +3,8 @@
 \setcounter{subsection}{0}
 \chapter*{Future Work}
 \addcontentsline{toc}{chapter}{Future Work}
-\section{Time Domain Implimentation}
+\section{Time Domain Implementation}
+\label{TDImplementation}
 Due to the limited time I had to work on this library, I mainly focused on implementations of beamformers in the
 frequency domain. While this covers some systems, the library effectively excludes a whole class of systems that perform
 time domain data gathering. But I don't see this being difficult to include in future updates. Using the multiple
@@ -13,14 +14,14 @@ not depend on the type of input data. The rest of the pipeline should work with 
 agnostic, or they have a type restriction permissive enough to allow for both time and frequency domain signals.
 
 \section{Implimentation of More Beamformers}
-Currently, the only beamformer implemented is the DAS beamformer, again mainly due to time constraints on the project
+Currently, the only beamformer implemented is the DAS beamformer, again mainly due to time constraints on the thesis
 itself. However, in the future one could consider implementing a generalized DAS beamformer, where more than just the
 relative permittivity value is parametrized. A more generalized DAS beamformer can described mathematically as:
 
 \begingroup
 \large
 \begin{equation}
-    I_{\epsilon_i}(r) = \mathcal{G}(\mathcal{S}) \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}} S_{a, a'}[\omega]e^{j\omega \tau_{\epsilon_i, a, a'}(r)}\right ]^2
+    I_{\varepsilon_i}(\textbf{r}) = \mathcal{G}(\mathcal{S}) \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}} S_{\textbf{a}, \textbf{a'}}[\omega]e^{j\omega \tau_{\varepsilon_i, \textbf{a}, \textbf{a'}}(\textbf{r})}\right ]^2
     \label{eq:GeneralisedDASBeamformer}
 \end{equation}
 \endgroup
@@ -34,7 +35,7 @@ parameters. It is assumed that anyone who would be willing to create their own b
 own processing pipeline using the high-level functions provided. 
 
 \section{Parallel Processing}
-Parallel processing was a feature that was not explored as it was outside the scope of this bachelor's project. However,
+Parallel processing was a feature that was not explored as it was outside the scope of this thesis. However,
 there are areas of the code that have been identified as ``embarrassingly parallel''. These are sections of the code
 that are amenable to significant acceleration through the use of multithreading and parallel processing. Consider for
 example the beamformer implementations in these equations, the response at each point is calculated independently of all

@@ -12,7 +12,7 @@ end
 
 function DAS(delayedSignals::T, weight::Real) where {T}
     #return should be of size (1 x 1 x numPoints)
-    weight*sum((sum(delayedSignals, dims=2)).^2, dims=1)[1,1,1] 
+    weight.*sum((sum(delayedSignals, dims=2)).^2, dims=1)[1,1,1] 
 end
 
 

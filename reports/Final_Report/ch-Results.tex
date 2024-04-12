@@ -4,6 +4,7 @@
 \chapter*{Results}
 \addcontentsline{toc}{chapter}{Results}
 \section{Current Workflow}
+\label{CurrentWorkflow}
 The current workflow in MERIT.jl was designed to be simple and approachable without much background knowledge about how
 Julia or the underlying library works. Shown below is the full workflow needed to generate a plot from the data:
 \lstinputlisting[language=Julia]{../../src/GettingStarted.jl}
@@ -27,7 +28,7 @@ visualized as demonstrated towards the end of the code block above. Overall the 
 \begin{figure}[h!]
     \includegraphics[width=1\textwidth]{MERITWorkflow.png}
     \centering
-    \caption{The entire MERIT.jl Workflow} 
+    \caption{An overview of the current workflow used to image a scan in MERIT.jl} 
     \label{fig:MERITWorkflow}
 \end{figure}
 
@@ -39,7 +40,7 @@ help function built into the Julia REPL. This was done in a bid to lower the pre
 library, thereby fulfilling one of the goals of MERIT.jl which was to create an open and accessible library. 
 
 \section{MERIT.jl Results}
-The library was benchmarked against the MATLAB implementation created by Prof O'Loughlin et al to ensure that the
+The library was benchmarked against the MATLAB implementation created by Dr. O'Loughlin \textit{et al.} to ensure that the
 results provided by MERIT.jl are provably correct. Both implementations were given the same data, B0\_P3\_p000.csv and
 B0\_P3\_p036.csv. Rotational subtraction was performed on these in both libraries to reduce the presence of skin
 reflections in the data as mentioned before. The data was then processed according to the processing pipeline
@@ -59,10 +60,9 @@ provides a viable alternative to the MATLAB implementation for frequency domain 
         \subfloat[MERIT.jl Output]{\includegraphics[width=0.45\linewidth]{JuliaOutput.png}}&
         \subfloat[MATLAB Output]{\includegraphics[width=0.45\linewidth]{MATLABOutput.png}}
     \end{tabular}
-    \caption{A comparison between Julia and MATLAB output}
+    \caption{A comparison between Julia and MATLAB output, showing an averaged MSE of $8.4417 \times 10^{-7}$}
     \label{fig:OutputResults}
 \end{figure}
-
 
 \section{Performance of MERIT.jl}
 One of the requirements for MERIT.jl was that it had to be performant. Through the use of type stability, SIMD optimized
@@ -81,8 +81,8 @@ judge the ``Big O'' notation of MERIT.jl.
 
 \begin{figure}[h!]
     \begin{tabular}{cc}
-        \subfloat[Unedited Points]{\includegraphics[width=0.45\linewidth]{PointsUnedited.png}}&
-        \subfloat[Edited Points]{\includegraphics[width=0.45\linewidth]{PointsEdited.png}}
+        \subfloat[Raw Points]{\includegraphics[width=0.45\linewidth]{PointsUnedited.png}}&
+        \subfloat[Processed Points]{\includegraphics[width=0.45\linewidth]{PointsEdited.png}}
     \end{tabular}
     \caption{Runtime for increasing Points}
     \label{fig:PointsResults}
@@ -97,14 +97,14 @@ judge the ``Big O'' notation of MERIT.jl.
 \vspace{1mm}
 \begin{figure}[h!]
     \begin{tabular}{cc}
-        \subfloat[Unedited Frequencies]{\includegraphics[width=0.45\linewidth]{FrequencyUnedited.png}}&
-        \subfloat[Edited Frequencies]{\includegraphics[width=0.45\linewidth]{FrequencyEdited.png}}
+        \subfloat[Raw Frequencies]{\includegraphics[width=0.45\linewidth]{FrequencyUnedited.png}}&
+        \subfloat[Processed Frequencies]{\includegraphics[width=0.45\linewidth]{FrequencyEdited.png}}
     \end{tabular}
     \caption{Runtime for increasing Frequency divisions}
     \label{fig:FrequenciesResults}
 \end{figure}
 
-Shown above in Figures \ref{fig:PointsResults}, \ref{fig:ChannelsResults}, \ref{fig:FrequenciesResults} are the results
+Figures \ref{fig:PointsResults}, \ref{fig:ChannelsResults}, \ref{fig:FrequenciesResults} show the results
 from BenchmarkTools. The reason for the two types of graphs was to remove outliers that skewed the data and prohibited
 any analysis. Running the benchmark used all the free RAM available on my laptop as well as significant amounts of swap
 space on my drive due to large amounts of overhead introduced by the BenchmarkTools benchmark. I believe that the
@@ -129,3 +129,6 @@ it allowed us easy access to data relating to points and channels. The above gra
 MERIT.jl library. From limited testing on my laptop with an Intel i7-1185G7 CPU and 16GB of RAM, the Julia library
 executed in the same amount of time as its MATLAB counterpart. However, further testing to accurately quantify the
 runtime of both libraries is needed.
+
+\section{MERIT.jl as a Library}
+%%Talk about MERIT.jl as a library and talk about how its general. Compare and contrast with Tyson Rheimers python code.

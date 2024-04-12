@@ -27,14 +27,14 @@
 \newcommand{\authorname}{Aaron Dinesh} % Your name, this is used in the title page and PDF stuff
 %% Do not put your Student ID in the document, as TCD will not publish
 %% documents that contain both your name and your Student ID.
-\newcommand{\supervisor}{Associate Prof. Declan O'Loughlin} % replace with the name of your supervisor
+\newcommand{\supervisor}{Dr. Declan O'Loughlin} % replace with the name of your supervisor
 %\newcommand{\cosupervisor}{Dr. Alex Lee} % replace with the name of your co-supervisor if you have one
 \newcommand{\keywords}{Microwave Imaging, Breast Imaging, Julia} % Replace with keywords for your thesis
 \newcommand{\school}{\href{https://www.tcd.ie/Engineering/}{School of Engineering}} % Your school's name and URL, this is used in the title page
 %Edited by HS for engineering
 
 %% Comment out the next line if you don't want a department to appear
-\newcommand{\department}{\href{https://www.tcd.ie/eleceng/}{Electronic Engineering}} % Your research group's name and URL, this is used in the title page
+\newcommand{\department}{\href{https://www.tcd.ie/eleceng/}{Electronic and Electrical Engineering}} % Your research group's name and URL, this is used in the title page
 
 
 %% Language and font encodings
@@ -67,6 +67,7 @@
 \usepackage{listings}
 \usepackage{subcaption}
 \usepackage{placeins}
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
 \captionsetup[figure]{font={default, sf}}
 \setcounter{tocdepth}{4}
 \graphicspath{{./Images/}}
@@ -74,6 +75,7 @@
 \pagestyle{plain} % Embrace simplicity!
 \counterwithout{figure}{section}
 \definecolor{tcd_blue}{RGB}{5, 105, 185}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
 
 %% For Today's Date
 \renewcommand{\today}{\ifnum\number\day<10 0\fi \number\day \space%
@@ -243,8 +245,8 @@ Thanks, Everyone!
 \setcounter{chapter}{1}
 \input{ch-Introduction.tex}
 \input{ch-Background.tex}
-\input{ch-Julia.tex}
 \input{ch-JuliaFeatures.tex}
+\input{ch-JuliaInContext.tex}
 \input{ch-Results.tex}
 \input{ch-FutureWork.tex}
 \input{ch-Conclusions.tex}
