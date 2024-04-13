@@ -3,10 +3,17 @@
 \setcounter{subsection}{0}
 \chapter*{Results}
 \addcontentsline{toc}{chapter}{Results}
+The results of the MERIT.jl library will be discussed in this chapter. The library will be judged on qualitative metrics
+such as ease of use, customizability and extensibility as well as quantitative metrics such as performance and its ``Big
+$\mathcal{O}$'' notation. The chapter will conclude with a brief section that evaluates MERIT.jl in the context of
+current microwave imaging libraries and research libraries in general.
+
 \section{Current Workflow}
 \label{CurrentWorkflow}
-The current workflow in MERIT.jl was designed to be simple and approachable without much background knowledge about how
-Julia or the underlying library works. Shown below is the full workflow needed to generate a plot from the data:
+The workflow in MERIT.jl was designed with speed and ease of use in mind. This is exemplified in the one-call processing
+pipeline that is currently implemented in the library and is the recommended workflow for researchers who want to
+process their scans while rapidly iterating through different $\varepsilon$'s and beamformers. Shown below is the full
+workflow needed to generate a plot from the scan data:
 \lstinputlisting[language=Julia]{../../src/GettingStarted.jl}
 A user would first instantiate the BrestScan struct and assign the data types that would be used throughout the
 processing pipeline. The first type sets the data type and thereby the precision of the points composing the imaging
@@ -36,24 +43,23 @@ This workflow exemplifies how easy it is to use the MERIT.jl library. The functi
 verbose and conform to established nomenclature in the field so that anyone who wants to use the library can understand
 what each function does without having to delve into the source code. In this way, the MERIT.jl library is somewhat self
 documenting. Additional information is provided above each function in the form of docstrings which can be used with the
-help function built into the Julia REPL. This was done in a bid to lower the prerequisite knowledge needed to use the
-library, thereby fulfilling one of the goals of MERIT.jl which was to create an open and accessible library. 
+help function built into the Julia REPL. 
 
-\section{MERIT.jl Results}
-The library was benchmarked against the MATLAB implementation created by Dr. O'Loughlin \textit{et al.} to ensure that the
-results provided by MERIT.jl are provably correct. Both implementations were given the same data, B0\_P3\_p000.csv and
-B0\_P3\_p036.csv. Rotational subtraction was performed on these in both libraries to reduce the presence of skin
-reflections in the data as mentioned before. The data was then processed according to the processing pipeline
-recommended by both libraries, the result of which can be seen below in Figure \ref{fig:OutputResults}. It should be
-noted that the \lstinline[language=Octave]{imshow} function was used in MATLAB to plot the image. This had the effect of
-reflecting the image across the x-axis and also slightly stretching the image along the x-axis, however, the matrix
-holding the image data still shares the same layout as the image matrix in Julia so a numerical comparison between the
-two could be performed. The averaged MSE proved to be an excellent choice as a numerical comparator, due to the squaring
-operations in the MSE formula any small differences would be greatly magnified in the error. This is desirable when the
-goal is to see if MERIT.jl can provide output that is similar to its MATLAB counterpart. Computing the averaged MSE
-between the two images yielded an error of $8.4417 \times 10^{-7}$ which is well within the accuracy of a float, making
-it effectively identical to the images produced by MATLAB. This shows that the Julia library in its current state
-provides a viable alternative to the MATLAB implementation for frequency domain analysis.
+\section{Plotted Scans}
+\label{PlottedScans}
+The library was benchmarked against the MATLAB implementation created by Dr. O'Loughlin \textit{et al.} to ensure that
+the results provided by MERIT.jl are provably correct. Both implementations were given the same data, B0\_P3\_p000.csv
+and B0\_P3\_p036.csv. Rotational subtraction was performed on these in both libraries to reduce the presence of skin
+reflections in the data. The data was then processed according to the processing pipeline recommended by both libraries,
+the result of which can be seen below in Figure \ref{fig:OutputResults}. It should be noted that the
+\lstinline[language=Octave]{imshow} function was used in MATLAB to plot the image. This had the effect of reflecting
+across the x-axis, it also slightly dilated the image along the x-axis, however since both image matrices share the same
+layout, a numerical comparison between the two matrices is possible. The averaged MSE was chosen as the numerical
+comparator due to the error squared term in the equation. This causes any small difference to be magnified in the error,
+which is desirable when the goal is absolute similarity between the MERIT.jl and its MATLAB counterpart. Computing the
+averaged MSE between the two images yielded an error of $8.4417 \times 10^{-7}$ which is within the accuracy of a
+float, making it effectively identical to the images produced by MATLAB. This shows that the Julia library in its
+current state provides a viable alternative to the MATLAB implementation for frequency domain analysis.
 
 \begin{figure}[t]
     \begin{tabular}{cc}
@@ -65,19 +71,15 @@ provides a viable alternative to the MATLAB implementation for frequency domain 
 \end{figure}
 
 \section{Performance of MERIT.jl}
-One of the requirements for MERIT.jl was that it had to be performant. Through the use of type stability, SIMD optimized
-for loops and the disabling of array bounds checking, the library could process the provided data in 8 seconds. However,
-after the addition of the Points data type for type safety, the processing time climbed to 12 seconds. While the overall
-runtime is still acceptable, an increase of 3 seconds is less than ideal. While no official analysis has been conducted
-to narrow down the cause of the slowdowns, I suspect that perhaps it may be down to unoptimized implementations of the
-basic operators such as addition and squaring in the Points.jl library. It should also be noted that when running the
-library, my laptop constantly ran into memory limits and had to write some memory to a swap file on disk. I believe that
-moving memory in and out of this file might also be partly responsible for the increased runtime, however, further
-research is necessary to determine a definitive cause. To capture the full performance characteristics of the library, a
-scalability test was performed, in which the number of points, channels and frequency divisions were progressively
-increased. This was performed in an automated manner using the functions provided by BenchmarkTools.jl
-\cite{BenchmarkToolsJl}. The results from the benchmark suites were then exported to CSV files and analyzed in Excel to
-judge the ``Big O'' notation of MERIT.jl.
+One of the requirements for MERIT.jl was performance. Through the use of type stability, SIMD optimized for loops and
+the disabling of array bounds checking, the library could process the provided data in 8 seconds. However, after the
+addition of the Points data type for type safety, the processing time climbed to 12 seconds. While the overall runtime
+is still acceptable, an increase of 3 seconds is less than ideal. An analysis to narrow down the cause of the increased
+runtime could not be conducted, however, unoptimized functions from the Points library may be the culprit. To capture
+the full performance characteristics of the library, a scalability test was performed, in which the number of points,
+channels and frequency divisions were progressively increased. This was performed in an automated manner using the
+functions provided by BenchmarkTools.jl \cite{BenchmarkToolsJl}. The results from the benchmark suites were
+exported to CSV files and analyzed in Excel to judge the ``Big O'' notation of MERIT.jl.
 
 \begin{figure}[h!]
     \begin{tabular}{cc}
@@ -104,31 +106,73 @@ judge the ``Big O'' notation of MERIT.jl.
     \label{fig:FrequenciesResults}
 \end{figure}
 
-Figures \ref{fig:PointsResults}, \ref{fig:ChannelsResults}, \ref{fig:FrequenciesResults} show the results
-from BenchmarkTools. The reason for the two types of graphs was to remove outliers that skewed the data and prohibited
-any analysis. Running the benchmark used all the free RAM available on my laptop as well as significant amounts of swap
-space on my drive due to large amounts of overhead introduced by the BenchmarkTools benchmark. I believe that the
-latency caused by IO to the swap file was the cause for the outliers and so I removed them in the edited graphs since
-these points are not indicative of the actual performance of the library. After these points were removed, a curve was
-fitted to each graph to provide an indication of the time complexity. From this analysis, I concluded that the runtime
-of the library scales linearly ($\mathcal{O}(n)$) with the number of points, and quadratically ($\mathcal{O}(n^2)$) with
-the number of channels. This aligns with expectations based on the code analysis of the DAS implementation. The main
-beamformer loop consists of a single for loop iterating over the points as such, the algorithm is expected to behave
-linearly with an increase in points. With channels, every additional antenna corresponds to a quadratic increase in
-channels since every antenna can send to and receive from any other antenna in a fully multistatic system. This is
-evidenced by the slight quadratic increase in Figure \ref{fig:ChannelsResults}. The algorithm is expected to have
-$\mathcal{O}(n)$ growth since the frequency is only used once in the algorithm process to delay each signal, which is
-evidenced by the linear growth in \ref{fig:FrequenciesResults}. Effectively, MERIT works very well with a large number
-of points and with relatively few channels. This in turn affected the layout of the matrices in the library. Since data
-to do with points would be accessed most frequently, the decision was made to place these along the columns of the
-matrices. Since Julia is a column major language, this would provide the quickest access to this data. Data that relate
-to the channels were placed along the second dimension since this would be accessed less frequently than data related to
-the points. Finally, data relating to the frequency were placed along the third dimension, since this data is accessed
-very infrequently, it was decided that the latency required to load this data from memory would be acceptable provided
-it allowed us easy access to data relating to points and channels. The above graphs demonstrate the performance of the
-MERIT.jl library. From limited testing on my laptop with an Intel i7-1185G7 CPU and 16GB of RAM, the Julia library
-executed in the same amount of time as its MATLAB counterpart. However, further testing to accurately quantify the
-runtime of both libraries is needed.
+Figures \ref{fig:PointsResults}, \ref{fig:ChannelsResults}, \ref{fig:FrequenciesResults} show the results from
+BenchmarkTools. A large number of outliers were found as can be seen in the raw data. Subsequent analysis revealed that
+these outliers were the product of excessive usage of the swap file on the test system; a consequence of the
+insufficient amounts of available RAM and the large overhead introduced by the BenchmarkTools library. Since these data
+points are an artifact caused by the BenchmarkTools library, they were removed from the data set. A curve was fitted to
+the remaining points, to indicate the time complexity. From this analysis, it was concluded that MERIT.jl scales
+linearly with the number of points ($\mathcal{O}(n)$) as can be seen in Figure \ref{fig:PointsResults}, and
+quadratically with the number of channels ($\mathcal{O}(n^2)$) as seen by the slightly quadratic increase in Figure
+\ref{fig:ChannelsResults}. This aligns with expectations based on an algorithm analysis of the DAS beamformer. The main
+loop consists of a single for loop iterating over the points as such, the algorithm is expected to behave linearly with
+an increase in points. With channels, every additional antenna corresponds to a quadratic increase in channels since
+every antenna can send to and receive from any other antenna in a fully multistatic system. The algorithm is expected to
+have $\mathcal{O}(n)$ growth in the number of frequency divisions since they are only used once in the algorithm process
+to delay each signal. This is evidenced by the linear growth trend that can be seen in Figure
+\ref{fig:FrequenciesResults}. Effectively, MERIT works very well with a large number of points and with relatively few
+channels. This in turn affected the layout of the matrices in the library. Since data to do with points would be
+accessed most frequently, it was decided to place this data along the columns of the matrices. Since Julia is a column
+major language, this would provide the quickest access to this data. Data that relate to the channels were placed along
+the second dimension since this would be accessed less frequently than data related to the points. Finally, data
+relating to the frequency were placed along the third dimension, since this data is accessed very infrequently, it was
+decided that the latency required to load this data from memory would be acceptable provided it allowed us easy access
+to data relating to points and channels. The above graphs demonstrate the performance of the MERIT.jl library. From
+limited testing on my laptop with an Intel i7-1185G7 CPU, the Julia library executed in the same amount of time as its
+MATLAB counterpart. However, further testing to accurately quantify the runtime of both libraries is needed.
 
 \section{MERIT.jl as a Library}
-%%Talk about MERIT.jl as a library and talk about how its general. Compare and contrast with Tyson Rheimers python code.
+\label{MERITAsLibrary}
+Creating generalized software for research is a challenge as most researchers create software and libraries that are
+specific to the question they are trying to answer. Conducting a search for microwave imaging libraries on Github yields
+23 repositories coded in either MATLAB, Python, C, C++ or R which upon further inspection were all created to solve a
+particular research question. For example, DLMiMed was created to investigate the use of deep learning for breast tumor
+classification in medical microwave images \cite{gerazovDLMiMed17}. Other researchers who might want to answer other
+questions relating to deep learning in microwave imaging cannot make use of this repository due to its fixed neural
+network and lack of generalizable code. Another example is the ``Microwave-Imaging'' repository created by André and
+Lucas Batista and Ricardo Adriano for their implementation of a quadratic programming approach to microwave breast
+imaging \cite{batistaMicrowaveImaging21}. Again, this repository is specific to their research question and is only
+useful to researchers who want to investigate similar questions. Also, it is not clear how one could extend this
+repository to answer other questions in the field of microwave imaging in a way that is transparent to the end user.
+Only the MERIT library created by Dr. O'Loughlin stood out as a truly generalized library by providing researchers 3
+well known beamforming algorithms as well as helper functions that would allow them to vizualise the provided scan data.
+This is the gap that MERIT.jl aims to fill. Section \ref{CurrentWorkflow} shows how quick and easy it would be for a
+researcher to ingest their data into the BreastScan struct and to visualize the output. Through the use of Closure as
+mentioned in section \ref{ClosureMJL}, MERIT.jl allows for extensive flexibility for the choice of $\varepsilon$, which
+is a parameter that is often changed by researchers. MERIT.jl also provides researchers with flexibility in the choice
+of delay and beamforming function used. 
+\begin{lstlisting}[language=Julia]
+function delay_template(relative_permiativity)
+    # Capture the relatively_permiativity
+    
+    # Create a delay function
+    function calc_(channels, antenna, domain_points):
+        #calculate and return a time matrix
+        #Size = (1 x #Channels x #Points)
+    end
+end
+
+function beamformer(delayed_signals)
+    #Do some processing
+    #return should be of size (1 x 1 x #Points)
+end
+\end{lstlisting}
+By creating a delay and beamformer function that follows the template provided above, researchers can substitute their
+own functions into the BreastScan struct and the one-call processing pipeline will work as normal. Section
+\ref{JuliaScientificComputing} showcased how easy it was for the DifferentialEquations.jl module to extend the classes
+and functions already provided in SciMLBase so that structures from one library could be used with functions from another
+library in a way that was completely transparent to the end users, by leveraging the aforementioned features in Julia.
+Since MERIT.jl also makes use of these features, it also benefits from the easy extensibility that comes as a
+consequence.
+
+%% Maybe talk about benchmarking?

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  12 APR 2024 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.26)  13 APR 2024 18:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,7 +1075,7 @@ Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count363
  (./ch-Title.tex
-<./Images//Trinity_RGB_transparent_main.png, id=159, 412.6617pt x 142.3719pt>
+<./Images//Trinity_RGB_transparent_main.png, id=163, 412.6617pt x 142.3719pt>
 File: ./Images//Trinity_RGB_transparent_main.png Graphic file (type png)
 <use ./Images//Trinity_RGB_transparent_main.png>
 Package pdftex.def Info: ./Images//Trinity_RGB_transparent_main.png  used on in
@@ -1139,12 +1139,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
 
-<./Images//multistaic.png, id=312, 668.4975pt x 668.4975pt>
+<./Images//multistaic.png, id=317, 668.4975pt x 668.4975pt>
 File: ./Images//multistaic.png Graphic file (type png)
 <use ./Images//multistaic.png>
 Package pdftex.def Info: ./Images//multistaic.png  used on input line 30.
 (pdftex.def)             Requested size: 135.89185pt x 135.89021pt.
-<./Images//MARIA_M4.png, id=314, 383.93437pt x 230.36063pt>
+<./Images//MARIA_M4.png, id=319, 383.93437pt x 230.36063pt>
 File: ./Images//MARIA_M4.png Graphic file (type png)
 <use ./Images//MARIA_M4.png>
 Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 47.
@@ -1152,12 +1152,12 @@ Package pdftex.def Info: ./Images//MARIA_M4.png  used on input line 47.
 [2.9
 
 ] [3.10 <./Images//multistaic.png> <./Images//MARIA_M4.png>]
-<./Images//Wavelia.png, id=336, 472.76625pt x 418.56375pt>
+<./Images//Wavelia.png, id=341, 472.76625pt x 418.56375pt>
 File: ./Images//Wavelia.png Graphic file (type png)
 <use ./Images//Wavelia.png>
 Package pdftex.def Info: ./Images//Wavelia.png  used on input line 78.
 (pdftex.def)             Requested size: 226.48413pt x 200.5187pt.
-<./Images//LeveledMultistatic.png, id=340, 537.80925pt x 361.35pt>
+<./Images//LeveledMultistatic.png, id=345, 537.80925pt x 361.35pt>
 File: ./Images//LeveledMultistatic.png Graphic file (type png)
 <use ./Images//LeveledMultistatic.png>
 Package pdftex.def Info: ./Images//LeveledMultistatic.png  used on input line 1
@@ -1177,13 +1177,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 129--149
 
  []
 
-<./Images//TSARPrototype.png, id=359, 144.54pt x 99.4917pt>
+<./Images//TSARPrototype.png, id=364, 144.54pt x 99.4917pt>
 File: ./Images//TSARPrototype.png Graphic file (type png)
 <use ./Images//TSARPrototype.png>
 Package pdftex.def Info: ./Images//TSARPrototype.png  used on input line 159.
 (pdftex.def)             Requested size: 294.4266pt x 202.67494pt.
 [6.13]
-<./Images//phasedArray.png, id=369, 523.9575pt x 523.9575pt>
+<./Images//phasedArray.png, id=374, 523.9575pt x 523.9575pt>
 File: ./Images//phasedArray.png Graphic file (type png)
 <use ./Images//phasedArray.png>
 Package pdftex.def Info: ./Images//phasedArray.png  used on input line 178.
@@ -1194,13 +1194,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 183--192
  []
 
 [7.14 <./Images//TSARPrototype.png> <./Images//phasedArray.png>]
-<./Images//pointEmitter.png, id=376, 695.59875pt x 785.93625pt>
+<./Images//pointEmitter.png, id=381, 695.59875pt x 785.93625pt>
 File: ./Images//pointEmitter.png Graphic file (type png)
 <use ./Images//pointEmitter.png>
 Package pdftex.def Info: ./Images//pointEmitter.png  used on input line 194.
 (pdftex.def)             Requested size: 226.48413pt x 255.89395pt.
  [8.15 <./Images//pointEmitter.png>] [9.16]
-<./Images//DMASDASComp.png, id=406, 823.075pt x 576.1525pt>
+<./Images//DMASDASComp.png, id=411, 823.075pt x 576.1525pt>
 File: ./Images//DMASDASComp.png Graphic file (type png)
 <use ./Images//DMASDASComp.png>
 Package pdftex.def Info: ./Images//DMASDASComp.png  used on input line 282.
@@ -1253,13 +1253,13 @@ LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
  [13.20
 
 ] [14.21]
-<./Images//multipleDispatch.png, id=500, 1228.59pt x 487.8225pt>
+<./Images//multipleDispatch.png, id=505, 1228.59pt x 487.8225pt>
 File: ./Images//multipleDispatch.png Graphic file (type png)
 <use ./Images//multipleDispatch.png>
 Package pdftex.def Info: ./Images//multipleDispatch.png  used on input line 106
 .
 (pdftex.def)             Requested size: 452.96826pt x 179.85135pt.
-<./Images//juliaTypeTree.png, id=502, 849.1725pt x 1147.28625pt>
+<./Images//juliaTypeTree.png, id=507, 849.1725pt x 1147.28625pt>
 File: ./Images//juliaTypeTree.png Graphic file (type png)
 <use ./Images//juliaTypeTree.png>
 Package pdftex.def Info: ./Images//juliaTypeTree.png  used on input line 120.
@@ -1269,56 +1269,55 @@ Package pdftex.def Info: ./Images//juliaTypeTree.png  used on input line 120.
 (./ch-JuliaInContext.tex [19.26] [20.27]
 
 LaTeX Warning: Citation `rackauckas2017differentialequations' on page 21 undefi
-ned on input line 14.
+ned on input line 15.
 
 [21.28
 
 ]
 
 LaTeX Warning: Citation `gilmoreMicrowaveImagingHuman2013' on page 22 undefined
- on input line 63.
+ on input line 64.
 
-<./Images//scanType.png, id=634, 605.26125pt x 484.81125pt>
+<./Images//scanType.png, id=639, 605.26125pt x 484.81125pt>
 File: ./Images//scanType.png Graphic file (type png)
 <use ./Images//scanType.png>
-Package pdftex.def Info: ./Images//scanType.png  used on input line 70.
+Package pdftex.def Info: ./Images//scanType.png  used on input line 71.
 (pdftex.def)             Requested size: 226.48413pt x 181.4117pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [22.29] [23.30 <./Images//scanType.png>]) (./ch-Results.tex [24.31]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 10.
+nput line 17.
 
 (../../src/GettingStarted.jl) [25.32
 
 ]
-<./Images//MERITWorkflow.png, id=690, 2655.9225pt x 725.71124pt>
+<./Images//MERITWorkflow.png, id=695, 2655.9225pt x 725.71124pt>
 File: ./Images//MERITWorkflow.png Graphic file (type png)
 <use ./Images//MERITWorkflow.png>
-Package pdftex.def Info: ./Images//MERITWorkflow.png  used on input line 29.
+Package pdftex.def Info: ./Images//MERITWorkflow.png  used on input line 36.
 (pdftex.def)             Requested size: 452.96826pt x 123.76791pt.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-<./Images//JuliaOutput.png, id=692, 723.45282pt x 538.26094pt>
+) [26.33 <./Images//MERITWorkflow.png>]
+<./Images//JuliaOutput.png, id=702, 723.45282pt x 538.26094pt>
 File: ./Images//JuliaOutput.png Graphic file (type png)
 <use ./Images//JuliaOutput.png>
-Package pdftex.def Info: ./Images//JuliaOutput.png  used on input line 60.
+Package pdftex.def Info: ./Images//JuliaOutput.png  used on input line 65.
 (pdftex.def)             Requested size: 203.83434pt x 151.65656pt.
-<./Images//MATLABOutput.png, id=693, 722.7pt x 537.50812pt>
+<./Images//MATLABOutput.png, id=703, 722.7pt x 537.50812pt>
 File: ./Images//MATLABOutput.png Graphic file (type png)
 <use ./Images//MATLABOutput.png>
-Package pdftex.def Info: ./Images//MATLABOutput.png  used on input line 61.
+Package pdftex.def Info: ./Images//MATLABOutput.png  used on input line 66.
 (pdftex.def)             Requested size: 203.83434pt x 151.60027pt.
- [26.33 <./Images//MERITWorkflow.png>]
-<./Images//PointsUnedited.png, id=700, 1022.511pt x 637.29pt>
+<./Images//PointsUnedited.png, id=705, 1022.511pt x 637.29pt>
 File: ./Images//PointsUnedited.png Graphic file (type png)
 <use ./Images//PointsUnedited.png>
 Package pdftex.def Info: ./Images//PointsUnedited.png  used on input line 85.
 (pdftex.def)             Requested size: 203.83434pt x 127.03758pt.
-<./Images//PointsEdited.png, id=701, 1022.511pt x 637.509pt>
+<./Images//PointsEdited.png, id=706, 1022.511pt x 637.509pt>
 File: ./Images//PointsEdited.png Graphic file (type png)
 <use ./Images//PointsEdited.png>
 Package pdftex.def Info: ./Images//PointsEdited.png  used on input line 86.
@@ -1327,7 +1326,7 @@ Package pdftex.def Info: ./Images//PointsEdited.png  used on input line 86.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Images//ChannelsUnedited.png, id=702, 1022.511pt x 637.29pt>
+<./Images//ChannelsUnedited.png, id=707, 1022.511pt x 637.29pt>
 File: ./Images//ChannelsUnedited.png Graphic file (type png)
 <use ./Images//ChannelsUnedited.png>
 Package pdftex.def Info: ./Images//ChannelsUnedited.png  used on input line 94.
@@ -1336,13 +1335,13 @@ Package pdftex.def Info: ./Images//ChannelsUnedited.png  used on input line 94.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./Images//FrequencyUnedited.png, id=703, 1022.511pt x 637.509pt>
+<./Images//FrequencyUnedited.png, id=708, 1022.511pt x 637.509pt>
 File: ./Images//FrequencyUnedited.png Graphic file (type png)
 <use ./Images//FrequencyUnedited.png>
 Package pdftex.def Info: ./Images//FrequencyUnedited.png  used on input line 10
 1.
 (pdftex.def)             Requested size: 203.83434pt x 127.08125pt.
-<./Images//FrequencyEdited.png, id=704, 1022.511pt x 637.29pt>
+<./Images//FrequencyEdited.png, id=709, 1022.511pt x 637.29pt>
 File: ./Images//FrequencyEdited.png Graphic file (type png)
 <use ./Images//FrequencyEdited.png>
 Package pdftex.def Info: ./Images//FrequencyEdited.png  used on input line 102.
@@ -1351,15 +1350,27 @@ Package pdftex.def Info: ./Images//FrequencyEdited.png  used on input line 102.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./ch-FutureWork.tex [27.34 <./Images//JuliaOutput.png> <./Images//MATLABOutp
-ut.png>] [28.35 <./Images//PointsUnedited.png> <./Images//PointsEdited.png> <./
-Images//ChannelsUnedited.png> <./Images//FrequencyUnedited.png> <./Images//Freq
-uencyEdited.png>] [29.36]) (./ch-Conclusions.tex [30.37
+[27.34 <./Images//JuliaOutput.png> <./Images//MATLABOutput.png>] [28.35 <./Imag
+es//PointsUnedited.png> <./Images//PointsEdited.png> <./Images//ChannelsUnedite
+d.png> <./Images//FrequencyUnedited.png> <./Images//FrequencyEdited.png>]
 
-] [31.38]) (./main.bbl
-[32.39
+LaTeX Warning: Citation `gerazovDLMiMed17' on page 29 undefined on input line 1
+38.
 
-] [33.40
+
+LaTeX Warning: Citation `batistaMicrowaveImaging21' on page 29 undefined on inp
+ut line 142.
+
+[29.36]) (./ch-FutureWork.tex [30.37]
+
+LaTeX Warning: Reference `eq:DASBeamformer, eq:DMASBeamformer' on page 31 undef
+ined on input line 37.
+
+) (./ch-Conclusions.tex [31.38
+
+] [32.39]) (./main.bbl [33.40
+
+] [34.41
 
 ])
 (/usr/share/texlive/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
@@ -1371,19 +1382,19 @@ File: se-pdfdoc.def 2019/11/29 v1.12 stringenc: PDFDocEncoding
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [34.41]
+) [35.42]
 (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C67402E4904325BF252B7BEFC1559D3D;5617.
+(rerunfilecheck)             Checksum: F48BB032B9B3B769A3695588B38B4E06;5773.
  ) 
 Here is how much of TeX's memory you used:
- 29775 strings out of 478287
- 541150 string characters out of 5849289
- 1138098 words of memory out of 5000000
- 47045 multiletter control sequences out of 15000+600000
+ 29803 strings out of 478287
+ 541618 string characters out of 5849289
+ 1138534 words of memory out of 5000000
+ 47057 multiletter control sequences out of 15000+600000
  492509 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,14n,117p,1193b,1967s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1411,10 +1422,10 @@ super/sfsx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsx1440.pfb><
 /usr/share/texmf/fonts/type1/public/cm-super/sfsx1728.pfb></usr/share/texmf/fon
 ts/type1/public/cm-super/sfsx2488.pfb></usr/share/texmf/fonts/type1/public/cm-s
 uper/sftt1200.pfb>
-Output written on main.pdf (41 pages, 3736087 bytes).
+Output written on main.pdf (42 pages, 3740170 bytes).
 PDF statistics:
- 957 PDF objects out of 1000 (max. 8388607)
- 809 compressed objects within 9 object streams
- 318 named destinations out of 1000 (max. 500000)
- 421 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 989 PDF objects out of 1000 (max. 8388607)
+ 840 compressed objects within 9 object streams
+ 334 named destinations out of 1000 (max. 500000)
+ 429 words of extra memory for PDF output out of 10000 (max. 10000000)
 

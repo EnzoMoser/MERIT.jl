@@ -8,6 +8,7 @@ JuliaHub and the Julia Package Manager. The following sections will contextualiz
 play in the broader field of scientific computing as well as its role in MERIT.jl. 
 
 \section{Julia For Scientific Computing}
+\label{JuliaScientificComputing}
 Julia and its libraries are an attractive choice for researchers in the fields of numerical analysis, data science and
 engineering. Consider the common task of solving differential equations. These equations, defined in terms of
 derivatives, underpin every field of engineering from the analysis of complex electronic systems to thermodynamical
@@ -79,31 +80,6 @@ could easily be extended to work with any type that subtypes the Scan type, prov
 field name structure to the current BreastScan struct. Full details surrounding the structure of the BreastScan struct
 can be found in the Scans.jl file.
 
-
-%% COULD GO IN RESULTS
-% \begin{lstlisting}[language=Julia]
-% function delay_template(relative_permiativity)
-%     # Capture the relatively_permiativity
-    
-%     # Create a delay function
-%     function calc_(channels, antenna, domain_points):
-%         #calculate and return a time matrix
-%         #Size = (1 x #Channels x #Points)
-%     end
-% end
-
-% function beamformer(delayed_signals)
-%     #Do some processing
-%     #return should be of size (1 x 1 x #Points)
-% end
-% \end{lstlisting}
-% These templates allow for a lot of flexibility and are really where MERIT.jl shines in comparison to its MATLAB
-% counterpart. Researchers who just want to benchmark new algorithms against already established ones just need to follow
-% these templates and they can be guaranteed that their functions will ``just work'' with the one-call data processing
-% pipeline. If their functions also follow the rules of type stability mentioned in previous sections, they can also have
-% some reasonable guarantees that any slowdowns are caused by their implementations rather than the lack of compiler
-% optimizations for type unstable code.
-
 \subsection{Parametric Polymorphism in MERIT.jl}
 MERIT.jl makes use of parametric polymorphism so that the functions it implements can be agnostic to the data type of
 its inputs. When instantiating the BreastScan struct the user can provide the types of the data that will be loaded and
@@ -128,6 +104,7 @@ can considerably benefit developers of MERIT.jl to ensure that any extensions wr
 with its philosophy of performance.
 
 \subsection{Closure in MERIT.jl}
+\label{ClosureMJL}
 Closure, in MERIT.jl, was the programming paradigm that was used in order to achieve some customizability for the
 functions that required it. Currently, it is being used in the \lstinline[language=Julia]{get_delys} in the Breamform.jl
 file. Earlier sections showed how $\varepsilon$ is a free parameter in the beamforming equations, one that researchers

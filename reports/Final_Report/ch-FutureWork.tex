@@ -3,48 +3,46 @@
 \setcounter{subsection}{0}
 \chapter*{Future Work}
 \addcontentsline{toc}{chapter}{Future Work}
+MERIT.jl in its current state already provides researchers with the tools to analyze and visualize scans and through the
+integration of the aforementioned programming features, it achieves flexibility and extensibility. This chapter will
+consider the scope of future work and how it can be integrated with MERIT.jl
+
 \section{Time Domain Implementation}
 \label{TDImplementation}
-Due to the limited time I had to work on this library, I mainly focused on implementations of beamformers in the
-frequency domain. While this covers some systems, the library effectively excludes a whole class of systems that perform
-time domain data gathering. But I don't see this being difficult to include in future updates. Using the multiple
-dispatch feature in Julia, one could extend the \lstinline[language=Julia]{delay_signal!} in the Process.jl file to
-accept signals that are a subtype of Real instead of Complex. The beamformers can stay largely the same since they do
-not depend on the type of input data. The rest of the pipeline should work with the time domain since they are type
-agnostic, or they have a type restriction permissive enough to allow for both time and frequency domain signals.
+While this library focused on the frequency domain implementations of the beamformers, equivalent time domain
+representations do exist, the main difference being the method in which the signals are delayed. One could extend the \lstinline[language=Julia]{delay_signal!} function in the Process.jl file to
+accept signals that are subtyped from the Real abstract type. This way when working with time domain signals, the Julia
+compiler, based on the principals of multiple dispatch, will select the correct implementation of the
+\lstinline[language=Julia]{delay_signal!} function in a way that is fully transparent to the user. One could also extend
+the \lstinline[language=Julia]{get_delay} function in Beamform.jl to accept a sampling rate as well as $\varepsilon$,
+using the concept of closure, these variables would be captured and could be used to return the delay in terms of
+samples instead of seconds. The functional implementations of the beamformers can stay as they are, as they sum over the
+already delayed signals, they are indifferent to the numerical type of the input. 
 
-\section{Implimentation of More Beamformers}
-Currently, the only beamformer implemented is the DAS beamformer, again mainly due to time constraints on the thesis
-itself. However, in the future one could consider implementing a generalized DAS beamformer, where more than just the
-relative permittivity value is parametrized. A more generalized DAS beamformer can described mathematically as:
-
-\begingroup
-\large
-\begin{equation}
-    I_{\varepsilon_i}(\textbf{r}) = \mathcal{G}(\mathcal{S}) \left [\sum_{\Omega}\sum_{\mathcal{A}'}\sum_{\mathcal{A}} S_{\textbf{a}, \textbf{a'}}[\omega]e^{j\omega \tau_{\varepsilon_i, \textbf{a}, \textbf{a'}}(\textbf{r})}\right ]^2
-    \label{eq:GeneralisedDASBeamformer}
-\end{equation}
-\endgroup
-Here $\mathcal{G}(\mathcal{S})$ can be considered as a generalized weighting function that can be defined by the user. This way, the
-library needs only to support this one family of beamformers which can then be specialized into traditional DAS or even
-Weighted DAS. Programmatically, this could be implemented via closure the same way \lstinline[language=Julia]{delay} was
-defined in Beamformer.jl. It would also require a rewrite of the one-call processing pipeline that has been established
-via the \lstinline[language=Julia]{beamform} function. However, this is expected since the one-call function is only
-meant for researchers who quickly want to visualize a scan and investigate the effects of tuning a limited set of
-parameters. It is assumed that anyone who would be willing to create their own beamforming function would create their
-own processing pipeline using the high-level functions provided. 
+\section{Implementation of More Beamformers}
+The implementation of further beamformers can be an area for future work. Section \ref{JuliaScientificComputing} showed
+how the structures and functions from multiple libraries could be combined behind the scenes to provide a more
+streamlined experience for the end user. A similar idea could be implemented in MERIT.jl where the beamformers could be
+defined in another library that gets used in MERIT.jl. The main benefit of this approach is that users are given the
+option to download a ``lightweight'' version of the library with one beamformer if the particular choice of beamformer
+does not matter, or they could install the secondary module and have access to a larger suite of beamformers. Another
+benefit is that the developers of MERIT.jl need not concern themselves with having to implement all current and future
+beamformers. This can be handled by a separate team thereby dividing the workload. Provided this team follows the
+template of the DAS beamformer, they can have the guarantee that their function will also work in MERIT.jl.
 
 \section{Parallel Processing}
-Parallel processing was a feature that was not explored as it was outside the scope of this thesis. However,
-there are areas of the code that have been identified as ``embarrassingly parallel''. These are sections of the code
-that are amenable to significant acceleration through the use of multithreading and parallel processing. Consider for
-example the beamformer implementations in these equations, the response at each point is calculated independently of all
-the other points. As such this operation can be easily split across all available threads or even all available GPU
-cores, providing exponential increases to the performance of the library overall. The Julia language provides native
-support for threaded for-loops through the use of the \lstinline[language=Julia]{Threads.@threads} macro, which will
-evenly split the for-loop range across the threads available to the Julia runtime. However, the onus still lies on the
-user to ensure that no data race conditions can occur. Julia also supports GPU programming natively through the use of
-CUDA.jl for Nvidia GPUs, AMDGPU.jl for AMD GPUs, oneAPI.jl for Intel GPUs as well as Metal.jl for the current Apple
-integrated GPUs \cite{JuliaGPU}. Out of the APIs listed, CUDA.jl is by far the most advanced and complete library due to
-its age and dominance in other fields and would probably offer the most benefit for researchers as they most likely
-already have access to an Nvidia GPU.
+Parallel processing was not a feature that was explored as it was outside the scope of this thesis. However, there are
+areas of the code that have been identified as ``embarrassingly parallel''. These are sections of code that are amenable
+to significant acceleration through the use of multithreading and parallel processing. Consider the beamforming equation
+in equations \ref{eq:DASBeamformer, eq:DMASBeamformer}. For all of these, the response at each point is calculated
+independently of the other points. As such this operation can be easily split across all available threads or even
+all available GPU cores, providing exponential increases to the performance of the library overall. The Julia language
+provides native support for threaded for-loops through the use of the \lstinline[language=Julia]{Threads.@threads}
+macro, which will evenly split the for-loop range across the threads available to the Julia runtime. However, the onus
+still lies on the user to ensure that no data race conditions can occur. Julia also supports GPU programming natively
+through the use of CUDA.jl for Nvidia GPUs, AMDGPU.jl for AMD GPUs, oneAPI.jl for Intel GPUs as well as Metal.jl for the
+current Apple integrated GPUs \cite{JuliaGPU}. However, one drawback to parallel processing is the increased logic
+required to collect all the answers at the end. To prevent race conditions when writing to the output array, each
+spawned thread would either have to acquire a lock on the final array in order to write to it or pass its calculated
+answer to another thread that would sequentially write to the output array. In both cases, the performance provided by
+parallelizing the code would be hampered by the overhead introduced by collecting the results. 

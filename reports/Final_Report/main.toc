@@ -30,10 +30,11 @@
 \contentsline {subsection}{\numberline {3.2.6}Type Safety in MERIT.jl}{24}{subsection.3.2.6}%
 \contentsline {chapter}{Results}{25}{chapter*.20}%
 \contentsline {section}{\numberline {4.1}Current Workflow}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}MERIT.jl Results}{26}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Plotted Scans}{26}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Performance of MERIT.jl}{27}{section.4.3}%
-\contentsline {chapter}{Future Work}{30}{chapter*.32}%
-\contentsline {section}{\numberline {5.1}Time Domain Implementation}{30}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Implimentation of More Beamformers}{30}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Parallel Processing}{31}{section.5.3}%
-\contentsline {chapter}{Conclusions}{32}{chapter*.33}%
+\contentsline {section}{\numberline {4.4}MERIT.jl as a Library}{29}{section.4.4}%
+\contentsline {chapter}{Future Work}{31}{chapter*.32}%
+\contentsline {section}{\numberline {5.1}Time Domain Implementation}{31}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Implementation of More Beamformers}{31}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Parallel Processing}{32}{section.5.3}%
+\contentsline {chapter}{Conclusions}{33}{chapter*.33}%

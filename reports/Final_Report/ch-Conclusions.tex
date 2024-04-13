@@ -3,11 +3,47 @@
 \setcounter{subsection}{0}
 \chapter*{Conclusions}
 \addcontentsline{toc}{chapter}{Conclusions}
-Microwave imaging is making waves in the medical field, with the potential to create cheaper and safer imaging
-modalities. With many systems at various stages of clinical trials, it is important now more than ever to create a
-library that can encourage compatibility and interoperability. MERIT.jl achieves this through the use of the Julia
-programming language. In its current state, it can ingest data from most systems and perform frequency domain
-beamforming to produce an image that is near identical to its MATLAB counterpart. By making use of Parametric
-Polymorphism, Multiple dispatch, Type Safety, Type Stability and Closure, MERIT.jl has demonstrated powerful extensibility
-and flexibility while also remaining performant. MERIT.jl's open-source nature, near-limitless customizability and
-high-level syntax make it an appealing choice to both beginner and advanced researchers alike. 
+The success of the MARIA, Wavelia and TSAR clinical trials indicate that microwave imaging can provide a viable
+alternative to traditional X-ray and ultrasound modalities. Aside from quantitative metrics, the subjective experiences
+of women also play a significant role in the success of an imaging modality. One qualitative study on women's
+satisfaction after receiving a mammogram found that they felt pain and discomfort during the imaging process, with one
+woman stating that they never showed up to their second appointment due to the pain experienced in the first one
+\cite{engelmanWomenSatisfactionTheir2006}. Whereas a survey conducted on the participants of the Wavelia clinical trial
+showed that 92\% of the women found the bed comfortable and would recommend the procedure to other women. Indicating
+that women feel safe and comfortable with this new imaging modality. While the hardware has progressed, generalized
+software that can analyze the data from these systems has been lacking. Before the MERIT library created
+by Dr. O'Loughlin for the MATLAB programming language, most available software was specific to a particular system or created to answer a specific research
+question as was discussed at length in section \ref{MERITAsLibrary}. MERIT.jl was motivated by this lack of software and
+was created to be an alternative for researchers who want to use the Julia programming language in their studies.
+
+MERIT was used to benchmark the MERIT.jl library in terms of performance and results. By making use of features such as
+type stability, MERIT.jl can process the data from the MERIT tutorial in under 12 seconds when running on a single
+thread on an i7-1185G7. MERIT.jl also demonstrates a similar level of customizability and flexibility as the MATLAB
+library by allowing for custom delay and beamforming functions, as well as allowing researchers to easily change the
+$\varepsilon$ parameter in the default delay function. MERIT.jl also offers a form of reliability that is not seen in
+the MATLAB library through the introduction of a Point data type. This Point type allowed for a distinction to be
+created between a collection of numbers that represent a coordinate point, and a general collection of numbers. If the
+user was to incorrectly pass a collection of the point type to a function in place of another argument, the Julia
+compiler would throw an error, thereby creating a level of reliability. MERIT.jl also makes use of the multiple dispatch
+feature in Julia to hide implementation-specific details from the end users. This is heavily used in the Point
+type to allow the inbuilt mathematical operators to work on the Point type. This feature could also be used when the
+library needs to be extended to include different body parts. If the library needed to accommodate the data from the
+study conducted by Zhao \textit{et al.} \cite{gilmoreMicrowaveImagingHuman2013}, one would only have to create a
+ForearmScan struct subtyped from the Scan abstract struct, and then overload the domain generation function. Users
+following the current pipeline in MERIT.jl would not notice any difference as the compiler will handle dispatching the
+correct functions. This demonstrates another one of the benefits that MERIT.jl has over the MATLAB version. The only way
+in MATLAB to achieve this would be to create long chains of if-else statements that check the types of the provided
+input. Whereas in Julia, each specific implementation of a function can be grouped under one name. In this way,
+functions in MERIT.jl can be considered as concepts that encapsulate functional implementations. As was seen in section
+\ref{PlottedScans}, the MERIT.jl library provides numerically identical outputs to the MATLAB implementation with an
+averaged MSE of $8.4417 \times 10^{-7}$, showing that the MERIT.jl library can be a viable alternative to the MATLAB
+library.
+
+The Julia programming language offers many beneficial features for developers creating libraries for scientific
+computing. The JIT compiler and type stability allow developers to write high-level code which is then optimized and
+compiled at runtime, simplifying the development process. Efficient garbage collection means that developers no longer
+have to worry about deallocating assigned memory, removing the risk of inadvertently causing memory leaks.
+%%Ability to call other languages
+%%Ability to use + extend other libraries
+%%ABility to use mathmatical notation
+%%multiple dispatch 

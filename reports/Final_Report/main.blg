@@ -23,6 +23,8 @@ Warning--I didn't find a database entry for "MATLABPricing"
 Warning--I didn't find a database entry for "bezansonWhyWeCreated12"
 Warning--I didn't find a database entry for "rackauckas2017differentialequations"
 Warning--I didn't find a database entry for "gilmoreMicrowaveImagingHuman2013"
+Warning--I didn't find a database entry for "gerazovDLMiMed17"
+Warning--I didn't find a database entry for "batistaMicrowaveImaging21"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -54,7 +56,7 @@ Warning--empty year in aruobaComparisonProgrammingLanguages2018
 Done.
 You've used 16 entries,
             4087 wiz_defined-function locations,
-            942 strings with 12125 characters,
+            946 strings with 12207 characters,
 and the built_in function-call counts, 10556 in all, are:
 = -- 794
 > -- 321
@@ -93,4 +95,4 @@ warning$ -- 24
 while$ -- 40
 width$ -- 18
 write$ -- 166
-(There were 39 warnings)
+(There were 41 warnings)
