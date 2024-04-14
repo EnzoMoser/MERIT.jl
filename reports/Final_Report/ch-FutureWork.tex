@@ -10,14 +10,15 @@ consider the scope of future work and how it can be integrated with MERIT.jl
 \section{Time Domain Implementation}
 \label{TDImplementation}
 While this library focused on the frequency domain implementations of the beamformers, equivalent time domain
-representations do exist, the main difference being the method in which the signals are delayed. One could extend the \lstinline[language=Julia]{delay_signal!} function in the Process.jl file to
-accept signals that are subtyped from the Real abstract type. This way when working with time domain signals, the Julia
-compiler, based on the principals of multiple dispatch, will select the correct implementation of the
-\lstinline[language=Julia]{delay_signal!} function in a way that is fully transparent to the user. One could also extend
-the \lstinline[language=Julia]{get_delay} function in Beamform.jl to accept a sampling rate as well as $\varepsilon$,
-using the concept of closure, these variables would be captured and could be used to return the delay in terms of
-samples instead of seconds. The functional implementations of the beamformers can stay as they are, as they sum over the
-already delayed signals, they are indifferent to the numerical type of the input. 
+representations do exist, the main difference being the method in which the signals are delayed. One could extend the
+\lstinline[language=Julia]{delay_signal!} function in the Process.jl file to accept signals that are subtyped from the
+Real abstract type. This way when working with time domain signals, the Julia compiler, based on the principals of
+multiple dispatch, will select the correct implementation of the \lstinline[language=Julia]{delay_signal!} function in a
+way that is fully transparent to the user. One could also extend the \lstinline[language=Julia]{get_delay} function in
+Beamform.jl to accept a sampling rate as well as $\varepsilon$, using the concept of closure, these variables would be
+captured and could be used to return the delay in terms of samples instead of seconds. The functional implementations of
+the beamformers can stay as they are. As they sum over the already delayed signals, they are indifferent to the
+numerical type of the input. 
 
 \section{Implementation of More Beamformers}
 The implementation of further beamformers can be an area for future work. Section \ref{JuliaScientificComputing} showed
@@ -28,7 +29,7 @@ option to download a ``lightweight'' version of the library with one beamformer 
 does not matter, or they could install the secondary module and have access to a larger suite of beamformers. Another
 benefit is that the developers of MERIT.jl need not concern themselves with having to implement all current and future
 beamformers. This can be handled by a separate team thereby dividing the workload. Provided this team follows the
-template of the DAS beamformer, they can have the guarantee that their function will also work in MERIT.jl.
+standards set forth in MERIT.jl, they can have the guarantee that their function will also work in MERIT.jl.
 
 \section{Parallel Processing}
 Parallel processing was not a feature that was explored as it was outside the scope of this thesis. However, there are

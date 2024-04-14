@@ -23,15 +23,15 @@ prob = ODEProblem(f, u0, tspan)
 solution = solve(prob)
 \end{lstlisting}
 After defining the differential equation, initial conditions and the solution time length, the example defines an
-\lstinline[language=Julia]{ODEProblem} which is a subtype of \lstinline[language=Julia]{SciMLBase.AbstractODEProblem} which
-itself is subtyped from \lstinline[language=Julia]{SciMLBase.AbstractDEProblem} and this pattern continues. Notice that
-the abstract type for ODEProblem was defined in the SciMLBase Module, not in the DifferentialEquations Module. SciMLBase
-is a separate library that DifferentialEquations extends in a way that is completely transparent to the end user. Any
-problems created using the ODEProblem type from DifferentialEquations can be used in any function from any library that
-can accept the SciMLBase.AbstractODEProblem or any of its supertypes. This highlights how easy it is for new libraries
-to extend older libraries in a way that is mutually beneficial for both libraries. The developer of the original library
-no longer has to worry about implementing functions for every type of differential equation, and the developer of the
-new library does not have to invest time in creating the complex type hierarchy or the helper functions from the
+\lstinline[language=Julia]{ODEProblem} which is a subtype of \lstinline[language=Julia]{SciMLBase.AbstractODEProblem}
+which itself is subtyped from \lstinline[language=Julia]{SciMLBase.AbstractDEProblem} and this pattern continues. Notice
+that the abstract type for ODEProblem was defined in the SciMLBase Module, not in the DifferentialEquations Module.
+SciMLBase is a separate library that DifferentialEquations extends in a way that is completely transparent to the end
+user. Any problems created using the ODEProblem type from DifferentialEquations can be used in any function from any
+library that can accept the SciMLBase.AbstractODEProblem or any of its supertypes. This highlights how easy it is for
+new libraries to extend older libraries in a way that is mutually beneficial for both. The developer of the original
+library no longer has to worry about implementing functions for every type of differential equation, and the developer
+of the new library does not have to invest time in creating the complex type hierarchy or the helper functions from the
 original library. Once passed to the \lstinline[language=Julia]{solve} function, the library can automatically determine
 the best solver based on the problem and dispatch the relevant methods accordingly exemplifying the use of multiple
 dispatch, all while boasting C and Fortran-like speeds. Their webpage demonstrates them solving the Lorenz ODE in
@@ -45,17 +45,17 @@ creating libraries and researchers who want quick answers to their questions.
 
 \section{Julia for MERIT.jl}
 MERIT.jl also makes full use of the aforementioned features in order to create a library that is reliable, performant
-and easily extensible. The sections below will outline how each feature was used to attain the goals stated at the begining.  
+and easily extensible. The sections below will outline how each feature was used to attain the goals stated at the beginning.  
 
 \subsection{Multiple Dispatch in MERIT.jl}
 MERIT.jl makes use of multiple dispatch in the beamforming algorithm implementations. As mentioned before, the DAS
 beamformer can be considered as a specialized case of the WDAS algorithm with a constant unit weighting factor. Due to
 both being effectively the same algorithm, it was decided to combine both of these under the DAS nomenclature and use
 multiple dispatch to select the correct function based on the presence of weighting factors in the argument list. This
-was also used when defining the addition, subtraction and exponentiation operators so that the users can make use of the
-inbuilt mathematical operators when working with the Point3 and Point2 datatypes. Multiple dispatch could also be used
-in the implementation of the time domain version of the DAS beamformer, the specifics of which will be detailed in
-section \ref{TDImplementation}.  
+was also used when defining the addition, subtraction and exponentiation operators for the Point abstract type so that
+users can make use of the inbuilt mathematical operators when working with the Point3 and Point2 datatypes. Multiple
+dispatch could also be used in the implementation of the time domain version of the DAS beamformer, the specifics of
+which will be detailed in section \ref{TDImplementation}.  
 
 \subsection{Type Hierarchy in MERIT.jl}
 The concept of abstract types and subtypes is used heavily in MERIT.jl due to the constant pace of progression in the

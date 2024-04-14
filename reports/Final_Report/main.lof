@@ -11,7 +11,7 @@
 \contentsline {figure}{\numberline {10}{\ignorespaces Type hierarchy for the Integer Type\relax }}{16}{figure.caption.16}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Current type hierarchy in MERIT.jl\relax }}{23}{figure.caption.18}%
 \contentsline {figure}{\numberline {12}{\ignorespaces An overview of the current workflow used to image a scan in MERIT.jl\relax }}{26}{figure.caption.20}%
-\contentsline {figure}{\numberline {13}{\ignorespaces A comparison between Julia and MATLAB output, showing an averaged MSE of $8.4417 \times 10^{-7}$\relax }}{27}{figure.caption.21}%
+\contentsline {figure}{\numberline {13}{\ignorespaces A comparison between Julia and MATLAB output. Averaged MSE of $8.4417 \times 10^{-7}$\relax }}{27}{figure.caption.21}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Runtime for increasing Points\relax }}{28}{figure.caption.24}%
 \contentsline {figure}{\numberline {15}{\ignorespaces Runtime for increasing Channels\relax }}{28}{figure.caption.27}%
 \contentsline {figure}{\numberline {16}{\ignorespaces Runtime for increasing Frequency divisions\relax }}{28}{figure.caption.28}%
