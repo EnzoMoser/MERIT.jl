@@ -1,3 +1,10 @@
+@online{ajitsariaWhatPythonGlobal,
+  title = {What {{Is}} the {{Python Global Interpreter Lock}} ({{GIL}})?},
+  author = {Ajitsaria, Abhinav},
+  url = {https://realpython.com/python-gil/},
+  organization = {What Is the Python Global Interpreter Lock (GIL)?}
+}
+
 @inproceedings{alsbouMedicalImagingSystem2023,
   title = {Medical {{Imaging System Design}} Using {{Microwave Antennas}} and {{Portable Platform}}},
   booktitle = {2023 {{IEEE}} 17th {{International Symposium}} on {{Medical Information}} and {{Communication Technology}} ({{ISMICT}})},
@@ -22,11 +29,41 @@
   abstract = {We recompute the experiment in Aruoba and Fern·ndez-Villaverde (2015) with the latest version of each programming language. The central conclusions of our original paper remain unaltered: C++ is the fastest alternative, Julia o§ers a great balance of speed and ease of use, and Python is too slow. As the main changes, Matlab and R have considerably improved their performance, in the case of Matlab to make it competitive, for example, with Rcpp}
 }
 
+@inproceedings{baranyPythonInterpreterPerformance2014,
+  title = {Python Interpreter Performance Deconstructed},
+  booktitle = {Proceedings of the Workshop on Dynamic Languages and Applications},
+  author = {Barany, Gergö},
+  date = {2014},
+  series = {Dyla'14},
+  pages = {1--9},
+  publisher = {Association for Computing Machinery},
+  location = {New York, NY, USA},
+  doi = {10.1145/2617548.2617552},
+  url = {https://doi.org/10.1145/2617548.2617552},
+  abstract = {The Python programming language is known for performing poorly on many tasks. While to some extent this is to be expected from a dynamic language, it is not clear how much each dynamic feature contributes to the costs of interpreting Python. In this study we attempt to quantify the costs of language features such as dynamic typing, reference counting for memory management, boxing of numbers, and late binding of function calls.We use an experimental compilation framework for Python that can make use of type annotations provided by the user to specialize the program as well as elide unnecessary reference counting operations and function lookups. The compiled programs run within the Python interpreter and use its internal API to implement language semantics. By separately enabling and disabling compiler optimizations, we can thus measure how much each language feature contributes to total execution time in the interpreter.We find that a boxed representation of numbers as heap objects is the single most costly language feature on numeric codes, accounting for up to 43\% of total execution time in our benchmark set. On symbolic object-oriented code, late binding of function and method calls costs up to 30\%. Redundant reference counting, dynamic type checks, and Python's elaborate function calling convention have comparatively smaller costs.},
+  isbn = {978-1-4503-2916-3},
+  pagetotal = {9},
+  keywords = {dynamic programming languages,interpreters,Python,reference counting,unboxing}
+}
+
+@software{batistaMicrowaveImaging21,
+  title = {Microwave {{Imaging}}},
+  author = {Batista, André and Batista, Lucas and Adriano, Ricardo},
+  date = {0021-01-10}
+}
+
 @online{BenchmarkToolsJl,
   title = {{{BenchmarkTools}}.Jl},
   author = {, jrevels},
   url = {https://juliaci.github.io/BenchmarkTools.jl/stable/},
   organization = {BenchmarkTools}
+}
+
+@online{bezansonWhyWeCreated12,
+  title = {Why {{We Created Julia}}},
+  author = {Bezanson, Jeff and Karpinski, Stefan and Shah, Viral B. and Edelman, Alan},
+  date = {0012-02-14},
+  url = {https://julialang.org/blog/2012/02/why-we-created-julia/}
 }
 
 @article{bourquiPrototypeSystemMeasuring2012,
@@ -38,6 +75,12 @@
   volume = {2012},
   pages = {851234},
   doi = {10.1155/2012/851234}
+}
+
+@unpublished{clasterJuliaUserDeveloper,
+  title = {Julia {{User}} and {{Developer Survery}}},
+  author = {Claster, Andrew},
+  url = {https://julialang.org/assets/2023-julia-user-developer-survey.pdf}
 }
 
 @online{CompaniesUsingMATLAB,
@@ -69,6 +112,17 @@
   eventtitle = {12th {{European Conference}} on {{Antennas}} and {{Propagation}} ({{EuCAP}} 2018)}
 }
 
+@inproceedings{d.oloughlinRotationalArtefactRemoval2020,
+  title = {Rotational {{Artefact Removal}} for {{Radar-based Breast Imaging}}: {{Effects}} on {{Image Quality}}},
+  booktitle = {2020 {{XXXIIIrd General Assembly}} and {{Scientific Symposium}} of the {{International Union}} of {{Radio Science}}},
+  author = {{D. O’Loughlin} and {H. Benchakroun} and {A. Lowery}},
+  year = {29 Aug.-5 Sept. 2020},
+  pages = {1--4},
+  doi = {10.23919/URSIGASS49373.2020.9232244},
+  eventtitle = {2020 {{XXXIIIrd General Assembly}} and {{Scientific Symposium}} of the {{International Union}} of {{Radio Science}}},
+  isbn = {2642-4339}
+}
+
 @article{e.c.fearMicrowaveBreastImaging2013,
   title = {Microwave {{Breast Imaging With}} a {{Monostatic Radar-Based System}}: {{A Study}} of {{Application}} to {{Patients}}},
   author = {{E. C. Fear} and {J. Bourqui} and {C. Curtis} and {D. Mew} and {B. Docktor} and {C. Romano}},
@@ -80,6 +134,21 @@
   pages = {2119--2128},
   issn = {1557-9670},
   doi = {10.1109/TMTT.2013.2255884}
+}
+
+@article{engelmanWomenSatisfactionTheir2006,
+  title = {Women's {{Satisfaction}} with {{Their Mammography Experience}}: {{Results}} of a {{Qualitative Study}}},
+  author = {Engelman, Kimberly K. and Cizik, Amy M. and Ellerbeck, Edward F.},
+  date = {2006-06-09},
+  journaltitle = {Women \& Health},
+  shortjournal = {Women \& Health},
+  volume = {42},
+  number = {4},
+  pages = {17--35},
+  publisher = {Taylor \& Francis},
+  issn = {0363-0242},
+  doi = {10.1300/J013v42n04_02},
+  url = {https://doi.org/10.1300/J013v42n04_02}
 }
 
 @article{g.matroneDelayMultiplySum2015,
@@ -95,6 +164,28 @@
   doi = {10.1109/TMI.2014.2371235}
 }
 
+@software{gerazovDLMiMed17,
+  title = {{{DLMiMed}}},
+  author = {Gerazov, Branislav and Conceição, Raquel C.},
+  date = {0017-05-08},
+  abstract = {eep learning for breast tumour classification based on medical microwave imaging. This repository contains the code used to classify the tumour shape using backscatter signals obtained using FDTD numerical simulation of 3D tumour models embedded in homogeneous adipose breast tissue.}
+}
+
+@article{gilmoreMicrowaveImagingHuman2013,
+  title = {Microwave {{Imaging}} of {{Human Forearms}}: {{Pilot Study}} and {{Image Enhancement}}},
+  author = {Gilmore, Colin and Zakaria, Amer and Pistorius, Stephen and LoVetri, Joe},
+  editor = {Zhao, Jun},
+  date = {2013-08-19},
+  journaltitle = {International Journal of Biomedical Imaging},
+  volume = {2013},
+  pages = {673027},
+  publisher = {Hindawi Publishing Corporation},
+  issn = {1687-4188},
+  doi = {10.1155/2013/673027},
+  url = {https://doi.org/10.1155/2013/673027},
+  abstract = {We present a pilot study using a microwave tomography system in which we image the forearms of 5 adult male and female volunteers between the ages of 30 and 48. Microwave scattering data were collected at 0.8 to 1.2\&\#x2009;GHz with 24 transmitting and receiving antennas located in a matching fluid of deionized water and table salt. Inversion of the microwave data was performed with a balanced version of the multiplicative-regularized contrast source inversion algorithm formulated using the finite-element method (FEM-CSI). T1-weighted MRI images of each volunteer\&\#x2019;s forearm were also collected in the same plane as the microwave scattering experiment. Initial \&\#x201c;blind\&\#x201d; imaging results from the utilized inversion algorithm show that the image quality is dependent on the thickness of the arm\&\#x2019;s peripheral adipose tissue layer; thicker layers of adipose tissue lead to poorer overall image quality. Due to the exible nature of the FEM-CSI algorithm used, prior information can be readily incorporated into the microwave imaging inversion process. We show that by introducing prior information into the FEM-CSI algorithm the internal anatomical features of all the arms are resolved, significantly improving the images. The prior information was estimated manually from the blind inversions using an \emph{ad hoc} procedure.}
+}
+
 @article{h.beenlimConfocalMicrowaveImaging2008,
   title = {Confocal {{Microwave Imaging}} for {{Breast Cancer Detection}}: {{Delay-Multiply-and-Sum Image Reconstruction Algorithm}}},
   author = {{H. Been Lim} and {N. Thi Tuyet Nhung} and {E. -P. Li} and {N. Duc Thang}},
@@ -108,20 +199,45 @@
   doi = {10.1109/TBME.2008.919716}
 }
 
+@inproceedings{h.benchakrounImpactRotationalArtefact2021,
+  title = {Impact of Rotational Artefact Removal on Microwave Breast Images},
+  booktitle = {2021 15th {{European Conference}} on {{Antennas}} and {{Propagation}} ({{EuCAP}})},
+  author = {{H. Benchakroun} and {M. O’Halloran} and {D. O’Loughlin}},
+  date = {2021-03-22/2021-03-26},
+  pages = {1--4},
+  doi = {10.23919/EuCAP51087.2021.9411204},
+  eventtitle = {2021 15th {{European Conference}} on {{Antennas}} and {{Propagation}} ({{EuCAP}})}
+}
+
+@online{indexPyPIStatistics,
+  title = {{{PyPI}} Statistics},
+  author = {Index, Python Package},
+  url = {https://pypi.org/stats/},
+  organization = {PyPI statistics}
+}
+
 @online{JuliaGPU,
   title = {{{JuliaGPU}}},
   author = {, Julia},
   url = {https://juliagpu.org/}
 }
 
-@article{klemmImprovedDelayandSumBeamforming2008,
-  title = {Improved {{Delay-and-Sum Beamforming Algorithm}} for {{Breast Cancer Detection}}},
-  author = {Klemm, M. and Craddock, I.J. and Leendertz, J. and Preece, Alan and Benjamin, Ralph},
-  date = {2008-01-01},
-  journaltitle = {International Journal of Antennas and Propagation},
-  shortjournal = {International Journal of Antennas and Propagation},
-  volume = {2008},
-  doi = {10.1155/2008/761402}
+@article{larsenMicrowaveScatteringParameter1979,
+  title = {Microwave Scattering Parameter Imagery of an Isolated Canine Kidney},
+  author = {Larsen, Lawrence E. and Jacobi, John H.},
+  date = {1979-09-01},
+  journaltitle = {Medical Physics},
+  shortjournal = {Medical Physics},
+  volume = {6},
+  number = {5},
+  pages = {394--403},
+  publisher = {John Wiley \& Sons, Ltd},
+  issn = {0094-2405},
+  doi = {10.1118/1.594595},
+  url = {https://doi.org/10.1118/1.594595},
+  urldate = {2024-04-10},
+  abstract = {This paper describes a method for imaging biosystems using radiation in the microwave frequency range (3.9 GHz). The advantages of interrogation with microwave radiation are discussed in terms of its physiological significance. An electromechanical scanning system for imaging isolated organs and the subsequent image processing techniques are described. Imagery is presented for a phantom target and an isolated canine kidney. The kidney images are interpreted in terms of the known anatomical and functional organization of the organ. It does appear to be possible to distinguish cortex corticis corresponding to a high proportion of proximal and distal convoluted tubules, deeper cortical layers corresponding to a high population density of glomeri, a medullary outer zone corresponding to the loops of Henle as well as the collecting system, and the region of calyces/renal pelvis.},
+  keywords = {Anatomy,Biomedical imaging,Biophysical techniques (research methods),DATA ACQUISION SYSTEMS,DATA PROCESSING,DIAGNOSTIC TECHNIQUES,DIAL SYSTEM (DIGITAL IMAGE ANALYSIS LABORATORY),DIELECTRIC MATERIALS,DIGITIZERS,ELECTROMAGNETIC RADIATION,IMAGE CONVERTERS,Image processing,IMAGE PROCESSING,IMAGE SCANNERS,Kidneys,KIDNEYS,Medical imaging,MICROWAVE EQUIPMENT,MICROWAVE IMAGE PROCESSING,MICROWAVE RADIATION,Microwaves,Non-ionizing radiation equipment and techniques,Optical/infrared radiation effects,PHANTOMS,Radiofrequency/microwave fields effects,TUBULES}
 }
 
 @article{makladNeighborhoodBasedAlgorithmFacilitate2012,
@@ -133,6 +249,20 @@
   volume = {39},
   pages = {115--139},
   doi = {10.2528/PIERB11122208}
+}
+
+@online{MATLABAcademia,
+  title = {{{MATLAB Academia}}},
+  author = {given=MATLAB, given-i=MATLAB},
+  url = {https://uk.mathworks.com/academia.html?s_tid=ln_acad_overview},
+  abstract = {MATLAB Academia}
+}
+
+@online{MATLABPricing,
+  title = {{{MATLAB Pricing}}},
+  author = {, Mathworks},
+  url = {https://uk.mathworks.com/pricing-licensing.html?prodcode=SLSS&intendeduse=startup},
+  organization = {Pricing and Licensing}
 }
 
 @article{moloneyWaveliaMicrowaveBreast2021,
@@ -181,6 +311,26 @@
   keywords = {biomedical electromagnetic imaging,microwave imaging,ultrawideband radar}
 }
 
+@article{ozgurMatLabVsPython2022,
+  title = {{{MatLab}} vs. {{Python}} vs. {{R}}},
+  author = {Ozgur, Ceyhun and Colliau, Taylor and Rogers, Grace and Hughes, Zachariah},
+  date = {2022},
+  journaltitle = {Journal of Data Science},
+  volume = {15},
+  number = {3},
+  pages = {355--372},
+  publisher = {School of Statistics, Renmin University of China},
+  issn = {1680-743X},
+  doi = {10.6339/JDS.201707_15(3).0001}
+}
+
+@online{paszkePyTorch,
+  title = {{{PyTorch}}},
+  author = {Paszke, Adam and Gross, Sam and Chintala, Soumith and Chanan, Gregory},
+  url = {https://github.com/pytorch/pytorch},
+  abstract = {PyTorch is a Python package that provides two high-level features: Tensor computation (like NumPy) with strong GPU acceleration Deep neural networks built on a tape-based autograd system You can reuse your favorite Python packages such as NumPy, SciPy, and Cython to extend PyTorch when needed.}
+}
+
 @article{preeceMARIAM4Clinical2016,
   title = {{{MARIA M4}}: Clinical Evaluation of a Prototype Ultrawideband Radar Scanner for Breast Cancer Detection.},
   author = {Preece, Alan W. and Craddock, Ian and Shere, Mike and Jones, Lyn and Winton, Helen L.},
@@ -199,6 +349,23 @@
   langid = {english},
   pmcid = {PMC4951628},
   keywords = {breast cancer,clinical evaluation,imaging,MARIA,multistatic radar,ultrawideband}
+}
+
+@online{PythonDevelopersSurvey,
+  title = {Python {{Developers Survey}} 2022 {{Results}}},
+  author = {, JetBrains},
+  url = {https://lp.jetbrains.com/python-developers-survey-2022/#PurposesUsingPython},
+  organization = {Python Developers Survey 2022 Results}
+}
+
+@article{rackauckas2017differentialequations,
+  title = {{{DifferentialEquations}}.Jl–a Performant and Feature-Rich Ecosystem for Solving Differential Equations in {{Julia}}},
+  author = {Rackauckas, Christopher and Nie, Qing},
+  date = {2017},
+  journaltitle = {Journal of Open Research Software},
+  volume = {5},
+  number = {1},
+  publisher = {Ubiquity Press}
 }
 
 @article{shahkaramWeightedDelayandsumBeamformer2021,
@@ -220,4 +387,10 @@
   title = {{{PsyToolkit Testimonials}}},
   author = {Stoet, Gijsbert},
   url = {https://www.psytoolkit.org/#_testimonials}
+}
+
+@online{Tensorflow,
+  title = {Tensorflow},
+  author = {, Google},
+  url = {https://github.com/tensorflow/tensorflow}
 }

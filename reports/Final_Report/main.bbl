@@ -55,6 +55,26 @@ G.~Stoet, \emph{{{PsyToolkit Testimonials}}}, Std. [Online]. Available:
   \url{https://www.psytoolkit.org/#_testimonials}
 \BIBentrySTDinterwordspacing
 
+\bibitem{larsenMicrowaveScatteringParameter1979}
+\BIBentryALTinterwordspacing
+L.~E. Larsen and J.~H. Jacobi, ``Microwave scattering parameter imagery of an
+  isolated canine kidney,'' vol.~6, no.~5, pp. 394--403. [Online]. Available:
+  \url{https://doi.org/10.1118/1.594595}
+\BIBentrySTDinterwordspacing
+
+\bibitem{h.benchakrounImpactRotationalArtefact2021}
+{H. Benchakroun}, {M. O’Halloran}, and {D. O’Loughlin}, ``Impact of
+  rotational artefact removal on microwave breast images,'' in \emph{2021 15th
+  {{European Conference}} on {{Antennas}} and {{Propagation}} ({{EuCAP}})}, pp.
+  1--4.
+
+\bibitem{d.oloughlinRotationalArtefactRemoval2020}
+{D. O’Loughlin}, {H. Benchakroun}, and {A. Lowery}, ``Rotational {{Artefact
+  Removal}} for {{Radar-based Breast Imaging}}: {{Effects}} on {{Image
+  Quality}},'' in \emph{2020 {{XXXIIIrd General Assembly}} and {{Scientific
+  Symposium}} of the {{International Union}} of {{Radio Science}}}, 29 Aug.-5
+  Sept. 2020, pp. 1--4.
+
 \bibitem{makladNeighborhoodBasedAlgorithmFacilitate2012}
 B.~Maklad, C.~Curtis, E.~Fear, and G.~Messier, ``Neighborhood-{{Based
   Algorithm}} to {{Facilitate}} the {{Reduction}} of {{Skin Reflections}} in
@@ -90,6 +110,59 @@ D.~O’Loughlin, B.~L. Oliveira, M.~Glavin, E.~Jones, and M.~O’Halloran,
   Multiply}} and {{Sum Beamforming Algorithm}} in {{Ultrasound B-Mode Medical
   Imaging}},'' vol.~34, no.~4, pp. 940--949.
 
+\bibitem{PythonDevelopersSurvey}
+\BIBentryALTinterwordspacing
+J.~. Python {{Developers Survey}} 2022 {{Results}}. Python Developers Survey
+  2022 Results. [Online]. Available:
+  \url{https://lp.jetbrains.com/python-developers-survey-2022/#PurposesUsingPython}
+\BIBentrySTDinterwordspacing
+
+\bibitem{MATLABAcademia}
+\BIBentryALTinterwordspacing
+g.-i. given=MATLAB. {{MATLAB Academia}}. [Online]. Available:
+  \url{https://uk.mathworks.com/academia.html?s_tid=ln_acad_overview}
+\BIBentrySTDinterwordspacing
+
+\bibitem{clasterJuliaUserDeveloper}
+\BIBentryALTinterwordspacing
+A.~Claster, ``Julia {{User}} and {{Developer Survery}}.'' [Online]. Available:
+  \url{https://julialang.org/assets/2023-julia-user-developer-survey.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{indexPyPIStatistics}
+\BIBentryALTinterwordspacing
+P.~P. Index. {{PyPI}} statistics. PyPI statistics. [Online]. Available:
+  \url{https://pypi.org/stats/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{baranyPythonInterpreterPerformance2014}
+\BIBentryALTinterwordspacing
+G.~Barany, ``Python interpreter performance deconstructed,'' in
+  \emph{Proceedings of the Workshop on Dynamic Languages and Applications},
+  ser. Dyla'14.\hskip 1em plus 0.5em minus 0.4em\relax Association for
+  Computing Machinery, pp. 1--9. [Online]. Available:
+  \url{https://doi.org/10.1145/2617548.2617552}
+\BIBentrySTDinterwordspacing
+
+\bibitem{Tensorflow}
+\BIBentryALTinterwordspacing
+G.~. Tensorflow. [Online]. Available:
+  \url{https://github.com/tensorflow/tensorflow}
+\BIBentrySTDinterwordspacing
+
+\bibitem{paszkePyTorch}
+\BIBentryALTinterwordspacing
+A.~Paszke, S.~Gross, S.~Chintala, and G.~Chanan. {{PyTorch}}. [Online].
+  Available: \url{https://github.com/pytorch/pytorch}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ajitsariaWhatPythonGlobal}
+\BIBentryALTinterwordspacing
+A.~Ajitsaria. What {{Is}} the {{Python Global Interpreter Lock}} ({{GIL}})?
+  What Is the Python Global Interpreter Lock (GIL)? [Online]. Available:
+  \url{https://realpython.com/python-gil/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{CompaniesUsingMATLAB}
 \BIBentryALTinterwordspacing
 Companies using {{MATLAB}} ‌. Enlyft. [Online]. Available:
@@ -103,15 +176,55 @@ S.~B. Aruoba and J.~Fernandez-Villaverde, ``A {{Comparison}} of {{Programming
   \url{https://www.sas.upenn.edu/~jesusfv/Update_March_23_2018.pdf}
 \BIBentrySTDinterwordspacing
 
+\bibitem{MATLABPricing}
+\BIBentryALTinterwordspacing
+M.~. {{MATLAB Pricing}}. Pricing and Licensing. [Online]. Available:
+  \url{https://uk.mathworks.com/pricing-licensing.html?prodcode=SLSS&intendeduse=startup}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bezansonWhyWeCreated12}
+\BIBentryALTinterwordspacing
+J.~Bezanson, S.~Karpinski, V.~B. Shah, and A.~Edelman. Why {{We Created
+  Julia}}. [Online]. Available:
+  \url{https://julialang.org/blog/2012/02/why-we-created-julia/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{rackauckas2017differentialequations}
+C.~Rackauckas and Q.~Nie, ``{{DifferentialEquations}}.jl–a performant and
+  feature-rich ecosystem for solving differential equations in {{Julia}},''
+  vol.~5, no.~1.
+
+\bibitem{gilmoreMicrowaveImagingHuman2013}
+\BIBentryALTinterwordspacing
+C.~Gilmore, A.~Zakaria, S.~Pistorius, and J.~LoVetri, ``Microwave {{Imaging}}
+  of {{Human Forearms}}: {{Pilot Study}} and {{Image Enhancement}},'' vol.
+  2013, p. 673027. [Online]. Available:
+  \url{https://doi.org/10.1155/2013/673027}
+\BIBentrySTDinterwordspacing
+
 \bibitem{BenchmarkToolsJl}
 \BIBentryALTinterwordspacing
 j.~. {{BenchmarkTools}}.jl. BenchmarkTools. [Online]. Available:
   \url{https://juliaci.github.io/BenchmarkTools.jl/stable/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{gerazovDLMiMed17}
+B.~Gerazov and R.~C. Conceição, ``{{DLMiMed}}.''
+
+\bibitem{batistaMicrowaveImaging21}
+A.~Batista, L.~Batista, and R.~Adriano, ``Microwave {{Imaging}}.''
+
 \bibitem{JuliaGPU}
 \BIBentryALTinterwordspacing
 J.~. {{JuliaGPU}}. [Online]. Available: \url{https://juliagpu.org/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{engelmanWomenSatisfactionTheir2006}
+\BIBentryALTinterwordspacing
+K.~K. Engelman, A.~M. Cizik, and E.~F. Ellerbeck, ``Women's {{Satisfaction}}
+  with {{Their Mammography Experience}}: {{Results}} of a {{Qualitative
+  Study}},'' vol.~42, no.~4, pp. 17--35. [Online]. Available:
+  \url{https://doi.org/10.1300/J013v42n04_02}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

@@ -1,17 +1,17 @@
 \babel@toc {english}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Example of a Fully Multistatic Configuration (Top-Down) showing a circular antenna array with one transmitting antenna illuminating a point scatterer whose reflections are collected by 7 receiving antennas\relax }}{3}{figure.caption.7}%
-\contentsline {figure}{\numberline {2}{\ignorespaces The MARIA M4 and M5 system. (a) The MARIA M4 multistatic antenna array. (b) The M4 system in a clinical setting. (c) The integrated M5 package \cite {preeceMARIAM4Clinical2016}\relax }}{3}{figure.caption.8}%
-\contentsline {figure}{\numberline {3}{\ignorespaces The Wavelia System installed in a Hospital \cite {moloneyWaveliaMicrowaveBreast2021}\relax }}{4}{figure.caption.9}%
-\contentsline {figure}{\numberline {4}{\ignorespaces The Leveled Multistatic Approach of Wavelia with a vertically moveable antenna array \cite {moloneyWaveliaMicrowaveBreast2021}\relax }}{5}{figure.caption.10}%
-\contentsline {figure}{\numberline {5}{\ignorespaces The TSAR Prototype used in their clinical study \cite {bourquiPrototypeSystemMeasuring2012}\relax }}{7}{figure.caption.11}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Phased antenna array demonstrating beamforming\relax }}{7}{figure.caption.12}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Point Emitter with waves incident on a phased array\relax }}{8}{figure.caption.13}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Comparason between DAS (a, c) and DMAS (b, d) Beamformers. The DMAS beamformer demonstrates a lower noise floor and reduced clutter\relax }}{10}{figure.caption.14}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Multiple Dispatch (top) vs Single Dispatch (bottom) demonstrating that in the multiple dispatch paradigm, the executed function also depends on the type and order of its inputs\relax }}{15}{figure.caption.16}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Type hierarchy for the Integer Type\relax }}{16}{figure.caption.17}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Current type hierarchy in MERIT.jl\relax }}{23}{figure.caption.19}%
-\contentsline {figure}{\numberline {12}{\ignorespaces An overview of the current workflow used to image a scan in MERIT.jl\relax }}{26}{figure.caption.21}%
-\contentsline {figure}{\numberline {13}{\ignorespaces A comparison between Julia and MATLAB output, showing an averaged MSE of $8.4417 \times 10^{-7}$\relax }}{27}{figure.caption.22}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Runtime for increasing Points\relax }}{28}{figure.caption.25}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Runtime for increasing Channels\relax }}{28}{figure.caption.28}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Runtime for increasing Frequency divisions\relax }}{28}{figure.caption.29}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Example of a Fully Multistatic Configuration (Top-Down) showing a circular antenna array with one transmitting antenna illuminating a point scatterer whose reflections are collected by 7 receiving antennas\relax }}{3}{figure.caption.6}%
+\contentsline {figure}{\numberline {2}{\ignorespaces The MARIA M4 and M5 system. (a) The MARIA M4 multistatic antenna array. (b) The M4 system in a clinical setting. (c) The integrated M5 package \cite {preeceMARIAM4Clinical2016}\relax }}{3}{figure.caption.7}%
+\contentsline {figure}{\numberline {3}{\ignorespaces The Wavelia System installed in a Hospital \cite {moloneyWaveliaMicrowaveBreast2021}\relax }}{4}{figure.caption.8}%
+\contentsline {figure}{\numberline {4}{\ignorespaces The Leveled Multistatic Approach of Wavelia with a vertically moveable antenna array \cite {moloneyWaveliaMicrowaveBreast2021}\relax }}{5}{figure.caption.9}%
+\contentsline {figure}{\numberline {5}{\ignorespaces The TSAR Prototype used in their clinical study \cite {bourquiPrototypeSystemMeasuring2012}\relax }}{7}{figure.caption.10}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Phased antenna array demonstrating beamforming\relax }}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Point Emitter with waves incident on a phased array\relax }}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Comparason between DAS (a, c) and DMAS (b, d) Beamformers. The DMAS beamformer demonstrates a lower noise floor and reduced clutter\relax }}{10}{figure.caption.13}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Multiple Dispatch (top) vs Single Dispatch (bottom) demonstrating that in the multiple dispatch paradigm, the executed function also depends on the type and order of its inputs\relax }}{15}{figure.caption.15}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Type hierarchy for the Integer Type\relax }}{16}{figure.caption.16}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Current type hierarchy in MERIT.jl\relax }}{23}{figure.caption.18}%
+\contentsline {figure}{\numberline {12}{\ignorespaces An overview of the current workflow used to image a scan in MERIT.jl\relax }}{26}{figure.caption.20}%
+\contentsline {figure}{\numberline {13}{\ignorespaces A comparison between Julia and MATLAB output, showing an averaged MSE of $8.4417 \times 10^{-7}$\relax }}{27}{figure.caption.21}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Runtime for increasing Points\relax }}{28}{figure.caption.24}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Runtime for increasing Channels\relax }}{28}{figure.caption.27}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Runtime for increasing Frequency divisions\relax }}{28}{figure.caption.28}%

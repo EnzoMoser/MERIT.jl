@@ -33,8 +33,8 @@ template of the DAS beamformer, they can have the guarantee that their function 
 \section{Parallel Processing}
 Parallel processing was not a feature that was explored as it was outside the scope of this thesis. However, there are
 areas of the code that have been identified as ``embarrassingly parallel''. These are sections of code that are amenable
-to significant acceleration through the use of multithreading and parallel processing. Consider the beamforming equation
-in equations \ref{eq:DASBeamformer, eq:DMASBeamformer}. For all of these, the response at each point is calculated
+to significant acceleration through the use of multithreading and parallel processing. Consider the beamforming equations
+in section \ref{BeamformingAlgorithms}. For all of these, the response at each point is calculated
 independently of the other points. As such this operation can be easily split across all available threads or even
 all available GPU cores, providing exponential increases to the performance of the library overall. The Julia language
 provides native support for threaded for-loops through the use of the \lstinline[language=Julia]{Threads.@threads}

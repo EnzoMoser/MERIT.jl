@@ -8,23 +8,10 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: citations.bib
-Warning--I didn't find a database entry for "larsenMicrowaveScatteringParameter1979"
-Warning--I didn't find a database entry for "h.benchakrounImpactRotationalArtefact2021"
-Warning--I didn't find a database entry for "d.oloughlinRotationalArtefactRemoval2020"
-Warning--I didn't find a database entry for "PythonDevelopersSurvey"
-Warning--I didn't find a database entry for "MATLABAcademia"
-Warning--I didn't find a database entry for "clasterJuliaUserDeveloper"
-Warning--I didn't find a database entry for "indexPyPIStatistics"
-Warning--I didn't find a database entry for "baranyPythonInterpreterPerformance2014"
-Warning--I didn't find a database entry for "Tensorflow"
-Warning--I didn't find a database entry for "paszkePyTorch"
-Warning--I didn't find a database entry for "ajitsariaWhatPythonGlobal"
-Warning--I didn't find a database entry for "MATLABPricing"
-Warning--I didn't find a database entry for "bezansonWhyWeCreated12"
-Warning--I didn't find a database entry for "rackauckas2017differentialequations"
-Warning--I didn't find a database entry for "gilmoreMicrowaveImagingHuman2013"
-Warning--I didn't find a database entry for "gerazovDLMiMed17"
-Warning--I didn't find a database entry for "batistaMicrowaveImaging21"
+Warning--entry type for "batistaMicrowaveImaging21" isn't style-file defined
+--line 49 of file citations.bib
+Warning--entry type for "gerazovDLMiMed17" isn't style-file defined
+--line 167 of file citations.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -38,6 +25,9 @@ Warning--empty journal in e.c.fearMicrowaveBreastImaging2013
 Warning--empty year in e.c.fearMicrowaveBreastImaging2013
 Warning--empty year in d.oloughlinOpensourceSoftwareMicrowave2018
 Warning--missing institution in stoetPsyToolkitTestimonials
+Warning--empty journal in larsenMicrowaveScatteringParameter1979
+Warning--empty year in larsenMicrowaveScatteringParameter1979
+Warning--empty year in h.benchakrounImpactRotationalArtefact2021
 Warning--empty journal in makladNeighborhoodBasedAlgorithmFacilitate2012
 Warning--empty year in makladNeighborhoodBasedAlgorithmFacilitate2012
 Warning--empty journal in oloughlinParameterSearchAlgorithms2017
@@ -50,49 +40,57 @@ Warning--empty journal in oloughlinComparingRadarBasedBreast2019
 Warning--empty year in oloughlinComparingRadarBasedBreast2019
 Warning--empty journal in g.matroneDelayMultiplySum2015
 Warning--empty year in g.matroneDelayMultiplySum2015
+Warning--empty note in clasterJuliaUserDeveloper
+Warning--empty year in baranyPythonInterpreterPerformance2014
 Warning--empty journal in aruobaComparisonProgrammingLanguages2018
 Warning--empty year in aruobaComparisonProgrammingLanguages2018
+Warning--empty journal in rackauckas2017differentialequations
+Warning--empty year in rackauckas2017differentialequations
+Warning--empty journal in gilmoreMicrowaveImagingHuman2013
+Warning--empty year in gilmoreMicrowaveImagingHuman2013
+Warning--empty journal in engelmanWomenSatisfactionTheir2006
+Warning--empty year in engelmanWomenSatisfactionTheir2006
 
 Done.
-You've used 16 entries,
+You've used 34 entries,
             4087 wiz_defined-function locations,
-            946 strings with 12207 characters,
-and the built_in function-call counts, 10556 in all, are:
-= -- 794
-> -- 321
-< -- 67
-+ -- 165
-- -- 67
-* -- 533
-:= -- 1544
-add.period$ -- 32
-call.type$ -- 16
-change.case$ -- 15
-chr.to.int$ -- 120
-cite$ -- 40
-duplicate$ -- 801
-empty$ -- 779
-format.name$ -- 79
-if$ -- 2403
+            1017 strings with 14999 characters,
+and the built_in function-call counts, 19340 in all, are:
+= -- 1472
+> -- 509
+< -- 106
++ -- 257
+- -- 105
+* -- 896
+:= -- 2998
+add.period$ -- 73
+call.type$ -- 34
+change.case$ -- 33
+chr.to.int$ -- 198
+cite$ -- 69
+duplicate$ -- 1476
+empty$ -- 1546
+format.name$ -- 127
+if$ -- 4388
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 167
-newline$ -- 83
-num.names$ -- 15
-pop$ -- 443
+int.to.str$ -- 34
+missing$ -- 314
+newline$ -- 163
+num.names$ -- 33
+pop$ -- 858
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 791
+skip$ -- 1461
 stack$ -- 0
-substring$ -- 346
-swap$ -- 620
-text.length$ -- 27
+substring$ -- 550
+swap$ -- 1072
+text.length$ -- 40
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 16
-warning$ -- 24
-while$ -- 40
-width$ -- 18
-write$ -- 166
-(There were 41 warnings)
+type$ -- 34
+warning$ -- 35
+while$ -- 79
+width$ -- 36
+write$ -- 336
+(There were 37 warnings)

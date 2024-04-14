@@ -39,11 +39,22 @@ functions in MERIT.jl can be considered as concepts that encapsulate functional 
 averaged MSE of $8.4417 \times 10^{-7}$, showing that the MERIT.jl library can be a viable alternative to the MATLAB
 library.
 
-The Julia programming language offers many beneficial features for developers creating libraries for scientific
-computing. The JIT compiler and type stability allow developers to write high-level code which is then optimized and
-compiled at runtime, simplifying the development process. Efficient garbage collection means that developers no longer
-have to worry about deallocating assigned memory, removing the risk of inadvertently causing memory leaks.
-%%Ability to call other languages
-%%Ability to use + extend other libraries
-%%ABility to use mathmatical notation
-%%multiple dispatch 
+The Julia programming language has proved to be an attractive choice for the developers of scientific libraries with
+10,760 packages being tracked by JuliaHub relating to some field of science, engineering or mathematics. Its popularity
+among these developers is a direct cause of the programming paradigm adopted by Julia, as was extensively discussed in
+chapters 2 and 3. Julia allows developers to code with a high level, easy to learn, language while also using a JIT
+compiler to generate highly optimized machine code at run time, even offering machine specific optimizations. This level
+of optimization and performance is critical for tasks requiring large amounts of numerical computation. Moreover, Julia
+offers native support for creating and working with matrices and their higher dimensional analogs, with operations that
+are reminiscent of MATLAB-like syntax. This allows developers may have a large scientific code base in MATLAB to easily
+port their matrix operations to Julia while availing of the optimized linear algebra operations provided by the Julia
+implementation of BLAS. Additionally features such as multiple dispatch and the type hierarchy allow developers to
+package multiple separate implementations of a particular function under one function name, whereas in other languages
+such as MATLAB, this could only be achieved by long if-else blocks checking the type of the input arguments. The benefit
+being code that is easily maintainable and easily extensible. As was seen in section \ref{JuliaScientificComputing}, the
+multiple dispatch system allows other developers to create libraries that extend existing libraries in a way that is
+transparent to the end user. This is demonstrated by the interplay between the DifferentialEquations.jl library and the
+SciMLBase.jl library; users can use structures and functions from both libraries, which work together as if they were
+part of the same library. This transparent integration is what allows packages in Julia to work seamlessly together,
+meaning that communities of developers can create comprehensive collections of libraries around a particular topic
+provided they agree on a common interface and standard.
