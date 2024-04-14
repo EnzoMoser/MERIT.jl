@@ -33,16 +33,16 @@ end
 
 kate = Cat("Kate")
 \end{lstlisting}
-If one wanted to call the \lstinline[language=Julia]{says} from the Cat or Dog class in the single dispatch paradigm,
-one would have to write \lstinline[language=Julia]{billy.says("Hello World")} or
+If one wanted to call the \lstinline[language=Julia]{says} function from the Cat or Dog class in the single dispatch
+paradigm, one would have to write \lstinline[language=Julia]{billy.says("Hello World")} or
 \lstinline[language=Julia]{kate.says("Hello World")}. This concept fits well with object-oriented programming languages
 where classes are used to encapsulate concepts. However, a drawback of this system is that the compiler relies on the
 user to remember which methods belong to the class and which methods are callable. Also since both the Cat and Dog
 classes are defined in different libraries it is not clear how either developer could create a function where these
 classes interact with each other without having to create a separate third library that implements compatibility code.
 
-Multiple and its particular implementation in Julia solves some of these issues. In Julia, methods no longer belong to
-classes, instead like in C they simply belong to a particular library, also known as a ``Module'' in Julia. Functions
+Multiple dispatch and its particular implementation in Julia solves some of these issues. In Julia, methods no longer belong to
+classes, instead like in C, they simply belong to a particular library also known as a ``Module'' in Julia. Functions
 defined in modules are usually exported such that they are available in the namespace of any other module that uses it.
 This allows modules to use and overload functions and structures from other modules in a way that is completely
 transparent to the end user.   
@@ -95,10 +95,9 @@ interaction between the Cat and the Dog types, as well as an \lstinline[language
 user can make use of both libraries as they did in the single dispatch case, but now they only have to call the function
 name, rather than the function name prepended with the class variable name. In the case of the
 \lstinline[language=Julia]{says} function call, the Julia compiler automatically dispatches the correct implementation
-based on the type of the input argument. This is further exemplified in the final two function calls. As stated before
-multiple dispatch is sensitive to both the type and order of the inputs. In the first call to the
-\lstinline[language=Julia]{encounters} function, the \lstinline[language=Julia]{meets} function on line 19 will be
-dispatched as the argument order was of type Cat and then Dog. Whereas in the second call to the
+based on the type of the input argument. This is further exemplified in the final two function calls. In the first call
+to the \lstinline[language=Julia]{encounters} function, the \lstinline[language=Julia]{meets} function on line 19 will
+be dispatched as the argument order was of type Cat and then Dog. Whereas in the second call to the
 \lstinline[language=Julia]{encoutners} function, the \lstinline[language=Julia]{meets} function defined on line 23 will
 be dispatched due to the reverse ordering of the types.
 
@@ -160,17 +159,17 @@ Library A defines a type hierarchy with Cat and Dog being a subtype of the abstr
 implements a series of \lstinline[language=Julia]{meets} functions and an \lstinline[language=Julia]{ecounters}
 function, similar to the example in the previous section. However, unlike the example before, there is a new
 \lstinline[language=Julia]{meets} which accepts an argument of type Animal. Library B, importing library A, defines a
-Rabbit type that is a subtype of the Animal abstract type and then calls the encounters function from library A. The
+Rabbit type which is a subtype of the Animal abstract type and then calls the encounters function from library A. The
 dispatch system cannot execute the \lstinline[language=Julia]{meets} function from lines 18, since
 \lstinline[language=Julia]{chompers} is not of type Dog. Instead, it executes the \lstinline[language=Julia]{meets}
 function on line 17, since both \lstinline[language=Julia]{whiskers} and \lstinline[language=Julia]{chompers} are valid
 Animal types. This highlights an important interplay between the type hierarchy and the multiple dispatch system, in
 that when dispatching, the Julia compiler will select the function that is most specific across all its input arguments.
-The developer of library A need not worry about all the other possible Animal types, or what their fields may contain,
-they can create a generic \lstinline[language=Julia]{meets} function that accepts any subtype of the Animal class and
+The developer of library A need not worry about all possible Animal types or what their fields may contain.
+They can create a generic \lstinline[language=Julia]{meets} function that accepts any subtype of the Animal class and
 will execute successfully provided the subtyped class contains the fields being accessed. Neither developer has to worry
 about the completeness of the other's implementation, provided developer B follows the standards set by developer A,
-they can develop an extension to library A and trust that the two libraries will be comparable.
+they can develop an extension to library A and trust that the two libraries will be compatible.
 
 \section{Parametric Polymorphism}
 Parametric polymorphism refers to the programming paradigm where a function can be made generic to the input argument
@@ -210,11 +209,11 @@ function stable()
     return x
 end
 \end{lstlisting}
-Both functions have a variable, \lstinline[language=Julia]{x} which is divided 10 times by random floats and is returned
+Both functions have a variable, \lstinline[language=Julia]{x}, which is divided 10 times by random floats and is returned
 at the end of the function. However, based on the description above, the first function is considered to be ``Type
 Unstable'' whereas the second function is considered to be ``Type Stable''. This is because in the first function the
-type of \lstinline[language=Julia]{x} changes in the lifetime of the function (turns from Int64 to Float64). However in
-the second function, the data type of \lstinline[language=Julia]{x} stays as a Float64 throughout the lifetime of the
+type of \lstinline[language=Julia]{x} changes in the lifetime of the function (turns from Int64 to Float64). However, in
+the second function the data type of \lstinline[language=Julia]{x} stays as a Float64 throughout the lifetime of the
 function. The notion of type stability is important as it allows the Julia compiler to perform optimizations based on
 the known data type of the variables at compile time. For type unstable functions, their unstable variables default to
 type Any, ergo forgoing any optimizations. These optimizations are evident when benchmarking the functions above. This
@@ -243,15 +242,14 @@ add7(10) # Will return 17
 Defined above is a function called \lstinline[language=Julia]{addX} which accepts an input \lstinline[language=Julia]{x}
 and assigns it to a variable \lstinline[language=Julia]{scalar}, before constructing and returning the function
 \lstinline[language=Julia]{calc_}. This can be beneficial as it allows developers to create a family of functions that
-are parametrized by their input variable.  It must be noted that the
-captured variable, in the above case \lstinline[language=Julia]{scalar}, must never be reassigned, otherwise, the
-compiler will not be able to infer the data types leading to type unstable code, and by extension all the negative
-consequences mentioned in the previous section.
+are parametrized by their input variable. It must be noted that the captured variable, in the above case
+\lstinline[language=Julia]{scalar}, must never be reassigned, otherwise the compiler will not be able to infer the data
+types leading to type unstable code, and by extension all the negative consequences mentioned in the previous section.
 
 \section{Type Safety}
 Type Safety refers to a program or language's ability to detect and discourage errors that arise from performing
 operations on the wrong data type. For example in Julia, it is simple to add two numeric types, but performing the same
-operation on two strings would yield an error, since the summation operator is not defined for two string types. This
+operation on two strings would yield an error since the summation operator is not defined for two string types. This
 offers some level of protection against illegal operations, but there are many cases where the type of the variables
 agree with the operation being performed, but their semantic meaning disagrees. The example below will illustrate this
 idea.
