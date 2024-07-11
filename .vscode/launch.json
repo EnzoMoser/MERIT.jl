@@ -8,7 +8,7 @@
             "type": "julia",
             "request": "launch",
             "name": "Debug tempTesting",
-            "program": "/mnt/c/Users/aaron/Desktop/Coding/MERIT.jl/benchmarking.jl",
+            "program": "${workspaceFolder}/tempTesting.jl",
             "stopOnEntry": false,
             "cwd": "${workspaceFolder}",
             "juliaEnv": "${command:activeJuliaEnvironment}"

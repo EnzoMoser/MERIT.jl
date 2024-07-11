@@ -7,6 +7,7 @@ using MAT
 using Profile
 using PProf
 using BenchmarkTools
+using PlotlyJS
 
 include("src/MERIT.jl")
 
