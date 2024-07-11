@@ -1,6 +1,5 @@
-using MERIT
 using Plots
-
+using MERIT
 
 plotlyjs()
 scan = BreastScan{Float32, ComplexF32, UInt32}()
